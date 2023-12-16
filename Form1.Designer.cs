@@ -1,6 +1,6 @@
 ﻿namespace LBN_Competitive_System_Simulation
 {
-    partial class Form1
+    partial class MainPage
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -28,55 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_enter = new System.Windows.Forms.Button();
-            this.labTest = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
+            this.btn_confirm = new System.Windows.Forms.Button();
+            this.Background = new System.Windows.Forms.PictureBox();
+            this.Disclaimer = new System.Windows.Forms.PictureBox();
+            this.Introduction = new System.Windows.Forms.PictureBox();
+            this.Ball = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Disclaimer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Introduction)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_enter
+            // btn_confirm
             // 
-            this.btn_enter.BackColor = System.Drawing.Color.FloralWhite;
-            this.btn_enter.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_enter.Location = new System.Drawing.Point(435, 264);
-            this.btn_enter.Name = "btn_enter";
-            this.btn_enter.Size = new System.Drawing.Size(415, 135);
-            this.btn_enter.TabIndex = 0;
-            this.btn_enter.Text = "進入";
-            this.btn_enter.UseVisualStyleBackColor = false;
-            this.btn_enter.Click += new System.EventHandler(this.button1_Click);
+            this.btn_confirm.BackColor = System.Drawing.Color.FloralWhite;
+            this.btn_confirm.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_confirm.Location = new System.Drawing.Point(418, 505);
+            this.btn_confirm.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.btn_confirm.Name = "btn_confirm";
+            this.btn_confirm.Size = new System.Drawing.Size(192, 68);
+            this.btn_confirm.TabIndex = 0;
+            this.btn_confirm.Text = "知道了";
+            this.btn_confirm.UseMnemonic = false;
+            this.btn_confirm.UseVisualStyleBackColor = false;
+            this.btn_confirm.Click += new System.EventHandler(this.button1_Click);
             // 
-            // labTest
+            // Background
             // 
-            this.labTest.AutoSize = true;
-            this.labTest.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labTest.Location = new System.Drawing.Point(607, 431);
-            this.labTest.Name = "labTest";
-            this.labTest.Size = new System.Drawing.Size(67, 34);
-            this.labTest.TabIndex = 1;
-            this.labTest.Text = "Test";
-            this.labTest.Click += new System.EventHandler(this.label1_Click);
+            this.Background.Image = ((System.Drawing.Image)(resources.GetObject("Background.Image")));
+            this.Background.Location = new System.Drawing.Point(-8, 112);
+            this.Background.Name = "Background";
+            this.Background.Size = new System.Drawing.Size(1068, 544);
+            this.Background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Background.TabIndex = 1;
+            this.Background.TabStop = false;
+            this.Background.Click += new System.EventHandler(this.Background_Click);
             // 
-            // Form1
+            // Disclaimer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.Disclaimer.Image = ((System.Drawing.Image)(resources.GetObject("Disclaimer.Image")));
+            this.Disclaimer.Location = new System.Drawing.Point(303, 72);
+            this.Disclaimer.Name = "Disclaimer";
+            this.Disclaimer.Size = new System.Drawing.Size(437, 384);
+            this.Disclaimer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Disclaimer.TabIndex = 2;
+            this.Disclaimer.TabStop = false;
+            this.Disclaimer.Click += new System.EventHandler(this.Disclaimer_Click);
+            // 
+            // Introduction
+            // 
+            this.Introduction.Image = ((System.Drawing.Image)(resources.GetObject("Introduction.Image")));
+            this.Introduction.Location = new System.Drawing.Point(303, 72);
+            this.Introduction.Name = "Introduction";
+            this.Introduction.Size = new System.Drawing.Size(437, 384);
+            this.Introduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Introduction.TabIndex = 3;
+            this.Introduction.TabStop = false;
+            this.Introduction.Click += new System.EventHandler(this.Introduction_Click);
+            // 
+            // Ball
+            // 
+            this.Ball.Image = ((System.Drawing.Image)(resources.GetObject("Ball.Image")));
+            this.Ball.Location = new System.Drawing.Point(942, 285);
+            this.Ball.Name = "Ball";
+            this.Ball.Size = new System.Drawing.Size(32, 32);
+            this.Ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Ball.TabIndex = 4;
+            this.Ball.TabStop = false;
+            this.Ball.Click += new System.EventHandler(this.Ball_Click);
+            // 
+            // MainPage
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1334, 697);
-            this.Controls.Add(this.labTest);
-            this.Controls.Add(this.btn_enter);
+            this.BackColor = System.Drawing.Color.Azure;
+            this.ClientSize = new System.Drawing.Size(1041, 639);
+            this.Controls.Add(this.Ball);
+            this.Controls.Add(this.btn_confirm);
+            this.Controls.Add(this.Disclaimer);
+            this.Controls.Add(this.Introduction);
+            this.Controls.Add(this.Background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Disclaimer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Introduction)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btn_enter;
-        private System.Windows.Forms.Label labTest;
+        private System.Windows.Forms.Button btn_confirm;
+        private System.Windows.Forms.PictureBox Background;
+        private System.Windows.Forms.PictureBox Disclaimer;
+        private System.Windows.Forms.PictureBox Introduction;
+        private System.Windows.Forms.PictureBox Ball;
     }
 }
 
