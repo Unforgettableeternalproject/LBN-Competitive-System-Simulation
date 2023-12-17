@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LBN_Competitive_System_Simulation
@@ -21,15 +20,26 @@ namespace LBN_Competitive_System_Simulation
         {
             InitializeComponent();
             intro = 0;
-            Background.Controls.Add(Disclaimer);
-            Background.Controls.Add(Introduction);
-            Background.Controls.Add(Ball);
-            Disclaimer.Location = new Point(300, -30);
-            Introduction.Location = new Point(300, -30);
-            Ball.Location = new Point(950, 200);
+            Background.Controls.Add(Sign);
+            Sign.Controls.Add(Disclaimer);
+            Sign.Controls.Add(Introduction);
+            Sign.Controls.Add(Property);
+            Sign.Controls.Add(Ball);
+
+
+            Sign.Location = new Point(0, 0);
+            btn_confirm.Location = new Point(423, 470);
+            Background.Location = new Point(0, 0);
+            Disclaimer.Location = new Point(300, 70);
+            Introduction.Location = new Point(300, 70);
+            Property.Location = new Point(300, 93);
+            Ball.Location = new Point(700, 150);
+            Background.BackColor = Color.Transparent;
             Disclaimer.BackColor = Color.Transparent;
             Introduction.BackColor = Color.Transparent;
+            Property.BackColor = Color.Transparent;
             Ball.BackColor = Color.Transparent;
+            Sign.BackColor = Color.Transparent;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,7 +60,9 @@ namespace LBN_Competitive_System_Simulation
                     intro++;
                     break;
                 case 2:
+                    Property.Hide();
                     btn_confirm.Text = "進入!";
+                    btn_confirm.Location = new Point(400, 250);
                     break;
                 default:
                     break;
@@ -77,5 +89,14 @@ namespace LBN_Competitive_System_Simulation
 
         }
 
+        private void Property_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Background_2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

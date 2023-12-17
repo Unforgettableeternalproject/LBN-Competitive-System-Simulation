@@ -34,17 +34,21 @@
             this.Disclaimer = new System.Windows.Forms.PictureBox();
             this.Introduction = new System.Windows.Forms.PictureBox();
             this.Ball = new System.Windows.Forms.PictureBox();
+            this.Property = new System.Windows.Forms.PictureBox();
+            this.Sign = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Disclaimer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Introduction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Property)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sign)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_confirm
             // 
             this.btn_confirm.BackColor = System.Drawing.Color.FloralWhite;
             this.btn_confirm.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_confirm.Location = new System.Drawing.Point(418, 505);
+            this.btn_confirm.Location = new System.Drawing.Point(423, 470);
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(192, 68);
@@ -56,10 +60,11 @@
             // 
             // Background
             // 
+            this.Background.BackColor = System.Drawing.Color.Transparent;
             this.Background.Image = ((System.Drawing.Image)(resources.GetObject("Background.Image")));
-            this.Background.Location = new System.Drawing.Point(-8, 112);
+            this.Background.Location = new System.Drawing.Point(-3, 0);
             this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1068, 544);
+            this.Background.Size = new System.Drawing.Size(1047, 643);
             this.Background.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Background.TabIndex = 1;
             this.Background.TabStop = false;
@@ -90,13 +95,34 @@
             // Ball
             // 
             this.Ball.Image = ((System.Drawing.Image)(resources.GetObject("Ball.Image")));
-            this.Ball.Location = new System.Drawing.Point(942, 285);
+            this.Ball.Location = new System.Drawing.Point(693, 197);
             this.Ball.Name = "Ball";
-            this.Ball.Size = new System.Drawing.Size(32, 32);
+            this.Ball.Size = new System.Drawing.Size(258, 307);
             this.Ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Ball.TabIndex = 4;
             this.Ball.TabStop = false;
             this.Ball.Click += new System.EventHandler(this.Ball_Click);
+            // 
+            // Property
+            // 
+            this.Property.Image = ((System.Drawing.Image)(resources.GetObject("Property.Image")));
+            this.Property.Location = new System.Drawing.Point(303, 85);
+            this.Property.Name = "Property";
+            this.Property.Size = new System.Drawing.Size(437, 350);
+            this.Property.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Property.TabIndex = 5;
+            this.Property.TabStop = false;
+            this.Property.Click += new System.EventHandler(this.Property_Click);
+            // 
+            // Sign
+            // 
+            this.Sign.Image = ((System.Drawing.Image)(resources.GetObject("Sign.Image")));
+            this.Sign.Location = new System.Drawing.Point(-3, 0);
+            this.Sign.Name = "Sign";
+            this.Sign.Size = new System.Drawing.Size(995, 643);
+            this.Sign.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Sign.TabIndex = 6;
+            this.Sign.TabStop = false;
             // 
             // MainPage
             // 
@@ -107,8 +133,10 @@
             this.ClientSize = new System.Drawing.Size(1041, 639);
             this.Controls.Add(this.Ball);
             this.Controls.Add(this.btn_confirm);
+            this.Controls.Add(this.Property);
             this.Controls.Add(this.Disclaimer);
             this.Controls.Add(this.Introduction);
+            this.Controls.Add(this.Sign);
             this.Controls.Add(this.Background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
@@ -120,6 +148,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Disclaimer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Introduction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Property)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Sign)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,6 +161,8 @@
         private System.Windows.Forms.PictureBox Disclaimer;
         private System.Windows.Forms.PictureBox Introduction;
         private System.Windows.Forms.PictureBox Ball;
+        private System.Windows.Forms.PictureBox Property;
+        private System.Windows.Forms.PictureBox Sign;
     }
 }
 
