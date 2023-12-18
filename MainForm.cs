@@ -45,8 +45,13 @@ namespace LBN_Competitive_System_Simulation
                 case 2:
                     Introduction.Hide();
                     btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Enter;
-                    var next = new LoginFrom();
-                    next.Show();
+                    var next = new LoginForm();
+
+                    if (next.ShowDialog() == DialogResult.OK) MessageBox.Show("登入成功!!");
+                    else MessageBox.Show("登入失敗!");
+
+                    next.Dispose();
+
                     break;
                 default:
                     break;

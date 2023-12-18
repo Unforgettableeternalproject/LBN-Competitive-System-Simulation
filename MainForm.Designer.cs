@@ -41,11 +41,15 @@
             this.btn_confirm.BackColor = System.Drawing.Color.Transparent;
             this.btn_confirm.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.btn_Confirm;
             this.btn_confirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_confirm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_confirm.FlatAppearance.BorderSize = 0;
+            this.btn_confirm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_confirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btn_confirm.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_confirm.Location = new System.Drawing.Point(985, 925);
-            this.btn_confirm.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btn_confirm.Location = new System.Drawing.Point(455, 462);
+            this.btn_confirm.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btn_confirm.Name = "btn_confirm";
-            this.btn_confirm.Size = new System.Drawing.Size(391, 153);
+            this.btn_confirm.Size = new System.Drawing.Size(180, 76);
             this.btn_confirm.TabIndex = 0;
             this.btn_confirm.UseMnemonic = false;
             this.btn_confirm.UseVisualStyleBackColor = false;
@@ -54,10 +58,9 @@
             // Introduction
             // 
             this.Introduction.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Disclaimer;
-            this.Introduction.Location = new System.Drawing.Point(520, 106);
-            this.Introduction.Margin = new System.Windows.Forms.Padding(6);
+            this.Introduction.Location = new System.Drawing.Point(240, 53);
             this.Introduction.Name = "Introduction";
-            this.Introduction.Size = new System.Drawing.Size(1312, 932);
+            this.Introduction.Size = new System.Drawing.Size(606, 466);
             this.Introduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Introduction.TabIndex = 3;
             this.Introduction.TabStop = false;
@@ -66,10 +69,9 @@
             // Ball
             // 
             this.Ball.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Golf;
-            this.Ball.Location = new System.Drawing.Point(1844, 728);
-            this.Ball.Margin = new System.Windows.Forms.Padding(6);
+            this.Ball.Location = new System.Drawing.Point(851, 364);
             this.Ball.Name = "Ball";
-            this.Ball.Size = new System.Drawing.Size(493, 555);
+            this.Ball.Size = new System.Drawing.Size(228, 278);
             this.Ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Ball.TabIndex = 4;
             this.Ball.TabStop = false;
@@ -77,18 +79,18 @@
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Azure;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2256, 1278);
+            this.ClientSize = new System.Drawing.Size(1041, 550);
             this.Controls.Add(this.Ball);
             this.Controls.Add(this.btn_confirm);
             this.Controls.Add(this.Introduction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
