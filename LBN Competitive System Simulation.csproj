@@ -95,6 +95,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="Resources\Disclaimer.png" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Background.png" />
+    <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />
     <None Include="Resources\RegistrationForm.png" />
     <None Include="Resources\btn_Confirm.png" />
