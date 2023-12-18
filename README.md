@@ -8,18 +8,24 @@
 
 "Well, not this time!"
 
--> Loading Screen to be added
--> Standard users should be able to visit a browsing page
--> Dashboards for admins and league owners
--> Infrastructure for advertisers...?
+✎ Loading Screen to be added
+
+✎ Standard users should be able to visit a browsing page
+
+✎ Dashboards for admins and league owners
+
+✎ Infrastructure for advertisers...?
 
 Contributors:
 	Currently None
 
 To-do list:
-	Add concept arts
-	Even more assets
-	GOD, front-end engineering is hard
+
+	✧ Add concept arts
+ 
+	✧ Even more assets
+ 
+	✧ GOD, front-end engineering is hard
 
 Preserved for future check: git 3 steps
 1. ```git add .```
