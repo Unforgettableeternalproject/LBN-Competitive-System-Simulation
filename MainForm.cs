@@ -19,6 +19,7 @@ namespace LBN_Competitive_System_Simulation
         static int intro = 0;
         private int counter = 3;
         ID userID = null;
+        string userName;
         public MainPage()
         {
             InitializeComponent();
@@ -59,12 +60,12 @@ namespace LBN_Competitive_System_Simulation
                     {
                         MessageBox.Show("登入成功!!");
                         userID = next.returnID();
-
+                        userName = userID.Username != "Anonymous" ? userID.Username : "匿名訪客";
                         RedirectingTimer.Enabled = true;
                         RedirectingTimer.Start();
 
                         btn_confirm.Hide();
-                        WelcomeDisplay.Text = $"歡迎, {userID.Username}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
+                        WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
                         WelcomeDisplay.Show();
 
                     }
@@ -102,7 +103,7 @@ namespace LBN_Competitive_System_Simulation
                 RedirectingTimer.Stop();
                 WelcomeDisplay.Hide();
             }
-            WelcomeDisplay.Text = $"歡迎, {userID.Username}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
+            WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
         }
 
         private void WelcomeDisplay_Click_1(object sender, EventArgs e)

@@ -43,7 +43,7 @@
             this.txt_Password.Location = new System.Drawing.Point(115, 404);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(316, 31);
-            this.txt_Password.TabIndex = 1;
+            this.txt_Password.TabIndex = 2;
             // 
             // txt_Username
             // 
@@ -51,7 +51,7 @@
             this.txt_Username.Location = new System.Drawing.Point(115, 257);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(316, 31);
-            this.txt_Username.TabIndex = 2;
+            this.txt_Username.TabIndex = 0;
             this.txt_Username.TextChanged += new System.EventHandler(this.txt_Username_TextChanged);
             // 
             // btn_confirm
@@ -67,7 +67,7 @@
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(180, 76);
-            this.btn_confirm.TabIndex = 3;
+            this.btn_confirm.TabIndex = 10;
             this.btn_confirm.UseMnemonic = false;
             this.btn_confirm.UseVisualStyleBackColor = false;
             this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
@@ -77,11 +77,11 @@
             this.Register.AutoSize = true;
             this.Register.BackColor = System.Drawing.Color.Transparent;
             this.Register.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Register.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Register.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Register.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(204)))), ((int)(((byte)(161)))));
-            this.Register.Location = new System.Drawing.Point(362, 554);
+            this.Register.Location = new System.Drawing.Point(365, 548);
             this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(69, 35);
+            this.Register.Size = new System.Drawing.Size(66, 27);
             this.Register.TabIndex = 4;
             this.Register.Text = "註冊";
             this.Register.Click += new System.EventHandler(this.Register_Click);
@@ -91,11 +91,11 @@
             this.Anonymous.AutoSize = true;
             this.Anonymous.BackColor = System.Drawing.Color.Transparent;
             this.Anonymous.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Anonymous.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Anonymous.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 9.75F);
             this.Anonymous.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(204)))), ((int)(((byte)(161)))));
             this.Anonymous.Location = new System.Drawing.Point(212, 613);
             this.Anonymous.Name = "Anonymous";
-            this.Anonymous.Size = new System.Drawing.Size(60, 17);
+            this.Anonymous.Size = new System.Drawing.Size(59, 13);
             this.Anonymous.TabIndex = 5;
             this.Anonymous.Text = "跳過登入";
             this.Anonymous.Click += new System.EventHandler(this.Anonymous_Click);
@@ -106,7 +106,7 @@
             this.txt_Email.Location = new System.Drawing.Point(115, 330);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(316, 31);
-            this.txt_Email.TabIndex = 6;
+            this.txt_Email.TabIndex = 1;
             // 
             // txt_ConfirmPW
             // 
@@ -114,7 +114,7 @@
             this.txt_ConfirmPW.Location = new System.Drawing.Point(115, 478);
             this.txt_ConfirmPW.Name = "txt_ConfirmPW";
             this.txt_ConfirmPW.Size = new System.Drawing.Size(316, 31);
-            this.txt_ConfirmPW.TabIndex = 7;
+            this.txt_ConfirmPW.TabIndex = 3;
             // 
             // LoginForm
             // 
