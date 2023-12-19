@@ -18,6 +18,7 @@ namespace LBN_Competitive_System_Simulation
     {
         String Mode = "Login";
         private ID userID = null;
+        private bool errorMsg = false;
         private ID Validation(string username, string password)
         {
             bool flag = false;
@@ -42,6 +43,7 @@ namespace LBN_Competitive_System_Simulation
                     break;
                 }else if(username == id.Username.ToString() && password != id.Password.ToString())
                 {
+                    errorMsg = true;
                     MessageBox.Show("您的密碼不正確，請重新嘗試!");
                     break;
                 }
@@ -218,6 +220,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void btn_confirm_Click(object sender, EventArgs e)
         {
+            errorMsg = false;
             if(Mode == "Login")
             {
                 userID = Validation(txt_Username.Text, txt_Password.Text);
@@ -231,8 +234,9 @@ namespace LBN_Competitive_System_Simulation
                     if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text))
                     {
                         MessageBox.Show("帳號與密碼為必填欄位!");
+                        errorMsg = true;
                     }
-                    else MessageBox.Show("找不到該已註冊的用戶，請重新嘗試!");
+                    if (!errorMsg) MessageBox.Show("找不到該用戶，請確認填入資料是否有誤!");
                     clearFields();
                 }
             }

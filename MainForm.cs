@@ -67,7 +67,6 @@ namespace LBN_Competitive_System_Simulation
                         btn_confirm.Hide();
                         WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
                         WelcomeDisplay.Show();
-
                     }
                     else 
                     {
@@ -102,6 +101,9 @@ namespace LBN_Competitive_System_Simulation
             {
                 RedirectingTimer.Stop();
                 WelcomeDisplay.Hide();
+                var redirect = new BrowseForm(); //Will change depending on user-type, but that's for later
+                redirect.Show();
+                this.Hide();
             }
             WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
         }
