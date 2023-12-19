@@ -24,6 +24,14 @@ namespace LBN_Competitive_System_Simulation
             ID result = new ID();
             var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
             var json = read.ReadToEnd();
+
+            if (string.IsNullOrEmpty(json.ToString()))
+            {
+                read.Close();
+                read.Dispose();
+                return null;
+            }
+
             dynamic IDs = JsonConvert.DeserializeObject(json);
             foreach(var id in IDs)
             {
@@ -31,6 +39,10 @@ namespace LBN_Competitive_System_Simulation
                 {
                     result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString());
                     flag = true;
+                    break;
+                }else if(username == id.Username.ToString() && password != id.Password.ToString())
+                {
+                    MessageBox.Show("您的密碼不正確，請重新嘗試!");
                     break;
                 }
             }
@@ -56,6 +68,12 @@ namespace LBN_Competitive_System_Simulation
 
             var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
             var json = read.ReadToEnd();
+
+            if (string.IsNullOrEmpty(json.ToString()))
+            {
+                goto ExceptionHandling;
+            }
+
             dynamic IDs = JsonConvert.DeserializeObject(json);
 
             foreach (var id in IDs)
@@ -67,34 +85,35 @@ namespace LBN_Competitive_System_Simulation
                 }
             }
 
-            read.Close();
-            read.Dispose();
+            ExceptionHandling:
+                read.Close();
+                read.Dispose();
 
-            if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text) || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_ConfirmPW.Text))
-            {
-                MessageBox.Show("請填寫所有欄位");
-                return null;
-            }
+                if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text) || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_ConfirmPW.Text))
+                {
+                    MessageBox.Show("請填寫所有欄位");
+                    return null;
+                }
 
-            if (password != confirmPassword)//Confirm Password
-            {
-                MessageBox.Show("密碼不相符，請檢察輸入的資料!");
-                return null;
-            }
+                if (password != confirmPassword)//Confirm Password
+                {
+                    MessageBox.Show("密碼不相符，請檢察輸入的資料!");
+                    return null;
+                }
 
-            if (!emailVaild)
-            {
-                MessageBox.Show("電子郵件地址格式不正確，請檢察輸入的資料!");
-                return null;
-            }
+                if (!emailVaild)
+                {
+                    MessageBox.Show("電子郵件地址格式不正確，請檢察輸入的資料!");
+                    return null;
+                }
 
-            if (repeated)
-            {
-                MessageBox.Show("使用者名稱已有人使用，請選擇其他的!");
-                return null;
-            }
+                if (repeated)
+                {
+                    MessageBox.Show("使用者名稱已有人使用，請選擇其他的!");
+                    return null;
+                }
 
-            return new ID(username, password, email);
+                return new ID(username, password, email);
         }
 
         private void newID(ID _new)
@@ -104,7 +123,7 @@ namespace LBN_Competitive_System_Simulation
 
             read.Close();
             read.Dispose();
-            var IDList = JsonConvert.DeserializeObject<List<ID>>(json);
+            var IDList = !string.IsNullOrEmpty(json.ToString()) ? JsonConvert.DeserializeObject<List<ID>>(json) : new List<ID>();
             IDList.Add(_new);
 
             json = JsonConvert.SerializeObject(IDList);
@@ -166,6 +185,7 @@ namespace LBN_Competitive_System_Simulation
         public LoginForm()
         {
             InitializeComponent();
+            Mode = "Login";
             this.Text = "Login Window";
             this.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.LoginForm;
             btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Confirm;
@@ -212,7 +232,7 @@ namespace LBN_Competitive_System_Simulation
                     {
                         MessageBox.Show("帳號與密碼為必填欄位!");
                     }
-                    else MessageBox.Show("查無該用戶資料，請確認帳號或密碼後再試!");
+                    else MessageBox.Show("找不到該已註冊的用戶，請重新嘗試!");
                     clearFields();
                 }
             }

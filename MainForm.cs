@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -15,6 +17,8 @@ namespace LBN_Competitive_System_Simulation
     public partial class MainPage : Form
     {
         static int intro = 0;
+        private int counter = 3;
+        ID userID = null;
         public MainPage()
         {
             InitializeComponent();
@@ -23,6 +27,8 @@ namespace LBN_Competitive_System_Simulation
             Introduction.Image = LBN_Competitive_System_Simulation.Properties.Resources.Disclaimer;
             Ball.BackColor = Color.Transparent;
             btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Confirm;
+            LoadingSpinner.Hide();
+            WelcomeDisplay.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,13 +50,33 @@ namespace LBN_Competitive_System_Simulation
                     break;
                 case 2:
                     Introduction.Hide();
+                    WelcomeDisplay.Hide();
                     btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Enter;
                     var next = new LoginForm();
 
-                    if (next.ShowDialog() == DialogResult.OK) MessageBox.Show("登入成功!!");
-                    else MessageBox.Show("登入失敗!");
+                    LoadingSpinner.Show();
+                    if (next.ShowDialog() == DialogResult.OK)
+                    {
+                        MessageBox.Show("登入成功!!");
+                        userID = next.returnID();
+
+                        RedirectingTimer.Enabled = true;
+                        RedirectingTimer.Start();
+
+                        btn_confirm.Hide();
+                        WelcomeDisplay.Text = $"歡迎, {userID.Username}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
+                        WelcomeDisplay.Show();
+
+                    }
+                    else 
+                    {
+                        MessageBox.Show("登入失敗!");
+                        WelcomeDisplay.Text = $"登入程序出現錯誤，請重新嘗試!";
+                        WelcomeDisplay.Show();
+                    } 
 
                     next.Dispose();
+                    LoadingSpinner.Hide();
 
                     break;
                 default:
@@ -64,6 +90,22 @@ namespace LBN_Competitive_System_Simulation
         }
 
         private void Ball_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RedirectingTimer_Tick(object sender, EventArgs e)
+        {
+            counter--;
+            if (counter == 0) 
+            {
+                RedirectingTimer.Stop();
+                WelcomeDisplay.Hide();
+            }
+            WelcomeDisplay.Text = $"歡迎, {userID.Username}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
+        }
+
+        private void WelcomeDisplay_Click_1(object sender, EventArgs e)
         {
 
         }
