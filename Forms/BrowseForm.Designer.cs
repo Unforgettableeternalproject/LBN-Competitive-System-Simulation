@@ -41,9 +41,10 @@
             this.WelcomeMessage.AutoSize = true;
             this.WelcomeMessage.BackColor = System.Drawing.Color.Transparent;
             this.WelcomeMessage.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeMessage.Location = new System.Drawing.Point(1145, 128);
+            this.WelcomeMessage.Location = new System.Drawing.Point(2481, 256);
+            this.WelcomeMessage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.WelcomeMessage.Name = "WelcomeMessage";
-            this.WelcomeMessage.Size = new System.Drawing.Size(160, 29);
+            this.WelcomeMessage.Size = new System.Drawing.Size(318, 58);
             this.WelcomeMessage.TabIndex = 0;
             this.WelcomeMessage.Text = "歡迎回來, !";
             this.WelcomeMessage.UseMnemonic = false;
@@ -52,11 +53,13 @@
             // ExampleVideo
             // 
             this.ExampleVideo.BackColor = System.Drawing.SystemColors.Window;
-            this.ExampleVideo.Location = new System.Drawing.Point(282, 156);
+            this.ExampleVideo.Location = new System.Drawing.Point(611, 312);
+            this.ExampleVideo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ExampleVideo.Name = "ExampleVideo";
-            this.ExampleVideo.Size = new System.Drawing.Size(457, 260);
+            this.ExampleVideo.Size = new System.Drawing.Size(990, 520);
             this.ExampleVideo.TabIndex = 1;
             this.ExampleVideo.UseVisualStyleBackColor = false;
+            this.ExampleVideo.Click += new System.EventHandler(this.ExampleVideo_Click);
             // 
             // Contact
             // 
@@ -64,9 +67,10 @@
             this.Contact.BackColor = System.Drawing.Color.Transparent;
             this.Contact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Contact.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Contact.Location = new System.Drawing.Point(12, 839);
+            this.Contact.Location = new System.Drawing.Point(26, 1678);
+            this.Contact.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Contact.Name = "Contact";
-            this.Contact.Size = new System.Drawing.Size(71, 16);
+            this.Contact.Size = new System.Drawing.Size(142, 32);
             this.Contact.TabIndex = 2;
             this.Contact.Text = "聯絡我們";
             // 
@@ -76,9 +80,10 @@
             this.SwitchRole.BackColor = System.Drawing.Color.Transparent;
             this.SwitchRole.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SwitchRole.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 9F);
-            this.SwitchRole.Location = new System.Drawing.Point(151, 799);
+            this.SwitchRole.Location = new System.Drawing.Point(327, 1598);
+            this.SwitchRole.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.SwitchRole.Name = "SwitchRole";
-            this.SwitchRole.Size = new System.Drawing.Size(74, 12);
+            this.SwitchRole.Size = new System.Drawing.Size(150, 25);
             this.SwitchRole.TabIndex = 3;
             this.SwitchRole.Text = "切換使用者...";
             // 
@@ -88,19 +93,20 @@
             this.MoreInfo.BackColor = System.Drawing.Color.Transparent;
             this.MoreInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MoreInfo.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoreInfo.Location = new System.Drawing.Point(150, 839);
+            this.MoreInfo.Location = new System.Drawing.Point(325, 1678);
+            this.MoreInfo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.MoreInfo.Name = "MoreInfo";
-            this.MoreInfo.Size = new System.Drawing.Size(71, 16);
+            this.MoreInfo.Size = new System.Drawing.Size(142, 32);
             this.MoreInfo.TabIndex = 4;
             this.MoreInfo.Text = "更多資訊";
             // 
             // BrowseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Browse;
-            this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Stream;
+            this.ClientSize = new System.Drawing.Size(3030, 1728);
             this.Controls.Add(this.MoreInfo);
             this.Controls.Add(this.SwitchRole);
             this.Controls.Add(this.Contact);
@@ -108,6 +114,7 @@
             this.Controls.Add(this.WelcomeMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "BrowseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
