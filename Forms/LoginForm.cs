@@ -44,7 +44,7 @@ namespace LBN_Competitive_System_Simulation
                 }else if(username == id.Username.ToString() && password != id.Password.ToString())
                 {
                     errorMsg = true;
-                    MessageBox.Show("您的密碼不正確，請重新嘗試!");
+                    MessageBox.Show("您的密碼不正確，請重新嘗試!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 }
             }
@@ -93,25 +93,25 @@ namespace LBN_Competitive_System_Simulation
 
                 if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text) || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_ConfirmPW.Text))
                 {
-                    MessageBox.Show("請填寫所有欄位");
+                    MessageBox.Show("請填寫所有欄位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return null;
                 }
 
                 if (password != confirmPassword)//Confirm Password
                 {
-                    MessageBox.Show("密碼不相符，請檢察輸入的資料!");
+                    MessageBox.Show("密碼不相符，請檢察輸入的資料!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return null;
                 }
 
                 if (!emailVaild)
                 {
-                    MessageBox.Show("電子郵件地址格式不正確，請檢察輸入的資料!");
+                    MessageBox.Show("電子郵件地址格式不正確，請檢察輸入的資料!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return null;
                 }
 
                 if (repeated)
                 {
-                    MessageBox.Show("使用者名稱已有人使用，請選擇其他的!");
+                    MessageBox.Show("使用者名稱已有人使用，請選擇其他的!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return null;
                 }
 
@@ -233,10 +233,10 @@ namespace LBN_Competitive_System_Simulation
                 {
                     if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text))
                     {
-                        MessageBox.Show("帳號與密碼為必填欄位!");
+                        MessageBox.Show("帳號與密碼為必填欄位!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         errorMsg = true;
                     }
-                    if (!errorMsg) MessageBox.Show("找不到該用戶，請確認填入資料是否有誤!");
+                    if (!errorMsg) MessageBox.Show("找不到該用戶，請確認填入資料是否有誤!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     clearFields();
                 }
             }
@@ -247,7 +247,7 @@ namespace LBN_Competitive_System_Simulation
                 {
                     newID(NewID);
                     switchMode();
-                    MessageBox.Show("已註冊新用戶! 跳轉回登入頁面...");
+                    MessageBox.Show("已註冊新用戶! 跳轉回登入頁面...", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

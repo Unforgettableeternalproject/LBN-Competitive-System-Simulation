@@ -28,14 +28,27 @@ namespace LBN_Competitive_System_Simulation
             "我覺得有料",
             "靠杯，剛剛那是三小",
             "啦啦啦",
+            "777777777",
+            "CNMBNMSL",
+            "這個人看起來很解欸",
+            "55555552",
+            "哈哈笑死",
+            "我討厭高爾夫球= =",
+            "自己加分，自己加分",
+            "有沒有人可以借我一件褲子?"
         };
 
         private List<string> demoIDs = new List<string>
         {
             "史丹利123",
-            "我阿罵",
-            "PY交易",
-            "一生的蘿莉擁護者<3"
+            "墊子小男孩",
+            "大魚兒",
+            "一生的蘿莉擁護者<3",
+            "AA潮濕草",
+            "洋歌",
+            "沒有人喜歡的Lonely",
+            "CYY",
+            "三哥"
         };
         private void UpdateUI()
         {
@@ -63,8 +76,8 @@ namespace LBN_Competitive_System_Simulation
             ChatTextbox.Hide();
             StreamTime.Hide();
             ViewersCount.Hide();
-            videoPosition = Stream.Ctlcontrols.currentPosition;
-            Stream.Ctlcontrols.pause();
+            Console.WriteLine("Pos: {0}", videoPosition);
+            Stream.Ctlcontrols.stop();
             timerStream.Stop();
             Stream.Hide();
         }
@@ -86,15 +99,14 @@ namespace LBN_Competitive_System_Simulation
             Stream.Show();
             UpdateUI();
             timerStream.Start();
-            Stream.Ctlcontrols.currentPosition = videoPosition;
             Stream.Ctlcontrols.play();
+            Stream.Ctlcontrols.currentPosition = videoPosition;
         }
         public BrowseForm(ID userID)
         {
             InitializeComponent();
             browseInit();
             this.userID = userID;
-            Stream.settings.autoStart = true;
             if (userID.Username != "Anonymous") WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
             else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
         }
@@ -118,6 +130,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void btn_return_Click(object sender, EventArgs e)
         {
+            videoPosition = Stream.Ctlcontrols.currentPosition;
             browseInit();
         }
 
@@ -135,9 +148,10 @@ namespace LBN_Competitive_System_Simulation
             viewerCount += random.Next(-5, 6); // Random increase/decrease between -5 and 5
 
             string randomMessage = prewrittenMessages[random.Next(prewrittenMessages.Count)];
-            if(random.Next(1,4) == 2) AddMessage(randomMessage, demoIDs[random.Next(demoIDs.Count)]);
+            if(random.Next(1,6) == 2) AddMessage(randomMessage, demoIDs[random.Next(demoIDs.Count)]);
 
             UpdateUI();
+            Console.WriteLine(Stream.Ctlcontrols.currentPosition);
         }
 
         private void btn_send_Click(object sender, EventArgs e)
