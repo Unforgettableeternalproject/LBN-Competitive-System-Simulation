@@ -101,7 +101,7 @@ namespace LBN_Competitive_System_Simulation
             {
                 RedirectingTimer.Stop();
                 WelcomeDisplay.Hide();
-                var redirect = new BrowseForm(); //Will change depending on user-type, but that's for later
+                var redirect = new BrowseForm(userID); //Will change depending on user-type, but that's for later
                 redirect.Show();
                 this.Hide();
             }
