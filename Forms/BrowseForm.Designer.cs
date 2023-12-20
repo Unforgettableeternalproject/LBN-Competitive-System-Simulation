@@ -28,23 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowseForm));
             this.WelcomeMessage = new System.Windows.Forms.Label();
             this.ExampleVideo = new System.Windows.Forms.Button();
             this.Contact = new System.Windows.Forms.Label();
             this.SwitchRole = new System.Windows.Forms.Label();
-            this.MoreInfo = new System.Windows.Forms.Label();
+            this.Exit = new System.Windows.Forms.Label();
+            this.btn_return = new System.Windows.Forms.Button();
+            this.ChatTextbox = new System.Windows.Forms.TextBox();
+            this.btn_send = new System.Windows.Forms.Button();
+            this.ChatMessage = new System.Windows.Forms.RichTextBox();
+            this.StreamTime = new System.Windows.Forms.Label();
+            this.ViewersCount = new System.Windows.Forms.Label();
+            this.Stream = new AxWMPLib.AxWindowsMediaPlayer();
+            this.timerStream = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.Stream)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeMessage
             // 
             this.WelcomeMessage.AutoSize = true;
-            this.WelcomeMessage.BackColor = System.Drawing.Color.Transparent;
+            this.WelcomeMessage.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.WelcomeMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WelcomeMessage.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WelcomeMessage.Location = new System.Drawing.Point(2481, 256);
-            this.WelcomeMessage.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.WelcomeMessage.Location = new System.Drawing.Point(1135, 126);
             this.WelcomeMessage.Name = "WelcomeMessage";
-            this.WelcomeMessage.Size = new System.Drawing.Size(318, 58);
+            this.WelcomeMessage.Size = new System.Drawing.Size(162, 31);
             this.WelcomeMessage.TabIndex = 0;
             this.WelcomeMessage.Text = "歡迎回來, !";
             this.WelcomeMessage.UseMnemonic = false;
@@ -53,10 +63,9 @@
             // ExampleVideo
             // 
             this.ExampleVideo.BackColor = System.Drawing.SystemColors.Window;
-            this.ExampleVideo.Location = new System.Drawing.Point(611, 312);
-            this.ExampleVideo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ExampleVideo.Location = new System.Drawing.Point(282, 156);
             this.ExampleVideo.Name = "ExampleVideo";
-            this.ExampleVideo.Size = new System.Drawing.Size(990, 520);
+            this.ExampleVideo.Size = new System.Drawing.Size(457, 260);
             this.ExampleVideo.TabIndex = 1;
             this.ExampleVideo.UseVisualStyleBackColor = false;
             this.ExampleVideo.Click += new System.EventHandler(this.ExampleVideo_Click);
@@ -67,10 +76,9 @@
             this.Contact.BackColor = System.Drawing.Color.Transparent;
             this.Contact.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Contact.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Contact.Location = new System.Drawing.Point(26, 1678);
-            this.Contact.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Contact.Location = new System.Drawing.Point(12, 839);
             this.Contact.Name = "Contact";
-            this.Contact.Size = new System.Drawing.Size(142, 32);
+            this.Contact.Size = new System.Drawing.Size(71, 16);
             this.Contact.TabIndex = 2;
             this.Contact.Text = "聯絡我們";
             // 
@@ -80,44 +88,141 @@
             this.SwitchRole.BackColor = System.Drawing.Color.Transparent;
             this.SwitchRole.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SwitchRole.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 9F);
-            this.SwitchRole.Location = new System.Drawing.Point(327, 1598);
-            this.SwitchRole.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.SwitchRole.Location = new System.Drawing.Point(151, 799);
             this.SwitchRole.Name = "SwitchRole";
-            this.SwitchRole.Size = new System.Drawing.Size(150, 25);
+            this.SwitchRole.Size = new System.Drawing.Size(74, 12);
             this.SwitchRole.TabIndex = 3;
             this.SwitchRole.Text = "切換使用者...";
+            this.SwitchRole.Click += new System.EventHandler(this.SwitchRole_Click);
             // 
-            // MoreInfo
+            // Exit
             // 
-            this.MoreInfo.AutoSize = true;
-            this.MoreInfo.BackColor = System.Drawing.Color.Transparent;
-            this.MoreInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MoreInfo.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoreInfo.Location = new System.Drawing.Point(325, 1678);
-            this.MoreInfo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.MoreInfo.Name = "MoreInfo";
-            this.MoreInfo.Size = new System.Drawing.Size(142, 32);
-            this.MoreInfo.TabIndex = 4;
-            this.MoreInfo.Text = "更多資訊";
+            this.Exit.AutoSize = true;
+            this.Exit.BackColor = System.Drawing.Color.Transparent;
+            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Exit.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.ForeColor = System.Drawing.Color.DarkRed;
+            this.Exit.Location = new System.Drawing.Point(150, 839);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(71, 16);
+            this.Exit.TabIndex = 4;
+            this.Exit.Text = "離開系統";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // btn_return
+            // 
+            this.btn_return.AutoSize = true;
+            this.btn_return.BackColor = System.Drawing.Color.Transparent;
+            this.btn_return.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Return;
+            this.btn_return.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_return.FlatAppearance.BorderSize = 0;
+            this.btn_return.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_return.Location = new System.Drawing.Point(203, 19);
+            this.btn_return.Name = "btn_return";
+            this.btn_return.Size = new System.Drawing.Size(47, 45);
+            this.btn_return.TabIndex = 5;
+            this.btn_return.UseVisualStyleBackColor = false;
+            this.btn_return.Click += new System.EventHandler(this.btn_return_Click);
+            // 
+            // ChatTextbox
+            // 
+            this.ChatTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ChatTextbox.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChatTextbox.Location = new System.Drawing.Point(1169, 742);
+            this.ChatTextbox.Name = "ChatTextbox";
+            this.ChatTextbox.Size = new System.Drawing.Size(309, 35);
+            this.ChatTextbox.TabIndex = 6;
+            // 
+            // btn_send
+            // 
+            this.btn_send.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(204)))), ((int)(((byte)(161)))));
+            this.btn_send.FlatAppearance.BorderSize = 0;
+            this.btn_send.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_send.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_send.Location = new System.Drawing.Point(1458, 794);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(66, 41);
+            this.btn_send.TabIndex = 7;
+            this.btn_send.Text = "送出";
+            this.btn_send.UseVisualStyleBackColor = false;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
+            // 
+            // ChatMessage
+            // 
+            this.ChatMessage.Cursor = System.Windows.Forms.Cursors.No;
+            this.ChatMessage.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChatMessage.Location = new System.Drawing.Point(1156, 174);
+            this.ChatMessage.Name = "ChatMessage";
+            this.ChatMessage.ReadOnly = true;
+            this.ChatMessage.Size = new System.Drawing.Size(367, 520);
+            this.ChatMessage.TabIndex = 8;
+            this.ChatMessage.Text = "";
+            this.ChatMessage.TextChanged += new System.EventHandler(this.ChatMessage_TextChanged);
+            // 
+            // StreamTime
+            // 
+            this.StreamTime.AutoSize = true;
+            this.StreamTime.BackColor = System.Drawing.Color.Transparent;
+            this.StreamTime.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 20F);
+            this.StreamTime.Location = new System.Drawing.Point(1020, 667);
+            this.StreamTime.Name = "StreamTime";
+            this.StreamTime.Size = new System.Drawing.Size(114, 27);
+            this.StreamTime.TabIndex = 9;
+            this.StreamTime.Text = "01:25:34";
+            // 
+            // ViewersCount
+            // 
+            this.ViewersCount.AutoSize = true;
+            this.ViewersCount.BackColor = System.Drawing.Color.Transparent;
+            this.ViewersCount.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 30F);
+            this.ViewersCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.ViewersCount.Location = new System.Drawing.Point(1007, 613);
+            this.ViewersCount.Name = "ViewersCount";
+            this.ViewersCount.Size = new System.Drawing.Size(87, 41);
+            this.ViewersCount.TabIndex = 10;
+            this.ViewersCount.Text = "238";
+            // 
+            // Stream
+            // 
+            this.Stream.Enabled = true;
+            this.Stream.Location = new System.Drawing.Point(238, 85);
+            this.Stream.Name = "Stream";
+            this.Stream.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Stream.OcxState")));
+            this.Stream.Size = new System.Drawing.Size(912, 516);
+            this.Stream.TabIndex = 11;
+            this.Stream.Enter += new System.EventHandler(this.Stream_Enter);
+            // 
+            // timerStream
+            // 
+            this.timerStream.Interval = 1000;
+            this.timerStream.Tick += new System.EventHandler(this.timerStream_Tick);
             // 
             // BrowseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Stream;
-            this.ClientSize = new System.Drawing.Size(3030, 1728);
-            this.Controls.Add(this.MoreInfo);
+            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Browse;
+            this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.Stream);
+            this.Controls.Add(this.ViewersCount);
+            this.Controls.Add(this.StreamTime);
+            this.Controls.Add(this.ChatMessage);
+            this.Controls.Add(this.btn_send);
+            this.Controls.Add(this.ChatTextbox);
+            this.Controls.Add(this.btn_return);
+            this.Controls.Add(this.Exit);
             this.Controls.Add(this.SwitchRole);
             this.Controls.Add(this.Contact);
             this.Controls.Add(this.ExampleVideo);
             this.Controls.Add(this.WelcomeMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "BrowseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = "      ";
+            this.Load += new System.EventHandler(this.BrowseForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Stream)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,6 +234,14 @@
         private System.Windows.Forms.Button ExampleVideo;
         private System.Windows.Forms.Label Contact;
         private System.Windows.Forms.Label SwitchRole;
-        private System.Windows.Forms.Label MoreInfo;
+        private System.Windows.Forms.Label Exit;
+        private System.Windows.Forms.Button btn_return;
+        private System.Windows.Forms.TextBox ChatTextbox;
+        private System.Windows.Forms.Button btn_send;
+        private System.Windows.Forms.RichTextBox ChatMessage;
+        private System.Windows.Forms.Label StreamTime;
+        private System.Windows.Forms.Label ViewersCount;
+        private AxWMPLib.AxWindowsMediaPlayer Stream;
+        private System.Windows.Forms.Timer timerStream;
     }
 }

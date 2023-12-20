@@ -43,7 +43,7 @@ namespace LBN_Competitive_System_Simulation
             {
                 case 0:
                     Introduction.Image = LBN_Competitive_System_Simulation.Properties.Resources.Introduction;
-                      intro++;
+                     intro++;
                     break;
                 case 1:
                     Introduction.Image = LBN_Competitive_System_Simulation.Properties.Resources.Property;
@@ -58,7 +58,7 @@ namespace LBN_Competitive_System_Simulation
                     LoadingSpinner.Show();
                     if (next.ShowDialog() == DialogResult.OK)
                     {
-                        MessageBox.Show("登入成功!!");
+                        MessageBox.Show("登入成功!!", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         userID = next.returnID();
                         userName = userID.Username != "Anonymous" ? userID.Username : "匿名訪客";
                         RedirectingTimer.Enabled = true;
@@ -70,7 +70,7 @@ namespace LBN_Competitive_System_Simulation
                     }
                     else 
                     {
-                        MessageBox.Show("登入失敗!");
+                        MessageBox.Show("登入失敗!", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         WelcomeDisplay.Text = $"登入程序出現錯誤，請重新嘗試!";
                         WelcomeDisplay.Show();
                     } 
@@ -102,15 +102,22 @@ namespace LBN_Competitive_System_Simulation
                 RedirectingTimer.Stop();
                 WelcomeDisplay.Hide();
                 var redirect = new BrowseForm(userID); //Will change depending on user-type, but that's for later
-                redirect.Show();
                 this.Hide();
+                if (redirect.ShowDialog() == DialogResult.OK)
+                {
+                    redirect.Dispose();
+                    this.Show();
+                    btn_confirm.Show();
+                    btn_confirm.PerformClick();
+                    counter = 3;
+                }
             }
             WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
         }
 
         private void WelcomeDisplay_Click_1(object sender, EventArgs e)
         {
-
+            MessageBox.Show("欸? 你找到了隱藏小彩蛋!", "恭喜!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -115,6 +115,7 @@
     <None Include="Resources\Spinner.gif" />
     <None Include="Resources\Browse.png" />
     <None Include="Resources\Stream.png" />
+    <None Include="Resources\Return.png" />
     <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />
     <None Include="Resources\RegistrationForm.png" />
