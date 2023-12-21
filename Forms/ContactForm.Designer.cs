@@ -68,6 +68,9 @@
             this.Title.Size = new System.Drawing.Size(415, 48);
             this.Title.TabIndex = 12;
             this.Title.Text = "輸入訊息主旨...";
+            this.Title.KeyDown += this.Pressed_Key;
+            this.Title.Enter += this.Title_Enter;
+            this.Title.Leave += this.Title_Leave;
             // 
             // Message
             // 
@@ -81,6 +84,9 @@
             this.Message.Size = new System.Drawing.Size(415, 240);
             this.Message.TabIndex = 13;
             this.Message.Text = "輸入訊息內容...";
+            this.Message.KeyDown += this.Pressed_Key;
+            this.Message.Enter += this.Message_Enter;
+            this.Message.Leave += this.Message_Leave;
             // 
             // CaptchaImg
             // 
@@ -102,7 +108,9 @@
             this.CaptchaBox.Size = new System.Drawing.Size(161, 33);
             this.CaptchaBox.TabIndex = 15;
             this.CaptchaBox.Text = "輸入驗證碼...";
-            this.CaptchaBox.TextChanged += new System.EventHandler(this.CaptchaBox_TextChanged);
+            this.CaptchaBox.KeyDown += this.Pressed_Key;
+            this.CaptchaBox.Enter += this.CaptchaBox_Enter;
+            this.CaptchaBox.Leave += this.CaptchaBox_Leave;
             // 
             // Advertise
             // 

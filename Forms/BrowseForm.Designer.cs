@@ -58,7 +58,6 @@
             this.WelcomeMessage.TabIndex = 0;
             this.WelcomeMessage.Text = "歡迎回來, !";
             this.WelcomeMessage.UseMnemonic = false;
-            this.WelcomeMessage.Click += new System.EventHandler(this.WelcomeMessage_Click);
             // 
             // ExampleVideo
             // 
@@ -133,6 +132,7 @@
             this.ChatTextbox.Name = "ChatTextbox";
             this.ChatTextbox.Size = new System.Drawing.Size(309, 35);
             this.ChatTextbox.TabIndex = 6;
+            this.ChatTextbox.KeyDown += this.Pressed_Key;
             // 
             // btn_send
             // 
@@ -158,7 +158,6 @@
             this.ChatMessage.Size = new System.Drawing.Size(367, 520);
             this.ChatMessage.TabIndex = 8;
             this.ChatMessage.Text = "";
-            this.ChatMessage.TextChanged += new System.EventHandler(this.ChatMessage_TextChanged);
             // 
             // StreamTime
             // 
@@ -191,7 +190,6 @@
             this.Stream.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Stream.OcxState")));
             this.Stream.Size = new System.Drawing.Size(912, 516);
             this.Stream.TabIndex = 11;
-            this.Stream.Enter += new System.EventHandler(this.Stream_Enter);
             // 
             // timerStream
             // 

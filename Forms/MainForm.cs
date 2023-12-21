@@ -32,18 +32,17 @@ namespace LBN_Competitive_System_Simulation
             WelcomeDisplay.Hide();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainPage_Load(object sender, EventArgs e)
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             switch (intro)
             {
                 case 0:
                     Introduction.Image = Properties.Resources.Introduction;
-                     intro++;
+                    intro++;
                     break;
                 case 1:
                     Introduction.Image = Properties.Resources.Property;
@@ -68,12 +67,12 @@ namespace LBN_Competitive_System_Simulation
                         WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
                         WelcomeDisplay.Show();
                     }
-                    else 
+                    else
                     {
                         MessageBox.Show("登入失敗!", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        WelcomeDisplay.Text = $"登入程序出現錯誤，請重新嘗試!";
+                        WelcomeDisplay.Text = "登入程序出現錯誤，請重新嘗試!";
                         WelcomeDisplay.Show();
-                    } 
+                    }
 
                     next.Dispose();
                     LoadingSpinner.Hide();
@@ -84,19 +83,10 @@ namespace LBN_Competitive_System_Simulation
             }
         }
 
-        private void Introduction_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Ball_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void RedirectingTimer_Tick(object sender, EventArgs e)
         {
             counter--;
+            WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
             if (counter == 0) 
             {
                 RedirectingTimer.Stop();
@@ -112,7 +102,6 @@ namespace LBN_Competitive_System_Simulation
                     counter = 3;
                 }
             }
-            WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
         }
 
         private void WelcomeDisplay_Click_1(object sender, EventArgs e)

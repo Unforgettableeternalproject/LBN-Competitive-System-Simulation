@@ -107,9 +107,6 @@ namespace LBN_Competitive_System_Simulation
 
         private void ContactForm_Load(object sender, EventArgs e)
         {
-            Title.GotFocus += Title_GotFocus;
-            Message.GotFocus += Message_GotFocus;
-            CaptchaBox.GotFocus += CaptchaBox_GotFocus;
             Title.ForeColor = SystemColors.ScrollBar;
             Message.ForeColor = SystemColors.ScrollBar;
             CaptchaBox.ForeColor = SystemColors.ScrollBar; 
@@ -155,6 +152,14 @@ namespace LBN_Competitive_System_Simulation
             GenerateCaptcha();
         }
 
+        private void Pressed_Key(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suppress the Enter key
+                btn_submit.PerformClick(); // Simulate a click on the Send Message button
+            }
+        }
         private void btn_exit_Click(object sender, EventArgs e)
         {
             if ((!string.IsNullOrEmpty(Title.Text) && entries[0]) || (!string.IsNullOrEmpty(Message.Text) && entries[1]))
@@ -170,7 +175,7 @@ namespace LBN_Competitive_System_Simulation
             MessageBox.Show("廣告商後臺介面待添加", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void Title_GotFocus(object sender, EventArgs e)
+        private void Title_Enter(object sender, EventArgs e)
         {
             string prompt = "輸入訊息主旨...";
             // Clear the placeholder text when the TextBox gets focus
@@ -182,7 +187,18 @@ namespace LBN_Competitive_System_Simulation
             }
         }
 
-        private void Message_GotFocus(object sender, EventArgs e)
+        private void Title_Leave(object sender, EventArgs e)
+        {
+            string prompt = "輸入訊息主旨...";
+            if (string.IsNullOrEmpty(Title.Text.Trim()))
+            {
+                entries[0] = false;
+                Title.Text = prompt;
+                Title.ForeColor = SystemColors.ScrollBar;
+            }
+        }
+
+        private void Message_Enter(object sender, EventArgs e)
         {
             string prompt = "輸入訊息內容...";
             // Clear the placeholder text when the TextBox gets focus
@@ -194,7 +210,18 @@ namespace LBN_Competitive_System_Simulation
             }
         }
 
-        private void CaptchaBox_GotFocus(object sender, EventArgs e)
+        private void Message_Leave(object sender, EventArgs e)
+        {
+            string prompt = "輸入訊息內容...";
+            if (string.IsNullOrEmpty(Message.Text.Trim()))
+            {
+                entries[1] = false;
+                Message.Text = prompt;
+                Message.ForeColor = SystemColors.ScrollBar;
+            }
+        }
+
+        private void CaptchaBox_Enter(object sender, EventArgs e)
         {
             string prompt = "輸入驗證碼...";
             // Clear the placeholder text when the TextBox gets focus
@@ -206,9 +233,15 @@ namespace LBN_Competitive_System_Simulation
             }
         }
 
-        private void CaptchaBox_TextChanged(object sender, EventArgs e)
+        private void CaptchaBox_Leave(object sender, EventArgs e)
         {
-
+            string prompt = "輸入驗證碼...";
+            if (string.IsNullOrEmpty(CaptchaBox.Text.Trim()))
+            {
+                entries[2] = false;
+                CaptchaBox.Text = prompt;
+                CaptchaBox.ForeColor = SystemColors.ScrollBar;
+            }
         }
     }
 }

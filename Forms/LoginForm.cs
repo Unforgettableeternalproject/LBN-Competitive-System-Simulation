@@ -201,6 +201,14 @@ namespace LBN_Competitive_System_Simulation
             Register.Text = "註冊";
         }
 
+        private void Pressed_Key(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Suppress the Enter key
+                btn_confirm.PerformClick(); // Simulate a click on the Send Message button
+            }
+        }
         private void Register_Click(object sender, EventArgs e)
         {
             switchMode();
@@ -211,11 +219,6 @@ namespace LBN_Competitive_System_Simulation
             userID = new ID("Anonymous", "Not Required", "None");
             this.DialogResult = DialogResult.OK;
             this.Close();
-        }
-
-        private void txt_Username_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_confirm_Click(object sender, EventArgs e)

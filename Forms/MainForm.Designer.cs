@@ -70,7 +70,6 @@
             this.Introduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Introduction.TabIndex = 3;
             this.Introduction.TabStop = false;
-            this.Introduction.Click += new System.EventHandler(this.Introduction_Click);
             // 
             // Ball
             // 
@@ -81,7 +80,6 @@
             this.Ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Ball.TabIndex = 4;
             this.Ball.TabStop = false;
-            this.Ball.Click += new System.EventHandler(this.Ball_Click);
             // 
             // LoadingSpinner
             // 
@@ -134,7 +132,7 @@
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Window";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Introduction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadingSpinner)).EndInit();

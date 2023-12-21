@@ -45,6 +45,7 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(316, 31);
             this.txt_Password.TabIndex = 2;
+            this.txt_Password.KeyDown += this.Pressed_Key;
             // 
             // txt_Username
             // 
@@ -53,7 +54,7 @@
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(316, 31);
             this.txt_Username.TabIndex = 0;
-            this.txt_Username.TextChanged += new System.EventHandler(this.txt_Username_TextChanged);
+            this.txt_Username.KeyDown += this.Pressed_Key;
             // 
             // btn_confirm
             // 
@@ -108,6 +109,7 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(316, 31);
             this.txt_Email.TabIndex = 1;
+            this.txt_Email.KeyDown += this.Pressed_Key;
             // 
             // txt_ConfirmPW
             // 
@@ -116,6 +118,7 @@
             this.txt_ConfirmPW.Name = "txt_ConfirmPW";
             this.txt_ConfirmPW.Size = new System.Drawing.Size(316, 31);
             this.txt_ConfirmPW.TabIndex = 3;
+            this.txt_ConfirmPW.KeyDown += this.Pressed_Key;
             // 
             // LoginForm
             // 

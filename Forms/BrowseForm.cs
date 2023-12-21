@@ -115,19 +115,12 @@ namespace LBN_Competitive_System_Simulation
             else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
         }
 
-        private void WelcomeMessage_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void BrowseForm_Load(object sender, EventArgs e)
         {
             Stream.uiMode = "None";
             Stream.settings.autoStart = false;
             Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources\Demo.mp4"));
-            Stream.DoubleClickEvent += Stream_MouseDoubleClick;
             Stream.settings.setMode("loop", false);
-            ChatMessage.KeyDown += ChatMessage_KeyDown;
             ChatMessage.Enter += (s, args) => { this.ActiveControl = null; };
         }
 
@@ -140,16 +133,6 @@ namespace LBN_Competitive_System_Simulation
         {
             videoPosition = Stream.Ctlcontrols.currentPosition;
             browseInit();
-        }
-
-        private void Stream_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Stream_MouseDoubleClick(object sender, AxWMPLib._WMPOCXEvents_DoubleClickEvent e)
-        {
-
         }
 
         private void timerStream_Tick(object sender, EventArgs e)
@@ -175,17 +158,13 @@ namespace LBN_Competitive_System_Simulation
                 ChatTextbox.Clear(); // Clear the input textbox
             }
         }
-        private void ChatMessage_KeyDown(object sender, KeyEventArgs e)
+        private void Pressed_Key(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter && Mode == "Stream")
             {
                 e.SuppressKeyPress = true; // Suppress the Enter key
                 btn_send.PerformClick(); // Simulate a click on the Send Message button
             }
-        }
-        private void ChatMessage_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void SwitchRole_Click(object sender, EventArgs e)
