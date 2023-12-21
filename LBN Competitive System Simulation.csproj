@@ -92,6 +92,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Concepts\Concept Art.pdf" />
     <None Include="ExampleIDs\NormalUserID.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -129,6 +130,7 @@
     <None Include="Resources\Exit.png" />
     <None Include="Resources\Demo_Video.bmp" />
     <None Include="Resources\Demo.mp4" />
+    <Content Include="Snapshots\BrowseScreen.png" />
     <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />
     <None Include="Resources\RegistrationForm.png" />

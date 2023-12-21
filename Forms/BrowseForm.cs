@@ -38,7 +38,11 @@ namespace LBN_Competitive_System_Simulation
             "自己加分，自己加分",
             "有沒有人可以借我一件褲子?",
             "☺☺☺☺☺☺☺☺☺☺☺☺☺",
-            "喔是喔真的假的5555555"
+            "喔是喔真的假的5555555",
+            "???????????",
+            "急了",
+            "0",
+            "這不是肯德基"
         };
 
         private List<string> demoIDs = new List<string>
