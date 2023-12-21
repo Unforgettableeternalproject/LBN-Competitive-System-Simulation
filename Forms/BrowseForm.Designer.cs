@@ -81,6 +81,7 @@
             this.Contact.Size = new System.Drawing.Size(71, 16);
             this.Contact.TabIndex = 2;
             this.Contact.Text = "聯絡我們";
+            this.Contact.Click += new System.EventHandler(this.Contact_Click);
             // 
             // SwitchRole
             // 

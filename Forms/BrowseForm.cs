@@ -31,11 +31,13 @@ namespace LBN_Competitive_System_Simulation
             "777777777",
             "CNMBNMSL",
             "這個人看起來很解欸",
-            "55555552",
+            "現在購買SurfShark VPN再享五折優惠!!",
             "哈哈笑死",
             "我討厭高爾夫球= =",
             "自己加分，自己加分",
-            "有沒有人可以借我一件褲子?"
+            "有沒有人可以借我一件褲子?",
+            "☺☺☺☺☺☺☺☺☺☺☺☺☺",
+            "喔是喔5555555"
         };
 
         private List<string> demoIDs = new List<string>
@@ -48,7 +50,8 @@ namespace LBN_Competitive_System_Simulation
             "洋歌",
             "沒有人喜歡的Lonely",
             "CYY",
-            "三哥"
+            "三哥",
+            "約德爾游擊隊"
         };
         private void UpdateUI()
         {
@@ -151,7 +154,6 @@ namespace LBN_Competitive_System_Simulation
             if(random.Next(1,6) == 2) AddMessage(randomMessage, demoIDs[random.Next(demoIDs.Count)]);
 
             UpdateUI();
-            Console.WriteLine(Stream.Ctlcontrols.currentPosition);
         }
 
         private void btn_send_Click(object sender, EventArgs e)
@@ -165,7 +167,6 @@ namespace LBN_Competitive_System_Simulation
         }
         private void ChatMessage_KeyDown(object sender, KeyEventArgs e)
         {
-            Console.WriteLine(e);
             if (e.KeyCode == Keys.Enter && Mode == "Stream")
             {
                 e.SuppressKeyPress = true; // Suppress the Enter key
@@ -192,6 +193,20 @@ namespace LBN_Competitive_System_Simulation
             {
                 Application.Exit();
             }
+        }
+
+        private void Contact_Click(object sender, EventArgs e)
+        {
+            this.Enabled = false;
+            ContactForm cf = new ContactForm(userID);
+            cf.FormClosed += ContactForm_FormClosed;
+            cf.ShowDialog();
+            cf.Dispose();
+        }
+
+        private void ContactForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Enabled = true;
         }
     }
 }
