@@ -8,11 +8,11 @@
 
 "Well, not this time!"
 
-✎ Loading Screen to be added
+✎ Consider adding a database?
 
-✎ Standard users should be able to visit a browsing page
+✎ There will be more branching screens 
 
-✎ Dashboards for admins and league owners
+✎ Dashboards for admins and league owners and players
 
 ✎ Infrastructure for advertisers...?
 
@@ -21,15 +21,15 @@ Contributors:
 
 To-do list:
 
-	✧ Add concept arts
+	✧ Advertising Page
  
-	✧ Even more assets
+	✧ Improved UX and UI
  
-	✧ GOD, front-end engineering is hard
+	✧ Perhaps add some SFXs?
 
 Preserved for future check: git 3 steps
 1. ```git add .```
 2. ```git git commit -m "commit message"```
 3. ```git push```
 
-![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/MainScreen.png)
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/BrowseMainScreen.png)
