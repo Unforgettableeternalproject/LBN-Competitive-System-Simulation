@@ -57,6 +57,7 @@ namespace LBN_Competitive_System_Simulation
                     LoadingSpinner.Show();
                     if (next.ShowDialog() == DialogResult.OK)
                     {
+                        counter = 3;
                         MessageBox.Show("登入成功!!", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         userID = next.returnID();
                         userName = userID.Username != "Anonymous" ? userID.Username : "匿名訪客";
@@ -85,8 +86,8 @@ namespace LBN_Competitive_System_Simulation
 
         private void RedirectingTimer_Tick(object sender, EventArgs e)
         {
+            WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter-1}秒後自動跳轉至瀏覽頁面...";
             counter--;
-            WelcomeDisplay.Text = $"歡迎, {userName}!\r\n將在{counter}秒後自動跳轉至瀏覽頁面...";
             if (counter == 0) 
             {
                 RedirectingTimer.Stop();
@@ -99,7 +100,6 @@ namespace LBN_Competitive_System_Simulation
                     this.Show();
                     btn_confirm.Show();
                     btn_confirm.PerformClick();
-                    counter = 3;
                 }
             }
         }

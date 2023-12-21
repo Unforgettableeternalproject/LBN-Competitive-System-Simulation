@@ -136,8 +136,7 @@ namespace LBN_Competitive_System_Simulation
             {
                 isSendable = false;
                 MessageBox.Show("驗證碼錯誤! 請重新嘗試", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                CaptchaBox.Text = "輸入驗證碼...";
-                CaptchaBox.ForeColor = SystemColors.ScrollBar;
+                CaptchaBox.Text = string.Empty;
             }
             
             if ((string.IsNullOrEmpty(title) || !entries[0]) && isSendable)
