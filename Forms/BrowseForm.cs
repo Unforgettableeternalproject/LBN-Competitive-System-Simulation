@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,7 +68,7 @@ namespace LBN_Competitive_System_Simulation
         private void browseInit()
         {
             Mode = "Browse";
-            this.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.Browse;
+            this.BackgroundImage = Properties.Resources.Browse;
             WelcomeMessage.Show();
             Exit.Show();
             Contact.Show();
@@ -88,7 +89,7 @@ namespace LBN_Competitive_System_Simulation
         private void streamInit()
         {
             Mode = "Stream";
-            this.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.Stream;
+            this.BackgroundImage = Properties.Resources.Stream;
             WelcomeMessage.Hide();
             ExampleVideo.Hide();
             SwitchRole.Hide();
@@ -122,6 +123,10 @@ namespace LBN_Competitive_System_Simulation
         private void BrowseForm_Load(object sender, EventArgs e)
         {
             Stream.uiMode = "None";
+            Stream.settings.autoStart = false;
+            Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources\Demo.mp4"));
+            Stream.DoubleClickEvent += Stream_MouseDoubleClick;
+            Stream.settings.setMode("loop", false);
             ChatMessage.KeyDown += ChatMessage_KeyDown;
             ChatMessage.Enter += (s, args) => { this.ActiveControl = null; };
         }
@@ -139,7 +144,12 @@ namespace LBN_Competitive_System_Simulation
 
         private void Stream_Enter(object sender, EventArgs e)
         {
-            Stream.URL = @"C:\Users\Admin\Videos\Captures\Celeste 2023-12-17 23-31-34.mp4";
+            
+        }
+
+        private void Stream_MouseDoubleClick(object sender, AxWMPLib._WMPOCXEvents_DoubleClickEvent e)
+        {
+
         }
 
         private void timerStream_Tick(object sender, EventArgs e)

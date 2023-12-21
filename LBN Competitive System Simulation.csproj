@@ -127,6 +127,8 @@
     <None Include="Resources\Return.png" />
     <None Include="Resources\Contact.png" />
     <None Include="Resources\Exit.png" />
+    <None Include="Resources\Demo_Video.bmp" />
+    <None Include="Resources\Demo.mp4" />
     <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />
     <None Include="Resources\RegistrationForm.png" />

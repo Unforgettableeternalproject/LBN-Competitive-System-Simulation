@@ -25,9 +25,9 @@ namespace LBN_Competitive_System_Simulation
             InitializeComponent();
             intro = 0;
             Introduction.BackColor = Color.Transparent;
-            Introduction.Image = LBN_Competitive_System_Simulation.Properties.Resources.Disclaimer;
+            Introduction.Image = Properties.Resources.Disclaimer;
             Ball.BackColor = Color.Transparent;
-            btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Confirm;
+            btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
             LoadingSpinner.Hide();
             WelcomeDisplay.Hide();
         }
@@ -42,17 +42,17 @@ namespace LBN_Competitive_System_Simulation
             switch (intro)
             {
                 case 0:
-                    Introduction.Image = LBN_Competitive_System_Simulation.Properties.Resources.Introduction;
+                    Introduction.Image = Properties.Resources.Introduction;
                      intro++;
                     break;
                 case 1:
-                    Introduction.Image = LBN_Competitive_System_Simulation.Properties.Resources.Property;
+                    Introduction.Image = Properties.Resources.Property;
                     intro++;
                     break;
                 case 2:
                     Introduction.Hide();
                     WelcomeDisplay.Hide();
-                    btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Enter;
+                    btn_confirm.BackgroundImage = Properties.Resources.btn_Enter;
                     var next = new LoginForm();
 
                     LoadingSpinner.Show();

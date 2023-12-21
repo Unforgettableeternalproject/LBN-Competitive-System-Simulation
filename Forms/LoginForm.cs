@@ -152,8 +152,8 @@ namespace LBN_Competitive_System_Simulation
                 case "Login":
                     Mode = "Register";
                     this.Text = "Registration Window";
-                    this.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.RegistrationForm;
-                    btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.Submit;
+                    this.BackgroundImage = Properties.Resources.RegistrationForm;
+                    btn_confirm.BackgroundImage = Properties.Resources.Submit;
                     txt_Username.Location = new Point(115, 257);
                     txt_Password.Location = new Point(115, 404);
                     btn_confirm.Location = new Point(155, 538);
@@ -165,8 +165,8 @@ namespace LBN_Competitive_System_Simulation
                 case "Register":
                     Mode = "Login";
                     this.Text = "Login Window";
-                    this.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.LoginForm;
-                    btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Confirm;
+                    this.BackgroundImage = Properties.Resources.LoginForm;
+                    btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
                     txt_Username.Location = new Point(115, 335);
                     txt_Password.Location = new Point(115, 443);
                     btn_confirm.Location = new Point(155, 523);
@@ -189,8 +189,8 @@ namespace LBN_Competitive_System_Simulation
             InitializeComponent();
             Mode = "Login";
             this.Text = "Login Window";
-            this.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.LoginForm;
-            btn_confirm.BackgroundImage = LBN_Competitive_System_Simulation.Properties.Resources.btn_Confirm;
+            this.BackgroundImage = Properties.Resources.LoginForm;
+            btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
             clearFields();
             txt_Username.Location = new Point(115, 335);
             txt_Password.Location = new Point(115, 443);

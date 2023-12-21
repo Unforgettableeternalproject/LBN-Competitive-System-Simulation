@@ -167,7 +167,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void Advertise_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To be implemented: Advertisements Page", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("廣告商後臺介面待添加", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Title_GotFocus(object sender, EventArgs e)
