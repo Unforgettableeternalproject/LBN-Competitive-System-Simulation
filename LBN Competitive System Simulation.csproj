@@ -61,6 +61,12 @@
     <Compile Include="Forms\BrowseForm.Designer.cs">
       <DependentUpon>BrowseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdvertisementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvertisementForm.Designer.cs">
+      <DependentUpon>AdvertisementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdvertisementForm.resx">
+      <DependentUpon>AdvertisementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BrowseForm.resx">
       <DependentUpon>BrowseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +130,8 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Advertise_Front.png" />
+    <None Include="Resources\Advertise_Base.png" />
     <Content Include="Resources\Background.png" />
     <None Include="Resources\Spinner.gif" />
     <None Include="Resources\Browse.png" />
@@ -128,7 +139,6 @@
     <None Include="Resources\Return.png" />
     <None Include="Resources\Contact.png" />
     <None Include="Resources\Exit.png" />
-    <None Include="Resources\Demo_Video.bmp" />
     <None Include="Resources\Demo.mp4" />
     <Content Include="Snapshots\BrowseScreen.png" />
     <Content Include="Snapshots\MainScreen.png" />
