@@ -67,6 +67,12 @@
     <Compile Include="Forms\AdvertisementForm.Designer.cs">
       <DependentUpon>AdvertisementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeploymentSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeploymentSubform.Designer.cs">
+      <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     <EmbeddedResource Include="Forms\ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeploymentSubform.resx">
+      <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +111,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Concepts\Concept Art.pdf" />
+    <None Include="ExampleIDs\PartnerUserID.json" />
     <None Include="ExampleIDs\NormalUserID.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -140,6 +150,8 @@
     <None Include="Resources\Contact.png" />
     <None Include="Resources\Exit.png" />
     <None Include="Resources\Demo.mp4" />
+    <None Include="Resources\Empty.png" />
+    <None Include="Resources\Deployment.png" />
     <Content Include="Snapshots\BrowseScreen.png" />
     <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />

@@ -30,22 +30,47 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvertisementForm));
             this.SubPages = new System.Windows.Forms.Panel();
+            this.btn_enter = new System.Windows.Forms.Button();
             this.AdvertisementDeploy = new System.Windows.Forms.Button();
             this.Daskboard = new System.Windows.Forms.Button();
             this.PersonalInfo = new System.Windows.Forms.Button();
             this.WelcomeMessage = new System.Windows.Forms.Label();
-            this.btn_enter = new System.Windows.Forms.Button();
+            this.Home = new System.Windows.Forms.Button();
+            this.Contact = new System.Windows.Forms.Label();
+            this.Exit = new System.Windows.Forms.Label();
+            this.Hint = new System.Windows.Forms.Label();
             this.SubPages.SuspendLayout();
             this.SuspendLayout();
             // 
             // SubPages
             // 
             this.SubPages.BackColor = System.Drawing.Color.Transparent;
+            this.SubPages.Controls.Add(this.Hint);
             this.SubPages.Controls.Add(this.btn_enter);
             this.SubPages.Location = new System.Drawing.Point(238, 87);
             this.SubPages.Name = "SubPages";
-            this.SubPages.Size = new System.Drawing.Size(1283, 741);
+            this.SubPages.Size = new System.Drawing.Size(1300, 779);
             this.SubPages.TabIndex = 0;
+            // 
+            // btn_enter
+            // 
+            this.btn_enter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_enter.BackColor = System.Drawing.Color.Transparent;
+            this.btn_enter.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.btn_Enter;
+            this.btn_enter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_enter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_enter.FlatAppearance.BorderSize = 0;
+            this.btn_enter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_enter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_enter.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btn_enter.Location = new System.Drawing.Point(548, 428);
+            this.btn_enter.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+            this.btn_enter.Name = "btn_enter";
+            this.btn_enter.Size = new System.Drawing.Size(165, 67);
+            this.btn_enter.TabIndex = 5;
+            this.btn_enter.UseMnemonic = false;
+            this.btn_enter.UseVisualStyleBackColor = false;
+            this.btn_enter.Click += new System.EventHandler(this.btn_enter_Click);
             // 
             // AdvertisementDeploy
             // 
@@ -93,31 +118,64 @@
             this.WelcomeMessage.Text = "歡迎回來, !";
             this.WelcomeMessage.UseMnemonic = false;
             // 
-            // btn_enter
+            // Home
             // 
-            this.btn_enter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btn_enter.BackColor = System.Drawing.Color.Transparent;
-            this.btn_enter.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.btn_Enter;
-            this.btn_enter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_enter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_enter.FlatAppearance.BorderSize = 0;
-            this.btn_enter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btn_enter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_enter.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_enter.Location = new System.Drawing.Point(545, 436);
-            this.btn_enter.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.btn_enter.Name = "btn_enter";
-            this.btn_enter.Size = new System.Drawing.Size(165, 67);
-            this.btn_enter.TabIndex = 5;
-            this.btn_enter.UseMnemonic = false;
-            this.btn_enter.UseVisualStyleBackColor = false;
+            this.Home.BackColor = System.Drawing.Color.Transparent;
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.Location = new System.Drawing.Point(139, 22);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(43, 42);
+            this.Home.TabIndex = 5;
+            this.Home.UseVisualStyleBackColor = false;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
+            // Contact
+            // 
+            this.Contact.AutoSize = true;
+            this.Contact.BackColor = System.Drawing.Color.Transparent;
+            this.Contact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Contact.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Contact.Location = new System.Drawing.Point(12, 839);
+            this.Contact.Name = "Contact";
+            this.Contact.Size = new System.Drawing.Size(71, 16);
+            this.Contact.TabIndex = 6;
+            this.Contact.Text = "聯絡我們";
+            this.Contact.Click += new System.EventHandler(this.Contact_Click);
+            // 
+            // Exit
+            // 
+            this.Exit.AutoSize = true;
+            this.Exit.BackColor = System.Drawing.Color.Transparent;
+            this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Exit.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.ForeColor = System.Drawing.Color.DarkRed;
+            this.Exit.Location = new System.Drawing.Point(150, 839);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(71, 16);
+            this.Exit.TabIndex = 7;
+            this.Exit.Text = "離開系統";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // Hint
+            // 
+            this.Hint.AutoSize = true;
+            this.Hint.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hint.Location = new System.Drawing.Point(511, 567);
+            this.Hint.Name = "Hint";
+            this.Hint.Size = new System.Drawing.Size(241, 21);
+            this.Hint.TabIndex = 6;
+            this.Hint.Text = "請先登入一個現有的帳號";
             // 
             // AdvertisementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Advertise_Front;
-            this.ClientSize = new System.Drawing.Size(1520, 825);
+            this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.Contact);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.WelcomeMessage);
             this.Controls.Add(this.PersonalInfo);
             this.Controls.Add(this.Daskboard);
@@ -127,8 +185,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdvertisementForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AdvertisementScreen";
+            this.Load += new System.EventHandler(this.AdvertisementForm_Load);
             this.SubPages.ResumeLayout(false);
+            this.SubPages.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +203,9 @@
         private System.Windows.Forms.Button PersonalInfo;
         private System.Windows.Forms.Label WelcomeMessage;
         private System.Windows.Forms.Button btn_enter;
+        private System.Windows.Forms.Button Home;
+        private System.Windows.Forms.Label Contact;
+        private System.Windows.Forms.Label Exit;
+        private System.Windows.Forms.Label Hint;
     }
 }

@@ -43,7 +43,10 @@
             this.ViewersCount = new System.Windows.Forms.Label();
             this.Stream = new AxWMPLib.AxWindowsMediaPlayer();
             this.timerStream = new System.Windows.Forms.Timer(this.components);
+            this.RedirectSpinner = new System.Windows.Forms.PictureBox();
+            this.redirectTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeMessage
@@ -196,13 +199,30 @@
             this.timerStream.Interval = 1000;
             this.timerStream.Tick += new System.EventHandler(this.timerStream_Tick);
             // 
+            // RedirectSpinner
+            // 
+            this.RedirectSpinner.BackColor = System.Drawing.Color.Transparent;
+            this.RedirectSpinner.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Spinner;
+            this.RedirectSpinner.Location = new System.Drawing.Point(664, 224);
+            this.RedirectSpinner.Name = "RedirectSpinner";
+            this.RedirectSpinner.Size = new System.Drawing.Size(512, 512);
+            this.RedirectSpinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RedirectSpinner.TabIndex = 12;
+            this.RedirectSpinner.TabStop = false;
+            // 
+            // redirectTimer
+            // 
+            this.redirectTimer.Interval = 3000;
+            this.redirectTimer.Tick += new System.EventHandler(this.redirectTimer_Tick);
+            // 
             // BrowseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Browse;
+            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Empty;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.RedirectSpinner);
             this.Controls.Add(this.Stream);
             this.Controls.Add(this.ViewersCount);
             this.Controls.Add(this.StreamTime);
@@ -222,6 +242,7 @@
             this.Text = "      ";
             this.Load += new System.EventHandler(this.BrowseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +263,7 @@
         private System.Windows.Forms.Label ViewersCount;
         private AxWMPLib.AxWindowsMediaPlayer Stream;
         private System.Windows.Forms.Timer timerStream;
+        private System.Windows.Forms.PictureBox RedirectSpinner;
+        private System.Windows.Forms.Timer redirectTimer;
     }
 }

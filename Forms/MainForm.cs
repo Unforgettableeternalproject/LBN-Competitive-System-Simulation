@@ -52,14 +52,15 @@ namespace LBN_Competitive_System_Simulation
                     Introduction.Hide();
                     WelcomeDisplay.Hide();
                     btn_confirm.BackgroundImage = Properties.Resources.btn_Enter;
-                    var next = new LoginForm();
+                    var login = new LoginForm("Normal", true);
 
                     LoadingSpinner.Show();
-                    if (next.ShowDialog() == DialogResult.OK)
+                    var result = login.ShowDialog();
+                    if (result == DialogResult.OK)
                     {
                         counter = 3;
                         MessageBox.Show("登入成功!!", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        userID = next.returnID();
+                        userID = login.returnID();
                         userName = userID.Username != "Anonymous" ? userID.Username : "匿名訪客";
                         RedirectingTimer.Enabled = true;
                         RedirectingTimer.Start();
@@ -75,7 +76,7 @@ namespace LBN_Competitive_System_Simulation
                         WelcomeDisplay.Show();
                     }
 
-                    next.Dispose();
+                    login.Dispose();
                     LoadingSpinner.Hide();
 
                     break;
@@ -107,6 +108,11 @@ namespace LBN_Competitive_System_Simulation
         private void WelcomeDisplay_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("欸? 你找到了隱藏小彩蛋!", "恭喜!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void Introduction_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

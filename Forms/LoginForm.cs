@@ -19,11 +19,32 @@ namespace LBN_Competitive_System_Simulation
         String Mode = "Login";
         private ID userID = null;
         private bool errorMsg = false;
+        private string type = null;
+
+        public LoginForm(string _type, bool allowAnonymous)
+        {
+            InitializeComponent();
+            type = _type;
+            Mode = "Login";
+            this.Text = "Login Window";
+            this.BackgroundImage = Properties.Resources.LoginForm;
+            btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
+            clearFields();
+            txt_Username.Location = new Point(115, 335);
+            txt_Password.Location = new Point(115, 443);
+            btn_confirm.Location = new Point(155, 523);
+            txt_Email.Hide();
+            txt_ConfirmPW.Hide();
+            if (allowAnonymous) Anonymous.Show();
+            else Anonymous.Hide();
+
+            Register.Text = "註冊";
+        }
         private ID Validation(string username, string password)
         {
             bool flag = false;
             ID result = new ID();
-            var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
+            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -68,7 +89,7 @@ namespace LBN_Competitive_System_Simulation
                 emailVaild = false;
             }
 
-            var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
+            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -120,7 +141,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void newID(ID _new)
         {
-            var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
+            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             read.Close();
@@ -129,7 +150,7 @@ namespace LBN_Competitive_System_Simulation
             IDList.Add(_new);
 
             json = JsonConvert.SerializeObject(IDList);
-            var writer = new StreamWriter(@"..\..\ExampleIDs\NormalUserID.json");
+            var writer = new StreamWriter($@"..\..\ExampleIDs\{type}UserID.json");
             writer.Write(json);
 
             writer.Flush();
@@ -183,22 +204,6 @@ namespace LBN_Competitive_System_Simulation
         public ID returnID()
         {
             return userID;
-        }
-        public LoginForm()
-        {
-            InitializeComponent();
-            Mode = "Login";
-            this.Text = "Login Window";
-            this.BackgroundImage = Properties.Resources.LoginForm;
-            btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
-            clearFields();
-            txt_Username.Location = new Point(115, 335);
-            txt_Password.Location = new Point(115, 443);
-            btn_confirm.Location = new Point(155, 523);
-            txt_Email.Hide();
-            txt_ConfirmPW.Hide();
-            Anonymous.Show();
-            Register.Text = "註冊";
         }
 
         private void Pressed_Key(object sender, KeyEventArgs e)

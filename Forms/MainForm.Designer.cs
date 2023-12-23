@@ -70,6 +70,7 @@
             this.Introduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Introduction.TabIndex = 3;
             this.Introduction.TabStop = false;
+            this.Introduction.Click += new System.EventHandler(this.Introduction_Click);
             // 
             // Ball
             // 

@@ -1,4 +1,5 @@
 ﻿using AxWMPLib;
+using LBN_Competitive_System_Simulation.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -58,6 +60,14 @@ namespace LBN_Competitive_System_Simulation
             "三哥",
             "約德爾游擊隊"
         };
+        public BrowseForm(ID userID)
+        {
+            InitializeComponent();
+            browseInit();
+            this.userID = userID;
+            if (userID.Username != "Anonymous") WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
+            else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
+        }
         private void UpdateUI()
         {
             // Update labels with the current stream time and viewer count
@@ -68,6 +78,28 @@ namespace LBN_Competitive_System_Simulation
         {
             ChatMessage.AppendText($"[❦] {user}: {message}\n");
             ChatMessage.ScrollToCaret(); // Scroll to the end to show the latest messages
+        }
+
+        private void advertiseInit()
+        {
+            Mode = "Redirect";
+            this.BackgroundImage = Properties.Resources.Empty;
+            RedirectSpinner.Show();
+            btn_return.Hide();
+            btn_send.Hide();
+            ChatMessage.Hide();
+            ChatTextbox.Hide();
+            StreamTime.Hide();
+            ViewersCount.Hide();
+            WelcomeMessage.Hide();
+            ExampleVideo.Hide();
+            SwitchRole.Hide();
+            Stream.Ctlcontrols.stop();
+            timerStream.Stop();
+            Stream.Hide();
+            Contact.Enabled = false;
+            Exit.Enabled = false;
+            redirectTimer.Start();
         }
         private void browseInit()
         {
@@ -84,7 +116,6 @@ namespace LBN_Competitive_System_Simulation
             ChatTextbox.Hide();
             StreamTime.Hide();
             ViewersCount.Hide();
-            Console.WriteLine("Pos: {0}", videoPosition);
             Stream.Ctlcontrols.stop();
             timerStream.Stop();
             Stream.Hide();
@@ -110,17 +141,10 @@ namespace LBN_Competitive_System_Simulation
             Stream.Ctlcontrols.play();
             Stream.Ctlcontrols.currentPosition = videoPosition;
         }
-        public BrowseForm(ID userID)
-        {
-            InitializeComponent();
-            browseInit();
-            this.userID = userID;
-            if (userID.Username != "Anonymous") WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
-            else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
-        }
 
         private void BrowseForm_Load(object sender, EventArgs e)
         {
+            RedirectSpinner.Hide();
             Stream.uiMode = "None";
             Stream.settings.autoStart = false;
             Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources\Demo.mp4"));
@@ -191,15 +215,31 @@ namespace LBN_Competitive_System_Simulation
         private void Contact_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            ContactForm cf = new ContactForm(userID);
+            ContactForm cf = new ContactForm(userID, true);
             cf.FormClosed += ContactForm_FormClosed;
             cf.ShowDialog();
+
+            if (cf.getRedirect()) advertiseInit();
             cf.Dispose();
         }
 
         private void ContactForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Enabled = true;
+        }
+
+        private void redirectTimer_Tick(object sender, EventArgs e)
+        {
+            redirectTimer.Stop();
+            this.Hide();
+            AdvertisementForm af = new AdvertisementForm(userID);
+            var _return = af.ShowDialog();
+
+            if (_return == DialogResult.OK) { this.Show();  browseInit(); }
+            Contact.Enabled = true;
+            Exit.Enabled = true;
+            RedirectSpinner.Hide();
+            af.Dispose();
         }
     }
 }
