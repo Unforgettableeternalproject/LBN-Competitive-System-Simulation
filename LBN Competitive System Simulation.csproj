@@ -142,6 +142,7 @@
   <ItemGroup>
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
+    <None Include="Resources\57b40dd1N3ee257f3.jpg" />
     <Content Include="Resources\Background.png" />
     <None Include="Resources\Spinner.gif" />
     <None Include="Resources\Browse.png" />

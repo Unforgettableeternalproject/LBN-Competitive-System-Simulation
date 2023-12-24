@@ -107,7 +107,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void deployInit()
         {
-            DeploymentSubform ds = new DeploymentSubform();
+            DeploymentSubform ds = new DeploymentSubform(userID);
             ds.TopLevel = false;
             ds.FormBorderStyle = FormBorderStyle.None;
             ds.Dock = DockStyle.Fill;
@@ -128,7 +128,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             bool proceed;
 
-            if (userID.Username == "Anonymous") { Hint.Text = "請先登入一個現有的帳戶";  proceed = reLogin(); }
+            if (userID.Username == "Anonymous") { Hint.Text = "請先登入一個現有的帳戶";  proceed = reLogin(); goto SkipAccountCreation; }
 
             if (isExist(userID)) { proceed = true; }
             else
@@ -142,7 +142,9 @@ namespace LBN_Competitive_System_Simulation.Forms
                 else proceed = false;
             }
 
+        SkipAccountCreation:
             if (proceed) { overallInit(); deployInit(); }
+            else { Hint.ForeColor = Color.Tomato; Hint.Text = "請先登入一個現有的帳戶!!"; }
         }
 
         private void Exit_Click(object sender, EventArgs e)

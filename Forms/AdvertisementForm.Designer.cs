@@ -109,11 +109,10 @@
             // 
             this.WelcomeMessage.AutoSize = true;
             this.WelcomeMessage.BackColor = System.Drawing.Color.Transparent;
-            this.WelcomeMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.WelcomeMessage.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
             this.WelcomeMessage.Location = new System.Drawing.Point(12, 110);
             this.WelcomeMessage.Name = "WelcomeMessage";
-            this.WelcomeMessage.Size = new System.Drawing.Size(123, 24);
+            this.WelcomeMessage.Size = new System.Drawing.Size(121, 22);
             this.WelcomeMessage.TabIndex = 4;
             this.WelcomeMessage.Text = "歡迎回來, !";
             this.WelcomeMessage.UseMnemonic = false;
@@ -185,7 +184,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdvertisementForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdvertisementScreen";
             this.Load += new System.EventHandler(this.AdvertisementForm_Load);
             this.SubPages.ResumeLayout(false);
