@@ -15,7 +15,8 @@ namespace LBN_Competitive_System_Simulation.Forms
     {
         private ID userID;
         private double[] arguments = new double[2] {0,0};
-        private bool updated = false;
+        private bool updated = false, isDeployed = false;
+        private Bitmap image = null;
 
         private Dictionary<string, int> prices = new Dictionary<string, int>(3)
         {
@@ -40,10 +41,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             Tick.Start();
         }
 
+        public bool returnStatus()
+        {
+            return isDeployed;
+        }
+
         private void Upload_Click(object sender, EventArgs e)
         {
-            Bitmap image;
-
             OpenFileDialog of = new OpenFileDialog
             {
                 InitialDirectory = Environment.CurrentDirectory,
@@ -80,8 +84,22 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void Tick_Tick(object sender, EventArgs e)
         {
             double total = arguments[0]*1.2*arguments[1];
-            Console.WriteLine($"{arguments[0]}, {arguments[1]}");
             Cost.Text = $"{(int)total} 元 (美金)";
+        }
+
+        private void btn_deploy_Click(object sender, EventArgs e)
+        {
+            double total = arguments[0] * 1.2 * arguments[1];
+
+            if (image == null) { MessageBox.Show("你尚未上傳任何廣告圖片", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipDeployment; };
+            if (total == 0 || !updated) { MessageBox.Show("你尚未填寫所有必要的資訊", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipDeployment; }
+
+            DialogResult result = MessageBox.Show($"這樣總共是{(int)total}，確認刊登?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.Yes) { isDeployed = true; MessageBox.Show($"已成功刊登廣告!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+
+            SkipDeployment:
+            Console.WriteLine("Skip");
         }
     }
 }

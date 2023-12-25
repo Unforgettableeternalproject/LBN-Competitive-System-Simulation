@@ -18,6 +18,9 @@ namespace LBN_Competitive_System_Simulation.Forms
     public partial class AdvertisementForm : Form
     {
         private ID userID;
+        private bool isDeployed;
+        private DeploymentSubform ds;
+        private ProfitSubform ps;
         public AdvertisementForm(ID _userID)
         {
             userID = _userID;
@@ -100,27 +103,42 @@ namespace LBN_Competitive_System_Simulation.Forms
             Hint.Hide();
             WelcomeMessage.Show();
             AdvertisementDeploy.Show();
-            Daskboard.Show();
+            Dashboard.Show();
             PersonalInfo.Show();
             WelcomeMessage.Text = $"歡迎回來, {userID.Username}\n\n今天過得如何?";
+            ds = new DeploymentSubform(userID);
+            ds.TopLevel = false;
+            ds.FormBorderStyle = FormBorderStyle.None;
+            ds.Dock = DockStyle.Fill;
+            ps = new ProfitSubform(userID);
+            ps.TopLevel = false;
+            ps.FormBorderStyle = FormBorderStyle.None;
+            ps.Dock = DockStyle.Fill;
         }
 
         private void deployInit()
         {
-            DeploymentSubform ds = new DeploymentSubform(userID);
-            ds.TopLevel = false;
-            ds.FormBorderStyle = FormBorderStyle.None;
-            ds.Dock = DockStyle.Fill;
+            SubPages.Controls.Clear();
             SubPages.Controls.Add(ds);
             SubPages.Tag = ds;
             ds.Show();
         }
 
+        private void dashboardInit()
+        {
+            ps.setStatus(isDeployed);
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(ps);
+            SubPages.Tag = ps;
+            ps.Show();
+        }
+
         private void AdvertisementForm_Load(object sender, EventArgs e)
         {
+            Tick.Start();
             WelcomeMessage.Hide();
             AdvertisementDeploy.Hide();
-            Daskboard.Hide();
+            Dashboard.Hide();
             PersonalInfo.Hide();
         }
 
@@ -176,6 +194,20 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void ContactForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Enabled = true;
+        }
+
+        private void AdvertisementDeploy_Click(object sender, EventArgs e)
+        {
+            deployInit();
+        }
+        private void Dashboard_Click(object sender, EventArgs e)
+        {
+            dashboardInit();
+        }
+
+        private void Tick_Tick(object sender, EventArgs e)
+        {
+            if(ds != null) isDeployed = ds.returnStatus();
         }
     }
 }

@@ -73,6 +73,12 @@
     <Compile Include="Forms\DeploymentSubform.Designer.cs">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProfitSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProfitSubform.Designer.cs">
+      <DependentUpon>ProfitSubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProfitSubform.resx">
+      <DependentUpon>ProfitSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,7 +151,6 @@
   <ItemGroup>
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
-    <None Include="Resources\57b40dd1N3ee257f3.jpg" />
     <Content Include="Resources\Background.png" />
     <None Include="Resources\Spinner.gif" />
     <None Include="Resources\Browse.png" />
@@ -153,6 +161,8 @@
     <None Include="Resources\Demo.mp4" />
     <None Include="Resources\Empty.png" />
     <None Include="Resources\Deployment.png" />
+    <None Include="Resources\Profits.png" />
+    <None Include="Resources\Diagram.png" />
     <Content Include="Snapshots\BrowseScreen.png" />
     <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />

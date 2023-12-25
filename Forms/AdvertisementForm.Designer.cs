@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvertisementForm));
             this.SubPages = new System.Windows.Forms.Panel();
+            this.Hint = new System.Windows.Forms.Label();
             this.btn_enter = new System.Windows.Forms.Button();
             this.AdvertisementDeploy = new System.Windows.Forms.Button();
-            this.Daskboard = new System.Windows.Forms.Button();
+            this.Dashboard = new System.Windows.Forms.Button();
             this.PersonalInfo = new System.Windows.Forms.Button();
             this.WelcomeMessage = new System.Windows.Forms.Label();
             this.Home = new System.Windows.Forms.Button();
             this.Contact = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Label();
-            this.Hint = new System.Windows.Forms.Label();
+            this.Tick = new System.Windows.Forms.Timer(this.components);
             this.SubPages.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,6 +53,16 @@
             this.SubPages.Name = "SubPages";
             this.SubPages.Size = new System.Drawing.Size(1300, 779);
             this.SubPages.TabIndex = 0;
+            // 
+            // Hint
+            // 
+            this.Hint.AutoSize = true;
+            this.Hint.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hint.Location = new System.Drawing.Point(511, 567);
+            this.Hint.Name = "Hint";
+            this.Hint.Size = new System.Drawing.Size(241, 21);
+            this.Hint.TabIndex = 6;
+            this.Hint.Text = "請先登入一個現有的帳號";
             // 
             // btn_enter
             // 
@@ -82,17 +94,19 @@
             this.AdvertisementDeploy.Size = new System.Drawing.Size(239, 57);
             this.AdvertisementDeploy.TabIndex = 1;
             this.AdvertisementDeploy.UseVisualStyleBackColor = false;
+            this.AdvertisementDeploy.Click += new System.EventHandler(this.AdvertisementDeploy_Click);
             // 
-            // Daskboard
+            // Dashboard
             // 
-            this.Daskboard.BackColor = System.Drawing.Color.Transparent;
-            this.Daskboard.FlatAppearance.BorderSize = 0;
-            this.Daskboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Daskboard.Location = new System.Drawing.Point(-1, 360);
-            this.Daskboard.Name = "Daskboard";
-            this.Daskboard.Size = new System.Drawing.Size(239, 57);
-            this.Daskboard.TabIndex = 2;
-            this.Daskboard.UseVisualStyleBackColor = false;
+            this.Dashboard.BackColor = System.Drawing.Color.Transparent;
+            this.Dashboard.FlatAppearance.BorderSize = 0;
+            this.Dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Dashboard.Location = new System.Drawing.Point(-1, 360);
+            this.Dashboard.Name = "Dashboard";
+            this.Dashboard.Size = new System.Drawing.Size(239, 57);
+            this.Dashboard.TabIndex = 2;
+            this.Dashboard.UseVisualStyleBackColor = false;
+            this.Dashboard.Click += new System.EventHandler(this.Dashboard_Click);
             // 
             // PersonalInfo
             // 
@@ -156,15 +170,9 @@
             this.Exit.Text = "離開系統";
             this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
-            // Hint
+            // Tick
             // 
-            this.Hint.AutoSize = true;
-            this.Hint.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hint.Location = new System.Drawing.Point(511, 567);
-            this.Hint.Name = "Hint";
-            this.Hint.Size = new System.Drawing.Size(241, 21);
-            this.Hint.TabIndex = 6;
-            this.Hint.Text = "請先登入一個現有的帳號";
+            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
             // AdvertisementForm
             // 
@@ -177,7 +185,7 @@
             this.Controls.Add(this.Home);
             this.Controls.Add(this.WelcomeMessage);
             this.Controls.Add(this.PersonalInfo);
-            this.Controls.Add(this.Daskboard);
+            this.Controls.Add(this.Dashboard);
             this.Controls.Add(this.AdvertisementDeploy);
             this.Controls.Add(this.SubPages);
             this.DoubleBuffered = true;
@@ -198,7 +206,7 @@
 
         private System.Windows.Forms.Panel SubPages;
         private System.Windows.Forms.Button AdvertisementDeploy;
-        private System.Windows.Forms.Button Daskboard;
+        private System.Windows.Forms.Button Dashboard;
         private System.Windows.Forms.Button PersonalInfo;
         private System.Windows.Forms.Label WelcomeMessage;
         private System.Windows.Forms.Button btn_enter;
@@ -206,5 +214,6 @@
         private System.Windows.Forms.Label Contact;
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Label Hint;
+        private System.Windows.Forms.Timer Tick;
     }
 }

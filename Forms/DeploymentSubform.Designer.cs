@@ -40,6 +40,7 @@
             this.Warning_1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Tick = new System.Windows.Forms.Timer(this.components);
+            this.btn_deploy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AdPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -122,7 +123,7 @@
             // 
             this.Cost.AutoSize = true;
             this.Cost.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cost.Location = new System.Drawing.Point(434, 624);
+            this.Cost.Location = new System.Drawing.Point(425, 567);
             this.Cost.Name = "Cost";
             this.Cost.Size = new System.Drawing.Size(93, 29);
             this.Cost.TabIndex = 7;
@@ -153,12 +154,24 @@
             // 
             this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
+            // btn_deploy
+            // 
+            this.btn_deploy.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
+            this.btn_deploy.Location = new System.Drawing.Point(322, 630);
+            this.btn_deploy.Name = "btn_deploy";
+            this.btn_deploy.Size = new System.Drawing.Size(118, 37);
+            this.btn_deploy.TabIndex = 10;
+            this.btn_deploy.Text = "確認刊登";
+            this.btn_deploy.UseVisualStyleBackColor = true;
+            this.btn_deploy.Click += new System.EventHandler(this.btn_deploy_Click);
+            // 
             // DeploymentSubform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Deployment;
             this.ClientSize = new System.Drawing.Size(1284, 740);
+            this.Controls.Add(this.btn_deploy);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Warning_1);
             this.Controls.Add(this.Cost);
@@ -192,5 +205,6 @@
         private System.Windows.Forms.Label Warning_1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer Tick;
+        private System.Windows.Forms.Button btn_deploy;
     }
 }
