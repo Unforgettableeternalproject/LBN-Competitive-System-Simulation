@@ -150,6 +150,7 @@ namespace LBN_Competitive_System_Simulation
             Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources\Demo.mp4"));
             Stream.settings.setMode("loop", false);
             ChatMessage.Enter += (s, args) => { this.ActiveControl = null; };
+            ChatTextbox.KeyDown += this.Pressed_Key;
         }
 
         private void ExampleVideo_Click(object sender, EventArgs e)

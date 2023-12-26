@@ -135,7 +135,6 @@
             this.ChatTextbox.Name = "ChatTextbox";
             this.ChatTextbox.Size = new System.Drawing.Size(309, 35);
             this.ChatTextbox.TabIndex = 6;
-            this.ChatTextbox.KeyDown += this.Pressed_Key;
             // 
             // btn_send
             // 

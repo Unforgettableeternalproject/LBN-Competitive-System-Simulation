@@ -18,9 +18,15 @@ namespace LBN_Competitive_System_Simulation.Forms
     public partial class AdvertisementForm : Form
     {
         private ID userID;
-        private bool isDeployed;
+        private bool isDeployed, newUser = false;
         private DeploymentSubform ds;
         private ProfitSubform ps;
+        private InfoSubform us;
+        private Bitmap adImage = null;
+        public Bitmap AdImage
+        {
+            get { return adImage; }
+        }
         public AdvertisementForm(ID _userID)
         {
             userID = _userID;
@@ -36,38 +42,31 @@ namespace LBN_Competitive_System_Simulation.Forms
             var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
             var json = read.ReadToEnd();
 
+            read.Close();
+            read.Dispose();
+
             if (string.IsNullOrEmpty(json.ToString()))
             {
-                read.Close();
-                read.Dispose();
                 return false;
             }
 
-            dynamic IDs = JsonConvert.DeserializeObject(json);
-            foreach (var id in IDs)
-            {
-                if (userID.Username == id.Username.ToString() && userID.Password == id.Password.ToString() && userID.Email == id.Email.ToString()) //I know this is dumb but I don't know otherwise
-                {
-                    read.Close();
-                    read.Dispose();
-                    return true;
-                }
-            }
+            List<ID> IDs = JsonConvert.DeserializeObject<List<ID>>(json);
 
-            read.Close();
-            read.Dispose();
-            return false;
+            return IDs.Any(id => 
+                userID.Username == id.Username &&
+                userID.Password == id.Password &&
+                userID.Email == id.Email);
         }
         private bool reLogin()
         {
-            bool proceed = false;
+            bool success = false;
             LoginForm relogin = new LoginForm("Normal", false);
             var result = relogin.ShowDialog();
             if (result == DialogResult.OK)
             {
                 MessageBox.Show("登入成功!!", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 userID = relogin.returnID();
-                proceed = true;
+                success = true;
             }
             else
             {
@@ -75,7 +74,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             }
 
             relogin.Dispose();
-            return proceed;
+            return success;
         }
 
         private void register(ID userID)
@@ -114,6 +113,12 @@ namespace LBN_Competitive_System_Simulation.Forms
             ps.TopLevel = false;
             ps.FormBorderStyle = FormBorderStyle.None;
             ps.Dock = DockStyle.Fill;
+            us = new InfoSubform(userID);
+            us.TopLevel = false;
+            us.FormBorderStyle = FormBorderStyle.None;
+            us.Dock = DockStyle.Fill;
+            if (newUser) { MessageBox.Show("新用戶請先設定帳戶資訊和配額方式!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); infoInit(); }
+            else deployInit();
         }
 
         private void deployInit()
@@ -133,6 +138,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             ps.Show();
         }
 
+        private void infoInit()
+        {
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(us);
+            SubPages.Tag = us;
+            us.Show();
+        }
         private void AdvertisementForm_Load(object sender, EventArgs e)
         {
             Tick.Start();
@@ -144,9 +156,11 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void btn_enter_Click(object sender, EventArgs e)
         {
-            bool proceed;
+            bool proceed = false, successfulLogin = true;
 
-            if (userID.Username == "Anonymous") { Hint.Text = "請先登入一個現有的帳戶";  proceed = reLogin(); goto SkipAccountCreation; }
+            if (userID.Username == "Anonymous") { Hint.Text = "請先登入一個現有的帳戶";  successfulLogin = reLogin();}
+
+            if (!successfulLogin) goto SkipAccountCreation;
 
             if (isExist(userID)) { proceed = true; }
             else
@@ -156,12 +170,13 @@ namespace LBN_Competitive_System_Simulation.Forms
                 {
                     register(userID);
                     proceed = true;
+                    newUser = true;
                 }
                 else proceed = false;
             }
 
-        SkipAccountCreation:
-            if (proceed) { overallInit(); deployInit(); }
+            SkipAccountCreation:
+            if (proceed) { overallInit();}
             else { Hint.ForeColor = Color.Tomato; Hint.Text = "請先登入一個現有的帳戶!!"; }
         }
 
@@ -205,9 +220,14 @@ namespace LBN_Competitive_System_Simulation.Forms
             dashboardInit();
         }
 
+        private void PersonalInfo_Click(object sender, EventArgs e)
+        {
+            infoInit();
+        }
+
         private void Tick_Tick(object sender, EventArgs e)
         {
-            if(ds != null) isDeployed = ds.returnStatus();
+            if (ds != null) { isDeployed = ds.returnStatus(); adImage = ds.Image; } 
         }
     }
 }

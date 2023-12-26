@@ -36,6 +36,7 @@
             this.Anonymous = new System.Windows.Forms.Label();
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_ConfirmPW = new System.Windows.Forms.TextBox();
+            this.ToggleInvis = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_Password
@@ -45,7 +46,6 @@
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(316, 31);
             this.txt_Password.TabIndex = 2;
-            this.txt_Password.KeyDown += this.Pressed_Key;
             // 
             // txt_Username
             // 
@@ -54,7 +54,6 @@
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(316, 31);
             this.txt_Username.TabIndex = 0;
-            this.txt_Username.KeyDown += this.Pressed_Key;
             // 
             // btn_confirm
             // 
@@ -109,7 +108,6 @@
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(316, 31);
             this.txt_Email.TabIndex = 1;
-            this.txt_Email.KeyDown += this.Pressed_Key;
             // 
             // txt_ConfirmPW
             // 
@@ -118,15 +116,30 @@
             this.txt_ConfirmPW.Name = "txt_ConfirmPW";
             this.txt_ConfirmPW.Size = new System.Drawing.Size(316, 31);
             this.txt_ConfirmPW.TabIndex = 3;
-            this.txt_ConfirmPW.KeyDown += this.Pressed_Key;
+            // 
+            // ToggleInvis
+            // 
+            this.ToggleInvis.AutoSize = true;
+            this.ToggleInvis.BackColor = System.Drawing.Color.Transparent;
+            this.ToggleInvis.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.PasswordInvisible;
+            this.ToggleInvis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ToggleInvis.FlatAppearance.BorderSize = 0;
+            this.ToggleInvis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ToggleInvis.Location = new System.Drawing.Point(396, 446);
+            this.ToggleInvis.Name = "ToggleInvis";
+            this.ToggleInvis.Size = new System.Drawing.Size(26, 26);
+            this.ToggleInvis.TabIndex = 11;
+            this.ToggleInvis.UseVisualStyleBackColor = false;
+            this.ToggleInvis.Click += new System.EventHandler(this.ToggleInvis_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.RegistrationForm;
+            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.LoginForm;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(481, 707);
+            this.Controls.Add(this.ToggleInvis);
             this.Controls.Add(this.txt_ConfirmPW);
             this.Controls.Add(this.txt_Email);
             this.Controls.Add(this.Anonymous);
@@ -155,5 +168,6 @@
         private System.Windows.Forms.Label Anonymous;
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_ConfirmPW;
+        private System.Windows.Forms.Button ToggleInvis;
     }
 }

@@ -118,6 +118,7 @@
             this.PersonalInfo.Size = new System.Drawing.Size(239, 55);
             this.PersonalInfo.TabIndex = 3;
             this.PersonalInfo.UseVisualStyleBackColor = false;
+            this.PersonalInfo.Click += new System.EventHandler(this.PersonalInfo_Click);
             // 
             // WelcomeMessage
             // 

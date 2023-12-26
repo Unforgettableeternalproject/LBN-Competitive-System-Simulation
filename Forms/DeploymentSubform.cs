@@ -17,6 +17,10 @@ namespace LBN_Competitive_System_Simulation.Forms
         private double[] arguments = new double[2] {0,0};
         private bool updated = false, isDeployed = false;
         private Bitmap image = null;
+        public Bitmap Image
+        {
+            get { return image; }
+        }
 
         private Dictionary<string, int> prices = new Dictionary<string, int>(3)
         {

@@ -26,6 +26,15 @@ namespace LBN_Competitive_System_Simulation
             if (enableAdvertise) Advertise.Show();
             else Advertise.Hide();
             this.userID = userID;
+            Title.KeyDown += Pressed_Key;
+            Title.Enter += Title_Enter;
+            Title.Leave += Title_Leave;
+            Message.KeyDown += Pressed_Key;
+            Message.Enter += Message_Enter;
+            Message.Leave += Message_Leave;
+            CaptchaBox.KeyDown += Pressed_Key;
+            CaptchaBox.Enter += CaptchaBox_Enter;
+            CaptchaBox.Leave += CaptchaBox_Leave;
         }
 
         private bool Send(string title, string message)

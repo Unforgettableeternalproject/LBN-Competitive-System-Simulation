@@ -73,6 +73,12 @@
     <Compile Include="Forms\DeploymentSubform.Designer.cs">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InfoSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InfoSubform.Designer.cs">
+      <DependentUpon>InfoSubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProfitSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InfoSubform.resx">
+      <DependentUpon>InfoSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -163,6 +172,9 @@
     <None Include="Resources\Deployment.png" />
     <None Include="Resources\Profits.png" />
     <None Include="Resources\Diagram.png" />
+    <None Include="Resources\Info.png" />
+    <None Include="Resources\PasswordInvisible.png" />
+    <None Include="Resources\PasswordVisible.png" />
     <Content Include="Snapshots\BrowseScreen.png" />
     <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />
