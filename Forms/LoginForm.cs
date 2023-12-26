@@ -45,6 +45,7 @@ namespace LBN_Competitive_System_Simulation
             txt_Username.Location = new Point(115, 335);
             txt_Password.Location = new Point(115, 443);
             txt_Password.PasswordChar = '*';
+            txt_ConfirmPW.PasswordChar = '*';
             btn_confirm.Location = new Point(155, 523);
 
             txt_Username.KeyDown += Pressed_Key;
@@ -194,7 +195,6 @@ namespace LBN_Competitive_System_Simulation
                     txt_ConfirmPW.Show();
                     Anonymous.Hide();
                     ToggleInvis.Hide();
-                    txt_Password.PasswordChar = '\0';
                     Register.Text = "返回";
                     break;
                 case "Register":

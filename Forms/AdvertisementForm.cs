@@ -207,6 +207,9 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void Home_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+            ds.Dispose();
+            ps.Dispose();
+            us.Dispose();
             Close();
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UserTag = new System.Windows.Forms.Label();
             this.Account = new System.Windows.Forms.Label();
             this.Quota = new System.Windows.Forms.Label();
@@ -36,6 +37,7 @@
             this.btn_quo_change = new System.Windows.Forms.Button();
             this.AccountChange = new System.Windows.Forms.TextBox();
             this.QuotaChange = new System.Windows.Forms.ComboBox();
+            this.Tick = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // UserTag
@@ -126,6 +128,10 @@
             this.QuotaChange.Size = new System.Drawing.Size(324, 51);
             this.QuotaChange.TabIndex = 9;
             // 
+            // Tick
+            // 
+            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
+            // 
             // InfoSubform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -159,5 +165,6 @@
         private System.Windows.Forms.Button btn_quo_change;
         private System.Windows.Forms.TextBox AccountChange;
         private System.Windows.Forms.ComboBox QuotaChange;
+        private System.Windows.Forms.Timer Tick;
     }
 }

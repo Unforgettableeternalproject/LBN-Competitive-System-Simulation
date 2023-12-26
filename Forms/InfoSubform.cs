@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Dynamic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
@@ -19,19 +23,74 @@ namespace LBN_Competitive_System_Simulation.Forms
         public InfoSubform(ID _userID)
         {
             InitializeComponent();
+            this.FormClosed += InfoSubform_FormClosed;
             userID = _userID;
             AccountChange.KeyDown += Pressed_Key_1;
             QuotaChange.KeyDown += Pressed_Key_2;
+            getUserInfo();
+        }
+
+        private void InfoSubform_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Tick.Stop();
         }
 
         private void InfoSubform_Load(object sender, EventArgs e)
         {
+            Tick.Start();
             UserTag.Text = $"{userID.Username}";
-            Account.Text = defaults[0]; Account.ForeColor = Color.Firebrick;
-            Quota.Text = defaults[1]; Quota.ForeColor = Color.Firebrick;
-            Notify.Checked = defaults[2];
+            Account.Text = userInfo[0] == null ? defaults[0] : userInfo[0];
+            Quota.Text = userInfo[1] == null ? defaults[1] : userInfo[1]; 
+            Notify.Checked = userInfo[2] == null ? defaults[2] : userInfo[2];
+            if(userInfo[0] == null) Account.ForeColor = Color.Firebrick;
+            else Account.ForeColor = SystemColors.ControlText;
+
+            if (userInfo[1] == null) Quota.ForeColor = Color.Firebrick;
+            else Quota.ForeColor = SystemColors.ControlText;
             AccountChange.Hide();
             QuotaChange.Hide();
+        }
+
+        private void getUserInfo()
+        {
+            var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
+            var json = read.ReadToEnd();
+
+            read.Close();
+            read.Dispose();
+
+            dynamic users = JsonConvert.DeserializeObject(json);
+            foreach (var user in users)
+            {
+                if (user.Username == userID.Username && user.Password == userID.Password)
+                {
+                    userInfo[0] = user.Account;
+                    userInfo[1] = user.Quota;
+                    userInfo[2] = user.Notify == "True" ? true : false;
+                }
+            }
+        }
+
+        //This WILL NOT work, and I am not going to fix this, fxxk it
+        private void updateJSON()
+        {
+            var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
+            var json = read.ReadToEnd();
+
+            read.Close();
+            read.Dispose();
+
+            dynamic users = JsonConvert.DeserializeObject<ExpandoObject[]>(json);
+            foreach(dynamic user in users)
+            {
+                if(user.Username == userID.Username && user.Password == userID.Password)
+                {
+                    Console.WriteLine("Hi");
+                    user.Account = (string)userInfo[0];
+                    user.Quota = (string)userInfo[1];
+                    user.Notify = (bool)userInfo[2] ? "True" : "False";
+                }
+            }
         }
 
         private void btn_acc_change_Click(object sender, EventArgs e)
@@ -145,6 +204,11 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             if (userInfo[2] == null) userInfo[2] = true;
             else userInfo[2] = !userInfo[2];
+        }
+
+        private void Tick_Tick(object sender, EventArgs e)
+        {
+            updateJSON();
         }
     }
 }
