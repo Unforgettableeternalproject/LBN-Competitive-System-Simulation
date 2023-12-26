@@ -14,27 +14,24 @@ namespace LBN_Competitive_System_Simulation.Forms
     {
         private ID userID;
         private bool isDeployed;
-        private int default_Profit, default_Exposure;
         public ProfitSubform(ID _userID)
         {
             InitializeComponent();
             userID = _userID;
-            Random random = new Random();
-            default_Profit = random.Next(100);
-            default_Exposure = random.Next(560);
         }
-        public void setStatus(bool _isDeployed)
+        public void setStatus(bool _isDeployed, double costTotal)
         {
             isDeployed = _isDeployed;
             if (isDeployed)
             {
+                Random random = new Random();
                 Diagram.Show();
                 Status_1.Text = "刊登中";
                 Status_1.ForeColor = Color.LimeGreen;
                 Status_2.Text = "安全";
                 Status_2.ForeColor = Color.LimeGreen;
-                Profit.Text = default_Profit.ToString();
-                Exposure.Text = default_Exposure.ToString();
+                Profit.Text = random.Next((int)costTotal + 50).ToString();
+                Exposure.Text = random.Next((int)costTotal + 350).ToString();
 
             }
             else

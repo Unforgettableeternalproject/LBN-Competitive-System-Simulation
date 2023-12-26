@@ -22,17 +22,28 @@ namespace LBN_Competitive_System_Simulation.Forms
         private DeploymentSubform ds;
         private ProfitSubform ps;
         private InfoSubform us;
-        private Bitmap adImage = null;
-        public Bitmap AdImage
+        private double costTotal = 0;
+        private object[] adImage = null;
+        public ID UserID
+        {
+            get { return userID; }
+        }
+        public bool IsDeployed
+        {
+            get { return isDeployed; }
+        }
+        public object[] AdImage
         {
             get { return adImage; }
         }
-        public AdvertisementForm(ID _userID)
+        public AdvertisementForm(ID _userID, Bitmap ad)
         {
             userID = _userID;
             InitializeComponent();
             this.BackgroundImage = Properties.Resources.Advertise_Front;
+            if(ad != null) AdSpot.Image = ad;
             btn_enter.Show();
+            AdSpot.Show();
             Hint.Show();
             Hint.Text = "";
         }
@@ -99,6 +110,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             this.BackgroundImage = Properties.Resources.Advertise_Base;
             btn_enter.Hide();
+            AdSpot.Hide();
             Hint.Hide();
             WelcomeMessage.Show();
             AdvertisementDeploy.Show();
@@ -131,7 +143,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void dashboardInit()
         {
-            ps.setStatus(isDeployed);
+            ps.setStatus(isDeployed, costTotal);
             SubPages.Controls.Clear();
             SubPages.Controls.Add(ps);
             SubPages.Tag = ps;
@@ -147,6 +159,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void AdvertisementForm_Load(object sender, EventArgs e)
         {
+            AdSpot.Show();
             Tick.Start();
             WelcomeMessage.Hide();
             AdvertisementDeploy.Hide();
@@ -227,7 +240,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void Tick_Tick(object sender, EventArgs e)
         {
-            if (ds != null) { isDeployed = ds.returnStatus(); adImage = ds.Image; } 
+            if (ds != null) { isDeployed = ds.IsDeployed; adImage = ds.Image; costTotal = ds.Total; } 
         }
     }
 }

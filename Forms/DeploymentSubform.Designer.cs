@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Tick = new System.Windows.Forms.Timer(this.components);
             this.btn_deploy = new System.Windows.Forms.Button();
+            this.UploadIndicator = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AdPreview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -165,12 +166,22 @@
             this.btn_deploy.UseVisualStyleBackColor = true;
             this.btn_deploy.Click += new System.EventHandler(this.btn_deploy_Click);
             // 
+            // UploadIndicator
+            // 
+            this.UploadIndicator.AutoSize = true;
+            this.UploadIndicator.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UploadIndicator.Location = new System.Drawing.Point(543, 337);
+            this.UploadIndicator.Name = "UploadIndicator";
+            this.UploadIndicator.Size = new System.Drawing.Size(0, 21);
+            this.UploadIndicator.TabIndex = 11;
+            // 
             // DeploymentSubform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Deployment;
             this.ClientSize = new System.Drawing.Size(1284, 740);
+            this.Controls.Add(this.UploadIndicator);
             this.Controls.Add(this.btn_deploy);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Warning_1);
@@ -206,5 +217,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer Tick;
         private System.Windows.Forms.Button btn_deploy;
+        private System.Windows.Forms.Label UploadIndicator;
     }
 }

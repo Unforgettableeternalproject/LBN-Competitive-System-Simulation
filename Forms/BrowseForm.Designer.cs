@@ -45,8 +45,14 @@
             this.timerStream = new System.Windows.Forms.Timer(this.components);
             this.RedirectSpinner = new System.Windows.Forms.PictureBox();
             this.redirectTimer = new System.Windows.Forms.Timer(this.components);
+            this.AdSpot1 = new System.Windows.Forms.PictureBox();
+            this.AdSpot2 = new System.Windows.Forms.PictureBox();
+            this.AdSpot3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot3)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeMessage
@@ -214,13 +220,49 @@
             this.redirectTimer.Interval = 3000;
             this.redirectTimer.Tick += new System.EventHandler(this.redirectTimer_Tick);
             // 
+            // AdSpot1
+            // 
+            this.AdSpot1.BackColor = System.Drawing.Color.Transparent;
+            this.AdSpot1.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Placeholder1;
+            this.AdSpot1.Location = new System.Drawing.Point(-1, 560);
+            this.AdSpot1.Name = "AdSpot1";
+            this.AdSpot1.Size = new System.Drawing.Size(239, 219);
+            this.AdSpot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot1.TabIndex = 13;
+            this.AdSpot1.TabStop = false;
+            // 
+            // AdSpot2
+            // 
+            this.AdSpot2.BackColor = System.Drawing.Color.Transparent;
+            this.AdSpot2.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Placeholder3;
+            this.AdSpot2.Location = new System.Drawing.Point(1249, 433);
+            this.AdSpot2.Name = "AdSpot2";
+            this.AdSpot2.Size = new System.Drawing.Size(287, 431);
+            this.AdSpot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot2.TabIndex = 14;
+            this.AdSpot2.TabStop = false;
+            // 
+            // AdSpot3
+            // 
+            this.AdSpot3.BackColor = System.Drawing.Color.Transparent;
+            this.AdSpot3.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Placeholder2;
+            this.AdSpot3.Location = new System.Drawing.Point(235, 775);
+            this.AdSpot3.Name = "AdSpot3";
+            this.AdSpot3.Size = new System.Drawing.Size(910, 91);
+            this.AdSpot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot3.TabIndex = 15;
+            this.AdSpot3.TabStop = false;
+            // 
             // BrowseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Empty;
+            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Stream;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.AdSpot3);
+            this.Controls.Add(this.AdSpot2);
+            this.Controls.Add(this.AdSpot1);
             this.Controls.Add(this.RedirectSpinner);
             this.Controls.Add(this.Stream);
             this.Controls.Add(this.ViewersCount);
@@ -242,6 +284,9 @@
             this.Load += new System.EventHandler(this.BrowseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +309,8 @@
         private System.Windows.Forms.Timer timerStream;
         private System.Windows.Forms.PictureBox RedirectSpinner;
         private System.Windows.Forms.Timer redirectTimer;
+        private System.Windows.Forms.PictureBox AdSpot1;
+        private System.Windows.Forms.PictureBox AdSpot2;
+        private System.Windows.Forms.PictureBox AdSpot3;
     }
 }

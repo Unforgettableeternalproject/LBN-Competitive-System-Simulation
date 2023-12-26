@@ -22,6 +22,7 @@ namespace LBN_Competitive_System_Simulation
         private Random random = new Random();
         private double videoPosition = 0;
         private string Mode = "Browse";
+        private Bitmap ad, spad;
 
         private List<string> prewrittenMessages = new List<string>
         {
@@ -84,6 +85,8 @@ namespace LBN_Competitive_System_Simulation
         {
             Mode = "Redirect";
             this.BackgroundImage = Properties.Resources.Empty;
+            AdSpot2.Hide();
+            AdSpot3.Hide();
             RedirectSpinner.Show();
             btn_return.Hide();
             btn_send.Hide();
@@ -110,6 +113,8 @@ namespace LBN_Competitive_System_Simulation
             Contact.Show();
             SwitchRole.Show();
             ExampleVideo.Show();
+            AdSpot2.Show();
+            AdSpot3.Hide();
             btn_return.Hide();
             btn_send.Hide();
             ChatMessage.Hide();
@@ -128,6 +133,8 @@ namespace LBN_Competitive_System_Simulation
             WelcomeMessage.Hide();
             ExampleVideo.Hide();
             SwitchRole.Hide();
+            AdSpot2.Hide();
+            AdSpot3.Show();
             btn_return.Show();
             btn_send.Show();
             ChatMessage.Show();
@@ -144,6 +151,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void BrowseForm_Load(object sender, EventArgs e)
         {
+            AdSpot1.Show();
             RedirectSpinner.Hide();
             Stream.uiMode = "None";
             Stream.settings.autoStart = false;
@@ -233,10 +241,33 @@ namespace LBN_Competitive_System_Simulation
         {
             redirectTimer.Stop();
             this.Hide();
-            AdvertisementForm af = new AdvertisementForm(userID);
+            AdvertisementForm af = new AdvertisementForm(userID, spad);
             var _return = af.ShowDialog();
 
-            if (_return == DialogResult.OK) { this.Show();  browseInit(); }
+            if (_return == DialogResult.OK) 
+            {
+                if (af.IsDeployed)
+                {
+                    ad = (Bitmap)af.AdImage[0];
+                    switch ((string)af.AdImage[1])
+                    {
+                        case "左側工作欄下方":
+                            AdSpot1.Image = ad;
+                            spad = ad;
+                            break;
+                        case "主要瀏覽頁面中右側":
+                            AdSpot2.Image = ad;
+                            break;
+                        case "實況頁面下方":
+                            AdSpot3.Image = ad;
+                            break;
+                    }
+                }
+                userID = af.UserID;
+                WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
+                this.Show();  
+                browseInit(); 
+            }
             Contact.Enabled = true;
             Exit.Enabled = true;
             RedirectSpinner.Hide();

@@ -160,6 +160,9 @@
   <ItemGroup>
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
+    <Content Include="Concepts\Concept Ad 1.png" />
+    <Content Include="Concepts\Concept Ad 2.png" />
+    <Content Include="Concepts\Concept Ad 3.png" />
     <Content Include="Resources\Background.png" />
     <None Include="Resources\Spinner.gif" />
     <None Include="Resources\Browse.png" />
@@ -175,6 +178,9 @@
     <None Include="Resources\Info.png" />
     <None Include="Resources\PasswordInvisible.png" />
     <None Include="Resources\PasswordVisible.png" />
+    <None Include="Resources\Placeholder1.png" />
+    <None Include="Resources\Placeholder2.png" />
+    <None Include="Resources\Placeholder3.png" />
     <Content Include="Snapshots\BrowseScreen.png" />
     <Content Include="Snapshots\MainScreen.png" />
     <None Include="Resources\Submit.png" />

@@ -140,6 +140,7 @@ namespace LBN_Competitive_System_Simulation.Forms
                 btn_quo_change.PerformClick(); // Simulate a click on the Send Message button
             }
         }
+
         private void Notify_CheckedChanged(object sender, EventArgs e)
         {
             if (userInfo[2] == null) userInfo[2] = true;

@@ -14,10 +14,20 @@ namespace LBN_Competitive_System_Simulation.Forms
     public partial class DeploymentSubform : Form
     {
         private ID userID;
-        private double[] arguments = new double[2] {0,0};
+        private double[] arguments = new double[2] { 0, 0 };
         private bool updated = false, isDeployed = false;
-        private Bitmap image = null;
-        public Bitmap Image
+        private object[] image = new object[]  { null, null };
+        private double total;
+
+        public bool IsDeployed
+        {
+            get { return isDeployed; }
+        }
+        public double Total
+        {
+            get { return total; }
+        }
+        public object[] Image
         {
             get { return image; }
         }
@@ -42,12 +52,8 @@ namespace LBN_Competitive_System_Simulation.Forms
             Warning_1.Hide();
             UserTag.Text = userID.Username;
             EndDate.MinDate = StartDate.Value;
+            UploadIndicator.Hide();
             Tick.Start();
-        }
-
-        public bool returnStatus()
-        {
-            return isDeployed;
         }
 
         private void Upload_Click(object sender, EventArgs e)
@@ -59,18 +65,31 @@ namespace LBN_Competitive_System_Simulation.Forms
                 FilterIndex = 1
             };
 
-            if (of.ShowDialog() == DialogResult.OK) { image = new Bitmap(of.FileName); AdPreview.Image = image; }
-            else MessageBox.Show("圖片檔案出現錯誤，請重新嘗試.", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            UploadIndicator.Show();
+
+            if (of.ShowDialog() == DialogResult.OK) 
+            {
+                image[0] = new Bitmap(of.FileName); 
+                AdPreview.Image = (Bitmap)image[0];
+                UploadIndicator.Text = "上傳成功!";
+                UploadIndicator.ForeColor = Color.LimeGreen;
+            }
+            else
+            {
+                MessageBox.Show("圖片檔案出現錯誤，請重新嘗試.", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                UploadIndicator.Text = "上傳失敗!";
+                UploadIndicator.ForeColor = Color.Firebrick;
+            } 
         }
 
         private void ChooseLocation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var currentPos = ChooseLocation.SelectedItem;
+            image[1] = ChooseLocation.SelectedItem;
 
-            if (currentPos == null) Warning_1.Show();
+            if (image[1] == null) Warning_1.Show();
             else
             {
-                arguments[0] = prices[currentPos.ToString()];
+                arguments[0] = prices[image[1].ToString()];
             }
         }
 
@@ -82,19 +101,18 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void EndDate_ValueChanged(object sender, EventArgs e)
         {
             if(!updated) updated = true;
-            arguments[1] = EndDate.Value.Subtract(StartDate.Value).TotalDays* 0.35;
+            arguments[1] = EndDate.Value.Subtract(StartDate.Value).TotalDays* 0.75;
         }
 
         private void Tick_Tick(object sender, EventArgs e)
         {
-            double total = arguments[0]*1.2*arguments[1];
+            total = arguments[0]*1.2*arguments[1];
             Cost.Text = $"{(int)total} 元 (美金)";
         }
 
         private void btn_deploy_Click(object sender, EventArgs e)
         {
-            double total = arguments[0] * 1.2 * arguments[1];
-
+            if (isDeployed) { MessageBox.Show("你已經有一個正在部屬的廣告!", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipDeployment; }
             if (image == null) { MessageBox.Show("你尚未上傳任何廣告圖片", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipDeployment; };
             if (total == 0 || !updated) { MessageBox.Show("你尚未填寫所有必要的資訊", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipDeployment; }
 
@@ -103,7 +121,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             if (result == DialogResult.Yes) { isDeployed = true; MessageBox.Show($"已成功刊登廣告!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 
             SkipDeployment:
-            Console.WriteLine("Skip");
+            ;
         }
     }
 }

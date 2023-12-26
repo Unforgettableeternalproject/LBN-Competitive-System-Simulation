@@ -41,7 +41,9 @@
             this.Contact = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Label();
             this.Tick = new System.Windows.Forms.Timer(this.components);
+            this.AdSpot = new System.Windows.Forms.PictureBox();
             this.SubPages.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot)).BeginInit();
             this.SuspendLayout();
             // 
             // SubPages
@@ -175,12 +177,24 @@
             // 
             this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
+            // AdSpot
+            // 
+            this.AdSpot.BackColor = System.Drawing.Color.Transparent;
+            this.AdSpot.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Placeholder11;
+            this.AdSpot.Location = new System.Drawing.Point(1, 560);
+            this.AdSpot.Name = "AdSpot";
+            this.AdSpot.Size = new System.Drawing.Size(237, 218);
+            this.AdSpot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot.TabIndex = 14;
+            this.AdSpot.TabStop = false;
+            // 
             // AdvertisementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Advertise_Front;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.AdSpot);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Contact);
             this.Controls.Add(this.Home);
@@ -198,6 +212,7 @@
             this.Load += new System.EventHandler(this.AdvertisementForm_Load);
             this.SubPages.ResumeLayout(false);
             this.SubPages.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,5 +231,6 @@
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Label Hint;
         private System.Windows.Forms.Timer Tick;
+        private System.Windows.Forms.PictureBox AdSpot;
     }
 }
