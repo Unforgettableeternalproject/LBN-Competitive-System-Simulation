@@ -67,22 +67,22 @@
     <Compile Include="Forms\AdvertisementForm.Designer.cs">
       <DependentUpon>AdvertisementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DeploymentSubform.cs">
+    <Compile Include="Forms\Subforms\DeploymentSubform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DeploymentSubform.Designer.cs">
+    <Compile Include="Forms\Subforms\DeploymentSubform.Designer.cs">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\InfoSubform.cs">
+    <Compile Include="Forms\Subforms\InfoSubform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InfoSubform.Designer.cs">
+    <Compile Include="Forms\Subforms\InfoSubform.Designer.cs">
       <DependentUpon>InfoSubform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProfitSubform.cs">
+    <Compile Include="Forms\Subforms\ProfitSubform.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProfitSubform.Designer.cs">
+    <Compile Include="Forms\Subforms\ProfitSubform.Designer.cs">
       <DependentUpon>ProfitSubform.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
@@ -108,10 +108,10 @@
     <EmbeddedResource Include="Forms\ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DeploymentSubform.resx">
+    <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\InfoSubform.resx">
+    <EmbeddedResource Include="Forms\Subforms\InfoSubform.resx">
       <DependentUpon>InfoSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LoginForm.resx">
@@ -120,7 +120,7 @@
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProfitSubform.resx">
+    <EmbeddedResource Include="Forms\Subforms\ProfitSubform.resx">
       <DependentUpon>ProfitSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
