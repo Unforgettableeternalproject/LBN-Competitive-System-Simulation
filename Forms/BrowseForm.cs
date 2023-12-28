@@ -1,4 +1,5 @@
 ﻿using AxWMPLib;
+using LBN_Competitive_System_Simulation.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,6 +22,7 @@ namespace LBN_Competitive_System_Simulation
         private Random random = new Random();
         private double videoPosition = 0;
         private string Mode = "Browse";
+        private Bitmap ad, spad;
 
         private List<string> prewrittenMessages = new List<string>
         {
@@ -42,7 +45,8 @@ namespace LBN_Competitive_System_Simulation
             "???????????",
             "急了",
             "0",
-            "這不是肯德基"
+            "這不是肯德基",
+            "這就是ㄘㄨㄚˋ執政的下場!"
         };
 
         private List<string> demoIDs = new List<string>
@@ -58,6 +62,14 @@ namespace LBN_Competitive_System_Simulation
             "三哥",
             "約德爾游擊隊"
         };
+        public BrowseForm(ID userID)
+        {
+            InitializeComponent();
+            browseInit();
+            this.userID = userID;
+            if (userID.Username != "Anonymous") WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
+            else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
+        }
         private void UpdateUI()
         {
             // Update labels with the current stream time and viewer count
@@ -69,6 +81,31 @@ namespace LBN_Competitive_System_Simulation
             ChatMessage.AppendText($"[❦] {user}: {message}\n");
             ChatMessage.ScrollToCaret(); // Scroll to the end to show the latest messages
         }
+
+        private void advertiseInit()
+        {
+            Mode = "Redirect";
+            this.BackgroundImage = Properties.Resources.Empty;
+            AdSpot2.Hide();
+            AdSpot3.Hide();
+            RedirectSpinner.Show();
+            btn_return.Hide();
+            btn_send.Hide();
+            ChatMessage.Hide();
+            ChatTextbox.Hide();
+            StreamTime.Hide();
+            ViewersCount.Hide();
+            WelcomeMessage.Hide();
+            ExampleVideo.Hide();
+            SwitchRole.Hide();
+            Stream.Ctlcontrols.stop();
+            timerStream.Stop();
+            Stream.Hide();
+            Home.Hide();
+            Contact.Enabled = false;
+            Exit.Enabled = false;
+            redirectTimer.Start();
+        }
         private void browseInit()
         {
             Mode = "Browse";
@@ -78,14 +115,16 @@ namespace LBN_Competitive_System_Simulation
             Contact.Show();
             SwitchRole.Show();
             ExampleVideo.Show();
+            AdSpot2.Show();
+            AdSpot3.Hide();
             btn_return.Hide();
             btn_send.Hide();
             ChatMessage.Hide();
             ChatTextbox.Hide();
             StreamTime.Hide();
             ViewersCount.Hide();
-            Console.WriteLine("Pos: {0}", videoPosition);
             Stream.Ctlcontrols.stop();
+            Home.Hide();
             timerStream.Stop();
             Stream.Hide();
         }
@@ -97,9 +136,12 @@ namespace LBN_Competitive_System_Simulation
             WelcomeMessage.Hide();
             ExampleVideo.Hide();
             SwitchRole.Hide();
+            AdSpot2.Hide();
+            AdSpot3.Show();
             btn_return.Show();
             btn_send.Show();
             ChatMessage.Show();
+            Home.Show();
             ChatMessage.Enabled = false;
             ChatTextbox.Show();
             StreamTime.Show();
@@ -110,22 +152,19 @@ namespace LBN_Competitive_System_Simulation
             Stream.Ctlcontrols.play();
             Stream.Ctlcontrols.currentPosition = videoPosition;
         }
-        public BrowseForm(ID userID)
-        {
-            InitializeComponent();
-            browseInit();
-            this.userID = userID;
-            if (userID.Username != "Anonymous") WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
-            else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
-        }
 
         private void BrowseForm_Load(object sender, EventArgs e)
         {
+            AdSpot1.Show();
+            RedirectSpinner.Hide();
             Stream.uiMode = "None";
             Stream.settings.autoStart = false;
             Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources\Demo.mp4"));
             Stream.settings.setMode("loop", false);
             ChatMessage.Enter += (s, args) => { this.ActiveControl = null; };
+            ChatTextbox.KeyDown += this.Pressed_Key;
+            toolTip.SetToolTip(btn_return, "返回上一頁");
+            toolTip.SetToolTip(Home, "返回主瀏覽介面");
         }
 
         private void ExampleVideo_Click(object sender, EventArgs e)
@@ -191,15 +230,59 @@ namespace LBN_Competitive_System_Simulation
         private void Contact_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            ContactForm cf = new ContactForm(userID);
+            ContactForm cf = new ContactForm(userID, true);
             cf.FormClosed += ContactForm_FormClosed;
             cf.ShowDialog();
+
+            if (cf.getRedirect()) advertiseInit();
             cf.Dispose();
         }
 
         private void ContactForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Enabled = true;
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            btn_return.PerformClick();
+        }
+
+        private void redirectTimer_Tick(object sender, EventArgs e)
+        {
+            redirectTimer.Stop();
+            this.Hide();
+            AdvertisementForm af = new AdvertisementForm(userID, spad);
+            var _return = af.ShowDialog();
+
+            if (_return == DialogResult.OK) 
+            {
+                if (af.IsDeployed)
+                {
+                    ad = (Bitmap)af.AdImage[0];
+                    switch ((string)af.AdImage[1])
+                    {
+                        case "左側工作欄下方":
+                            AdSpot1.Image = ad;
+                            spad = ad;
+                            break;
+                        case "主要瀏覽頁面中右側":
+                            AdSpot2.Image = ad;
+                            break;
+                        case "實況頁面下方":
+                            AdSpot3.Image = ad;
+                            break;
+                    }
+                }
+                userID = af.UserID;
+                WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
+                this.Show();  
+                browseInit(); 
+            }
+            Contact.Enabled = true;
+            Exit.Enabled = true;
+            RedirectSpinner.Hide();
+            af.Dispose();
         }
     }
 }

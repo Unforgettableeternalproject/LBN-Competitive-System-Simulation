@@ -18,12 +18,46 @@ namespace LBN_Competitive_System_Simulation
     {
         String Mode = "Login";
         private ID userID = null;
-        private bool errorMsg = false;
+        private bool errorMsg = false, passwordToggle = true, allowAnonymous = true;
+        private string type = null;
+
+        public LoginForm(string _type, bool _allowAnonymous)
+        {
+            InitializeComponent();
+            type = _type;
+            allowAnonymous = _allowAnonymous;
+            Mode = "Login";
+            this.Text = "Login Window";
+            this.BackgroundImage = Properties.Resources.LoginForm;
+            btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
+            clearFields();
+            ToggleInvis.Show();
+            txt_Email.Hide();
+            txt_ConfirmPW.Hide();
+            if (allowAnonymous) Anonymous.Show();
+            else Anonymous.Hide();
+
+            Register.Text = "註冊";
+        }
+
+        private void LoginFrom_Load(object sender, EventArgs e)
+        {
+            txt_Username.Location = new Point(115, 335);
+            txt_Password.Location = new Point(115, 443);
+            txt_Password.PasswordChar = '*';
+            txt_ConfirmPW.PasswordChar = '*';
+            btn_confirm.Location = new Point(155, 523);
+            toolTip.SetToolTip(ToggleInvis, "顯示/隱藏密碼");
+            txt_Username.KeyDown += Pressed_Key;
+            txt_Password.KeyDown += Pressed_Key;
+            txt_Email.KeyDown += Pressed_Key;
+            txt_ConfirmPW.KeyDown += Pressed_Key;
+        }
         private ID Validation(string username, string password)
         {
             bool flag = false;
             ID result = new ID();
-            var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
+            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -68,7 +102,7 @@ namespace LBN_Competitive_System_Simulation
                 emailVaild = false;
             }
 
-            var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
+            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -120,7 +154,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void newID(ID _new)
         {
-            var read = new StreamReader(@"..\..\ExampleIDs\NormalUserID.json");
+            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             read.Close();
@@ -129,7 +163,7 @@ namespace LBN_Competitive_System_Simulation
             IDList.Add(_new);
 
             json = JsonConvert.SerializeObject(IDList);
-            var writer = new StreamWriter(@"..\..\ExampleIDs\NormalUserID.json");
+            var writer = new StreamWriter($@"..\..\ExampleIDs\{type}UserID.json");
             writer.Write(json);
 
             writer.Flush();
@@ -160,10 +194,12 @@ namespace LBN_Competitive_System_Simulation
                     txt_Email.Show();
                     txt_ConfirmPW.Show();
                     Anonymous.Hide();
+                    ToggleInvis.Hide();
                     Register.Text = "返回";
                     break;
                 case "Register":
                     Mode = "Login";
+                    passwordToggle = true;
                     this.Text = "Login Window";
                     this.BackgroundImage = Properties.Resources.LoginForm;
                     btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
@@ -172,7 +208,10 @@ namespace LBN_Competitive_System_Simulation
                     btn_confirm.Location = new Point(155, 523);
                     txt_Email.Hide();
                     txt_ConfirmPW.Hide();
-                    Anonymous.Show();
+                    if (allowAnonymous) Anonymous.Show();
+                    ToggleInvis.Show();
+                    ToggleInvis.BackgroundImage = Properties.Resources.PasswordInvisible;
+                    txt_Password.PasswordChar = '*';
                     Register.Text = "註冊";
                     break;
                 default:
@@ -183,22 +222,6 @@ namespace LBN_Competitive_System_Simulation
         public ID returnID()
         {
             return userID;
-        }
-        public LoginForm()
-        {
-            InitializeComponent();
-            Mode = "Login";
-            this.Text = "Login Window";
-            this.BackgroundImage = Properties.Resources.LoginForm;
-            btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
-            clearFields();
-            txt_Username.Location = new Point(115, 335);
-            txt_Password.Location = new Point(115, 443);
-            btn_confirm.Location = new Point(155, 523);
-            txt_Email.Hide();
-            txt_ConfirmPW.Hide();
-            Anonymous.Show();
-            Register.Text = "註冊";
         }
 
         private void Pressed_Key(object sender, KeyEventArgs e)
@@ -234,7 +257,7 @@ namespace LBN_Competitive_System_Simulation
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text))
+                    if (!errorMsg && (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text)))
                     {
                         MessageBox.Show("帳號與密碼為必填欄位!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         errorMsg = true;
@@ -259,9 +282,20 @@ namespace LBN_Competitive_System_Simulation
             }
         }
 
-        private void LoginFrom_Load(object sender, EventArgs e)
+        private void ToggleInvis_Click(object sender, EventArgs e)
         {
-
+            if (passwordToggle)
+            {
+                ToggleInvis.BackgroundImage = Properties.Resources.PasswordVisible;
+                txt_Password.PasswordChar = '\0';
+                passwordToggle = false;
+            }
+            else
+            {
+                ToggleInvis.BackgroundImage = Properties.Resources.PasswordInvisible;
+                txt_Password.PasswordChar = '*';
+                passwordToggle = true;
+            }
         }
     }
     public class ID
@@ -269,17 +303,21 @@ namespace LBN_Competitive_System_Simulation
         public string Username;
         public string Password;
         public string Email;
+        public string UUID;
         public ID()
         {
             Username = null;
             Password = null;
             Email = null;
+            UUID = null;
         }
         public ID(string username, string password, string email)
         {
+            Guid myuuid = Guid.NewGuid();
             Username = username;
             Password = password;
             Email = email;
+            UUID = myuuid.ToString();
         }
     }
 }

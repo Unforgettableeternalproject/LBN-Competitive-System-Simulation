@@ -43,7 +43,18 @@
             this.ViewersCount = new System.Windows.Forms.Label();
             this.Stream = new AxWMPLib.AxWindowsMediaPlayer();
             this.timerStream = new System.Windows.Forms.Timer(this.components);
+            this.RedirectSpinner = new System.Windows.Forms.PictureBox();
+            this.redirectTimer = new System.Windows.Forms.Timer(this.components);
+            this.AdSpot1 = new System.Windows.Forms.PictureBox();
+            this.AdSpot2 = new System.Windows.Forms.PictureBox();
+            this.AdSpot3 = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.Home = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot3)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeMessage
@@ -132,7 +143,6 @@
             this.ChatTextbox.Name = "ChatTextbox";
             this.ChatTextbox.Size = new System.Drawing.Size(309, 35);
             this.ChatTextbox.TabIndex = 6;
-            this.ChatTextbox.KeyDown += this.Pressed_Key;
             // 
             // btn_send
             // 
@@ -196,13 +206,79 @@
             this.timerStream.Interval = 1000;
             this.timerStream.Tick += new System.EventHandler(this.timerStream_Tick);
             // 
+            // RedirectSpinner
+            // 
+            this.RedirectSpinner.BackColor = System.Drawing.Color.Transparent;
+            this.RedirectSpinner.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Spinner;
+            this.RedirectSpinner.Location = new System.Drawing.Point(664, 224);
+            this.RedirectSpinner.Name = "RedirectSpinner";
+            this.RedirectSpinner.Size = new System.Drawing.Size(512, 512);
+            this.RedirectSpinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RedirectSpinner.TabIndex = 12;
+            this.RedirectSpinner.TabStop = false;
+            // 
+            // redirectTimer
+            // 
+            this.redirectTimer.Interval = 3000;
+            this.redirectTimer.Tick += new System.EventHandler(this.redirectTimer_Tick);
+            // 
+            // AdSpot1
+            // 
+            this.AdSpot1.BackColor = System.Drawing.Color.Transparent;
+            this.AdSpot1.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Placeholder1;
+            this.AdSpot1.Location = new System.Drawing.Point(-1, 560);
+            this.AdSpot1.Name = "AdSpot1";
+            this.AdSpot1.Size = new System.Drawing.Size(239, 219);
+            this.AdSpot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AdSpot1.TabIndex = 13;
+            this.AdSpot1.TabStop = false;
+            // 
+            // AdSpot2
+            // 
+            this.AdSpot2.BackColor = System.Drawing.Color.Transparent;
+            this.AdSpot2.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Placeholder3;
+            this.AdSpot2.Location = new System.Drawing.Point(1249, 433);
+            this.AdSpot2.Name = "AdSpot2";
+            this.AdSpot2.Size = new System.Drawing.Size(287, 431);
+            this.AdSpot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AdSpot2.TabIndex = 14;
+            this.AdSpot2.TabStop = false;
+            // 
+            // AdSpot3
+            // 
+            this.AdSpot3.BackColor = System.Drawing.Color.Transparent;
+            this.AdSpot3.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Placeholder2;
+            this.AdSpot3.Location = new System.Drawing.Point(235, 775);
+            this.AdSpot3.Name = "AdSpot3";
+            this.AdSpot3.Size = new System.Drawing.Size(910, 91);
+            this.AdSpot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.AdSpot3.TabIndex = 15;
+            this.AdSpot3.TabStop = false;
+            // 
+            // Home
+            // 
+            this.Home.BackColor = System.Drawing.Color.Transparent;
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.Location = new System.Drawing.Point(139, 22);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(43, 42);
+            this.Home.TabIndex = 16;
+            this.Home.UseVisualStyleBackColor = false;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // BrowseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Browse;
+            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Stream;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.Home);
+            this.Controls.Add(this.AdSpot3);
+            this.Controls.Add(this.AdSpot2);
+            this.Controls.Add(this.AdSpot1);
+            this.Controls.Add(this.RedirectSpinner);
             this.Controls.Add(this.Stream);
             this.Controls.Add(this.ViewersCount);
             this.Controls.Add(this.StreamTime);
@@ -222,6 +298,10 @@
             this.Text = "      ";
             this.Load += new System.EventHandler(this.BrowseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AdSpot3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,5 +322,12 @@
         private System.Windows.Forms.Label ViewersCount;
         private AxWMPLib.AxWindowsMediaPlayer Stream;
         private System.Windows.Forms.Timer timerStream;
+        private System.Windows.Forms.PictureBox RedirectSpinner;
+        private System.Windows.Forms.Timer redirectTimer;
+        private System.Windows.Forms.PictureBox AdSpot1;
+        private System.Windows.Forms.PictureBox AdSpot2;
+        private System.Windows.Forms.PictureBox AdSpot3;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button Home;
     }
 }

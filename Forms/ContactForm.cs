@@ -17,6 +17,25 @@ namespace LBN_Competitive_System_Simulation
         Random random = new Random();
         private ID userID;
         private bool[] entries = new bool[3] {false, false, false};
+        private bool redirect = false;
+
+        public ContactForm(ID userID, bool enableAdvertise)
+        {
+            InitializeComponent();
+            GenerateCaptcha();
+            if (enableAdvertise) Advertise.Show();
+            else Advertise.Hide();
+            this.userID = userID;
+            Title.KeyDown += Pressed_Key;
+            Title.Enter += Title_Enter;
+            Title.Leave += Title_Leave;
+            Message.KeyDown += Pressed_Key;
+            Message.Enter += Message_Enter;
+            Message.Leave += Message_Leave;
+            CaptchaBox.KeyDown += Pressed_Key;
+            CaptchaBox.Enter += CaptchaBox_Enter;
+            CaptchaBox.Leave += CaptchaBox_Leave;
+        }
 
         private bool Send(string title, string message)
         {
@@ -98,11 +117,9 @@ namespace LBN_Competitive_System_Simulation
             }
             return image;
         }
-        public ContactForm(ID userID)
+        public bool getRedirect()
         {
-            InitializeComponent();
-            GenerateCaptcha();
-            this.userID = userID;
+            return redirect;
         }
 
         private void ContactForm_Load(object sender, EventArgs e)
@@ -167,11 +184,14 @@ namespace LBN_Competitive_System_Simulation
                 if (result == DialogResult.OK) Close();
             }
             else Close();
+
+            redirect = false;
         }
 
         private void Advertise_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("廣告商後臺介面待添加", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            redirect = true;
+            Close();
         }
 
         private void Title_Enter(object sender, EventArgs e)

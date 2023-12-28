@@ -8,28 +8,30 @@
 
 "Well, not this time!"
 
-✎ Consider adding a database?
+✎ More graphics! More!
 
-✎ There will be more branching screens 
+✎ Different color theme for different types of users
 
-✎ Dashboards for admins and league owners and players
+✎ Dashboards for admins, league owners and players
 
-✎ Infrastructure for advertisers...?
+✎ Consider adding some more easter eggs?
 
 Contributors:
 	Currently None
 
 To-do list:
 
-	✧ Advertising Page
+	✧ Admin login and their dashboard Page
  
-	✧ Improved UX and UI
+	✧ Backend login interface
+
+	✧ Make the codes much more cleaner
  
-	✧ Perhaps add some SFXs?
+	✧ Perhaps adding some SFXs?
 
 Preserved for future check: git 3 steps
 1. ```git add .```
 2. ```git git commit -m "commit message"```
 3. ```git push```
 
-![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/BrowseScreen.png)
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/AdvertiserDashboard.png)
