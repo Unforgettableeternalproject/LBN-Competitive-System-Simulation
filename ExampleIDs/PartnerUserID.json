@@ -1,1 +1,29 @@
-[{"Username":"Bernie","Password":"123456","Email":"ptyc4076@gmail.com","UUID":"29fec91e-0c9b-4d83-9af8-4d276de1ff4b"},{"Username":"Test","Password":"test","Email":"Test@gmail.com","UUID":"00594c79-0e59-4ee2-a319-c3d0d016abb4"},{"Username":"046","Password":"6","Email":"046@gmail.com","UUID":"b81c306f-8ca9-4e85-82c5-fda1820456a0"},{"Username":"三哥","Password":"123","Email":"gm@gmail.com","UUID":"b041218d-e901-4e29-8fc3-24d33e51de90"}]
+[
+  {
+    "Username": "Bernie",
+    "Password": "123456",
+    "Email": "ptyc4076@gmail.com",
+    "UUID": "29fec91e-0c9b-4d83-9af8-4d276de1ff4b",
+    "Account": "4234567 2341432",
+    "Quota": "每雙月入/出帳",
+    "Notify": "False"
+  },
+  {
+    "Username": "Test",
+    "Password": "test",
+    "Email": "Test@gmail.com",
+    "UUID": "00594c79-0e59-4ee2-a319-c3d0d016abb4"
+  },
+  {
+    "Username": "046",
+    "Password": "6",
+    "Email": "046@gmail.com",
+    "UUID": "b81c306f-8ca9-4e85-82c5-fda1820456a0"
+  },
+  {
+    "Username": "三哥",
+    "Password": "123",
+    "Email": "gm@gmail.com",
+    "UUID": "b041218d-e901-4e29-8fc3-24d33e51de90"
+  }
+]

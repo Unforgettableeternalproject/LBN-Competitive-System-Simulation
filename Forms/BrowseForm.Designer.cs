@@ -48,6 +48,8 @@
             this.AdSpot1 = new System.Windows.Forms.PictureBox();
             this.AdSpot2 = new System.Windows.Forms.PictureBox();
             this.AdSpot3 = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.Home = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AdSpot1)).BeginInit();
@@ -253,6 +255,18 @@
             this.AdSpot3.TabIndex = 15;
             this.AdSpot3.TabStop = false;
             // 
+            // Home
+            // 
+            this.Home.BackColor = System.Drawing.Color.Transparent;
+            this.Home.FlatAppearance.BorderSize = 0;
+            this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Home.Location = new System.Drawing.Point(139, 22);
+            this.Home.Name = "Home";
+            this.Home.Size = new System.Drawing.Size(43, 42);
+            this.Home.TabIndex = 16;
+            this.Home.UseVisualStyleBackColor = false;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
+            // 
             // BrowseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -260,6 +274,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Stream;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.Home);
             this.Controls.Add(this.AdSpot3);
             this.Controls.Add(this.AdSpot2);
             this.Controls.Add(this.AdSpot1);
@@ -312,5 +327,7 @@
         private System.Windows.Forms.PictureBox AdSpot1;
         private System.Windows.Forms.PictureBox AdSpot2;
         private System.Windows.Forms.PictureBox AdSpot3;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button Home;
     }
 }

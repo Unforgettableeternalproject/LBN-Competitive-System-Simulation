@@ -47,7 +47,7 @@ namespace LBN_Competitive_System_Simulation
             txt_Password.PasswordChar = '*';
             txt_ConfirmPW.PasswordChar = '*';
             btn_confirm.Location = new Point(155, 523);
-
+            toolTip.SetToolTip(ToggleInvis, "顯示/隱藏密碼");
             txt_Username.KeyDown += Pressed_Key;
             txt_Password.KeyDown += Pressed_Key;
             txt_Email.KeyDown += Pressed_Key;

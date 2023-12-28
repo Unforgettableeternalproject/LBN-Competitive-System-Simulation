@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.txt_Email = new System.Windows.Forms.TextBox();
             this.txt_ConfirmPW = new System.Windows.Forms.TextBox();
             this.ToggleInvis = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // txt_Password
@@ -169,5 +171,6 @@
         private System.Windows.Forms.TextBox txt_Email;
         private System.Windows.Forms.TextBox txt_ConfirmPW;
         private System.Windows.Forms.Button ToggleInvis;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

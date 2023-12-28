@@ -159,6 +159,8 @@ namespace LBN_Competitive_System_Simulation
             Stream.settings.setMode("loop", false);
             ChatMessage.Enter += (s, args) => { this.ActiveControl = null; };
             ChatTextbox.KeyDown += this.Pressed_Key;
+            toolTip.SetToolTip(btn_return, "返回上一頁");
+            toolTip.SetToolTip(Home, "返回主瀏覽介面");
         }
 
         private void ExampleVideo_Click(object sender, EventArgs e)
@@ -235,6 +237,11 @@ namespace LBN_Competitive_System_Simulation
         private void ContactForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Enabled = true;
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            if (Mode == "Stream") btn_return.PerformClick();
         }
 
         private void redirectTimer_Tick(object sender, EventArgs e)

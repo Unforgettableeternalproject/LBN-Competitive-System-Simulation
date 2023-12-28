@@ -42,6 +42,7 @@
             this.Exit = new System.Windows.Forms.Label();
             this.Tick = new System.Windows.Forms.Timer(this.components);
             this.AdSpot = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SubPages.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdSpot)).BeginInit();
             this.SuspendLayout();
@@ -232,5 +233,6 @@
         private System.Windows.Forms.Label Hint;
         private System.Windows.Forms.Timer Tick;
         private System.Windows.Forms.PictureBox AdSpot;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

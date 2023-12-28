@@ -39,7 +39,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             Tick.Start();
             UserTag.Text = $"{userID.Username}";
-            Account.Text = userInfo[0] == null ? defaults[0] : userInfo[0];
+            Account.Text = userInfo[0] == null ? defaults[0] : $"{userInfo[0].Substring(0, 3)}**** {userInfo[0].Substring(7, 3)}****";
             Quota.Text = userInfo[1] == null ? defaults[1] : userInfo[1]; 
             Notify.Checked = userInfo[2] == null ? defaults[2] : userInfo[2];
             if(userInfo[0] == null) Account.ForeColor = Color.Firebrick;
@@ -64,33 +64,38 @@ namespace LBN_Competitive_System_Simulation.Forms
             {
                 if (user.Username == userID.Username && user.Password == userID.Password)
                 {
-                    userInfo[0] = user.Account;
-                    userInfo[1] = user.Quota;
-                    userInfo[2] = user.Notify == "True" ? true : false;
+                    userInfo[0] = user.Account.ToString();
+                    userInfo[1] = user.Quota.ToString();
+                    userInfo[2] = user.Notify.ToString() == "True" ? true : false;
                 }
             }
         }
 
-        //This WILL NOT work, and I am not going to fix this, fxxk it
         private void updateJSON()
         {
-            var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
-            var json = read.ReadToEnd();
+            var filePath = @"..\..\ExampleIDs\PartnerUserID.json";
 
-            read.Close();
-            read.Dispose();
+            // Read JSON from file
+            var json = File.ReadAllText(filePath);
 
+            // Deserialize JSON to dynamic array
             dynamic users = JsonConvert.DeserializeObject<ExpandoObject[]>(json);
-            foreach(dynamic user in users)
+
+            foreach (dynamic user in users)
             {
-                if(user.Username == userID.Username && user.Password == userID.Password)
+                if (user.Username == userID.Username && user.Password == userID.Password)
                 {
-                    Console.WriteLine("Hi");
                     user.Account = (string)userInfo[0];
                     user.Quota = (string)userInfo[1];
                     user.Notify = (bool)userInfo[2] ? "True" : "False";
                 }
             }
+
+            // Serialize modified dynamic array back to JSON
+            var updatedJson = JsonConvert.SerializeObject(users, Formatting.Indented);
+
+            // Write the updated JSON back to the file
+            File.WriteAllText(filePath, updatedJson);
         }
 
         private void btn_acc_change_Click(object sender, EventArgs e)
@@ -114,13 +119,14 @@ namespace LBN_Competitive_System_Simulation.Forms
             }
             else
             {
-                string result = String.Concat(AccountChange.Text.Where(c => !Char.IsWhiteSpace(c)));
+                string result = String.Concat(AccountChange.Text.Where(c => !Char.IsWhiteSpace(c))), display = "";
                 Console.WriteLine(result);
                 bool IsAllDigits(string s) => s.All(char.IsDigit);
                 if (result.Length == 14 && IsAllDigits(result))
                 {
                     MessageBox.Show("成功設定新的帳戶資料!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    userInfo[0] = $"{result.Substring(0, 3)}**** {result.Substring(7, 3)}****";
+                    userInfo[0] = $"{result.Substring(0, 7)} {result.Substring(7, 7)}";
+                    display = $"{result.Substring(0, 3)}**** {result.Substring(7, 3)}****";
                     Account.Text = userInfo[0];
                     Account.ForeColor = SystemColors.ControlText;
                     Account.Show();

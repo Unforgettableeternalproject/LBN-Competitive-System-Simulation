@@ -165,6 +165,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             AdvertisementDeploy.Hide();
             Dashboard.Hide();
             PersonalInfo.Hide();
+            toolTip.SetToolTip(Home, "返回主瀏覽介面");
         }
 
         private void btn_enter_Click(object sender, EventArgs e)
