@@ -257,7 +257,7 @@ namespace LBN_Competitive_System_Simulation
                 }
                 else
                 {
-                    if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text))
+                    if (!errorMsg && (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text)))
                     {
                         MessageBox.Show("帳號與密碼為必填欄位!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         errorMsg = true;

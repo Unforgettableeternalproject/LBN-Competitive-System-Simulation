@@ -185,7 +185,7 @@
             this.AdSpot.Location = new System.Drawing.Point(1, 560);
             this.AdSpot.Name = "AdSpot";
             this.AdSpot.Size = new System.Drawing.Size(237, 218);
-            this.AdSpot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AdSpot.TabIndex = 14;
             this.AdSpot.TabStop = false;
             // 

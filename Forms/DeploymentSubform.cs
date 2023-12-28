@@ -116,7 +116,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             if (image == null) { MessageBox.Show("你尚未上傳任何廣告圖片", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipDeployment; };
             if (total == 0 || !updated) { MessageBox.Show("你尚未填寫所有必要的資訊", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipDeployment; }
 
-            DialogResult result = MessageBox.Show($"這樣總共是{(int)total}，確認刊登?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult result = MessageBox.Show($"這樣總共是{(int)total}元，確認刊登?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (result == DialogResult.Yes) { isDeployed = true; MessageBox.Show($"已成功刊登廣告!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); }
 

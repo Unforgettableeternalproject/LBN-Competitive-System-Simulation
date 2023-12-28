@@ -45,7 +45,8 @@ namespace LBN_Competitive_System_Simulation
             "???????????",
             "急了",
             "0",
-            "這不是肯德基"
+            "這不是肯德基",
+            "這就是ㄘㄨㄚˋ執政的下場!"
         };
 
         private List<string> demoIDs = new List<string>
@@ -100,6 +101,7 @@ namespace LBN_Competitive_System_Simulation
             Stream.Ctlcontrols.stop();
             timerStream.Stop();
             Stream.Hide();
+            Home.Hide();
             Contact.Enabled = false;
             Exit.Enabled = false;
             redirectTimer.Start();
@@ -122,6 +124,7 @@ namespace LBN_Competitive_System_Simulation
             StreamTime.Hide();
             ViewersCount.Hide();
             Stream.Ctlcontrols.stop();
+            Home.Hide();
             timerStream.Stop();
             Stream.Hide();
         }
@@ -138,6 +141,7 @@ namespace LBN_Competitive_System_Simulation
             btn_return.Show();
             btn_send.Show();
             ChatMessage.Show();
+            Home.Show();
             ChatMessage.Enabled = false;
             ChatTextbox.Show();
             StreamTime.Show();
@@ -241,7 +245,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void Home_Click(object sender, EventArgs e)
         {
-            if (Mode == "Stream") btn_return.PerformClick();
+            btn_return.PerformClick();
         }
 
         private void redirectTimer_Tick(object sender, EventArgs e)

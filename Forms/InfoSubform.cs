@@ -64,9 +64,11 @@ namespace LBN_Competitive_System_Simulation.Forms
             {
                 if (user.Username == userID.Username && user.Password == userID.Password)
                 {
-                    userInfo[0] = user.Account.ToString();
-                    userInfo[1] = user.Quota.ToString();
-                    userInfo[2] = user.Notify.ToString() == "True" ? true : false;
+                    userInfo[0] = user.Account == null ? null : user.Account.ToString();
+                    userInfo[1] = user.Quota == null ? null : user.Quota.ToString();
+
+                    if (user.Notify == null) userInfo[2] = null;
+                    else userInfo[2] = user.Notify.ToString() == "True" ? true : false;
                 }
             }
         }
@@ -85,9 +87,9 @@ namespace LBN_Competitive_System_Simulation.Forms
             {
                 if (user.Username == userID.Username && user.Password == userID.Password)
                 {
-                    user.Account = (string)userInfo[0];
-                    user.Quota = (string)userInfo[1];
-                    user.Notify = (bool)userInfo[2] ? "True" : "False";
+                    if(userInfo[0] != null) user.Account = (string)userInfo[0];
+                    if (userInfo[1] != null) user.Quota = (string)userInfo[1];
+                    if (userInfo[2] != null) user.Notify = (bool)userInfo[2] ? "True" : "False";
                 }
             }
 

@@ -229,7 +229,7 @@
             this.AdSpot1.Location = new System.Drawing.Point(-1, 560);
             this.AdSpot1.Name = "AdSpot1";
             this.AdSpot1.Size = new System.Drawing.Size(239, 219);
-            this.AdSpot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AdSpot1.TabIndex = 13;
             this.AdSpot1.TabStop = false;
             // 
@@ -240,7 +240,7 @@
             this.AdSpot2.Location = new System.Drawing.Point(1249, 433);
             this.AdSpot2.Name = "AdSpot2";
             this.AdSpot2.Size = new System.Drawing.Size(287, 431);
-            this.AdSpot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AdSpot2.TabIndex = 14;
             this.AdSpot2.TabStop = false;
             // 
@@ -251,7 +251,7 @@
             this.AdSpot3.Location = new System.Drawing.Point(235, 775);
             this.AdSpot3.Name = "AdSpot3";
             this.AdSpot3.Size = new System.Drawing.Size(910, 91);
-            this.AdSpot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.AdSpot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AdSpot3.TabIndex = 15;
             this.AdSpot3.TabStop = false;
             // 
