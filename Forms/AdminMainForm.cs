@@ -18,5 +18,21 @@ namespace LBN_Competitive_System_Simulation.Forms
             InitializeComponent();
             userID = _userID;
         }
+
+        private void ViewAsPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserManagement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SwitchRole_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
     }
 }

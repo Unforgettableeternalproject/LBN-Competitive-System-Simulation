@@ -220,11 +220,14 @@ namespace LBN_Competitive_System_Simulation
             txt_Username.Location = new Point(115, 257);
             txt_Password.Location = new Point(115, 404);
             btn_confirm.Location = new Point(155, 538);
+            ToggleInvis.Location = new Point(396, 407);
             txt_DoubleCheck.Hide();
             txt_Email.Show();
             txt_ConfirmPW.Show();
             Anonymous.Hide();
-            ToggleInvis.Hide();
+            ToggleInvis.Show();
+            ToggleInvis.BackgroundImage = Properties.Resources.PasswordInvisible;
+            txt_Password.PasswordChar = '*';
         }
 
         private void specialInit()

@@ -173,6 +173,7 @@
     <None Include="Resources\SwitchOff.png" />
     <None Include="Resources\SwitchOn.png" />
     <None Include="Resources\btn_ConfirmAdmin.png" />
+    <None Include="Resources\ExpandChat.png" />
     <Content Include="Snapshots\AdvertiserDashboard.png" />
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />

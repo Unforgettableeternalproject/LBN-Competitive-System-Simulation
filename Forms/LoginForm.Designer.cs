@@ -121,7 +121,7 @@
             this.txt_ConfirmPW.Location = new System.Drawing.Point(115, 478);
             this.txt_ConfirmPW.Name = "txt_ConfirmPW";
             this.txt_ConfirmPW.Size = new System.Drawing.Size(316, 31);
-            this.txt_ConfirmPW.TabIndex = 4;
+            this.txt_ConfirmPW.TabIndex = 3;
             // 
             // ToggleInvis
             // 
@@ -134,7 +134,7 @@
             this.ToggleInvis.Location = new System.Drawing.Point(396, 389);
             this.ToggleInvis.Name = "ToggleInvis";
             this.ToggleInvis.Size = new System.Drawing.Size(26, 26);
-            this.ToggleInvis.TabIndex = 3;
+            this.ToggleInvis.TabIndex = 5;
             this.toolTip.SetToolTip(this.ToggleInvis, "顯示/隱藏密碼");
             this.ToggleInvis.UseVisualStyleBackColor = false;
             this.ToggleInvis.Click += new System.EventHandler(this.ToggleInvis_Click);
@@ -161,7 +161,7 @@
             this.txt_DoubleCheck.Location = new System.Drawing.Point(115, 480);
             this.txt_DoubleCheck.Name = "txt_DoubleCheck";
             this.txt_DoubleCheck.Size = new System.Drawing.Size(316, 31);
-            this.txt_DoubleCheck.TabIndex = 5;
+            this.txt_DoubleCheck.TabIndex = 4;
             // 
             // LoginForm
             // 
