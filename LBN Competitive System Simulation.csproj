@@ -67,6 +67,12 @@
     <Compile Include="Forms\AdvertisementForm.Designer.cs">
       <DependentUpon>AdvertisementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\DeploymentSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdvertisementForm.resx">
       <DependentUpon>AdvertisementForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,8 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Admin_Base.png" />
+    <None Include="Resources\AdminLogin.png" />
     <Content Include="Snapshots\AdvertiserDashboard.png" />
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
