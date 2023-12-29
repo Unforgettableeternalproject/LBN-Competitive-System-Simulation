@@ -3,7 +3,28 @@
     "Username": "Bernie",
     "Password": "123456",
     "Email": "ptyc4076@gmail.com",
-    "UUID": "2bdb777b-01e0-430c-833a-0e0d0374e9d1",
+    "UUID": "bcd2611f-a230-41e6-bd31-f4eac0d98cb5",
     "Role": "Admin"
+  },
+  {
+    "Username": "Bernie",
+    "Password": "123456",
+    "Email": "ptyc4076@gmail.com",
+    "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
+    "Role": "Player"
+  },
+  {
+    "Username": "Vanity",
+    "Password": "654321",
+    "Email": "notptyc4076@gmail.com",
+    "UUID": "1100b01a-220c-4bb4-bc8b-5d5a365ee90d",
+    "Role": "League Owner"
+  },
+  {
+    "Username": "Special",
+    "Password": "512354",
+    "Email": "sp@gmail.com",
+    "UUID": "a8038855-dbb4-4dbc-8674-556639ba229a",
+    "Role": "Player"
   }
 ]
