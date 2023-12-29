@@ -119,15 +119,12 @@ namespace LBN_Competitive_System_Simulation.Forms
             WelcomeMessage.Text = $"歡迎回來, {userID.Username}\n\n今天過得如何?";
             ds = new DeploymentSubform(userID);
             ds.TopLevel = false;
-            ds.FormBorderStyle = FormBorderStyle.None;
             ds.Dock = DockStyle.Fill;
             ps = new ProfitSubform(userID);
             ps.TopLevel = false;
-            ps.FormBorderStyle = FormBorderStyle.None;
             ps.Dock = DockStyle.Fill;
             us = new InfoSubform(userID);
             us.TopLevel = false;
-            us.FormBorderStyle = FormBorderStyle.None;
             us.Dock = DockStyle.Fill;
             if (newUser) { MessageBox.Show("新用戶請先設定帳戶資訊和配額方式!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); infoInit(); }
             else deployInit();
@@ -176,14 +173,13 @@ namespace LBN_Competitive_System_Simulation.Forms
 
             if (!successfulLogin) goto SkipAccountCreation;
 
-            if (isExist(userID)) { proceed = true; userID.Role = "Partner"; }
+            if (isExist(userID)) { proceed = true; }
             else
             {
                 var createNew = MessageBox.Show("將以現有帳號加入合作夥伴計畫，是否繼續?", "資訊", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (createNew == DialogResult.Yes)
                 {
                     register(userID);
-                    userID.Role = "Partner";
                     proceed = true;
                     newUser = true;
                 }
@@ -197,7 +193,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("你確定要離開系統嗎?", "離開系統?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("您確定要離開系統嗎?", "離開系統?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // If the user clicks Yes, close the application
             if (result == DialogResult.Yes)

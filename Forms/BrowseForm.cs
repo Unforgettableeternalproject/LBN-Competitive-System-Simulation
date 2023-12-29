@@ -218,7 +218,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("你確定要離開系統嗎?", "離開系統?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("您確定要離開系統嗎?", "離開系統?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // If the user clicks Yes, close the application
             if (result == DialogResult.Yes)

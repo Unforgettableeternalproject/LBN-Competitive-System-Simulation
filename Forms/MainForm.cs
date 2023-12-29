@@ -72,6 +72,7 @@ namespace LBN_Competitive_System_Simulation
                     }
                     else
                     {
+                        WelcomeDisplay.ForeColor = Color.FromArgb(145, 204, 161);
                         MessageBox.Show("登入失敗!", "資訊", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         WelcomeDisplay.Text = "登入程序出現錯誤，請重新嘗試!";
                         WelcomeDisplay.Show();
@@ -139,7 +140,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void WelcomeDisplay_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("欸? 你找到了隱藏小彩蛋!", "恭喜!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("欸? 您找到了隱藏小彩蛋!", "恭喜!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Introduction_Click(object sender, EventArgs e)

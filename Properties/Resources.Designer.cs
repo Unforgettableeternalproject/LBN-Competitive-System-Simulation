@@ -123,6 +123,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap btn_Add {
+            get {
+                object obj = ResourceManager.GetObject("btn_Add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap btn_Confirm {
             get {
                 object obj = ResourceManager.GetObject("btn_Confirm", resourceCulture);
@@ -136,6 +146,26 @@ namespace LBN_Competitive_System_Simulation.Properties {
         internal static System.Drawing.Bitmap btn_ConfirmAdmin {
             get {
                 object obj = ResourceManager.GetObject("btn_ConfirmAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_Delete {
+            get {
+                object obj = ResourceManager.GetObject("btn_Delete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_Edit {
+            get {
+                object obj = ResourceManager.GetObject("btn_Edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -406,6 +436,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         internal static System.Drawing.Bitmap SwitchOn {
             get {
                 object obj = ResourceManager.GetObject("SwitchOn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap UMPage {
+            get {
+                object obj = ResourceManager.GetObject("UMPage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

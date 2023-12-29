@@ -98,7 +98,7 @@ namespace LBN_Competitive_System_Simulation
 
         private ID Verification(string username, string email, string password, string confirmPassword)
         {
-            bool emailVaild = true;
+            bool emailValid = true;
             bool repeated = false;
             try
             {
@@ -106,7 +106,7 @@ namespace LBN_Competitive_System_Simulation
             }
             catch
             {
-                emailVaild = false;
+                emailValid = false;
             }
 
             var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
@@ -144,7 +144,7 @@ namespace LBN_Competitive_System_Simulation
                     return null;
                 }
 
-                if (!emailVaild)
+                if (!emailValid)
                 {
                     MessageBox.Show("電子郵件地址格式不正確，請檢察輸入的資料!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return null;
@@ -386,11 +386,11 @@ namespace LBN_Competitive_System_Simulation
     }
     public class ID
     {
-        public string Username;
-        public string Password;
-        public string Email;
-        public string UUID;
-        public string Role;
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
+        public string UUID { get; set; }
+        public string Role { get; set; }
         public ID()
         {
             Username = null;
@@ -410,6 +410,11 @@ namespace LBN_Competitive_System_Simulation
         public ID(string username, string password, string email, string role) : this(username, password, email)
         {
             Role = role;
+        }
+
+        public ID(string username, string password, string email, string role, string uUID) : this(username, password, email, role)
+        {
+            UUID = uUID;
         }
     }
 }
