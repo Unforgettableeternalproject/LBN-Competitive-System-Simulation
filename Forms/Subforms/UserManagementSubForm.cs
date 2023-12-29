@@ -250,8 +250,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if (SpecialUsers.Checked && cbox_Roles.SelectedItem != null)
             {
-                cbox_UserType.Items.Clear();
-                cbox_UserType.Items.AddRange(new object[] { "玩家", "聯盟所有人" });
                 switch (cbox_Roles.SelectedIndex)
                 {
                     case 0:

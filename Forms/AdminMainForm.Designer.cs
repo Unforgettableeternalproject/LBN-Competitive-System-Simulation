@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMainForm));
             this.Home = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Label();
             this.SwitchRole = new System.Windows.Forms.Label();
@@ -251,6 +252,7 @@
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.Home);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

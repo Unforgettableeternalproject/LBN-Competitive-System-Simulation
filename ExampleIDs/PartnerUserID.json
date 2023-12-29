@@ -2,7 +2,7 @@
   {
     "Account": "1234567 0123456",
     "Quota": "",
-    "Notify": false,
+    "Notify": "True",
     "Username": "Bernie",
     "Password": "123456",
     "Email": "ptyc4076@gmail.com",
