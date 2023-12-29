@@ -12,9 +12,11 @@ namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class AdminMainForm : Form
     {
-        public AdminMainForm()
+        private ID userID;
+        public AdminMainForm(ID _userID)
         {
             InitializeComponent();
+            userID = _userID;
         }
     }
 }

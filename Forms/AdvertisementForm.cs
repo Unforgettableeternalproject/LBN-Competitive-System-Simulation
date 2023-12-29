@@ -71,7 +71,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private bool reLogin()
         {
             bool success = false;
-            LoginForm relogin = new LoginForm("Normal", false);
+            LoginForm relogin = new LoginForm(false);
             var result = relogin.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -176,13 +176,14 @@ namespace LBN_Competitive_System_Simulation.Forms
 
             if (!successfulLogin) goto SkipAccountCreation;
 
-            if (isExist(userID)) { proceed = true; }
+            if (isExist(userID)) { proceed = true; userID.Role = "Partner"; }
             else
             {
                 var createNew = MessageBox.Show("將以現有帳號加入合作夥伴計畫，是否繼續?", "資訊", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (createNew == DialogResult.Yes)
                 {
                     register(userID);
+                    userID.Role = "Partner";
                     proceed = true;
                     newUser = true;
                 }

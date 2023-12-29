@@ -138,6 +138,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Concepts\Concept Art.pdf" />
+    <None Include="ExampleIDs\SpecialUserID.json" />
     <None Include="ExampleIDs\PartnerUserID.json" />
     <None Include="ExampleIDs\NormalUserID.json" />
     <None Include="packages.config" />
@@ -169,6 +170,9 @@
   <ItemGroup>
     <None Include="Resources\Admin_Base.png" />
     <None Include="Resources\AdminLogin.png" />
+    <None Include="Resources\SwitchOff.png" />
+    <None Include="Resources\SwitchOn.png" />
+    <None Include="Resources\btn_ConfirmAdmin.png" />
     <Content Include="Snapshots\AdvertiserDashboard.png" />
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
