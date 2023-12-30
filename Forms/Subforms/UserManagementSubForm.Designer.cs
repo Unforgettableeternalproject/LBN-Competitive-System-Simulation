@@ -67,7 +67,6 @@
             this.DataGrid.RowTemplate.Height = 24;
             this.DataGrid.Size = new System.Drawing.Size(871, 484);
             this.DataGrid.TabIndex = 0;
-            this.DataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGrid_CellContentClick);
             // 
             // NormalUsers
             // 
@@ -153,6 +152,7 @@
             this.btn_edit.Size = new System.Drawing.Size(142, 65);
             this.btn_edit.TabIndex = 4;
             this.btn_edit.UseVisualStyleBackColor = false;
+            this.btn_edit.Click += new System.EventHandler(this.btn_edit_Click);
             // 
             // btn_delete
             // 

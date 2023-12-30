@@ -7,20 +7,6 @@
     "Role": "Normal"
   },
   {
-    "Username": "Test",
-    "Password": "test",
-    "Email": "Test@gmail.com",
-    "UUID": "62634182-f5ff-46ed-b6a5-cec2fd68368b",
-    "Role": "Normal"
-  },
-  {
-    "Username": "046",
-    "Password": "6",
-    "Email": "046@gmail.com",
-    "UUID": "c0ae8691-b0fe-41b2-a457-1e1c781b70d1",
-    "Role": "Normal"
-  },
-  {
     "Username": "三哥",
     "Password": "123",
     "Email": "gm@gmail.com",
@@ -42,13 +28,6 @@
     "Role": "Normal"
   },
   {
-    "Username": "jj",
-    "Password": "jj",
-    "Email": "jj@gmail.com",
-    "UUID": "fd360e82-6097-4bae-9302-547c0f196e9c",
-    "Role": "Normal"
-  },
-  {
     "Username": "Hobo",
     "Password": "hobohobho",
     "Email": "hobo@gmail.com",
@@ -60,6 +39,27 @@
     "Password": "1212",
     "Email": "te@gmail.com",
     "UUID": "c104a793-9299-47ad-9c97-cf5ff514845e",
+    "Role": "Normal"
+  },
+  {
+    "Username": "Test",
+    "Password": "test",
+    "Email": "Test@gmail.com",
+    "UUID": "62634182-f5ff-46ed-b6a5-cec2fd68368b",
+    "Role": "Normal"
+  },
+  {
+    "Username": "jjjj",
+    "Password": "jjjj",
+    "Email": "jj@gmail.com",
+    "UUID": "fd360e82-6097-4bae-9302-547c0f196e9c",
+    "Role": "Normal"
+  },
+  {
+    "Username": "046",
+    "Password": "666",
+    "Email": "046@gmail.com",
+    "UUID": "c0ae8691-b0fe-41b2-a457-1e1c781b70d1",
     "Role": "Normal"
   }
 ]

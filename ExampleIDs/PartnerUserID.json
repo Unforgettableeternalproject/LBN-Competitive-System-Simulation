@@ -2,31 +2,11 @@
   {
     "Account": "1234567 0123456",
     "Quota": "",
-    "Notify": "True",
+    "Notify": true,
     "Username": "Bernie",
     "Password": "123456",
     "Email": "ptyc4076@gmail.com",
     "UUID": "09f24fff-1e2f-45b2-ba81-d3e5732eedb8",
-    "Role": "Normal"
-  },
-  {
-    "Account": "",
-    "Quota": "",
-    "Notify": false,
-    "Username": "Test",
-    "Password": "test",
-    "Email": "Test@gmail.com",
-    "UUID": "62634182-f5ff-46ed-b6a5-cec2fd68368b",
-    "Role": "Normal"
-  },
-  {
-    "Account": "",
-    "Quota": "",
-    "Notify": false,
-    "Username": "Te",
-    "Password": "121",
-    "Email": "te@gmail.com",
-    "UUID": "99394c6a-0f6d-4452-809c-2b9d7ed8f201",
     "Role": "Normal"
   },
   {
@@ -53,10 +33,10 @@
     "Account": "",
     "Quota": "",
     "Notify": false,
-    "Username": "jj",
-    "Password": "jj",
-    "Email": "jj@gmail.com",
-    "UUID": "fd360e82-6097-4bae-9302-547c0f196e9c",
+    "Username": "Te",
+    "Password": "121",
+    "Email": "te@gmail.com",
+    "UUID": "99394c6a-0f6d-4452-809c-2b9d7ed8f201",
     "Role": "Normal"
   }
 ]

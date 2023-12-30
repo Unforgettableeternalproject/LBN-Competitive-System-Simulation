@@ -22,8 +22,8 @@ namespace LBN_Competitive_System_Simulation
             var testCase = new ID("Bernie", "123456", "ptyc4076@gmail.com", "Admin");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-        //    Application.Run(new AdminMainForm(testCase));
-            Application.Run(new MainPage());
+            Application.Run(new AdminMainForm(testCase));
+        //    Application.Run(new MainPage());
         }
     }
 }

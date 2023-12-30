@@ -108,7 +108,8 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void Tick_Tick(object sender, EventArgs e)
         {
-            people += random.Next(-7, 10);
+            people += random.Next(random.Next(-18, -3), random.Next(3, 18));
+            if (people < 0) people = 0;
             OnlineCount.Text = $"{people} 人";
         }
 

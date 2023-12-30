@@ -17,15 +17,17 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
     public partial class UserManagementSubForm : Form
     {
         private ID userID;
-        private IDwithPartnerCheck selectedUser;
+        private IDwithPartnerCheck originalUser;
         private string Mode = "None", Users = "None";
+        bool isFirstClick = true;
         public UserManagementSubForm(ID _userID)
         {
             InitializeComponent();
             userID = _userID;
             cbox_UserType.DropDown += Cbox_UserType_DropDown;
+            cbox_UserType.DropDownClosed += Cbox_UserType_DropDownClosed;
+            DataGrid.CellClick += DataGrid_CellClick;
         }
-
         private void DoNothing()
         {
             ;
@@ -35,6 +37,9 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             Hint.Show();
             cbox_UserType.Items.Clear();
             cbox_UserType.Items.AddRange(new object[] { "一般用戶", "合作夥伴" });
+            DataGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DataGrid.MultiSelect = false;
+            DataGrid.SelectionChanged += DataGrid_SelectionChanged;
             overallInit();
         }
         private bool isExist(ID newUser, bool isPartner = false)
@@ -54,6 +59,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private void overallInit()
         {
             Mode = "None";
+            originalUser = null;
+            isFirstClick = true;
             lbl_Email.Hide();
             lbl_Password.Hide();
             lbl_Username.Hide();
@@ -73,9 +80,34 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_delete.Show();
             btn_edit.Show();
             RadioBtns.Enabled = true;
+            isFirstClick = true;
             lbl_Select.Show();
         }
 
+        private void editInit()
+        {
+            Mode = "Edit";
+            lbl_Email.Show();
+            lbl_Password.Show();
+            lbl_Username.Show();
+            lbl_UserType.Show();
+            lbl_Partner.Show();
+            txt_Email.Show();
+            txt_Password.Show();
+            txt_Username.Show();
+            cbox_UserType.Show();
+            chk_Partner.Show();
+            Confim.Show();
+            Cancel.Show();
+            btn_add.Hide();
+            btn_delete.Hide();
+            btn_edit.Hide();
+            Confim.Text = "確認並更改";
+            RadioBtns.Enabled = false;
+
+            if (Users == "Normal") { lbl_Partner.Enabled = true; chk_Partner.Enabled = true; lbl_UserType.Enabled = true; cbox_UserType.Enabled = true; }
+            else { lbl_Partner.Enabled = false; chk_Partner.Enabled = false; lbl_UserType.Enabled = false; cbox_UserType.Enabled = false; }
+        }
         private void addInit()
         {
             Mode = "Add";
@@ -95,7 +127,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_delete.Hide();
             btn_edit.Hide();
             RadioBtns.Enabled = false;
-
+            Confim.Text = "確認並添加";
             if(Users == "Normal") { lbl_Partner.Enabled = true; chk_Partner.Enabled = true; lbl_UserType.Enabled = true; cbox_UserType.Enabled = true; }
             else { lbl_Partner.Enabled = false; chk_Partner.Enabled = false; lbl_UserType.Enabled = false; cbox_UserType.Enabled = false; }
         }
@@ -160,6 +192,82 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             }
         }
 
+        private void editUsers(IDwithPartnerCheck revisedUser)
+        {
+            if(Users == "Normal")
+            {
+                var userList_n = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
+                var userList_p = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleIDs\PartnerUserID.json"));
+                string usersJson = "", usersJson2 = "";
+                if (originalUser.IsPartner == revisedUser.IsPartner)
+                {
+                    if(originalUser.IsPartner == "True")
+                    {
+                        userList_p.RemoveAll(u => u.UUID == originalUser.UUID);
+                        userList_n.RemoveAll(u => u.UUID == originalUser.UUID);
+                        userList_p.Add(new PartnerID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
+                        userList_n.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
+                        usersJson = JsonConvert.SerializeObject(userList_p, Formatting.Indented);
+                        usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
+
+                        File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
+                        File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                    }
+                    else
+                    {
+                        userList_n.RemoveAll(u => u.UUID == originalUser.UUID);
+                        userList_n.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
+                        usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
+
+                        File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                    }
+                }
+                if(originalUser.IsPartner == "True" && revisedUser.IsPartner == "False")
+                {
+                    userList_p.RemoveAll(u => u.UUID == originalUser.UUID);
+                    userList_n.RemoveAll(u => u.UUID == originalUser.UUID);
+                    userList_n.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
+                    usersJson = JsonConvert.SerializeObject(userList_p, Formatting.Indented);
+                    usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
+                    File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
+                    File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                }
+                if(originalUser.IsPartner == "False" && revisedUser.IsPartner == "True")
+                {
+                    userList_n.RemoveAll(u => u.UUID == originalUser.UUID);
+                    userList_p.Add(new PartnerID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
+                    userList_n.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
+                    usersJson = JsonConvert.SerializeObject(userList_p, Formatting.Indented);
+                    usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
+                    File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
+                    File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                }
+                gridInit("Normal");
+            }
+            else
+            {
+                var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\SpecialUserID.json"));
+                userList.RemoveAll(u => u.UUID == originalUser.UUID);
+                userList.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
+                string usersJson = JsonConvert.SerializeObject(userList, Formatting.Indented);
+
+                // Write the JSON to the file
+                File.WriteAllText(@"..\..\ExampleIDs\SpecialUserID.json", usersJson);
+                gridInit("Special", revisedUser.Role);
+            }
+
+            originalUser = null;
+            txt_Email.Text = "";
+            txt_Password.Text = "";
+            txt_Username.Text = "";
+            if(Users == "Normal") 
+            {
+                chk_Partner.Checked = false;
+                cbox_UserType.Text = "選擇類型...";
+                cbox_UserType.ForeColor = SystemColors.GrayText;
+            }
+            isFirstClick = true;
+        }
         private void addUsers(IDwithPartnerCheck newUser)
         {
             if(Users == "Normal") 
@@ -208,14 +316,78 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 gridInit("Special", newUser.Role);
             }
         }
-        private void DataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (Mode == "Add" || Mode == "None") return;
+            if (isFirstClick)
+            {
+                isFirstClick = false;
+                if (DataGrid.CurrentRow != null && Users == "Normal" && DataGrid.CurrentRow.DataBoundItem is IDwithPartnerCheck selectedUser)
+                {
+                        // Display the selected user's information in the text boxes
+                    originalUser = selectedUser;
+                    txt_Username.Text = selectedUser.Username;
+                    txt_Password.Text = selectedUser.Password;
+                    txt_Email.Text = selectedUser.Email;
+                    cbox_UserType.ForeColor = SystemColors.ControlText;
+                    cbox_UserType.SelectedIndex = cbox_UserType.FindStringExact(selectedUser.IsPartner == "True" ? "合作夥伴" : "一般用戶");
+                }else if (DataGrid.CurrentRow != null && Users != "Normal" && DataGrid.CurrentRow.DataBoundItem is ID selectedUser_s)
+                {
+                    var transID = new IDwithPartnerCheck(selectedUser_s);
+                    originalUser = transID;
+                    txt_Username.Text = transID.Username;
+                    txt_Password.Text = transID.Password;
+                    txt_Email.Text = transID.Email;
+                }
+                else Console.WriteLine("Debug");
+            }
+            else
+            {
+                DialogResult result;
+                string strPartner = chk_Partner.Checked ? "True" : "False";
+                if (originalUser.Username == txt_Username.Text && originalUser.Password == txt_Password.Text && originalUser.Email == txt_Email.Text && originalUser.IsPartner == strPartner) result = DialogResult.Yes;
+                else result = MessageBox.Show("您還有未保存的變更，要捨棄並開始編輯其他用戶嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if(result == DialogResult.Yes)
+                {
+                    if (DataGrid.CurrentRow != null && Users == "Normal" && DataGrid.CurrentRow.DataBoundItem is IDwithPartnerCheck selectedUser)
+                    {
+                        // Display the selected user's information in the text boxes
+                        originalUser = selectedUser;
+                        txt_Username.Text = selectedUser.Username;
+                        txt_Password.Text = selectedUser.Password;
+                        txt_Email.Text = selectedUser.Email;
+                        cbox_UserType.ForeColor = SystemColors.ControlText;
+                        cbox_UserType.SelectedIndex = cbox_UserType.FindStringExact(selectedUser.IsPartner == "True" ? "合作夥伴" : "一般用戶");
+                    }
+                    else if (DataGrid.CurrentRow != null && Users != "Normal" && DataGrid.CurrentRow.DataBoundItem is ID selectedUser_s)
+                    {
+                        var transID = new IDwithPartnerCheck(selectedUser_s);
+                        originalUser = transID;
+                        txt_Username.Text = transID.Username;
+                        txt_Password.Text = transID.Password;
+                        txt_Email.Text = transID.Email;
+                    }
+                    else Console.WriteLine("Debug");
+                }
+                DoNothing();
+            }
         }
 
+        private void DataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DataGrid.SelectedRows.Count > 1)
+            {
+                MessageBox.Show("Please select only one row.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DataGrid.ClearSelection();
+            }
+        }
         private void NormalUsers_CheckedChanged(object sender, EventArgs e)
         {
             if (NormalUsers.Checked)
             {
+                cbox_UserType.Items.Clear();
+                cbox_UserType.Items.AddRange(new object[] { "一般用戶", "合作夥伴" });
                 Users = "Normal";
                 gridInit(Users);
                 cbox_Roles.SelectedItem = null;
@@ -228,12 +400,16 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if (SpecialUsers.Checked && cbox_Roles.SelectedItem != null)
             {
+                cbox_UserType.Items.Clear();
+                cbox_UserType.Items.AddRange(new object[] { "玩家", "聯盟所有者" });
                 switch (cbox_Roles.SelectedIndex)
                 {
                     case 0:
+                        cbox_UserType.SelectedIndex = 0;
                         Users = "Player";
                         break;
                     case 1:
+                        cbox_UserType.SelectedIndex = 1;
                         Users = "League Owner";
                         break;
                     default:
@@ -250,12 +426,16 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if (SpecialUsers.Checked && cbox_Roles.SelectedItem != null)
             {
+                cbox_UserType.Items.Clear();
+                cbox_UserType.Items.AddRange(new object[] { "玩家", "聯盟所有者" });
                 switch (cbox_Roles.SelectedIndex)
                 {
                     case 0:
+                        cbox_UserType.SelectedIndex = 0;
                         Users = "Player";
                         break;
                     case 1:
+                        cbox_UserType.SelectedIndex = 1;
                         Users = "League Owner";
                         break;
                     default:
@@ -271,6 +451,13 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if (Users != "None") addInit();
             else MessageBox.Show("你還沒有選擇一個用戶群體類型!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void btn_edit_Click(object sender, EventArgs e)
+        {
+            if (Users != "None") editInit();
+            else MessageBox.Show("你還沒有選擇一個用戶群體類型!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
         }
         private void Confim_Click(object sender, EventArgs e)
         {
@@ -290,14 +477,15 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             }
             if(string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email)) { MessageBox.Show("沒有填寫所有必要的欄位!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipEverything; }
             if(!emailValid) { MessageBox.Show("電子郵件地址格式不正確或者並非真實存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipEverything; }
-            if(usertype == null) { MessageBox.Show("沒有選擇一個合法的用戶類別!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipEverything; }
-            if (isExist(new ID(username, password, email, Users), chk_Partner.Checked)) { MessageBox.Show("該用戶已經存在於系統裡!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipEverything; }
+            if (usertype == null) { MessageBox.Show("沒有選擇一個合法的用戶類別!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipEverything; }
             switch (Mode)
             {
                 case "Add":
+                    if (isExist(new ID(username, password, email, Users), chk_Partner.Checked)) { MessageBox.Show("該用戶已經存在於系統裡!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipEverything; }
                     addUsers(new IDwithPartnerCheck(username, password, email, Users, isPartner));
                     break;
                 case "Edit":
+                    editUsers(new IDwithPartnerCheck(username, password, email, Users, isPartner));
                     break;
                 case "Delete":
                     break;
@@ -332,6 +520,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             cbox_UserType.ForeColor = SystemColors.ControlText;
         }
+
+        private void Cbox_UserType_DropDownClosed(object sender, EventArgs e)
+        {
+            if (cbox_UserType.SelectedItem == null) cbox_UserType.ForeColor = SystemColors.GrayText;
+        }
+
     }
     class IDwithPartnerCheck : ID
     {
@@ -340,6 +534,11 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         public IDwithPartnerCheck() : base()
         {
             IsPartner = "False"; // Default value
+        }
+
+        public IDwithPartnerCheck(ID baseID) : base(baseID.Username, baseID.Password, baseID.Email, baseID.Role, baseID.UUID)
+        {
+            IsPartner = "False";
         }
 
         public IDwithPartnerCheck(string username, string password, string email, string role, string isPartner = "false") : base(username, password, email, role)
