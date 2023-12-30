@@ -13,10 +13,12 @@ namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class AdminMainForm : Form
     {
-        private ID userID;
+        private List<Proposal> acceptedProposal = null;
+        private readonly ID userID;
         private readonly Random random = new Random();
         private int people = 0;
         private UserManagementSubForm um;
+        private GameProposalSubForm gp;
         public AdminMainForm(ID _userID)
         {
             InitializeComponent();
@@ -37,9 +39,16 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void overallInit()
         {
-            um = new UserManagementSubForm(userID);
-            um.TopLevel = false;
-            um.Dock = DockStyle.Fill;
+            um = new UserManagementSubForm
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            gp = new GameProposalSubForm
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
         }
         private void UMInit()
         {
@@ -51,7 +60,10 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void GPInit()
         {
-
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(gp);
+            SubPages.Tag = gp;
+            gp.Show();
         }
 
         private void GMInit()
@@ -111,6 +123,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             people += random.Next(random.Next(-18, -3), random.Next(3, 18));
             if (people < 0) people = 0;
             OnlineCount.Text = $"{people} 人";
+            acceptedProposal = gp.AcceptedProposals;
         }
 
         private void Exit_Click(object sender, EventArgs e)

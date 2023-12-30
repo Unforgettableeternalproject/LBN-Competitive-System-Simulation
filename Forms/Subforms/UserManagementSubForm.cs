@@ -17,14 +17,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     public partial class UserManagementSubForm : Form
     {
-        private ID userID;
         private IDwithPartnerCheck originalUser;
         private string Mode = "None", Users = "None";
         bool isFirstClick = true;
-        public UserManagementSubForm(ID _userID)
+        public UserManagementSubForm()
         {
             InitializeComponent();
-            userID = _userID;
             cbox_UserType.DropDown += Cbox_UserType_DropDown;
             cbox_UserType.DropDownClosed += Cbox_UserType_DropDownClosed;
             DataGrid.CellClick += DataGrid_CellClick;
@@ -636,38 +634,39 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             if (cbox_UserType.SelectedItem == null) cbox_UserType.ForeColor = SystemColors.GrayText;
         }
 
+        private class IDwithPartnerCheck : ID
+        {
+            public string IsPartner { get; set; }
+
+            public IDwithPartnerCheck() : base()
+            {
+                IsPartner = "False"; // Default value
+            }
+
+            public IDwithPartnerCheck(ID baseID) : base(baseID.Username, baseID.Password, baseID.Email, baseID.Role, baseID.UUID)
+            {
+                IsPartner = "False";
+            }
+
+            public IDwithPartnerCheck(string username, string password, string email, string role, string isPartner = "false") : base(username, password, email, role)
+            {
+                IsPartner = isPartner;
+            }
+        }
+
+        private class PartnerID : ID
+        {
+            public string Account { get; set; }
+            public string Quota { get; set; }
+            public bool Notify { get; set; }
+
+            public PartnerID(string username, string password, string email, string role, string uUID) : base(username, password, email, role, uUID)
+            {
+                Account = "";
+                Quota = "";
+                Notify = false;
+            }
+        }
     }
-    class IDwithPartnerCheck : ID
-    {
-        public string IsPartner { get; set; }
-
-        public IDwithPartnerCheck() : base()
-        {
-            IsPartner = "False"; // Default value
-        }
-
-        public IDwithPartnerCheck(ID baseID) : base(baseID.Username, baseID.Password, baseID.Email, baseID.Role, baseID.UUID)
-        {
-            IsPartner = "False";
-        }
-
-        public IDwithPartnerCheck(string username, string password, string email, string role, string isPartner = "false") : base(username, password, email, role)
-        {
-            IsPartner = isPartner;
-        }
-    }
-
-    class PartnerID : ID
-    {
-        public string Account { get; set; }
-        public string Quota { get; set; }
-        public bool Notify { get; set; }
-
-        public PartnerID(string username, string password, string email, string role, string uUID) : base(username, password, email, role, uUID)
-        {
-            Account = "";
-            Quota = "";
-            Notify = false;
-        }
-    }
+  
 }

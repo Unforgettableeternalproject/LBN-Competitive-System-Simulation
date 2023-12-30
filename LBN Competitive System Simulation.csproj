@@ -79,6 +79,12 @@
     <Compile Include="Forms\Subforms\DeploymentSubform.Designer.cs">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Subforms\GameProposalSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\GameProposalSubForm.Designer.cs">
+      <DependentUpon>GameProposalSubForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\UserManagementSubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\GameProposalSubForm.resx">
+      <DependentUpon>GameProposalSubForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\InfoSubform.resx">
       <DependentUpon>InfoSubform.cs</DependentUpon>
@@ -187,6 +196,8 @@
     <None Include="Resources\btn_Add.png" />
     <None Include="Resources\btn_Edit.png" />
     <None Include="Resources\btn_Delete.png" />
+    <None Include="Resources\GPPage.png" />
+    <None Include="Resources\NewRequest.png" />
     <Content Include="Snapshots\AdvertiserDashboard.png" />
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
