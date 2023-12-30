@@ -86,7 +86,14 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void ViewAsGuest_Click(object sender, EventArgs e)
         {
-
+            DialogResult = MessageBox.Show("將以訪客身分檢視一般瀏覽頁面，是否繼續?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(DialogResult == DialogResult.Yes)
+            {
+                this.Hide();
+                BrowseForm readOnly = new BrowseForm(new ID("Anonymous", "Not Required", "None", "Admin"), true);
+                readOnly.ShowDialog();
+                this.Show();
+            }
         }
         private void UserManagement_Click(object sender, EventArgs e)
         {

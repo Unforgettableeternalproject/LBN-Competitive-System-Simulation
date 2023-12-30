@@ -112,10 +112,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void Proposal_Tick_Tick(object sender, EventArgs e)
         {
-            if(delayTime > 0) { delayTime--; return; }
+            if(delayTime > 0) { delayTime--; goto SkipCreation; }
             if (random.Next(20) == 1) { proposals.Add(GenerateRandomProposal()); delayTime = 5; }
 
+            SkipCreation:
             if (proposals.Count > 0) ShowAndDeploy();
+            else if(!hasProposal) HideAndClear();
         }
 
         private void ContactLO_Click(object sender, EventArgs e)

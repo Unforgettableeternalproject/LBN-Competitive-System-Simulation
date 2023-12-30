@@ -223,6 +223,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap DMPage {
+            get {
+                object obj = ResourceManager.GetObject("DMPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Empty {
             get {
                 object obj = ResourceManager.GetObject("Empty", resourceCulture);
@@ -266,6 +276,26 @@ namespace LBN_Competitive_System_Simulation.Properties {
         internal static System.Drawing.Bitmap GPPage {
             get {
                 object obj = ResourceManager.GetObject("GPPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Graph_1 {
+            get {
+                object obj = ResourceManager.GetObject("Graph_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Graph_2 {
+            get {
+                object obj = ResourceManager.GetObject("Graph_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

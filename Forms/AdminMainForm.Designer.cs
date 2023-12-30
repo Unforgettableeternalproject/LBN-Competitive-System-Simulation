@@ -136,6 +136,8 @@
             // 
             this.ViewAsGuest.BackColor = System.Drawing.Color.Transparent;
             this.ViewAsGuest.FlatAppearance.BorderSize = 0;
+            this.ViewAsGuest.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.ViewAsGuest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.ViewAsGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewAsGuest.Location = new System.Drawing.Point(1358, 383);
             this.ViewAsGuest.Name = "ViewAsGuest";
@@ -148,6 +150,8 @@
             // 
             this.ViewAsPlayer.BackColor = System.Drawing.Color.Transparent;
             this.ViewAsPlayer.FlatAppearance.BorderSize = 0;
+            this.ViewAsPlayer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.ViewAsPlayer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.ViewAsPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewAsPlayer.Location = new System.Drawing.Point(1358, 343);
             this.ViewAsPlayer.Name = "ViewAsPlayer";
