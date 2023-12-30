@@ -13,30 +13,10 @@
     "Account": "",
     "Quota": "",
     "Notify": false,
-    "Username": "Hobo",
-    "Password": "hobohobho",
-    "Email": "hobo@gmail.com",
-    "UUID": "527fd2cc-4794-43f4-a335-7effd3984f99",
-    "Role": "Normal"
-  },
-  {
-    "Account": "",
-    "Quota": "",
-    "Notify": false,
-    "Username": "Ted",
-    "Password": "1212",
-    "Email": "te@gmail.com",
-    "UUID": "c104a793-9299-47ad-9c97-cf5ff514845e",
-    "Role": "Normal"
-  },
-  {
-    "Account": "",
-    "Quota": "",
-    "Notify": false,
-    "Username": "Te",
-    "Password": "121",
-    "Email": "te@gmail.com",
-    "UUID": "99394c6a-0f6d-4452-809c-2b9d7ed8f201",
+    "Username": "四弟",
+    "Password": "123",
+    "Email": "gm@gmail.com",
+    "UUID": "3da03d2c-38ab-485d-b88d-f17fbcac61ca",
     "Role": "Normal"
   }
 ]

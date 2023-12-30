@@ -166,6 +166,7 @@
             this.btn_delete.Size = new System.Drawing.Size(142, 65);
             this.btn_delete.TabIndex = 5;
             this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // lbl_Select
             // 
