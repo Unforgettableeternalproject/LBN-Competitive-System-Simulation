@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SLWindow = new System.Windows.Forms.RichTextBox();
             this.ClearLog = new System.Windows.Forms.Button();
             this.CopytoClipBoard = new System.Windows.Forms.Button();
+            this.Tick = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // SLWindow
@@ -53,6 +55,7 @@
             this.ClearLog.TabIndex = 1;
             this.ClearLog.Text = "清除所有紀錄";
             this.ClearLog.UseVisualStyleBackColor = true;
+            this.ClearLog.Click += new System.EventHandler(this.ClearLog_Click);
             // 
             // CopytoClipBoard
             // 
@@ -63,6 +66,12 @@
             this.CopytoClipBoard.TabIndex = 2;
             this.CopytoClipBoard.Text = "複製到剪貼簿";
             this.CopytoClipBoard.UseVisualStyleBackColor = true;
+            this.CopytoClipBoard.Click += new System.EventHandler(this.CopytoClipBoard_Click);
+            // 
+            // Tick
+            // 
+            this.Tick.Interval = 1000;
+            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
             // SystemLogSubForm
             // 
@@ -76,6 +85,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SystemLogSubForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.SystemLogSubForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -85,5 +95,6 @@
         private System.Windows.Forms.RichTextBox SLWindow;
         private System.Windows.Forms.Button ClearLog;
         private System.Windows.Forms.Button CopytoClipBoard;
+        private System.Windows.Forms.Timer Tick;
     }
 }

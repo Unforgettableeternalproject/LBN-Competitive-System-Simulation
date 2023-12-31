@@ -20,6 +20,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private UserManagementSubForm um;
         private GameProposalSubForm gp;
         private DataManagementSubForm dm;
+        private SystemLogSubForm sl;
         public AdminMainForm(ID _userID)
         {
             InitializeComponent();
@@ -55,6 +56,11 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
+            sl = new SystemLogSubForm
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
         }
         private void UMInit()
         {
@@ -82,7 +88,10 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void SLInit()
         {
-
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(sl);
+            SubPages.Tag = sl;
+            sl.Show();
         }
 
         private void CInit()
