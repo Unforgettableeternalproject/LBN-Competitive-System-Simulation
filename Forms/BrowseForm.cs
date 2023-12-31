@@ -82,6 +82,7 @@ namespace LBN_Competitive_System_Simulation
         private void AddMessage(string message, string user)
         {
             ChatMessage.AppendText($"[❦] {user}: {message}\n");
+            ChatMessage.SelectionStart = ChatMessage.Text.Length;
             ChatMessage.ScrollToCaret(); // Scroll to the end to show the latest messages
         }
 

@@ -127,6 +127,8 @@
             // 
             this.btn_Refresh.BackColor = System.Drawing.Color.Transparent;
             this.btn_Refresh.FlatAppearance.BorderSize = 0;
+            this.btn_Refresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btn_Refresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Location = new System.Drawing.Point(983, 81);
             this.btn_Refresh.Name = "btn_Refresh";

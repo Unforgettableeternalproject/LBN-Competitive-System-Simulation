@@ -20,8 +20,16 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             "正在初始化..."
         }, randomLog = new List<string>()
         {
-            "米糕",
-            "蛋糕"
+            "系統一切正常",
+            "直播介面穩定運作中",
+            "瀏覽介面穩定運作中",
+            "合作夥伴後台介面穩定運作中",
+            "玩家儀表板介面穩定運作中",
+            "聯盟所有人儀表板介面穩定運作中",
+            "註冊程序正常",
+            "偵測到不明網路流量，正在查明緣由",
+            "處理傳輸資訊當中...等待網路",
+            "偵測到不明攻擊嘗試，正在查明緣由"
         };
         private Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private int loadtime = 3;
@@ -38,6 +46,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             SLWindow.Enabled = false;
             SLWindow.Clear();
             SLWindow.Lines = log.ToArray();
+            SLWindow.SelectionStart = SLWindow.Text.Length;
             SLWindow.ScrollToCaret();
             Tick.Start();
         }
@@ -46,11 +55,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             SLWindow.Clear();
             SLWindow.Lines = log.ToArray();
+            SLWindow.SelectionStart = SLWindow.Text.Length;
             SLWindow.ScrollToCaret();
         }
         private void addLog()
         {
-            log.Add(randomLog[random.Next(randomLog.Count)]);
+            log.Add($"[{DateTime.Now.ToLocalTime()}]: {randomLog[random.Next(randomLog.Count)]}");
         }
 
         private void ClearLog_Click(object sender, EventArgs e)
