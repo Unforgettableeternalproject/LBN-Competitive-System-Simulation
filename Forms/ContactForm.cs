@@ -213,7 +213,7 @@ namespace LBN_Competitive_System_Simulation
             {
                 entries[0] = false;
                 Title.Text = prompt;
-                Title.ForeColor = SystemColors.ScrollBar;
+                Title.ForeColor = SystemColors.GrayText;
             }
         }
 
@@ -236,7 +236,7 @@ namespace LBN_Competitive_System_Simulation
             {
                 entries[1] = false;
                 Message.Text = prompt;
-                Message.ForeColor = SystemColors.ScrollBar;
+                Message.ForeColor = SystemColors.GrayText;
             }
         }
 
@@ -259,7 +259,7 @@ namespace LBN_Competitive_System_Simulation
             {
                 entries[2] = false;
                 CaptchaBox.Text = prompt;
-                CaptchaBox.ForeColor = SystemColors.ScrollBar;
+                CaptchaBox.ForeColor = SystemColors.GrayText;
             }
         }
     }

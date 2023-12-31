@@ -21,6 +21,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private GameProposalSubForm gp;
         private DataManagementSubForm dm;
         private SystemLogSubForm sl;
+        private CalendarSubForm c;
         public AdminMainForm(ID _userID)
         {
             InitializeComponent();
@@ -61,13 +62,22 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
+            c = new CalendarSubForm
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            um.Show();
+            gp.Show();
+            dm.Show();
+            sl.Show();
+            c.Show();
         }
         private void UMInit()
         {
             SubPages.Controls.Clear();
             SubPages.Controls.Add(um);
             SubPages.Tag = um;
-            um.Show();
         }
 
         private void GPInit()
@@ -75,7 +85,6 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(gp);
             SubPages.Tag = gp;
-            gp.Show();
         }
 
         private void GMInit()
@@ -83,7 +92,6 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(dm);
             SubPages.Tag = dm;
-            dm.Show();
         }
 
         private void SLInit()
@@ -91,12 +99,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(sl);
             SubPages.Tag = sl;
-            sl.Show();
         }
 
         private void CInit()
         {
-
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(c);
+            SubPages.Tag = c;
         }
         private void ViewAsPlayer_Click(object sender, EventArgs e)
         {
@@ -150,6 +159,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             OnlineCount.Text = $"{people} 人";
             acceptedProposal = gp.AcceptedProposals;
             dm.getProposals(acceptedProposal);
+            c.getProposals(acceptedProposal);
         }
 
         private void Exit_Click(object sender, EventArgs e)

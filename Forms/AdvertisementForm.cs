@@ -117,15 +117,24 @@ namespace LBN_Competitive_System_Simulation.Forms
             Dashboard.Show();
             PersonalInfo.Show();
             WelcomeMessage.Text = $"歡迎回來, {userID.Username}\n\n今天過得如何?";
-            ds = new DeploymentSubform(userID);
-            ds.TopLevel = false;
-            ds.Dock = DockStyle.Fill;
-            ps = new ProfitSubform(userID);
-            ps.TopLevel = false;
-            ps.Dock = DockStyle.Fill;
-            us = new InfoSubform(userID);
-            us.TopLevel = false;
-            us.Dock = DockStyle.Fill;
+            ds = new DeploymentSubform(userID)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            ps = new ProfitSubform(userID)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            us = new InfoSubform(userID)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            ds.Show();
+            ps.Show();
+            us.Show();
             if (newUser) { MessageBox.Show("新用戶請先設定帳戶資訊和配額方式!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); infoInit(); }
             else deployInit();
         }
@@ -135,7 +144,6 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(ds);
             SubPages.Tag = ds;
-            ds.Show();
         }
 
         private void dashboardInit()
@@ -144,7 +152,6 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(ps);
             SubPages.Tag = ps;
-            ps.Show();
         }
 
         private void infoInit()
@@ -152,7 +159,6 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(us);
             SubPages.Tag = us;
-            us.Show();
         }
         private void AdvertisementForm_Load(object sender, EventArgs e)
         {
