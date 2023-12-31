@@ -85,6 +85,12 @@
     <Compile Include="Forms\Subforms\DataManagementSubForm.Designer.cs">
       <DependentUpon>DataManagementSubForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Subforms\SystemLogSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\SystemLogSubForm.Designer.cs">
+      <DependentUpon>SystemLogSubForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\GameProposalSubForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\SystemLogSubForm.resx">
+      <DependentUpon>SystemLogSubForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\GameProposalSubForm.resx">
       <DependentUpon>GameProposalSubForm.cs</DependentUpon>
@@ -210,6 +219,7 @@
     <None Include="Resources\DMPage.png" />
     <None Include="Resources\Graph_2.gif" />
     <None Include="Resources\Graph_1.gif" />
+    <None Include="Resources\SLPage.png" />
     <Content Include="Snapshots\AdvertiserDashboard.png" />
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
