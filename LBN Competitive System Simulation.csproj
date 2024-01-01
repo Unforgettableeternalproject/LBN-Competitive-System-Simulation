@@ -73,6 +73,12 @@
     <Compile Include="Forms\AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlayerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerMainForm.Designer.cs">
+      <DependentUpon>PlayerMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\DeploymentSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <EmbeddedResource Include="Forms\ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerMainForm.resx">
+      <DependentUpon>PlayerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\CalendarSubform.resx">
       <DependentUpon>CalendarSubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -223,6 +232,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\StreamPreview.png" />
+    <None Include="Resources\Player_Base.png" />
     <Content Include="Snapshots\AdminScreen.png" />
     <None Include="Resources\Admin_Base.png" />
     <None Include="Resources\AdminLogin.png" />
