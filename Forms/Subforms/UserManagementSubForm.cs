@@ -15,12 +15,12 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    public partial class UserManagementSubForm : Form
+    public partial class UserManagementSubform : Form
     {
         private IDwithPartnerCheck originalUser;
         private string Mode = "None", Users = "None";
         bool isFirstClick = true;
-        public UserManagementSubForm()
+        public UserManagementSubform()
         {
             InitializeComponent();
             cbox_UserType.DropDown += Cbox_UserType_DropDown;

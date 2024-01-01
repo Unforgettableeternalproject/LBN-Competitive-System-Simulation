@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    public partial class CalendarSubForm : Form
+    public partial class CalendarSubform : Form
     { 
         private List<Proposal> eventList = null;
         private DateTime selectedDate, updateTime;
@@ -27,7 +27,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         public DateTime UpdateTime => updateTime;
 
-        public CalendarSubForm()
+        public CalendarSubform()
         {
             InitializeComponent();
             EventName.Enter += EventName_Enter;
@@ -156,7 +156,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             selectedDate = Calendar.SelectionStart;
             timeSpan = (int)(Calendar.SelectionEnd - Calendar.SelectionStart).TotalDays;
-            Console.WriteLine(selectedDate);
             updateDisplay();
             if(Mode != "View") updateFill(false);
         }

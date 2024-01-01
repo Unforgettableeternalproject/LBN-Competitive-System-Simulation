@@ -33,5 +33,12 @@
     "Email": "Test@gmail.com",
     "UUID": "62634182-f5ff-46ed-b6a5-cec2fd68368b",
     "Role": "Normal"
+  },
+  {
+    "Username": "很不錯",
+    "Password": "Itsgood",
+    "Email": "opopo@gmail.com",
+    "UUID": "5983122a-eef3-45bd-ad79-e2033b2d7471",
+    "Role": "Normal"
   }
 ]

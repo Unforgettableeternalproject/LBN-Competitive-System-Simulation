@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    public partial class GameProposalSubForm : Form
+    public partial class GameProposalSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;
 
@@ -49,6 +49,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private Proposal activeProposal = null;
         private int delayTime = 0;
         private DateTime updateTime;
+        private ChatroomSubform chatroom;
 
         public DateTime UpdateTime => updateTime;
         public List<Proposal> AcceptedProposals
@@ -56,9 +57,10 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             get { return acceptedProposals; }
             set { acceptedProposals = value; updateTime = DateTime.Now; }
         }
-        public GameProposalSubForm()
+        public GameProposalSubform(ChatroomSubform _chatroom)
         {
             InitializeComponent();
+            chatroom = _chatroom;
         }
         private void DoNothing()
         {
@@ -102,8 +104,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         private Proposal GenerateRandomProposal()
         {
-            // Implement logic to generate a random proposal
-            // (For simplicity, you can create a new Proposal with random data)
             return new Proposal(leagues[random.Next(leagues.Count)], DateTime.Now.AddDays(random.Next(30)), gameType[random.Next(gameType.Count)], gameFormat[random.Next(gameFormat.Count)], random.Next(5, 15));
         }
 
@@ -119,7 +119,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void ContactLO_Click(object sender, EventArgs e)
         {
-            //This is to be added
+            chatroom.outerAccess(activeProposal.LeagueName + "所有人", new List<string>() { "✎這是你們訊息的開端!\n" });
         }
 
         private void Decline_Click(object sender, EventArgs e)

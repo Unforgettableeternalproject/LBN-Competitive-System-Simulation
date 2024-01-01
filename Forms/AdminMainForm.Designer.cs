@@ -131,6 +131,7 @@
             this.ExpandChatroom.Size = new System.Drawing.Size(189, 57);
             this.ExpandChatroom.TabIndex = 2;
             this.ExpandChatroom.UseVisualStyleBackColor = false;
+            this.ExpandChatroom.Click += new System.EventHandler(this.ExpandChatroom_Click);
             // 
             // ViewAsGuest
             // 
@@ -163,9 +164,9 @@
             // Chatroom
             // 
             this.Chatroom.BackColor = System.Drawing.Color.Transparent;
-            this.Chatroom.Location = new System.Drawing.Point(1119, 430);
+            this.Chatroom.Location = new System.Drawing.Point(1102, 430);
             this.Chatroom.Name = "Chatroom";
-            this.Chatroom.Size = new System.Drawing.Size(417, 434);
+            this.Chatroom.Size = new System.Drawing.Size(434, 434);
             this.Chatroom.TabIndex = 3;
             // 
             // UserManagement
@@ -240,10 +241,10 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Admin_Base;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.Calendar);
             this.Controls.Add(this.SystemLog);
             this.Controls.Add(this.DataManagement);
-            this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.ExpandChatroom);
             this.Controls.Add(this.GameProposal);
             this.Controls.Add(this.UserManagement);

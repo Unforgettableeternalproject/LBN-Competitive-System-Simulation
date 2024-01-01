@@ -1,6 +1,6 @@
 ﻿namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    partial class SystemLogSubForm
+    partial class SystemLogSubform
     {
         /// <summary>
         /// Required designer variable.

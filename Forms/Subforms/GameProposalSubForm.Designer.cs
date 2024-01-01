@@ -1,6 +1,6 @@
 ﻿namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    partial class GameProposalSubForm
+    partial class GameProposalSubform
     {
         /// <summary>
         /// Required designer variable.

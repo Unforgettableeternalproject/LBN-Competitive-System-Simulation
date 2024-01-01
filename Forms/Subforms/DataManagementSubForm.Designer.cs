@@ -1,6 +1,6 @@
 ﻿namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    partial class DataManagementSubForm
+    partial class DataManagementSubform
     {
         /// <summary>
         /// Required designer variable.

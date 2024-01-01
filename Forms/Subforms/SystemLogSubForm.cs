@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    public partial class SystemLogSubForm : Form
+    public partial class SystemLogSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;
         private List<string> log = new List<string>()
@@ -33,7 +33,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         };
         private Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private int loadtime = 3;
-        public SystemLogSubForm()
+        public SystemLogSubform()
         {
             InitializeComponent();
         }

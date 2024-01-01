@@ -17,11 +17,12 @@ namespace LBN_Competitive_System_Simulation.Forms
         private readonly ID userID;
         private readonly Random random = new Random();
         private int people = 0;
-        private UserManagementSubForm um;
-        private GameProposalSubForm gp;
-        private DataManagementSubForm dm;
-        private SystemLogSubForm sl;
-        private CalendarSubForm c;
+        private UserManagementSubform um;
+        private GameProposalSubform gp;
+        private DataManagementSubform dm;
+        private SystemLogSubform sl;
+        private CalendarSubform c;
+        private ChatroomSubform chat;
         private DateTime updateTime;
         public AdminMainForm(ID _userID)
         {
@@ -43,27 +44,32 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void overallInit()
         {
-            um = new UserManagementSubForm
+            chat = new ChatroomSubform("Admin")
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            gp = new GameProposalSubForm
+            um = new UserManagementSubform
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            dm = new DataManagementSubForm
+            gp = new GameProposalSubform(chat)
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            sl = new SystemLogSubForm
+            dm = new DataManagementSubform
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            c = new CalendarSubForm
+            sl = new SystemLogSubform
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            c = new CalendarSubform
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
@@ -73,7 +79,12 @@ namespace LBN_Competitive_System_Simulation.Forms
             dm.Show();
             sl.Show();
             c.Show();
+            chat.Show();
+            chat.VisibleChanged += Chat_VisibleChanged;
+            Chatroom.Controls.Add(chat);
+            Chatroom.Tag = "active";
         }
+
         private void UMInit()
         {
             SubPages.Controls.Clear();
@@ -155,7 +166,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void Tick_Tick(object sender, EventArgs e)
         {
-            people += random.Next(random.Next(-18, -3), random.Next(3, 18));
+            people += random.Next(random.Next(-5, -3), random.Next(3, 5));
             if (people < 0) people = 0;
             OnlineCount.Text = $"{people} 人";
             if (DateTime.Compare(updateTime, gp.UpdateTime) < 0) { eventList = gp.AcceptedProposals; updateTime = DateTime.Now; }
@@ -185,6 +196,22 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void OnlineCount_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ExpandChatroom_Click(object sender, EventArgs e)
+        {
+            ExpandChatroom.Hide();
+            Chatroom.Show();
+            chat.Show();
+        }
+
+        private void Chat_VisibleChanged(object sender, EventArgs e)
+        {
+            if(chat.Visible == false)
+            {
+                ExpandChatroom.Show();
+                Chatroom.Hide();
+            }
         }
     }
 }

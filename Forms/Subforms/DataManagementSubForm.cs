@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    public partial class DataManagementSubForm : Form
+    public partial class DataManagementSubform : Form
     {
         private int leagueCount = 26, userCount = 0, gameCount = 0, errorCount = 0;
-        public DataManagementSubForm()
+        public DataManagementSubform()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
-    partial class CalendarSubForm
+    partial class CalendarSubform
     {
         /// <summary>
         /// Required designer variable.
