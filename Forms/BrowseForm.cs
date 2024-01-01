@@ -35,7 +35,7 @@ namespace LBN_Competitive_System_Simulation
             "777777777",
             "CNMBNMSL",
             "這個人看起來很解欸",
-            "現在購買SurfShark VPN再享五折優惠!!",
+            "哪門子的高爾夫球可以跳= =",
             "哈哈笑死",
             "我討厭高爾夫球= =",
             "自己加分，自己加分",
@@ -46,7 +46,8 @@ namespace LBN_Competitive_System_Simulation
             "急了",
             "0",
             "這不是肯德基",
-            "這就是ㄘㄨㄚˋ執政的下場!"
+            "這就是ㄘㄨㄚˋ執政的下場!",
+            "猛的內"
         };
 
         private readonly List<string> demoIDs = new List<string>

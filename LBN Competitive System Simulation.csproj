@@ -222,6 +222,8 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\StreamPreview.png" />
+    <Content Include="Snapshots\AdminScreen.png" />
     <None Include="Resources\Admin_Base.png" />
     <None Include="Resources\AdminLogin.png" />
     <None Include="Resources\SwitchOff.png" />
