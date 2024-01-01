@@ -17,7 +17,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         // Use the current time as the seed for the random number generator
         private List<Proposal> proposals = new List<Proposal>(), acceptedProposals = new List<Proposal>();
-        private List<string> leagues = new List<string>()
+        private readonly List<string> leagues = new List<string>()
         {
             "大美國聯合聯盟",
             "美麗島共和國",
@@ -26,31 +26,35 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             "啊對對隊",
             "大老鷹隊",
             "王國之淚五百小隊"
-        },
-                             gameType = new List<string>()
+        };
+        private readonly List<string> gameType = new List<string>()
         {
             "友誼賽",
             "邀請賽",
             "錦標賽",
             "聯盟賽",
             "猴友誼賽"
-        },
-                             gameFormat = new List<string>()
-                             {
-                                 "單淘汰賽制",
-                                 "雙淘汰賽制",
-                                 "小組賽制",
-                                 "圓桌賽制",
-                                 "混合團體賽制",
-                                 "速度賽制"
-                             };
+        };
+        private readonly List<string> gameFormat = new List<string>()
+        {
+            "單淘汰賽制",
+            "雙淘汰賽制",
+            "小組賽制",
+            "圓桌賽制",
+            "混合團體賽制",
+            "速度賽制"
+        };
         private Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private bool hasProposal = false;
         private Proposal activeProposal = null;
         private int delayTime = 0;
+        private DateTime updateTime;
+
+        public DateTime UpdateTime => updateTime;
         public List<Proposal> AcceptedProposals
         {
             get { return acceptedProposals; }
+            set { acceptedProposals = value; updateTime = DateTime.Now; }
         }
         public GameProposalSubForm()
         {
@@ -100,20 +104,13 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             // Implement logic to generate a random proposal
             // (For simplicity, you can create a new Proposal with random data)
-            return new Proposal
-            {
-                LeagueName = leagues[random.Next(leagues.Count)],
-                Date = DateTime.Now.AddDays(random.Next(30)),
-                GameType = gameType[random.Next(gameType.Count)],
-                GameFormat = gameFormat[random.Next(gameFormat.Count)],
-                DurationDays = random.Next(5, 15)
-            };
+            return new Proposal(leagues[random.Next(leagues.Count)], DateTime.Now.AddDays(random.Next(30)), gameType[random.Next(gameType.Count)], gameFormat[random.Next(gameFormat.Count)], random.Next(5, 15));
         }
 
         private void Proposal_Tick_Tick(object sender, EventArgs e)
         {
             if(delayTime > 0) { delayTime--; goto SkipCreation; }
-            if (random.Next(20) == 1) { proposals.Add(GenerateRandomProposal()); delayTime = 5; }
+            if (random.Next(20) < 3) { proposals.Add(GenerateRandomProposal()); delayTime = 5; }
 
             SkipCreation:
             if (proposals.Count > 0) ShowAndDeploy();
@@ -137,6 +134,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             MessageBox.Show("已准許比賽，並加入至公開時程表!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             acceptedProposals.Add(activeProposal);
             activeProposal = null;
+            updateTime = DateTime.Now;
             HideAndClear();
         }
 
@@ -155,5 +153,14 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         public string GameType { get; set; }
         public string GameFormat { get; set; }
         public int DurationDays { get; set; }
+
+        public Proposal(string leagueName, DateTime date, string gameType, string gameFormat, int durationDays)
+        {
+            LeagueName = leagueName;
+            Date = date;
+            GameType = gameType;
+            GameFormat = gameFormat;
+            DurationDays = durationDays;
+        }
     }
 }

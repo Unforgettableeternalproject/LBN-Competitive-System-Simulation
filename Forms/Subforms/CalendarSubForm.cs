@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,22 +14,24 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
     public partial class CalendarSubForm : Form
     { 
         private List<Proposal> eventList = null;
-        private DateTime selectedDate;
+        private DateTime selectedDate, updateTime;
         private int timeSpan = 0;
         private List<string> eventName = new List<string>();
         private string Mode = "View";
         private readonly string prompt = "輸入活動名稱...";
         private bool hasEvent = false, isDefault = true;
+        public List<Proposal> EventList
+        {
+            get { return eventList; }
+            set { eventList = value; updateTime = DateTime.Now; }
+        }
+        public DateTime UpdateTime => updateTime;
+
         public CalendarSubForm()
         {
             InitializeComponent();
             EventName.Enter += EventName_Enter;
             EventName.Leave += EventName_Leave;
-        }
-
-        public void getProposals(List<Proposal> input)
-        {
-            eventList = input;
         }
 
         private void CalendarSubForm_Load(object sender, EventArgs e)
@@ -51,13 +54,25 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             if (eventName.Count > 1)
             {
                 EventDisplay.Text += $"\n\n還有 {eventName.Count-1} 個其他活動...";
-                if(eventName.Count <= 10) AdditionalDisplay.SetToolTip(EventDisplay, "還有以下活動:\n" + string.Join("\n", eventName));
-                else AdditionalDisplay.SetToolTip(EventDisplay, "還有以下活動:\n" + string.Join("\n", eventName.Take(10)) + "\n等...");
+                if(eventName.Count <= 10) AdditionalDisplay.SetToolTip(EventDisplay, "還有以下活動:\n" + string.Join("\n", eventName.Skip(1)));
+                else AdditionalDisplay.SetToolTip(EventDisplay, "還有以下活動:\n" + string.Join("\n", eventName.Skip(1).Take(10)) + "\n等...");
             }
         }
         private void updateEvent()
         {
-            throw new NotImplementedException();
+            switch (Mode)
+            {
+                case "Edit-A":
+                    eventList.Add(new Proposal("管理員", StartDate.Value, EventName.Text, "", EndDate.Value.Subtract(StartDate.Value).Days));
+                    break;
+                case "Edit-R":
+                    eventList.RemoveAll(e => DateTime.Compare(StartDate.Value.Date, e.Date.Date) >= 0 && DateTime.Compare(StartDate.Value.Date, e.Date.AddDays(e.DurationDays).Date) <= 0);
+                    break;
+            }
+            updateTime = DateTime.Now;
+            Calendar.MaxSelectionCount = 1;
+            Calendar.SelectionStart = Calendar.TodayDate;
+            updateFill(true);
         }
 
         private void updateFill(bool init)
@@ -117,7 +132,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                     }
                     else
                     {
-                        EventName.Text = eventName.Count > 1 ? $"{eventName[0]} 以及其他 {eventName.Count - 1} 個..." : eventName[0];
+                        EventName.Text = eventName.Count > 1 ? $"{eventName.Count - 1}個活動" : eventName[0];
                         EventName.ForeColor = SystemColors.GrayText;
                         StartDate.Value = selectedDate;
                         EndDate.Value = selectedDate.AddDays(timeSpan);
@@ -176,11 +191,13 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         private void AddEvent_Click(object sender, EventArgs e)
         {
+            Confirm.Text = "確認添加";
             eInit("A");
         }
 
         private void DeleteEvent_Click(object sender, EventArgs e)
         {
+            Confirm.Text = "確認刪除";
             eInit("R");
         }
 
@@ -190,7 +207,9 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             {
                 if (string.IsNullOrEmpty(EventName.Text) || isDefault) { MessageBox.Show("您沒有填寫活動名稱!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
                 updateEvent();
-            }else if(Mode == "Edit-R")
+                MessageBox.Show("已經成功添加活動!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if(Mode == "Edit-R")
             {
                 if(!hasEvent) { MessageBox.Show("您並沒有選擇具有活動的有效日期!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information); return; }
                 if (eventName.Count == 1) goto SkipQuestion;
@@ -198,6 +217,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 if (result == DialogResult.No) return;
             SkipQuestion:
                 updateEvent();
+                MessageBox.Show("已經成功刪除活動!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void Cancel_Click(object sender, EventArgs e)
@@ -207,7 +227,9 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void StartDate_ValueChanged(object sender, EventArgs e)
         {
-            EndDate.MinDate = StartDate.Value;
+            if (selectedDate.AddDays(14) < EndDate.MinDate) EndDate.MinDate = selectedDate; ;
+            EndDate.MaxDate = selectedDate.AddDays(14);
+            EndDate.MinDate = selectedDate;
         }
 
         private void EventName_Enter(object sender, EventArgs e)

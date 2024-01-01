@@ -46,7 +46,7 @@
             // 
             this.Calendar.BackColor = System.Drawing.SystemColors.Menu;
             this.Calendar.CalendarDimensions = new System.Drawing.Size(3, 4);
-            this.Calendar.Location = new System.Drawing.Point(109, 82);
+            this.Calendar.Location = new System.Drawing.Point(79, 83);
             this.Calendar.MaxSelectionCount = 14;
             this.Calendar.Name = "Calendar";
             this.Calendar.TabIndex = 0;
@@ -57,7 +57,7 @@
             this.EventDisplay.AutoEllipsis = true;
             this.EventDisplay.BackColor = System.Drawing.Color.Transparent;
             this.EventDisplay.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
-            this.EventDisplay.Location = new System.Drawing.Point(800, 107);
+            this.EventDisplay.Location = new System.Drawing.Point(797, 83);
             this.EventDisplay.Name = "EventDisplay";
             this.EventDisplay.Size = new System.Drawing.Size(242, 164);
             this.EventDisplay.TabIndex = 1;
@@ -66,7 +66,7 @@
             // AddEvent
             // 
             this.AddEvent.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15F);
-            this.AddEvent.Location = new System.Drawing.Point(801, 382);
+            this.AddEvent.Location = new System.Drawing.Point(801, 376);
             this.AddEvent.Name = "AddEvent";
             this.AddEvent.Size = new System.Drawing.Size(221, 54);
             this.AddEvent.TabIndex = 2;
@@ -77,7 +77,7 @@
             // DeleteEvent
             // 
             this.DeleteEvent.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15F);
-            this.DeleteEvent.Location = new System.Drawing.Point(801, 478);
+            this.DeleteEvent.Location = new System.Drawing.Point(801, 472);
             this.DeleteEvent.Name = "DeleteEvent";
             this.DeleteEvent.Size = new System.Drawing.Size(221, 54);
             this.DeleteEvent.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             this.EventName.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EventName.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.EventName.Location = new System.Drawing.Point(801, 397);
+            this.EventName.Location = new System.Drawing.Point(801, 391);
             this.EventName.Name = "EventName";
             this.EventName.Size = new System.Drawing.Size(221, 30);
             this.EventName.TabIndex = 5;
@@ -98,7 +98,7 @@
             // Confirm
             // 
             this.Confirm.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Confirm.Location = new System.Drawing.Point(817, 596);
+            this.Confirm.Location = new System.Drawing.Point(817, 590);
             this.Confirm.Name = "Confirm";
             this.Confirm.Size = new System.Drawing.Size(84, 36);
             this.Confirm.TabIndex = 6;
@@ -109,7 +109,7 @@
             // StartDate
             // 
             this.StartDate.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StartDate.Location = new System.Drawing.Point(801, 450);
+            this.StartDate.Location = new System.Drawing.Point(801, 444);
             this.StartDate.Name = "StartDate";
             this.StartDate.Size = new System.Drawing.Size(221, 30);
             this.StartDate.TabIndex = 7;
@@ -120,7 +120,7 @@
             this.To.AutoSize = true;
             this.To.BackColor = System.Drawing.Color.Transparent;
             this.To.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.To.Location = new System.Drawing.Point(899, 496);
+            this.To.Location = new System.Drawing.Point(899, 490);
             this.To.Name = "To";
             this.To.Size = new System.Drawing.Size(28, 19);
             this.To.TabIndex = 8;
@@ -129,7 +129,7 @@
             // EndDate
             // 
             this.EndDate.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EndDate.Location = new System.Drawing.Point(801, 542);
+            this.EndDate.Location = new System.Drawing.Point(801, 536);
             this.EndDate.Name = "EndDate";
             this.EndDate.Size = new System.Drawing.Size(221, 30);
             this.EndDate.TabIndex = 9;
@@ -137,7 +137,7 @@
             // Cancel
             // 
             this.Cancel.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel.Location = new System.Drawing.Point(921, 596);
+            this.Cancel.Location = new System.Drawing.Point(921, 590);
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(84, 36);
             this.Cancel.TabIndex = 10;

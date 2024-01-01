@@ -13,7 +13,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class AdminMainForm : Form
     {
-        private List<Proposal> acceptedProposal = null;
+        private List<Proposal> eventList = new List<Proposal>();
         private readonly ID userID;
         private readonly Random random = new Random();
         private int people = 0;
@@ -22,6 +22,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private DataManagementSubForm dm;
         private SystemLogSubForm sl;
         private CalendarSubForm c;
+        private DateTime updateTime;
         public AdminMainForm(ID _userID)
         {
             InitializeComponent();
@@ -157,9 +158,12 @@ namespace LBN_Competitive_System_Simulation.Forms
             people += random.Next(random.Next(-18, -3), random.Next(3, 18));
             if (people < 0) people = 0;
             OnlineCount.Text = $"{people} 人";
-            acceptedProposal = gp.AcceptedProposals;
-            dm.getProposals(acceptedProposal);
-            c.getProposals(acceptedProposal);
+            if (DateTime.Compare(updateTime, gp.UpdateTime) < 0) { eventList = gp.AcceptedProposals; updateTime = DateTime.Now; }
+            else gp.AcceptedProposals = eventList;
+
+            if (DateTime.Compare(updateTime, c.UpdateTime) < 0) { eventList = c.EventList; updateTime = DateTime.Now; }
+            else c.EventList = eventList;
+            dm.getProposals(eventList);
         }
 
         private void Exit_Click(object sender, EventArgs e)
