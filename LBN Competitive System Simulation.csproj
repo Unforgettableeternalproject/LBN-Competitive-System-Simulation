@@ -67,11 +67,53 @@
     <Compile Include="Forms\AdvertisementForm.Designer.cs">
       <DependentUpon>AdvertisementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminMainForm.Designer.cs">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\DeploymentSubform.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Subforms\DeploymentSubform.Designer.cs">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\DataManagementSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\DataManagementSubform.Designer.cs">
+      <DependentUpon>DataManagementSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\CalendarSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\CalendarSubform.Designer.cs">
+      <DependentUpon>CalendarSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\ChatroomSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
+      <DependentUpon>ChatroomSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\SystemLogSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\SystemLogSubform.Designer.cs">
+      <DependentUpon>SystemLogSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\GameProposalSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\GameProposalSubform.Designer.cs">
+      <DependentUpon>GameProposalSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\UserManagementSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\UserManagementSubform.Designer.cs">
+      <DependentUpon>UserManagementSubform.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Subforms\InfoSubform.cs">
       <SubType>Form</SubType>
@@ -99,6 +141,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdminMainForm.resx">
+      <DependentUpon>AdminMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdvertisementForm.resx">
       <DependentUpon>AdvertisementForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,8 +153,23 @@
     <EmbeddedResource Include="Forms\ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\CalendarSubform.resx">
+      <DependentUpon>CalendarSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\ChatroomSubform.resx">
+      <DependentUpon>ChatroomSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\DataManagementSubform.resx">
+      <DependentUpon>DataManagementSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\SystemLogSubform.resx">
+      <DependentUpon>SystemLogSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\GameProposalSubform.resx">
+      <DependentUpon>GameProposalSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\InfoSubform.resx">
       <DependentUpon>InfoSubform.cs</DependentUpon>
@@ -123,12 +183,16 @@
     <EmbeddedResource Include="Forms\Subforms\ProfitSubform.resx">
       <DependentUpon>ProfitSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\UserManagementSubform.resx">
+      <DependentUpon>UserManagementSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Concepts\Concept Art.pdf" />
+    <None Include="ExampleIDs\SpecialUserID.json" />
     <None Include="ExampleIDs\PartnerUserID.json" />
     <None Include="ExampleIDs\NormalUserID.json" />
     <None Include="packages.config" />
@@ -158,6 +222,25 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\StreamPreview.png" />
+    <Content Include="Snapshots\AdminScreen.png" />
+    <None Include="Resources\Admin_Base.png" />
+    <None Include="Resources\AdminLogin.png" />
+    <None Include="Resources\SwitchOff.png" />
+    <None Include="Resources\SwitchOn.png" />
+    <None Include="Resources\btn_ConfirmAdmin.png" />
+    <None Include="Resources\ExpandChat.png" />
+    <None Include="Resources\UMPage.png" />
+    <None Include="Resources\btn_Add.png" />
+    <None Include="Resources\btn_Edit.png" />
+    <None Include="Resources\btn_Delete.png" />
+    <None Include="Resources\GPPage.png" />
+    <None Include="Resources\NewRequest.png" />
+    <None Include="Resources\DMPage.png" />
+    <None Include="Resources\Graph_2.gif" />
+    <None Include="Resources\Graph_1.gif" />
+    <None Include="Resources\SLPage.png" />
+    <None Include="Resources\Chatroom.png" />
     <Content Include="Snapshots\AdvertiserDashboard.png" />
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />

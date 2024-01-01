@@ -51,6 +51,10 @@ namespace LBN_Competitive_System_Simulation.Forms
             QuotaChange.Hide();
         }
 
+        private void DoNothing()
+        {
+            ;
+        }
         private void getUserInfo()
         {
             var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
@@ -107,7 +111,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             if(!isInitial && !buttonStatus[0]) 
             { 
                 DialogResult ans = MessageBox.Show("您確定要更改帳戶資訊嗎?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (ans == DialogResult.Yes) ;
+                if (ans == DialogResult.Yes) DoNothing();
                 else goto SkipAccChange;
             }
 
@@ -154,7 +158,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             if (!isInitial && !buttonStatus[1])
             {
                 DialogResult ans = MessageBox.Show("您確定要更改配額方式嗎?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (ans == DialogResult.Yes) ;
+                if (ans == DialogResult.Yes) DoNothing();
                 else goto SkipQuoChange;
             }
 
@@ -174,7 +178,7 @@ namespace LBN_Competitive_System_Simulation.Forms
                 else { MessageBox.Show("你並沒有選擇一種方案!", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); goto SkipQuoChange; }
 
                 DialogResult ans = MessageBox.Show($"配額方式將被更改為{newPlan}, 確定嗎?", "訊息", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (ans == DialogResult.Yes) ;
+                if (ans == DialogResult.Yes) DoNothing();
                 else goto SkipQuoChange;
 
                 userInfo[1] = newPlan;

@@ -16,10 +16,13 @@ namespace LBN_Competitive_System_Simulation
 
         static void Main()
         {
-        //   var testCase = new ID("Bernie", "123456", "ptyc4076@gmail.com");
+            System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("zh-TW");
+            System.Threading.Thread.CurrentThread.CurrentCulture = culture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = culture;
+        //    var testCase = new ID("Bernie", "123456", "ptyc4076@gmail.com", "Admin");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-        //    Application.Run(new AdvertisementForm(testCase, null));
+        //    Application.Run(new AdminMainForm(testCase));
             Application.Run(new MainPage());
         }
     }

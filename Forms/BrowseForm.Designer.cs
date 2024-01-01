@@ -72,7 +72,11 @@
             // 
             // ExampleVideo
             // 
-            this.ExampleVideo.BackColor = System.Drawing.SystemColors.Window;
+            this.ExampleVideo.BackColor = System.Drawing.Color.Transparent;
+            this.ExampleVideo.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.StreamPreview;
+            this.ExampleVideo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ExampleVideo.FlatAppearance.BorderSize = 0;
+            this.ExampleVideo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ExampleVideo.Location = new System.Drawing.Point(282, 156);
             this.ExampleVideo.Name = "ExampleVideo";
             this.ExampleVideo.Size = new System.Drawing.Size(457, 260);
@@ -279,6 +283,7 @@
             this.Controls.Add(this.AdSpot2);
             this.Controls.Add(this.AdSpot1);
             this.Controls.Add(this.RedirectSpinner);
+            this.Controls.Add(this.ExampleVideo);
             this.Controls.Add(this.Stream);
             this.Controls.Add(this.ViewersCount);
             this.Controls.Add(this.StreamTime);
@@ -289,7 +294,6 @@
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.SwitchRole);
             this.Controls.Add(this.Contact);
-            this.Controls.Add(this.ExampleVideo);
             this.Controls.Add(this.WelcomeMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

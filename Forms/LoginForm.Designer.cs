@@ -39,12 +39,14 @@
             this.txt_ConfirmPW = new System.Windows.Forms.TextBox();
             this.ToggleInvis = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.SwitchRole = new System.Windows.Forms.Button();
+            this.txt_DoubleCheck = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txt_Password
             // 
             this.txt_Password.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Password.Location = new System.Drawing.Point(115, 404);
+            this.txt_Password.Location = new System.Drawing.Point(115, 386);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(316, 31);
             this.txt_Password.TabIndex = 2;
@@ -52,7 +54,7 @@
             // txt_Username
             // 
             this.txt_Username.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Username.Location = new System.Drawing.Point(115, 257);
+            this.txt_Username.Location = new System.Drawing.Point(115, 290);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(316, 31);
             this.txt_Username.TabIndex = 0;
@@ -61,12 +63,12 @@
             // 
             this.btn_confirm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_confirm.BackColor = System.Drawing.Color.Transparent;
-            this.btn_confirm.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.btn_Confirm;
+            this.btn_confirm.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.btn_ConfirmAdmin;
             this.btn_confirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_confirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_confirm.FlatAppearance.BorderSize = 0;
             this.btn_confirm.Font = new System.Drawing.Font("微軟正黑體", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btn_confirm.Location = new System.Drawing.Point(152, 538);
+            this.btn_confirm.Location = new System.Drawing.Point(152, 548);
             this.btn_confirm.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(180, 76);
@@ -87,6 +89,7 @@
             this.Register.Size = new System.Drawing.Size(66, 27);
             this.Register.TabIndex = 4;
             this.Register.Text = "註冊";
+            this.toolTip.SetToolTip(this.Register, "跳轉註冊頁面");
             this.Register.Click += new System.EventHandler(this.Register_Click);
             // 
             // Anonymous
@@ -101,6 +104,7 @@
             this.Anonymous.Size = new System.Drawing.Size(59, 13);
             this.Anonymous.TabIndex = 5;
             this.Anonymous.Text = "跳過登入";
+            this.toolTip.SetToolTip(this.Anonymous, "以訪客身分登入");
             this.Anonymous.Click += new System.EventHandler(this.Anonymous_Click);
             // 
             // txt_Email
@@ -127,20 +131,47 @@
             this.ToggleInvis.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ToggleInvis.FlatAppearance.BorderSize = 0;
             this.ToggleInvis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ToggleInvis.Location = new System.Drawing.Point(396, 446);
+            this.ToggleInvis.Location = new System.Drawing.Point(396, 389);
             this.ToggleInvis.Name = "ToggleInvis";
             this.ToggleInvis.Size = new System.Drawing.Size(26, 26);
-            this.ToggleInvis.TabIndex = 11;
+            this.ToggleInvis.TabIndex = 5;
+            this.toolTip.SetToolTip(this.ToggleInvis, "顯示/隱藏密碼");
             this.ToggleInvis.UseVisualStyleBackColor = false;
             this.ToggleInvis.Click += new System.EventHandler(this.ToggleInvis_Click);
+            // 
+            // SwitchRole
+            // 
+            this.SwitchRole.BackColor = System.Drawing.Color.Transparent;
+            this.SwitchRole.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.SwitchOff;
+            this.SwitchRole.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.SwitchRole.CausesValidation = false;
+            this.SwitchRole.FlatAppearance.BorderSize = 0;
+            this.SwitchRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SwitchRole.Location = new System.Drawing.Point(427, 12);
+            this.SwitchRole.Name = "SwitchRole";
+            this.SwitchRole.Size = new System.Drawing.Size(42, 36);
+            this.SwitchRole.TabIndex = 999;
+            this.toolTip.SetToolTip(this.SwitchRole, "切換後台登入");
+            this.SwitchRole.UseVisualStyleBackColor = false;
+            this.SwitchRole.Click += new System.EventHandler(this.SwitchRole_Click);
+            // 
+            // txt_DoubleCheck
+            // 
+            this.txt_DoubleCheck.Font = new System.Drawing.Font("Britannic Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DoubleCheck.Location = new System.Drawing.Point(115, 480);
+            this.txt_DoubleCheck.Name = "txt_DoubleCheck";
+            this.txt_DoubleCheck.Size = new System.Drawing.Size(316, 31);
+            this.txt_DoubleCheck.TabIndex = 4;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.LoginForm;
+            this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.AdminLogin;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(481, 707);
+            this.Controls.Add(this.txt_DoubleCheck);
+            this.Controls.Add(this.SwitchRole);
             this.Controls.Add(this.ToggleInvis);
             this.Controls.Add(this.txt_ConfirmPW);
             this.Controls.Add(this.txt_Email);
@@ -172,5 +203,7 @@
         private System.Windows.Forms.TextBox txt_ConfirmPW;
         private System.Windows.Forms.Button ToggleInvis;
         private System.Windows.Forms.ToolTip toolTip;
+        public System.Windows.Forms.Button SwitchRole;
+        private System.Windows.Forms.TextBox txt_DoubleCheck;
     }
 }

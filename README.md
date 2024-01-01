@@ -8,22 +8,22 @@
 
 "Well, not this time!"
 
-✎ More graphics! More!
+✎ Why is admin page so hard to make
 
-✎ Different color theme for different types of users
+✎ Now the chatroom template is done, everything will be fine
 
-✎ Dashboards for admins, league owners and players
+✎ Dashboards league owners and players, especailly the later one
 
-✎ Consider adding some more easter eggs?
+✎ Consider adding some more easter eggs? Uh, Not now I guess
 
 Contributors:
 	Currently None
 
 To-do list:
 
-	✧ Admin login and their dashboard Page
+	✧ Players...Well I have bad feeling about this
  
-	✧ Backend login interface
+	✧ We can do league owners at the same time, absolutely
 
 	✧ Make the codes much more cleaner
  
@@ -34,4 +34,4 @@ Preserved for future check: git 3 steps
 2. ```git git commit -m "commit message"```
 3. ```git push```
 
-![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/AdvertiserDashboard.png)
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/AdminScreen.png)

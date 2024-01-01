@@ -19,12 +19,12 @@ namespace LBN_Competitive_System_Simulation
         private ID userID;
         private TimeSpan streamTime = new TimeSpan(1, 25, 34);
         private int viewerCount = 238;
-        private Random random = new Random();
+        private readonly Random random = new Random();
         private double videoPosition = 0;
         private string Mode = "Browse";
         private Bitmap ad, spad;
 
-        private List<string> prewrittenMessages = new List<string>
+        private readonly List<string> prewrittenMessages = new List<string>
         {
             "猛的",
             "安安，現在是甚麼情況?",
@@ -35,7 +35,7 @@ namespace LBN_Competitive_System_Simulation
             "777777777",
             "CNMBNMSL",
             "這個人看起來很解欸",
-            "現在購買SurfShark VPN再享五折優惠!!",
+            "哪門子的高爾夫球可以跳= =",
             "哈哈笑死",
             "我討厭高爾夫球= =",
             "自己加分，自己加分",
@@ -46,10 +46,11 @@ namespace LBN_Competitive_System_Simulation
             "急了",
             "0",
             "這不是肯德基",
-            "這就是ㄘㄨㄚˋ執政的下場!"
+            "這就是ㄘㄨㄚˋ執政的下場!",
+            "猛的內"
         };
 
-        private List<string> demoIDs = new List<string>
+        private readonly List<string> demoIDs = new List<string>
         {
             "史丹利123",
             "墊子小男孩",
@@ -62,23 +63,27 @@ namespace LBN_Competitive_System_Simulation
             "三哥",
             "約德爾游擊隊"
         };
-        public BrowseForm(ID userID)
+        public BrowseForm(ID userID, bool adminMode = false)
         {
             InitializeComponent();
             browseInit();
             this.userID = userID;
             if (userID.Username != "Anonymous") WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
             else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
+
+            if (adminMode) SwitchRole.Text = "返回管理頁面";
+            else SwitchRole.Text = "切換使用者...";
         }
         private void UpdateUI()
         {
             // Update labels with the current stream time and viewer count
-            StreamTime.Text = $"{streamTime.ToString(@"hh\:mm\:ss")}";
+            StreamTime.Text = $"{streamTime:hh\\:mm\\:ss}";
             ViewersCount.Text = $"{viewerCount}";
         }
         private void AddMessage(string message, string user)
         {
             ChatMessage.AppendText($"[❦] {user}: {message}\n");
+            ChatMessage.SelectionStart = ChatMessage.Text.Length;
             ChatMessage.ScrollToCaret(); // Scroll to the end to show the latest messages
         }
 
@@ -218,7 +223,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("你確定要離開系統嗎?", "離開系統?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("您確定要離開系統嗎?", "離開系統?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // If the user clicks Yes, close the application
             if (result == DialogResult.Yes)

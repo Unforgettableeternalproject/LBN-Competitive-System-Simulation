@@ -1,20 +1,22 @@
 [
   {
+    "Account": "1234567 0123456",
+    "Quota": "",
+    "Notify": true,
     "Username": "Bernie",
     "Password": "123456",
     "Email": "ptyc4076@gmail.com",
-    "UUID": "29fec91e-0c9b-4d83-9af8-4d276de1ff4b",
-    "Account": "4234567 2341432",
-    "Quota": "每雙月入/出帳",
-    "Notify": "False"
+    "UUID": "09f24fff-1e2f-45b2-ba81-d3e5732eedb8",
+    "Role": "Normal"
   },
   {
-    "Username": "Test",
-    "Password": "test",
-    "Email": "Test@gmail.com",
-    "UUID": "00594c79-0e59-4ee2-a319-c3d0d016abb4",
-    "Account": "2345678 1234567",
-    "Quota": "每月入/出帳",
-    "Notify": "False"
+    "Account": "",
+    "Quota": "",
+    "Notify": false,
+    "Username": "四弟",
+    "Password": "123",
+    "Email": "gm@gmail.com",
+    "UUID": "3da03d2c-38ab-485d-b88d-f17fbcac61ca",
+    "Role": "Normal"
   }
 ]
