@@ -104,6 +104,12 @@
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Subforms\LeagueDutySubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\LeagueDutySubform.Designer.cs">
+      <DependentUpon>LeagueDutySubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\PersonalStatsSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +193,9 @@
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\LeagueDutySubform.resx">
+      <DependentUpon>LeagueDutySubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\PersonalStatsSubform.resx">
       <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +260,9 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\LDPage.png" />
+    <None Include="Resources\Novia.gif" />
+    <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />
     <None Include="Resources\LeagueAnnouncementEmpty.png" />

@@ -39,7 +39,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             "老二高爾夫協會",
             "血盟騎士團",
             "弒獸之者",
-            "風切鬥士"
+            "風切鬥士",
+            "蜂蜜聯盟"
         };
         private readonly List<string> gameType = new List<string>()
         {
@@ -96,8 +97,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 AffiliatedLeague.Text = "所屬聯盟: 無";
                 LeagueRole.Text = "成員身分: 無";
                 Ratings.Text = "評分排名: 無";
-                NoRecord.Show();
                 foreach(Control c in History.Controls) c.Visible = false;
+                NoRecord.Show();
             }
 
             Participated.Text = "歷史參與賽事數: " + pastGames.Count;

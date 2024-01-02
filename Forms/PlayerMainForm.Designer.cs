@@ -94,6 +94,7 @@
             this.LeagueDuty.Size = new System.Drawing.Size(240, 57);
             this.LeagueDuty.TabIndex = 26;
             this.LeagueDuty.UseVisualStyleBackColor = false;
+            this.LeagueDuty.Click += new System.EventHandler(this.LeagueDuty_Click);
             // 
             // Calendar
             // 

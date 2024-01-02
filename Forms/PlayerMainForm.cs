@@ -23,6 +23,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private RecentGamesSubform rg;
         private PersonalStatsSubform ps;
+        private LeagueDutySubform ld;
         private ChatroomSubform chat;
         private CalendarSubform c;
         private DateTime updateTime;
@@ -81,6 +82,11 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
+            ld = new LeagueDutySubform(userID)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
             c = new CalendarSubform(false)
             {
                 TopLevel = false,
@@ -88,6 +94,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             };
             rg.Show();
             ps.Show();
+            ld.Show();
             chat.Show();
             c.Show();
             chat.VisibleChanged += Chat_VisibleChanged;
@@ -107,6 +114,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(ps);
             SubPages.Tag = ps;
+        }
+
+        private void LDInit()
+        {
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(ld);
+            SubPages.Tag = ld;
         }
         private void CInit()
         {
@@ -159,6 +173,11 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void PersonalStats_Click(object sender, EventArgs e)
         {
             PSInit();
+        }
+
+        private void LeagueDuty_Click(object sender, EventArgs e)
+        {
+            LDInit();
         }
 
         private void Home_Click(object sender, EventArgs e)

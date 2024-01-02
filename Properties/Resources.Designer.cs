@@ -333,6 +333,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap LDPage {
+            get {
+                object obj = ResourceManager.GetObject("LDPage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap LeagueAnnouncementEmpty {
             get {
                 object obj = ResourceManager.GetObject("LeagueAnnouncementEmpty", resourceCulture);
@@ -366,6 +376,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         internal static System.Drawing.Bitmap NewRequest {
             get {
                 object obj = ResourceManager.GetObject("NewRequest", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Novia {
+            get {
+                object obj = ResourceManager.GetObject("Novia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -25,7 +25,16 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             "完全勝利團隊",
             "啊對對隊",
             "大老鷹隊",
-            "王國之淚五百小隊"
+            "王國之淚五百小隊",
+            "美麗生活",
+            "小人物聯盟",
+            "車諾比戰隊",
+            "自然聯盟",
+            "老二高爾夫協會",
+            "血盟騎士團",
+            "弒獸之者",
+            "風切鬥士",
+            "蜂蜜聯盟"
         };
         private readonly List<string> gameType = new List<string>()
         {

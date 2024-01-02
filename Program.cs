@@ -19,11 +19,15 @@ namespace LBN_Competitive_System_Simulation
             System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("zh-TW");
             System.Threading.Thread.CurrentThread.CurrentCulture = culture;
             System.Threading.Thread.CurrentThread.CurrentUICulture = culture;
-            var testCase = new ID("Berniee", "122334", "ptyc4076@gmail.com", "Admin", "a4df083d-dd7b-4d6e-81b0-2686d24acc64");
+            var testCase = new List<ID>()
+            {
+                new ID("Bernie", "123456", "ptyc4076@gmail.com", "Admin", "bcd2611f-a230-41e6-bd31-f4eac0d98cb5"),
+                new ID("Berniee", "122334", "ptyc4076@gmail.com", "Player", "a4df083d-dd7b-4d6e-81b0-2686d24acc64"),
+            };
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-        //    Application.Run(new AdminMainForm(testCase));
-            Application.Run(new PlayerMainForm(testCase));
+        //    Application.Run(new AdminMainForm(testCase[0]));
+            Application.Run(new PlayerMainForm(testCase[1]));
             //    Application.Run(new MainPage());
         }
     }
