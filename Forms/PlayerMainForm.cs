@@ -18,17 +18,19 @@ namespace LBN_Competitive_System_Simulation.Forms
         static readonly long currentTime = DateTime.Now.Ticks;
         private List<Proposal> eventList = new List<Proposal>(), extraEventList = null;
         private List<League> leagueList = new List<League>();
-        private bool isInLeague = false;
+        private bool isInLeague = false, adminMode;
         private readonly ID userID;
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private RecentGamesSubform rg;
+        private PersonalStatsSubform ps;
         private ChatroomSubform chat;
         private CalendarSubform c;
         private DateTime updateTime;
-        public PlayerMainForm(ID _userID, bool adminMode = false, List<Proposal> outerEventList = null)
+        public PlayerMainForm(ID _userID, bool _adminMode = false, List<Proposal> outerEventList = null)
         {
             InitializeComponent();
             userID = _userID;
+            adminMode = _adminMode;
             if(outerEventList != null) extraEventList = outerEventList;
             if (adminMode) SwitchRole.Text = "返回管理頁面";
             else SwitchRole.Text = "切換使用者...";
@@ -54,7 +56,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
             foreach(League league in leagueList)
             {
-                if (league.Players.Any(e => e.UUID == userID.UUID)) { result = true; LeagueDisplay.Text = league.Name; }
+                if (league.Members.Any(e => e.UUID == userID.UUID)) { result = true; LeagueDisplay.Text = league.Name; }
             }
             return result;
         }
@@ -74,12 +76,18 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
+            ps = new PersonalStatsSubform(userID, adminMode)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
             c = new CalendarSubform(false)
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
             rg.Show();
+            ps.Show();
             chat.Show();
             c.Show();
             chat.VisibleChanged += Chat_VisibleChanged;
@@ -94,6 +102,12 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Tag = rg;
         }
 
+        private void PSInit()
+        {
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(ps);
+            SubPages.Tag = ps;
+        }
         private void CInit()
         {
             SubPages.Controls.Clear();
@@ -142,6 +156,16 @@ namespace LBN_Competitive_System_Simulation.Forms
             CInit();
         }
 
+        private void PersonalStats_Click(object sender, EventArgs e)
+        {
+            PSInit();
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            RGInit();
+        }
+
         private void Tick_Tick(object sender, EventArgs e)
         {
             if (DateTime.Compare(updateTime, rg.UpdateTime) < 0) { eventList = rg.EventList; updateTime = DateTime.Now; }
@@ -152,17 +176,19 @@ namespace LBN_Competitive_System_Simulation.Forms
     public class League
     {
         public string Name;
-        public List<ID> Players;
+        public ID Owner;
+        public List<ID> Members;
 
         public League() { }
-        public League(string name)
+        public League(string name, ID owner)
         {
             Name = name;
-            Players = new List<ID>();
+            Members = new List<ID>();
+            Owner = owner;
         }
-        public League(string name, List<ID> players) : this(name)
+        public League(string name, ID owner, List<ID> players) : this(name, owner)
         {
-            this.Players = players;
+            this.Members = players;
         }
     }
 }

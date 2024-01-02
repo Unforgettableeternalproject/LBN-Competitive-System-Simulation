@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,6 +103,12 @@
     </Compile>
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\PersonalStatsSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\PersonalStatsSubform.Designer.cs">
+      <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Subforms\RecentGamesSubform.cs">
       <SubType>Form</SubType>
@@ -180,6 +187,9 @@
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\PersonalStatsSubform.resx">
+      <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\RecentGamesSubform.resx">
       <DependentUpon>RecentGamesSubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +256,8 @@
     <None Include="Resources\LeagueAnnouncementEmpty.png" />
     <None Include="Resources\RGPage.png" />
     <None Include="Resources\LeagueAnnouncementNormal.png" />
+    <None Include="Resources\PSPage.png" />
+    <None Include="Resources\Placeholder4.png" />
     <Content Include="Snapshots\AdminScreen.png" />
     <None Include="Resources\Admin_Base.png" />
     <None Include="Resources\AdminLogin.png" />

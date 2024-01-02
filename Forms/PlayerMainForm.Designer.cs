@@ -82,6 +82,7 @@
             this.PersonalStats.Size = new System.Drawing.Size(239, 57);
             this.PersonalStats.TabIndex = 25;
             this.PersonalStats.UseVisualStyleBackColor = false;
+            this.PersonalStats.Click += new System.EventHandler(this.PersonalStats_Click);
             // 
             // LeagueDuty
             // 
@@ -195,6 +196,7 @@
             this.Home.Size = new System.Drawing.Size(43, 42);
             this.Home.TabIndex = 33;
             this.Home.UseVisualStyleBackColor = false;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // Announcement
             // 
