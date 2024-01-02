@@ -63,7 +63,7 @@ namespace LBN_Competitive_System_Simulation
         {
             bool flag = false;
             ID result = new ID();
-            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -109,7 +109,7 @@ namespace LBN_Competitive_System_Simulation
                 emailValid = false;
             }
 
-            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -161,7 +161,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void newID(ID _new)
         {
-            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             read.Close();
@@ -170,7 +170,7 @@ namespace LBN_Competitive_System_Simulation
             IDList.Add(_new);
 
             json = JsonConvert.SerializeObject(IDList);
-            var writer = new StreamWriter($@"..\..\ExampleIDs\{type}UserID.json");
+            var writer = new StreamWriter($@"..\..\ExampleJSONs\{type}UserID.json");
             writer.Write(json);
 
             writer.Flush();

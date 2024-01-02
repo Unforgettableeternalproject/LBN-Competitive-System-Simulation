@@ -54,7 +54,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         public DateTime UpdateTime => updateTime;
         public List<Proposal> AcceptedProposals
         {
-            get { return acceptedProposals; }
+            get => acceptedProposals;
             set { acceptedProposals = value; updateTime = DateTime.Now; }
         }
         public GameProposalSubform(ChatroomSubform _chatroom)

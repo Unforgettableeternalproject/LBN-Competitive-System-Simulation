@@ -39,8 +39,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void getUserCount()
         {
-            List<ID> users = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
-            users.AddRange(JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\SpecialUserID.json")));
+            List<ID> users = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
+            users.AddRange(JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json")));
 
             userCount = users.Count();
         }

@@ -124,6 +124,7 @@ namespace LBN_Competitive_System_Simulation
                         redirect = new AdminMainForm(userID);
                         break;
                     case "Player":
+                        redirect = new PlayerMainForm(userID);
                         break;
                 }
                 

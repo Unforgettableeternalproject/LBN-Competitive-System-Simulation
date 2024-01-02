@@ -22,7 +22,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private bool hasEvent = false, isDefault = true;
         public List<Proposal> EventList
         {
-            get { return eventList; }
+            get => eventList;
             set { eventList = value; updateTime = DateTime.Now; }
         }
         public DateTime UpdateTime => updateTime;

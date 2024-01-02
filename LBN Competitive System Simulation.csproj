@@ -103,6 +103,12 @@
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Subforms\RecentGamesSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\RecentGamesSubform.Designer.cs">
+      <DependentUpon>RecentGamesSubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\SystemLogSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\RecentGamesSubform.resx">
+      <DependentUpon>RecentGamesSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\SystemLogSubform.resx">
       <DependentUpon>SystemLogSubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,9 +210,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Concepts\Concept Art.pdf" />
-    <None Include="ExampleIDs\SpecialUserID.json" />
-    <None Include="ExampleIDs\PartnerUserID.json" />
-    <None Include="ExampleIDs\NormalUserID.json" />
+    <None Include="ExampleJSONs\SpecialUserID.json" />
+    <None Include="ExampleJSONs\PartnerUserID.json" />
+    <None Include="ExampleJSONs\NormalUserID.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -233,6 +242,8 @@
   <ItemGroup>
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />
+    <None Include="Resources\LeagueAnnouncementEmpty.png" />
+    <None Include="Resources\RGPage.png" />
     <Content Include="Snapshots\AdminScreen.png" />
     <None Include="Resources\Admin_Base.png" />
     <None Include="Resources\AdminLogin.png" />

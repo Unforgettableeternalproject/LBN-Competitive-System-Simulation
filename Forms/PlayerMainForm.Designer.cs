@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.WelcomeMessage = new System.Windows.Forms.Label();
             this.RecentGames = new System.Windows.Forms.Button();
             this.PersonalStats = new System.Windows.Forms.Button();
@@ -41,6 +42,9 @@
             this.Warnings = new System.Windows.Forms.Label();
             this.League = new System.Windows.Forms.Label();
             this.Home = new System.Windows.Forms.Button();
+            this.Announcement = new System.Windows.Forms.PictureBox();
+            this.Tick = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.Announcement)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeMessage
@@ -62,9 +66,10 @@
             this.RecentGames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RecentGames.Location = new System.Drawing.Point(-1, 294);
             this.RecentGames.Name = "RecentGames";
-            this.RecentGames.Size = new System.Drawing.Size(239, 57);
+            this.RecentGames.Size = new System.Drawing.Size(240, 59);
             this.RecentGames.TabIndex = 24;
             this.RecentGames.UseVisualStyleBackColor = false;
+            this.RecentGames.Click += new System.EventHandler(this.RecentGames_Click);
             // 
             // PersonalStats
             // 
@@ -84,7 +89,7 @@
             this.LeagueDuty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LeagueDuty.Location = new System.Drawing.Point(-1, 414);
             this.LeagueDuty.Name = "LeagueDuty";
-            this.LeagueDuty.Size = new System.Drawing.Size(239, 57);
+            this.LeagueDuty.Size = new System.Drawing.Size(240, 57);
             this.LeagueDuty.TabIndex = 26;
             this.LeagueDuty.UseVisualStyleBackColor = false;
             // 
@@ -118,6 +123,7 @@
             this.ExpandChatroom.Size = new System.Drawing.Size(189, 57);
             this.ExpandChatroom.TabIndex = 3;
             this.ExpandChatroom.UseVisualStyleBackColor = false;
+            this.ExpandChatroom.Click += new System.EventHandler(this.ExpandChatroom_Click);
             // 
             // SwitchRole
             // 
@@ -130,6 +136,7 @@
             this.SwitchRole.Size = new System.Drawing.Size(87, 16);
             this.SwitchRole.TabIndex = 29;
             this.SwitchRole.Text = "切換使用者";
+            this.SwitchRole.Click += new System.EventHandler(this.SwitchRole_Click);
             // 
             // Exit
             // 
@@ -143,6 +150,7 @@
             this.Exit.Size = new System.Drawing.Size(71, 16);
             this.Exit.TabIndex = 30;
             this.Exit.Text = "離開系統";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // SubPages
             // 
@@ -168,7 +176,7 @@
             this.League.AutoSize = true;
             this.League.BackColor = System.Drawing.Color.Transparent;
             this.League.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F);
-            this.League.Location = new System.Drawing.Point(1355, 279);
+            this.League.Location = new System.Drawing.Point(1426, 278);
             this.League.Name = "League";
             this.League.Size = new System.Drawing.Size(36, 25);
             this.League.TabIndex = 32;
@@ -185,16 +193,32 @@
             this.Home.TabIndex = 33;
             this.Home.UseVisualStyleBackColor = false;
             // 
+            // Announcement
+            // 
+            this.Announcement.BackColor = System.Drawing.Color.Transparent;
+            this.Announcement.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.LeagueAnnouncementEmpty;
+            this.Announcement.Location = new System.Drawing.Point(0, 543);
+            this.Announcement.Name = "Announcement";
+            this.Announcement.Size = new System.Drawing.Size(239, 239);
+            this.Announcement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Announcement.TabIndex = 34;
+            this.Announcement.TabStop = false;
+            // 
+            // Tick
+            // 
+            this.Tick.Interval = 1000;
+            // 
             // PlayerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Player_Base;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.Chatroom);
+            this.Controls.Add(this.Announcement);
             this.Controls.Add(this.Home);
             this.Controls.Add(this.League);
             this.Controls.Add(this.Warnings);
-            this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.SubPages);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.SwitchRole);
@@ -206,7 +230,10 @@
             this.Controls.Add(this.WelcomeMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PlayerMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.PlayerMainForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Announcement)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,5 +254,7 @@
         private System.Windows.Forms.Label Warnings;
         private System.Windows.Forms.Label League;
         private System.Windows.Forms.Button Home;
+        private System.Windows.Forms.PictureBox Announcement;
+        private System.Windows.Forms.Timer Tick;
     }
 }
