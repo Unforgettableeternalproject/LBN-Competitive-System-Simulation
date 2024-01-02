@@ -210,6 +210,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Concepts\Concept Art.pdf" />
+    <None Include="ExampleJSONs\Leagues.json" />
     <None Include="ExampleJSONs\SpecialUserID.json" />
     <None Include="ExampleJSONs\PartnerUserID.json" />
     <None Include="ExampleJSONs\NormalUserID.json" />
@@ -244,6 +245,7 @@
     <None Include="Resources\Player_Base.png" />
     <None Include="Resources\LeagueAnnouncementEmpty.png" />
     <None Include="Resources\RGPage.png" />
+    <None Include="Resources\LeagueAnnouncementNormal.png" />
     <Content Include="Snapshots\AdminScreen.png" />
     <None Include="Resources\Admin_Base.png" />
     <None Include="Resources\AdminLogin.png" />

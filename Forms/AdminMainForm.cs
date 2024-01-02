@@ -71,7 +71,7 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            c = new CalendarSubform
+            c = new CalendarSubform(true)
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
@@ -127,7 +127,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             if (result == DialogResult.Yes)
             {
                 this.Hide();
-                using (PlayerMainForm readOnly = new PlayerMainForm(new ID("Test Player", "Not Required", "None", "Admin"), true))
+                using (PlayerMainForm readOnly = new PlayerMainForm(new ID("Test Player", "Not Required", "None", "Admin"), true, eventList))
                 {
                     readOnly.ShowDialog();
                 }

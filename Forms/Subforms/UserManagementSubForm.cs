@@ -519,7 +519,13 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 }
                 gridInit("Special", Users);
             }
-            else if(SpecialUsers.Checked && cbox_Roles.SelectedItem == null) { MessageBox.Show("你還沒有選擇一個特殊用戶的分類!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); NormalUsers.Checked = true; }
+            else if(SpecialUsers.Checked && cbox_Roles.SelectedItem == null) 
+            { 
+                MessageBox.Show("你還沒有選擇一個特殊用戶的分類!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                NormalUsers.Checked = true; 
+                cbox_UserType.Items.Clear();
+                cbox_UserType.Items.AddRange(new object[] { "一般用戶", "合作夥伴" });
+            }
             else DoNothing();
         }
 

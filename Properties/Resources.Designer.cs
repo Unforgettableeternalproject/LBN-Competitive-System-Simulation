@@ -343,6 +343,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap LeagueAnnouncementNormal {
+            get {
+                object obj = ResourceManager.GetObject("LeagueAnnouncementNormal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap LoginForm {
             get {
                 object obj = ResourceManager.GetObject("LoginForm", resourceCulture);

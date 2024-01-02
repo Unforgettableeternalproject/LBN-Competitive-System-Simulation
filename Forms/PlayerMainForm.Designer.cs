@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerMainForm));
             this.WelcomeMessage = new System.Windows.Forms.Label();
             this.RecentGames = new System.Windows.Forms.Button();
             this.PersonalStats = new System.Windows.Forms.Button();
@@ -40,7 +41,7 @@
             this.Exit = new System.Windows.Forms.Label();
             this.SubPages = new System.Windows.Forms.Panel();
             this.Warnings = new System.Windows.Forms.Label();
-            this.League = new System.Windows.Forms.Label();
+            this.LeagueDisplay = new System.Windows.Forms.Label();
             this.Home = new System.Windows.Forms.Button();
             this.Announcement = new System.Windows.Forms.PictureBox();
             this.Tick = new System.Windows.Forms.Timer(this.components);
@@ -103,6 +104,7 @@
             this.Calendar.Size = new System.Drawing.Size(239, 57);
             this.Calendar.TabIndex = 27;
             this.Calendar.UseVisualStyleBackColor = false;
+            this.Calendar.Click += new System.EventHandler(this.Calendar_Click);
             // 
             // Chatroom
             // 
@@ -171,16 +173,17 @@
             this.Warnings.TabIndex = 5;
             this.Warnings.Text = "沒有警告";
             // 
-            // League
+            // LeagueDisplay
             // 
-            this.League.AutoSize = true;
-            this.League.BackColor = System.Drawing.Color.Transparent;
-            this.League.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F);
-            this.League.Location = new System.Drawing.Point(1426, 278);
-            this.League.Name = "League";
-            this.League.Size = new System.Drawing.Size(36, 25);
-            this.League.TabIndex = 32;
-            this.League.Text = "無";
+            this.LeagueDisplay.AutoEllipsis = true;
+            this.LeagueDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.LeagueDisplay.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F);
+            this.LeagueDisplay.Location = new System.Drawing.Point(1354, 281);
+            this.LeagueDisplay.Name = "LeagueDisplay";
+            this.LeagueDisplay.Size = new System.Drawing.Size(136, 25);
+            this.LeagueDisplay.TabIndex = 32;
+            this.LeagueDisplay.Text = "無";
+            this.LeagueDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Home
             // 
@@ -196,7 +199,7 @@
             // Announcement
             // 
             this.Announcement.BackColor = System.Drawing.Color.Transparent;
-            this.Announcement.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.LeagueAnnouncementEmpty;
+            this.Announcement.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.LeagueAnnouncementNormal;
             this.Announcement.Location = new System.Drawing.Point(0, 543);
             this.Announcement.Name = "Announcement";
             this.Announcement.Size = new System.Drawing.Size(239, 239);
@@ -207,6 +210,7 @@
             // Tick
             // 
             this.Tick.Interval = 1000;
+            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
             // PlayerMainForm
             // 
@@ -217,7 +221,7 @@
             this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.Announcement);
             this.Controls.Add(this.Home);
-            this.Controls.Add(this.League);
+            this.Controls.Add(this.LeagueDisplay);
             this.Controls.Add(this.Warnings);
             this.Controls.Add(this.SubPages);
             this.Controls.Add(this.Exit);
@@ -229,6 +233,7 @@
             this.Controls.Add(this.RecentGames);
             this.Controls.Add(this.WelcomeMessage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlayerMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -252,7 +257,7 @@
         private System.Windows.Forms.Label Exit;
         private System.Windows.Forms.Panel SubPages;
         private System.Windows.Forms.Label Warnings;
-        private System.Windows.Forms.Label League;
+        private System.Windows.Forms.Label LeagueDisplay;
         private System.Windows.Forms.Button Home;
         private System.Windows.Forms.PictureBox Announcement;
         private System.Windows.Forms.Timer Tick;

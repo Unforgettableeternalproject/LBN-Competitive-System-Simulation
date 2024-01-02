@@ -1,9 +1,11 @@
 ﻿using LBN_Competitive_System_Simulation.Forms.Subforms;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,18 +16,26 @@ namespace LBN_Competitive_System_Simulation.Forms
     public partial class PlayerMainForm : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;
-        private List<Proposal> eventList = new List<Proposal>();
+        private List<Proposal> eventList = new List<Proposal>(), extraEventList = null;
+        private List<League> leagueList = new List<League>();
+        private bool isInLeague = false;
         private readonly ID userID;
-        private readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
-        private RecentGamesSubform rg = new RecentGamesSubform();
+        private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
+        private RecentGamesSubform rg;
         private ChatroomSubform chat;
-        public PlayerMainForm(ID _userID, bool adminMode = false)
+        private CalendarSubform c;
+        private DateTime updateTime;
+        public PlayerMainForm(ID _userID, bool adminMode = false, List<Proposal> outerEventList = null)
         {
             InitializeComponent();
             userID = _userID;
-
+            if(outerEventList != null) extraEventList = outerEventList;
             if (adminMode) SwitchRole.Text = "返回管理頁面";
             else SwitchRole.Text = "切換使用者...";
+            getLeagueList();
+            isInLeague = IsInLeague();
+            if (!isInLeague) Announcement.Image = Properties.Resources.LeagueAnnouncementEmpty;
+            else Announcement.Image = Properties.Resources.LeagueAnnouncementNormal;
         }
 
         private void PlayerMainForm_Load(object sender, EventArgs e)
@@ -38,6 +48,20 @@ namespace LBN_Competitive_System_Simulation.Forms
             RGInit();
         }
 
+        private bool IsInLeague()
+        {
+            bool result = false;
+
+            foreach(League league in leagueList)
+            {
+                if (league.Players.Any(e => e.UUID == userID.UUID)) { result = true; LeagueDisplay.Text = league.Name; }
+            }
+            return result;
+        }
+        private void getLeagueList()
+        {
+            leagueList = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
+        }
         private void overallInit()
         {
             chat = new ChatroomSubform("Player")
@@ -45,13 +69,19 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            rg = new RecentGamesSubform()
+            rg = new RecentGamesSubform(isInLeague, extraEventList)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
+            c = new CalendarSubform(false)
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
             rg.Show();
             chat.Show();
+            c.Show();
             chat.VisibleChanged += Chat_VisibleChanged;
             Chatroom.Controls.Add(chat);
             Chatroom.Tag = "active";
@@ -62,6 +92,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(rg);
             SubPages.Tag = rg;
+        }
+
+        private void CInit()
+        {
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(c);
+            SubPages.Tag = c;
         }
         private void SwitchRole_Click(object sender, EventArgs e)
         {
@@ -99,6 +136,17 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             RGInit();
         }
+
+        private void Calendar_Click(object sender, EventArgs e)
+        {
+            CInit();
+        }
+
+        private void Tick_Tick(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(updateTime, rg.UpdateTime) < 0) { eventList = rg.EventList; updateTime = DateTime.Now; }
+            c.EventList = eventList;
+        }
     }
 
     public class League
@@ -106,6 +154,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         public string Name;
         public List<ID> Players;
 
+        public League() { }
         public League(string name)
         {
             Name = name;

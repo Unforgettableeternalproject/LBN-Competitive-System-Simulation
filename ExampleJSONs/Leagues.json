@@ -1,0 +1,21 @@
+[
+  {
+    "Name": "小人物聯盟",
+    "Players": [
+      {
+        "Username": "Berniee",
+        "Password": "122334",
+        "Email": "ptyc4076@gmail.com",
+        "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
+        "Role": "Player"
+      },
+      {
+        "Username": "GoodLord",
+        "Password": "Lmao",
+        "Email": "Nord@gmail.com",
+        "UUID": "b9f8c6a2-ae16-4a7f-b53b-fbbbcd610f35",
+        "Role": "Player"
+      }
+    ]
+  }
+]

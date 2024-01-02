@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Recent7Days = new System.Windows.Forms.GroupBox();
             this.Etc_7 = new System.Windows.Forms.Label();
             this.Ignore_7_3 = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.lbl_Game_30_1 = new System.Windows.Forms.Label();
             this.lbl_30 = new System.Windows.Forms.Label();
             this.lbl_7 = new System.Windows.Forms.Label();
+            this.FullDescription = new System.Windows.Forms.ToolTip(this.components);
             this.Recent7Days.SuspendLayout();
             this.Recent30Days.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +84,7 @@
             this.Etc_7.Name = "Etc_7";
             this.Etc_7.Size = new System.Drawing.Size(531, 27);
             this.Etc_7.TabIndex = 9;
-            this.Etc_7.Text = "還有 {} 個未顯示的賽事";
+            this.Etc_7.Text = "還有 {} 個未顯示的賽事...";
             this.Etc_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Ignore_7_3
@@ -147,6 +149,7 @@
             // 
             // lbl_Game_7_3
             // 
+            this.lbl_Game_7_3.AutoEllipsis = true;
             this.lbl_Game_7_3.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
             this.lbl_Game_7_3.Location = new System.Drawing.Point(24, 154);
             this.lbl_Game_7_3.Name = "lbl_Game_7_3";
@@ -157,6 +160,7 @@
             // 
             // lbl_Game_7_2
             // 
+            this.lbl_Game_7_2.AutoEllipsis = true;
             this.lbl_Game_7_2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
             this.lbl_Game_7_2.Location = new System.Drawing.Point(24, 94);
             this.lbl_Game_7_2.Name = "lbl_Game_7_2";
@@ -167,6 +171,7 @@
             // 
             // lbl_Game_7_1
             // 
+            this.lbl_Game_7_1.AutoEllipsis = true;
             this.lbl_Game_7_1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
             this.lbl_Game_7_1.Location = new System.Drawing.Point(24, 34);
             this.lbl_Game_7_1.Name = "lbl_Game_7_1";
@@ -201,7 +206,7 @@
             this.Etc_30.Name = "Etc_30";
             this.Etc_30.Size = new System.Drawing.Size(531, 27);
             this.Etc_30.TabIndex = 10;
-            this.Etc_30.Text = "還有 {} 個未顯示的賽事";
+            this.Etc_30.Text = "還有 {} 個未顯示的賽事...";
             this.Etc_30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Ignore_30_3
@@ -266,6 +271,7 @@
             // 
             // lbl_Game_30_3
             // 
+            this.lbl_Game_30_3.AutoEllipsis = true;
             this.lbl_Game_30_3.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
             this.lbl_Game_30_3.Location = new System.Drawing.Point(24, 154);
             this.lbl_Game_30_3.Name = "lbl_Game_30_3";
@@ -276,6 +282,7 @@
             // 
             // lbl_Game_30_2
             // 
+            this.lbl_Game_30_2.AutoEllipsis = true;
             this.lbl_Game_30_2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
             this.lbl_Game_30_2.Location = new System.Drawing.Point(24, 94);
             this.lbl_Game_30_2.Name = "lbl_Game_30_2";
@@ -286,6 +293,7 @@
             // 
             // lbl_Game_30_1
             // 
+            this.lbl_Game_30_1.AutoEllipsis = true;
             this.lbl_Game_30_1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 16F);
             this.lbl_Game_30_1.Location = new System.Drawing.Point(24, 34);
             this.lbl_Game_30_1.Name = "lbl_Game_30_1";
@@ -363,5 +371,6 @@
         private System.Windows.Forms.Label lbl_Game_30_3;
         private System.Windows.Forms.Label lbl_Game_30_2;
         private System.Windows.Forms.Label lbl_Game_30_1;
+        private System.Windows.Forms.ToolTip FullDescription;
     }
 }
