@@ -19,7 +19,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private League affiliatedLeague = null;
         private List<League> leagueList;
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
-        private bool inLeague, isOwner, hadContact = false, uploaded = false;
+        private bool inLeague, isOwner, hadContact = false, uploaded = false, redirectToLO = false;
         private bool[] isDefault = new bool[] { true, true, true, true };
         private List<string> feed = new List<string>()
         {
@@ -45,6 +45,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private Bitmap leagueLogo = null;
         public bool IsOwner { get => isOwner; }
         public bool IsInLeague { get => inLeague; }
+        public bool RedirectToLO { get => redirectToLO; set { redirectToLO = value; } }
         public LeagueDutySubform(ID _userID, ChatroomSubform _chat)
         {
             InitializeComponent();
@@ -242,7 +243,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void LeaguePage_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();///To be implemented
+            redirectToLO = true;
         }
         private void CancelTransfer_Click(object sender, EventArgs e)
         {

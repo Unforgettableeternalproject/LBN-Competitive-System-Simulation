@@ -94,6 +94,12 @@
     <Compile Include="Forms\AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LeagueMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LeagueMainForm.Designer.cs">
+      <DependentUpon>LeagueMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PlayerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <EmbeddedResource Include="Forms\ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LeagueMainForm.resx">
+      <DependentUpon>LeagueMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlayerMainForm.resx">
       <DependentUpon>PlayerMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +301,8 @@
     <None Include="Resources\LDPage2.png" />
     <None Include="Resources\Search.png" />
     <Content Include="Concepts\To-Do List.txt" />
+    <None Include="Resources\Spinner_Blue.gif" />
+    <None Include="Resources\LO_Base.png" />
     <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />

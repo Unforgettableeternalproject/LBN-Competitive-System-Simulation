@@ -118,196 +118,205 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="LeagueLogo_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeagueLogo_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Chatroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Chatroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeagueAnnouncementNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeagueAnnouncementNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RegistrationForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RegistrationForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeagueLogo_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeagueLogo_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GPPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GPPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LoginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Stream" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Stream.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Property" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Property.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Browse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Browse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Profits" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Profits.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LDPage2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LDPage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LDPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LDPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="StreamPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\StreamPreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Golf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Golf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Graph_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Graph_2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AdminLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AdminLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Chatroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Chatroom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PasswordVisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PasswordVisible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Placeholder3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Placeholder3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DMPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DMPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RGPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RGPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Player_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Player_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Advertise_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Advertise_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Placeholder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Placeholder1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_Enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_ConfirmAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_ConfirmAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeagueLogo_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeagueLogo_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Novia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Novia.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ExpandChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExpandChat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeagueLogo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeagueLogo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LeagueLogo_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LeagueLogo_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Stream" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stream.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Placeholder4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Placeholder41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Placeholder4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeagueLogo_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeagueLogo_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Announement" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Announement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Disclaimer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Disclaimer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LeagueAnnouncementEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LeagueAnnouncementEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Submit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Submit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Admin_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Admin_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Deployment" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Deployment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Advertise_Front" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Advertise_Front.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Golf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Golf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SLPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SLPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Introduction" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Introduction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Spinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Spinner.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_Confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Confirm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RGPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RGPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NewRequest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\NewRequest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Advertise_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Advertise_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Diagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="SwitchOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SwitchOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewRequest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewRequest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Placeholder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Placeholder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btn_Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Graph_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Graph_1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PasswordInvisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PasswordInvisible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btn_Confirm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Confirm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SwitchOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SwitchOn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UMPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UMPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Return" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LeagueLogo_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueLogo_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RegistrationForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RegistrationForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Introduction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Introduction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Property" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Property.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Placeholder3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Placeholder3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PSPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PSPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Placeholder41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="UMPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UMPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeagueLogo_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueLogo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Return" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Return.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Advertise_Front" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Advertise_Front.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Graph_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Graph_1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeagueLogo_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueLogo_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoginForm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginForm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeagueAnnouncementEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueAnnouncementEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DMPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DMPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SLPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SLPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SwitchOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SwitchOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LO_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LO_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeagueAnnouncementNormal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueAnnouncementNormal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_ConfirmAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_ConfirmAdmin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Submit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Submit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasswordVisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PasswordVisible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeagueLogo_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueLogo_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Profits" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Profits.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Placeholder4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Placeholder4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpandChat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExpandChat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Player_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Player_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Browse" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Browse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GPPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GPPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Disclaimer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Disclaimer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Announement" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Announement.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasswordInvisible" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PasswordInvisible.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Placeholder2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Placeholder2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeagueLogo_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueLogo_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Placeholder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Placeholder1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Novia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Novia.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdminLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdminLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LDPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LDPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Admin_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Admin_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StreamPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StreamPreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Deployment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Deployment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LDPage2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LDPage2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spinner_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spinner_Blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LeagueLogo_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LeagueLogo_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

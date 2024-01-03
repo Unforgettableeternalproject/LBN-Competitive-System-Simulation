@@ -393,6 +393,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap LeagueLogo_11 {
+            get {
+                object obj = ResourceManager.GetObject("LeagueLogo_11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap LeagueLogo_2 {
             get {
                 object obj = ResourceManager.GetObject("LeagueLogo_2", resourceCulture);
@@ -436,6 +446,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         internal static System.Drawing.Bitmap LeagueLogo_6 {
             get {
                 object obj = ResourceManager.GetObject("LeagueLogo_6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap LO_Base {
+            get {
+                object obj = ResourceManager.GetObject("LO_Base", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -636,6 +656,16 @@ namespace LBN_Competitive_System_Simulation.Properties {
         internal static System.Drawing.Bitmap Spinner {
             get {
                 object obj = ResourceManager.GetObject("Spinner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Spinner_Blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
