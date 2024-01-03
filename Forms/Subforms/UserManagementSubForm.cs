@@ -100,7 +100,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             txt_Username.Text = ""; txt_Username.Hide();
             chk_Partner.Checked = false;
             cbox_UserType.SelectedItem = null;
-            cbox_UserType.Text = "選擇類型...";
+            if (Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
+            else cbox_UserType.Text = "選擇類型...";
             cbox_UserType.ForeColor = SystemColors.GrayText;
             cbox_UserType.Hide();
             chk_Partner.Hide();
@@ -136,6 +137,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_edit.Hide();
             Confim.Text = "確認並刪除";
             RadioBtns.Enabled = false;
+            if (Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
         }
         private void editInit()
         {
@@ -159,6 +161,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_edit.Hide();
             Confim.Text = "確認並更改";
             RadioBtns.Enabled = false;
+            if(Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
         }
         private void addInit()
         {

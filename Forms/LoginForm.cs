@@ -73,13 +73,13 @@ namespace LBN_Competitive_System_Simulation
                 return null;
             }
 
-            dynamic IDs = JsonConvert.DeserializeObject(json);
+            var IDs = JsonConvert.DeserializeObject<List<ID>>(json);
             foreach(var id in IDs)
             {
                 if (username == id.Username.ToString() && password == id.Password.ToString())
                 {
                     if (id.Role == null) result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString());
-                    else result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString(), id.Role.ToString());
+                    else result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString(), id.Role.ToString(), id.UUID.ToString());
                     flag = true;
                     break;
                 }else if(username == id.Username.ToString() && password != id.Password.ToString())

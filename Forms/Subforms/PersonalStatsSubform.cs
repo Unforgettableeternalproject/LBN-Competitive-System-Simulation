@@ -22,7 +22,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private readonly ID userID;
         private League affiliatedLeague = null;
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
-        private bool isDefault = true, adminMode = false;
+        private bool isDefault = true, adminMode = false, isInLeague, uploaded = false;
         private List<Proposal> pastGames = new List<Proposal>();
         private int defaultChance = 200;
         private readonly List<string> leagues = new List<string>()
@@ -61,6 +61,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             "混合團體賽制",
             "速度賽制"
         };
+        public bool IsInLeague { get => isInLeague; set { isInLeague = value; } }
         public PersonalStatsSubform(ID _userID, bool _adminMode)
         {
             InitializeComponent();
@@ -70,23 +71,21 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             SignatureTXT.Leave += SignatureTXT_Leave;
         }
 
-        private bool IsInLeague()
+        private void fetchLeague()
         {
-            bool result = false;
             var leagueList = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
             foreach (League league in leagueList)
             {
-                if (league.Members.Any(e => e.UUID == userID.UUID)) { result = true; affiliatedLeague = league; }
+                if (league.Members.Any(e => e.UUID == userID.UUID)) { isInLeague = true; affiliatedLeague = league; }
             }
-            return result;
         }
 
         private void PersonalStatsSubform_Load(object sender, EventArgs e)
         {
             Nickname.Text = "玩家暱稱: " + userID.Username;
             Identifier.Text = "識別碼: " + userID.UUID;
-
-            if(IsInLeague())
+            fetchLeague();
+            if(isInLeague)
             {
                 AffiliatedLeague.Text = "所屬聯盟: " + affiliatedLeague.Name;
                 LeagueRole.Text = "成員身分: " + (affiliatedLeague.Owner.UUID == userID.UUID ? "所有者" : "成員");
@@ -108,6 +107,25 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         }
 
+        public void update()
+        {
+            fetchLeague();
+            if (isInLeague)
+            {
+                AffiliatedLeague.Text = "所屬聯盟: " + affiliatedLeague.Name;
+                LeagueRole.Text = "成員身分: " + (affiliatedLeague.Owner.UUID == userID.UUID ? "所有者" : "成員");
+                Ratings.Text = "評分排名: 尚未更新";
+                NoRecord.Hide();
+            }
+            else
+            {
+                AffiliatedLeague.Text = "所屬聯盟: 無";
+                LeagueRole.Text = "成員身分: 無";
+                Ratings.Text = "評分排名: 無";
+                foreach (Control c in History.Controls) c.Visible = false;
+                NoRecord.Show();
+            }
+        }
         private void createPastGames()
         {
             while(defaultChance > 0)
@@ -140,7 +158,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private void Upload_Click(object sender, EventArgs e)
         {
             DialogResult result;
-            if (AvatarIMG.Image.Equals(Properties.Resources.Placeholder4)) result = MessageBox.Show("你要更換你的使用者頭像嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (uploaded) result = MessageBox.Show("你要更換你的使用者頭像嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             else goto SkipComfirmation;
 
             if (result == DialogResult.No) return;
@@ -153,19 +171,19 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 Filter = "png files (*.png)|*.png|jpg files (*.jpg)|*.jpg",
                 FilterIndex = 1
             };
-            if (of.ShowDialog() == DialogResult.OK) { AvatarIMG.Image = new Bitmap(of.FileName); MessageBox.Show("已成功更換頭貼!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            if (of.ShowDialog() == DialogResult.OK) { AvatarIMG.Image = new Bitmap(of.FileName); uploaded = true;  MessageBox.Show("已成功更換頭貼!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information); }
         }
 
         private void Remove_Click(object sender, EventArgs e)
         {
             DialogResult result;
-            if (!AvatarIMG.Image.Equals(Properties.Resources.Placeholder4)) result = MessageBox.Show("你要移除現有的使用者頭像嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (uploaded) result = MessageBox.Show("你要移除現有的使用者頭像嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             else { MessageBox.Show("你還沒有上傳任何頭像!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return; }
 
             if (result == DialogResult.No) return;
 
             AvatarIMG.Image = Properties.Resources.Placeholder4;
-
+            uploaded = false;
             MessageBox.Show("已移除現有頭貼!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

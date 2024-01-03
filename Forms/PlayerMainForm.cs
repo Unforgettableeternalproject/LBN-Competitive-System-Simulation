@@ -1,5 +1,6 @@
 ﻿using LBN_Competitive_System_Simulation.Forms.Subforms;
 using Newtonsoft.Json;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,8 @@ namespace LBN_Competitive_System_Simulation.Forms
         static readonly long currentTime = DateTime.Now.Ticks;
         private List<Proposal> eventList = new List<Proposal>(), extraEventList = null;
         private List<League> leagueList = new List<League>();
-        private bool isInLeague = false, adminMode;
+        private bool isInLeague, isOwner, adminMode;
+        private League affiliatedLeague = null;
         private readonly ID userID;
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private RecentGamesSubform rg;
@@ -36,7 +38,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             if (adminMode) SwitchRole.Text = "返回管理頁面";
             else SwitchRole.Text = "切換使用者...";
             getLeagueList();
-            isInLeague = IsInLeague();
+            fetchLeague();
             if (!isInLeague) Announcement.Image = Properties.Resources.LeagueAnnouncementEmpty;
             else Announcement.Image = Properties.Resources.LeagueAnnouncementNormal;
         }
@@ -51,19 +53,22 @@ namespace LBN_Competitive_System_Simulation.Forms
             RGInit();
         }
 
-        private bool IsInLeague()
+        private void fetchLeague()
         {
-            bool result = false;
-
-            foreach(League league in leagueList)
+            Console.WriteLine("Debug-1");
+            foreach (League league in leagueList)
             {
-                if (league.Members.Any(e => e.UUID == userID.UUID)) { result = true; LeagueDisplay.Text = league.Name; }
+                if (league.Members.Any(e => e.UUID == userID.UUID)) { isInLeague = true; LeagueDisplay.Text = league.Name; affiliatedLeague = league; }
+                foreach(ID user in league.Members) Console.WriteLine(user.UUID.ToString() + " : " + userID.UUID);
             }
-            return result;
+            if (affiliatedLeague != null && affiliatedLeague.Owner.UUID == userID.UUID) isOwner = true;
+            else isOwner = false;
         }
         private void getLeagueList()
         {
+            Console.WriteLine("Debug-2");
             leagueList = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
+            Console.WriteLine(leagueList[0].Members.Count);
         }
         private void overallInit()
         {
@@ -189,18 +194,23 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             if (DateTime.Compare(updateTime, rg.UpdateTime) < 0) { eventList = rg.EventList; updateTime = DateTime.Now; }
             c.EventList = eventList;
+            if(isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); }
+            if(isOwner != ld.IsOwner) { isOwner = ld.IsOwner; ps.update(); }
         }
     }
 
     public class League
     {
-        public string Name;
-        public string Motto;
-        public string LeagueType;
-        public ID Owner;
-        public List<ID> Members;
+        public string Name { get; set; }
+        public string Motto { get; set; }
+        public string LeagueType { get; set; }
+        public ID Owner { get; set; }
+        public List<ID> Members { get; set; }
 
-        public League() { }
+        public League()
+        {
+            Members = new List<ID>();
+        }
         public League(string name, ID owner)
         {
             Name = name;
@@ -209,7 +219,13 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         public League(string name, ID owner, List<ID> players) : this(name, owner)
         {
-            this.Members = players;
+            Members = players;
+        }
+
+        public League(string name, ID owner, string lt, string motto, List<ID> players) : this(name, owner, players)
+        {
+            Motto = motto;
+            LeagueType = lt;
         }
     }
 }

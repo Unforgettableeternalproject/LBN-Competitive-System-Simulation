@@ -2,7 +2,7 @@
   {
     "Account": "1234567 0123456",
     "Quota": "每月入/出帳",
-    "Notify": "True",
+    "Notify": "False",
     "Username": "Bernie",
     "Password": "123456",
     "Email": "ptyc4076@gmail.com",

@@ -59,7 +59,7 @@
             this.btn_confirm.TabIndex = 0;
             this.btn_confirm.UseMnemonic = false;
             this.btn_confirm.UseVisualStyleBackColor = false;
-            this.btn_confirm.Click += new System.EventHandler(this.button1_Click);
+            this.btn_confirm.Click += new System.EventHandler(this.btn_confirm_Click);
             // 
             // Introduction
             // 

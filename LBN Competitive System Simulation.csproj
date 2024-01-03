@@ -289,6 +289,9 @@
     <None Include="Resources\LeagueLogo_4.png" />
     <None Include="Resources\LeagueLogo_5.png" />
     <None Include="Resources\LeagueLogo_6.png" />
+    <None Include="Resources\LDPage2.png" />
+    <None Include="Resources\Search.png" />
+    <Content Include="Concepts\To-Do List.txt" />
     <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />

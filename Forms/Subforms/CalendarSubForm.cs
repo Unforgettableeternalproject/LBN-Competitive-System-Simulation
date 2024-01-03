@@ -106,7 +106,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                         }
                         else
                         {
-                            EventName.Text = eventName.Count > 1 ? $"{eventName.Count-1}個活動" : eventName[0];
+                            EventName.Text = eventName.Count > 1 ? $"{eventName.Count}個活動" : eventName[0];
                             EventName.ForeColor = SystemColors.GrayText;
                             StartDate.Value = selectedDate;
                             EndDate.Value = selectedDate.AddDays(timeSpan);

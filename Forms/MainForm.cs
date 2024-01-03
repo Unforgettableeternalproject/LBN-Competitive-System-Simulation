@@ -37,7 +37,7 @@ namespace LBN_Competitive_System_Simulation
         {
 
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_confirm_Click(object sender, EventArgs e)
         {
             switch (intro)
             {

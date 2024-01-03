@@ -212,7 +212,6 @@
             // 
             // Tick
             // 
-            this.Tick.Interval = 1000;
             this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
             // PlayerMainForm

@@ -7,13 +7,6 @@
     "Role": "Admin"
   },
   {
-    "Username": "Berniee",
-    "Password": "122334",
-    "Email": "ptyc4076@gmail.com",
-    "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
-    "Role": "League Owner"
-  },
-  {
     "Username": "Vanity",
     "Password": "654321",
     "Email": "notptyc4076@gmail.com",
@@ -25,13 +18,20 @@
     "Password": "Lmao",
     "Email": "Nord@gmail.com",
     "UUID": "b9f8c6a2-ae16-4a7f-b53b-fbbbcd610f35",
+    "Role": "League Owner"
+  },
+  {
+    "Username": "HX閃電狼",
+    "Password": "Wolfy",
+    "Email": "LightningWolf@gmail.com",
+    "UUID": "c7g7c6b4-aa21-4t4f-b54h-fb34c5610f35",
     "Role": "Player"
   },
   {
-    "Email": "LightningWolf@gmail.com",
-    "Password": "Wolfy",
-    "Role": "Player",
-    "Username": "HX閃電狼",
-    "UUID": "c7g7c6b4-aa21-4t4f-b54h-fb34c5610f35"
+    "Username": "Berniee",
+    "Password": "122334",
+    "Email": "ptyc4076@gmail.com",
+    "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
+    "Role": "Player"
   }
 ]
