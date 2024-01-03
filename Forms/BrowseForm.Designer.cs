@@ -299,7 +299,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BrowseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "      ";
+            this.Text = "LBN瀏覽介面";
             this.Load += new System.EventHandler(this.BrowseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Stream)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).EndInit();

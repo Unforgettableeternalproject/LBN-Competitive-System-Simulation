@@ -180,7 +180,7 @@
             this.Controls.Add(this.SubPages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LeagueMainForm";
-            this.Text = "Form1";
+            this.Text = "LBN聯盟後台";
             ((System.ComponentModel.ISupportInitialize)(this.LeagueLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

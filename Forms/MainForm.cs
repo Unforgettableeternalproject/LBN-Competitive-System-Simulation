@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Media;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -17,13 +18,17 @@ namespace LBN_Competitive_System_Simulation
 {
     public partial class MainPage : Form
     {
+        private const int Countdown = 3;
         static int intro = 0;
-        private int counter = 3;
+        private int counter = 3, countdownTimer = Countdown;
         ID userID = null;
+        private SoundPlayer soundPlayer = null;
         string userName;
         public MainPage()
         {
             InitializeComponent();
+            KeyDown += MainPage_KeyDown;
+            KeyUp += MainPage_KeyUp;
             intro = 0;
             Introduction.BackColor = Color.Transparent;
             Introduction.Image = Properties.Resources.Disclaimer;
@@ -31,11 +36,31 @@ namespace LBN_Competitive_System_Simulation
             btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
             LoadingSpinner.Hide();
             WelcomeDisplay.Hide();
+
+            soundPlayer = new SoundPlayer(Properties.Resources.ExitIndicator);
         }
+        private void MainPage_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Escape && !Esc_Timer.Enabled)
+            {
+                countdownTimer = Countdown;
+                Esc_Timer.Start();
+            }
+        }
+
+        private void MainPage_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                Esc_Timer.Stop();
+                Reminder.Text = "按住ESC以退出";
+            }
+        }
+
 
         private void MainPage_Load(object sender, EventArgs e)
         {
-
+            Reminder.Text = "按住ESC以退出";
         }
         private void btn_confirm_Click(object sender, EventArgs e)
         {
@@ -146,14 +171,20 @@ namespace LBN_Competitive_System_Simulation
             }
         }
 
-        private void WelcomeDisplay_Click_1(object sender, EventArgs e)
+        private void WelcomeDisplay_Click(object sender, EventArgs e)
         {
             MessageBox.Show("欸? 您找到了隱藏小彩蛋!", "恭喜!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void Introduction_Click(object sender, EventArgs e)
+        private void Esc_Timer_Tick(object sender, EventArgs e)
         {
-
+            Console.WriteLine(countdownTimer.ToString());
+            countdownTimer--;
+            var indicator = "正在離開" + String.Concat(Enumerable.Repeat(".", 3 - countdownTimer));
+            Reminder.Text = indicator;
+            // If countdown reaches zero, close the form
+            if (countdownTimer <= 0) { soundPlayer.Play();  Application.Exit(); }
+            else soundPlayer.Play();
         }
     }
 }

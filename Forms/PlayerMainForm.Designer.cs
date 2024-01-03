@@ -258,7 +258,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlayerMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "LBN選手儀表板";
             this.Load += new System.EventHandler(this.PlayerMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Announcement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).EndInit();

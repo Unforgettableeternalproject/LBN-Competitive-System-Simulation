@@ -192,7 +192,7 @@ namespace LBN_Competitive_System_Simulation
             Mode = "Login";
             SwitchRole.Show();
             passwordToggle = true;
-            this.Text = "Login Window";
+            this.Text = "LBN登入畫面";
             this.BackgroundImage = Properties.Resources.LoginForm;
             btn_confirm.BackgroundImage = Properties.Resources.btn_Confirm;
             txt_Username.Location = new Point(115, 335);
@@ -214,7 +214,7 @@ namespace LBN_Competitive_System_Simulation
             clearFields();
             Mode = "Register";
             SwitchRole.Hide();
-            this.Text = "Registration Window";
+            this.Text = "LBN註冊畫面";
             this.BackgroundImage = Properties.Resources.RegistrationForm;
             btn_confirm.BackgroundImage = Properties.Resources.Submit;
             txt_Username.Location = new Point(115, 257);
@@ -235,7 +235,7 @@ namespace LBN_Competitive_System_Simulation
             clearFields();
             Mode = "Special";
             SwitchRole.Show();
-            this.Text = "Back-end Login Window";
+            this.Text = "LBN後台登入畫面";
             this.BackgroundImage = Properties.Resources.AdminLogin;
             btn_confirm.BackgroundImage = Properties.Resources.btn_ConfirmAdmin;
             txt_Username.Location = new Point(115, 290);

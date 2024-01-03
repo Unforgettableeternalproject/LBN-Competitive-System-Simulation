@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPPlus, Version=7.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.7.0.5\lib\net462\EPPlus.dll</HintPath>
@@ -303,6 +306,9 @@
     <Content Include="Concepts\To-Do List.txt" />
     <None Include="Resources\Spinner_Blue.gif" />
     <None Include="Resources\LO_Base.png" />
+    <Content Include="Icon.ico" />
+    <None Include="Resources\beep.wav" />
+    <None Include="Resources\ExitIndicator.wav" />
     <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />

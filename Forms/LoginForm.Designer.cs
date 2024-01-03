@@ -185,7 +185,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "LBN登入畫面";
             this.Load += new System.EventHandler(this.LoginFrom_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
