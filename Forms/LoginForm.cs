@@ -63,7 +63,7 @@ namespace LBN_Competitive_System_Simulation
         {
             bool flag = false;
             ID result = new ID();
-            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -73,13 +73,13 @@ namespace LBN_Competitive_System_Simulation
                 return null;
             }
 
-            dynamic IDs = JsonConvert.DeserializeObject(json);
+            var IDs = JsonConvert.DeserializeObject<List<ID>>(json);
             foreach(var id in IDs)
             {
                 if (username == id.Username.ToString() && password == id.Password.ToString())
                 {
                     if (id.Role == null) result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString());
-                    else result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString(), id.Role.ToString());
+                    else result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString(), id.Role.ToString(), id.UUID.ToString());
                     flag = true;
                     break;
                 }else if(username == id.Username.ToString() && password != id.Password.ToString())
@@ -109,7 +109,7 @@ namespace LBN_Competitive_System_Simulation
                 emailValid = false;
             }
 
-            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             if (string.IsNullOrEmpty(json.ToString()))
@@ -161,7 +161,7 @@ namespace LBN_Competitive_System_Simulation
 
         private void newID(ID _new)
         {
-            var read = new StreamReader($@"..\..\ExampleIDs\{type}UserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
             var json = read.ReadToEnd();
 
             read.Close();
@@ -170,7 +170,7 @@ namespace LBN_Competitive_System_Simulation
             IDList.Add(_new);
 
             json = JsonConvert.SerializeObject(IDList);
-            var writer = new StreamWriter($@"..\..\ExampleIDs\{type}UserID.json");
+            var writer = new StreamWriter($@"..\..\ExampleJSONs\{type}UserID.json");
             writer.Write(json);
 
             writer.Flush();

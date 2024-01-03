@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,10 @@ namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class AdminMainForm : Form
     {
+        static readonly long currentTime = DateTime.Now.Ticks;
         private List<Proposal> eventList = new List<Proposal>();
         private readonly ID userID;
-        private readonly Random random = new Random();
+        private readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private int people = 0;
         private UserManagementSubform um;
         private GameProposalSubform gp;
@@ -69,7 +71,7 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            c = new CalendarSubform
+            c = new CalendarSubform(true)
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
@@ -121,17 +123,30 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void ViewAsPlayer_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = MessageBox.Show("將以玩家身分檢視儀表板頁面，是否繼續?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                using (PlayerMainForm readOnly = new PlayerMainForm(new ID("Test Player", "Not Required", "None", "Admin"), true, eventList))
+                {
+                    readOnly.ShowDialog();
+                }
+                this.Show();
+                Console.WriteLine(this.Visible);
+            }
         }
         private void ViewAsGuest_Click(object sender, EventArgs e)
         {
-            DialogResult = MessageBox.Show("將以訪客身分檢視一般瀏覽頁面，是否繼續?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if(DialogResult == DialogResult.Yes)
+            DialogResult result = MessageBox.Show("將以訪客身分檢視一般瀏覽頁面，是否繼續?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if(result == DialogResult.Yes)
             {
                 this.Hide();
-                BrowseForm readOnly = new BrowseForm(new ID("Anonymous", "Not Required", "None", "Admin"), true);
-                readOnly.ShowDialog();
+                using (BrowseForm readOnly = new BrowseForm(new ID("Anonymous", "Not Required", "None", "Admin"), true))
+                {
+                    readOnly.ShowDialog();
+                }
                 this.Show();
+                Console.WriteLine(this.Visible);
             }
         }
         private void UserManagement_Click(object sender, EventArgs e)
@@ -186,16 +201,6 @@ namespace LBN_Competitive_System_Simulation.Forms
             {
                 Application.Exit();
             }
-        }
-
-        private void SubPages_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void OnlineCount_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ExpandChatroom_Click(object sender, EventArgs e)

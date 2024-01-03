@@ -23,6 +23,7 @@ namespace LBN_Competitive_System_Simulation
         private double videoPosition = 0;
         private string Mode = "Browse";
         private Bitmap ad, spad;
+        private bool adminMode;
 
         private readonly List<string> prewrittenMessages = new List<string>
         {
@@ -63,11 +64,12 @@ namespace LBN_Competitive_System_Simulation
             "三哥",
             "約德爾游擊隊"
         };
-        public BrowseForm(ID userID, bool adminMode = false)
+        public BrowseForm(ID _userID, bool _adminMode = false)
         {
             InitializeComponent();
             browseInit();
-            this.userID = userID;
+            userID = _userID;
+            adminMode = _adminMode;
             if (userID.Username != "Anonymous") WelcomeMessage.Text = $"歡迎回來, {userID.Username}!\n\n今天想要觀看甚麼賽事?";
             else WelcomeMessage.Text = "您現在是以訪客身分登入\n\n匿名用戶無法使用釘選等功能\n\n，但仍然可以進行聊天!";
 
@@ -235,7 +237,7 @@ namespace LBN_Competitive_System_Simulation
         private void Contact_Click(object sender, EventArgs e)
         {
             this.Enabled = false;
-            ContactForm cf = new ContactForm(userID, true);
+            ContactForm cf = new ContactForm(userID, !adminMode);
             cf.FormClosed += ContactForm_FormClosed;
             cf.ShowDialog();
 

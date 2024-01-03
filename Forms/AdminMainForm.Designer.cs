@@ -106,7 +106,6 @@
             this.SubPages.Name = "SubPages";
             this.SubPages.Size = new System.Drawing.Size(1108, 777);
             this.SubPages.TabIndex = 22;
-            this.SubPages.Paint += new System.Windows.Forms.PaintEventHandler(this.SubPages_Paint);
             // 
             // OnlineCount
             // 
@@ -118,7 +117,6 @@
             this.OnlineCount.Size = new System.Drawing.Size(54, 21);
             this.OnlineCount.TabIndex = 4;
             this.OnlineCount.Text = "0 人";
-            this.OnlineCount.Click += new System.EventHandler(this.OnlineCount_Click);
             // 
             // ExpandChatroom
             // 

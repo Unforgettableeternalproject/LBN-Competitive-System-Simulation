@@ -57,7 +57,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void getUserInfo()
         {
-            var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\PartnerUserID.json");
             var json = read.ReadToEnd();
 
             read.Close();
@@ -68,8 +68,8 @@ namespace LBN_Competitive_System_Simulation.Forms
             {
                 if (user.Username == userID.Username && user.Password == userID.Password)
                 {
-                    userInfo[0] = user.Account == null ? null : user.Account.ToString();
-                    userInfo[1] = user.Quota == null ? null : user.Quota.ToString();
+                    userInfo[0] = string.IsNullOrEmpty(user.Account.ToString()) ? null : user.Account.ToString();
+                    userInfo[1] = string.IsNullOrEmpty(user.Quota.ToString()) ? null : user.Quota.ToString();
 
                     if (user.Notify == null) userInfo[2] = null;
                     else userInfo[2] = user.Notify.ToString() == "True" ? true : false;
@@ -79,7 +79,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void updateJSON()
         {
-            var filePath = @"..\..\ExampleIDs\PartnerUserID.json";
+            var filePath = @"..\..\ExampleJSONs\PartnerUserID.json";
 
             // Read JSON from file
             var json = File.ReadAllText(filePath);
@@ -126,7 +126,6 @@ namespace LBN_Competitive_System_Simulation.Forms
             else
             {
                 string result = String.Concat(AccountChange.Text.Where(c => !Char.IsWhiteSpace(c))), display = "";
-                Console.WriteLine(result);
                 bool IsAllDigits(string s) => s.All(char.IsDigit);
                 if (result.Length == 14 && IsAllDigits(result))
                 {

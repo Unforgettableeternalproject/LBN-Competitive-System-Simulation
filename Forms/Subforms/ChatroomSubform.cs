@@ -46,9 +46,10 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             switch (user)
             {
                 case "Admin":
-                    defaultContact = new Contact("首席管理員(HA)", new List<string> (){ $"[{DateTime.Now.AddDays(random.Next(-10, -1)*random.NextDouble()).ToShortTimeString()}] 首席管理員(HA): 最近的系統狀況如何?" });
+                    defaultContact = new Contact("首席管理員(HA)", new List<string> (){ $"[{DateTime.Now.AddHours(random.Next(-10, -1)*random.NextDouble()).ToShortTimeString()}] 首席管理員(HA): 最近的系統狀況如何?" });
                     break;
                 case "Player":
+                    defaultContact = new Contact("HX閃電狼", new List<string>() { $"[{DateTime.Now.AddHours(random.Next(-10, -1) * random.NextDouble()).ToShortTimeString()}] HX閃電狼: 欸阿你之前還欠我五百內!" });
                     break;
                 case "League Owner":
                     break;

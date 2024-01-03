@@ -33,13 +33,13 @@
             this.MsgBox = new System.Windows.Forms.RichTextBox();
             this.Send = new System.Windows.Forms.Button();
             this.Contacts = new System.Windows.Forms.GroupBox();
-            this.Etc = new System.Windows.Forms.Label();
-            this.Contact6 = new System.Windows.Forms.Button();
-            this.Contact5 = new System.Windows.Forms.Button();
-            this.Contact4 = new System.Windows.Forms.Button();
-            this.Contact3 = new System.Windows.Forms.Button();
-            this.Contact2 = new System.Windows.Forms.Button();
             this.Contact1 = new System.Windows.Forms.Button();
+            this.Contact2 = new System.Windows.Forms.Button();
+            this.Contact3 = new System.Windows.Forms.Button();
+            this.Contact5 = new System.Windows.Forms.Button();
+            this.Contact6 = new System.Windows.Forms.Button();
+            this.Contact4 = new System.Windows.Forms.Button();
+            this.Etc = new System.Windows.Forms.Label();
             this.HideChat = new System.Windows.Forms.Button();
             this.ReplyTick = new System.Windows.Forms.Timer(this.components);
             this.Contacts.SuspendLayout();
@@ -92,59 +92,16 @@
             this.Contacts.TabIndex = 3;
             this.Contacts.TabStop = false;
             // 
-            // Etc
+            // Contact1
             // 
-            this.Etc.AutoSize = true;
-            this.Etc.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Etc.Location = new System.Drawing.Point(14, 275);
-            this.Etc.Name = "Etc";
-            this.Etc.Size = new System.Drawing.Size(92, 12);
-            this.Etc.TabIndex = 6;
-            this.Etc.Text = "還有 個聯絡人...";
-            // 
-            // Contact6
-            // 
-            this.Contact6.AutoEllipsis = true;
-            this.Contact6.Location = new System.Drawing.Point(0, 213);
-            this.Contact6.Name = "Contact6";
-            this.Contact6.Size = new System.Drawing.Size(123, 35);
-            this.Contact6.TabIndex = 5;
-            this.Contact6.Text = "聯絡人六號";
-            this.Contact6.UseVisualStyleBackColor = true;
-            this.Contact6.Click += new System.EventHandler(this.Contact6_Click);
-            // 
-            // Contact5
-            // 
-            this.Contact5.AutoEllipsis = true;
-            this.Contact5.Location = new System.Drawing.Point(0, 172);
-            this.Contact5.Name = "Contact5";
-            this.Contact5.Size = new System.Drawing.Size(123, 35);
-            this.Contact5.TabIndex = 4;
-            this.Contact5.Text = "聯絡人五號";
-            this.Contact5.UseVisualStyleBackColor = true;
-            this.Contact5.Click += new System.EventHandler(this.Contact5_Click);
-            // 
-            // Contact4
-            // 
-            this.Contact4.AutoEllipsis = true;
-            this.Contact4.Location = new System.Drawing.Point(0, 131);
-            this.Contact4.Name = "Contact4";
-            this.Contact4.Size = new System.Drawing.Size(123, 35);
-            this.Contact4.TabIndex = 3;
-            this.Contact4.Text = "聯絡人四號";
-            this.Contact4.UseVisualStyleBackColor = true;
-            this.Contact4.Click += new System.EventHandler(this.Contact4_Click);
-            // 
-            // Contact3
-            // 
-            this.Contact3.AutoEllipsis = true;
-            this.Contact3.Location = new System.Drawing.Point(0, 90);
-            this.Contact3.Name = "Contact3";
-            this.Contact3.Size = new System.Drawing.Size(123, 35);
-            this.Contact3.TabIndex = 2;
-            this.Contact3.Text = "聯絡人三號";
-            this.Contact3.UseVisualStyleBackColor = true;
-            this.Contact3.Click += new System.EventHandler(this.Contact3_Click);
+            this.Contact1.AutoEllipsis = true;
+            this.Contact1.Location = new System.Drawing.Point(0, 8);
+            this.Contact1.Name = "Contact1";
+            this.Contact1.Size = new System.Drawing.Size(123, 35);
+            this.Contact1.TabIndex = 0;
+            this.Contact1.Text = "聯絡人一號";
+            this.Contact1.UseVisualStyleBackColor = true;
+            this.Contact1.Click += new System.EventHandler(this.Contact1_Click);
             // 
             // Contact2
             // 
@@ -157,16 +114,59 @@
             this.Contact2.UseVisualStyleBackColor = true;
             this.Contact2.Click += new System.EventHandler(this.Contact2_Click);
             // 
-            // Contact1
+            // Contact3
             // 
-            this.Contact1.AutoEllipsis = true;
-            this.Contact1.Location = new System.Drawing.Point(0, 8);
-            this.Contact1.Name = "Contact1";
-            this.Contact1.Size = new System.Drawing.Size(123, 35);
-            this.Contact1.TabIndex = 0;
-            this.Contact1.Text = "聯絡人一號";
-            this.Contact1.UseVisualStyleBackColor = true;
-            this.Contact1.Click += new System.EventHandler(this.Contact1_Click);
+            this.Contact3.AutoEllipsis = true;
+            this.Contact3.Location = new System.Drawing.Point(0, 90);
+            this.Contact3.Name = "Contact3";
+            this.Contact3.Size = new System.Drawing.Size(123, 35);
+            this.Contact3.TabIndex = 2;
+            this.Contact3.Text = "聯絡人三號";
+            this.Contact3.UseVisualStyleBackColor = true;
+            this.Contact3.Click += new System.EventHandler(this.Contact3_Click);
+            // 
+            // Contact5
+            // 
+            this.Contact5.AutoEllipsis = true;
+            this.Contact5.Location = new System.Drawing.Point(0, 172);
+            this.Contact5.Name = "Contact5";
+            this.Contact5.Size = new System.Drawing.Size(123, 35);
+            this.Contact5.TabIndex = 4;
+            this.Contact5.Text = "聯絡人五號";
+            this.Contact5.UseVisualStyleBackColor = true;
+            this.Contact5.Click += new System.EventHandler(this.Contact5_Click);
+            // 
+            // Contact6
+            // 
+            this.Contact6.AutoEllipsis = true;
+            this.Contact6.Location = new System.Drawing.Point(0, 213);
+            this.Contact6.Name = "Contact6";
+            this.Contact6.Size = new System.Drawing.Size(123, 35);
+            this.Contact6.TabIndex = 5;
+            this.Contact6.Text = "聯絡人六號";
+            this.Contact6.UseVisualStyleBackColor = true;
+            this.Contact6.Click += new System.EventHandler(this.Contact6_Click);
+            // 
+            // Contact4
+            // 
+            this.Contact4.AutoEllipsis = true;
+            this.Contact4.Location = new System.Drawing.Point(0, 131);
+            this.Contact4.Name = "Contact4";
+            this.Contact4.Size = new System.Drawing.Size(123, 35);
+            this.Contact4.TabIndex = 3;
+            this.Contact4.Text = "聯絡人四號";
+            this.Contact4.UseVisualStyleBackColor = true;
+            this.Contact4.Click += new System.EventHandler(this.Contact4_Click);
+            // 
+            // Etc
+            // 
+            this.Etc.AutoSize = true;
+            this.Etc.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Etc.Location = new System.Drawing.Point(14, 275);
+            this.Etc.Name = "Etc";
+            this.Etc.Size = new System.Drawing.Size(92, 12);
+            this.Etc.TabIndex = 6;
+            this.Etc.Text = "還有 個聯絡人...";
             // 
             // HideChat
             // 
@@ -191,6 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Chatroom;
             this.ClientSize = new System.Drawing.Size(434, 434);
             this.Controls.Add(this.HideChat);

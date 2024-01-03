@@ -33,11 +33,32 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EPPlus, Version=7.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.0.5\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +94,12 @@
     <Compile Include="Forms\AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlayerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerMainForm.Designer.cs">
+      <DependentUpon>PlayerMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\DeploymentSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +123,24 @@
     </Compile>
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\LeagueDutySubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\LeagueDutySubform.Designer.cs">
+      <DependentUpon>LeagueDutySubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\PersonalStatsSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\PersonalStatsSubform.Designer.cs">
+      <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\RecentGamesSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\RecentGamesSubform.Designer.cs">
+      <DependentUpon>RecentGamesSubform.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Subforms\SystemLogSubform.cs">
       <SubType>Form</SubType>
@@ -153,6 +198,9 @@
     <EmbeddedResource Include="Forms\ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerMainForm.resx">
+      <DependentUpon>PlayerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\CalendarSubform.resx">
       <DependentUpon>CalendarSubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +212,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\LeagueDutySubform.resx">
+      <DependentUpon>LeagueDutySubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\PersonalStatsSubform.resx">
+      <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\RecentGamesSubform.resx">
+      <DependentUpon>RecentGamesSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\SystemLogSubform.resx">
       <DependentUpon>SystemLogSubform.cs</DependentUpon>
@@ -192,9 +249,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Concepts\Concept Art.pdf" />
-    <None Include="ExampleIDs\SpecialUserID.json" />
-    <None Include="ExampleIDs\PartnerUserID.json" />
-    <None Include="ExampleIDs\NormalUserID.json" />
+    <None Include="ExampleJSONs\Leagues.json" />
+    <None Include="ExampleJSONs\SpecialUserID.json" />
+    <None Include="ExampleJSONs\PartnerUserID.json" />
+    <None Include="ExampleJSONs\NormalUserID.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -222,7 +280,26 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\LDPage.png" />
+    <None Include="Resources\Novia.gif" />
+    <None Include="Resources\Announement.png" />
+    <None Include="Resources\LeagueLogo_1.png" />
+    <None Include="Resources\LeagueLogo_2.png" />
+    <None Include="Resources\LeagueLogo_3.png" />
+    <None Include="Resources\LeagueLogo_4.png" />
+    <None Include="Resources\LeagueLogo_5.png" />
+    <None Include="Resources\LeagueLogo_6.png" />
+    <None Include="Resources\LDPage2.png" />
+    <None Include="Resources\Search.png" />
+    <Content Include="Concepts\To-Do List.txt" />
+    <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
+    <None Include="Resources\Player_Base.png" />
+    <None Include="Resources\LeagueAnnouncementEmpty.png" />
+    <None Include="Resources\RGPage.png" />
+    <None Include="Resources\LeagueAnnouncementNormal.png" />
+    <None Include="Resources\PSPage.png" />
+    <None Include="Resources\Placeholder4.png" />
     <Content Include="Snapshots\AdminScreen.png" />
     <None Include="Resources\Admin_Base.png" />
     <None Include="Resources\AdminLogin.png" />

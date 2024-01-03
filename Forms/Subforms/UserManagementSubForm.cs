@@ -46,12 +46,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             List<ID> userList;
             if(Users == "Normal")
             {
-                if(isPartner) userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\PartnerUserID.json"));
-                else userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
+                if(isPartner) userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
+                else userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
             }
             else
             {
-                userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
+                userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
             }
             return userList.Any(user => user.Username == newUser.Username && user.Password == newUser.Password);
         }
@@ -100,7 +100,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             txt_Username.Text = ""; txt_Username.Hide();
             chk_Partner.Checked = false;
             cbox_UserType.SelectedItem = null;
-            cbox_UserType.Text = "選擇類型...";
+            if (Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
+            else cbox_UserType.Text = "選擇類型...";
             cbox_UserType.ForeColor = SystemColors.GrayText;
             cbox_UserType.Hide();
             chk_Partner.Hide();
@@ -136,6 +137,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_edit.Hide();
             Confim.Text = "確認並刪除";
             RadioBtns.Enabled = false;
+            if (Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
+            else cbox_UserType.Text = "選擇類型...";
         }
         private void editInit()
         {
@@ -159,6 +162,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_edit.Hide();
             Confim.Text = "確認並更改";
             RadioBtns.Enabled = false;
+            if(Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
+            else cbox_UserType.Text = "選擇類型...";
         }
         private void addInit()
         {
@@ -181,8 +186,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_edit.Hide();
             RadioBtns.Enabled = false;
             Confim.Text = "確認並添加";
-            if(Users == "Normal") { lbl_Partner.Enabled = true; chk_Partner.Enabled = true; lbl_UserType.Enabled = true; cbox_UserType.Enabled = true; }
-            else { lbl_Partner.Enabled = false; chk_Partner.Enabled = false; lbl_UserType.Enabled = false; cbox_UserType.Enabled = false; }
+            if(Users == "Normal") { lbl_Partner.Enabled = true; chk_Partner.Enabled = true; lbl_UserType.Enabled = true; cbox_UserType.Enabled = true; cbox_UserType.Text = "選擇類型..."; }
+            else { lbl_Partner.Enabled = false; chk_Partner.Enabled = false; lbl_UserType.Enabled = false; cbox_UserType.Enabled = false; cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex; }
         }
         private void gridInit(string type, string role = "")
         {
@@ -191,8 +196,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             switch (type)
             {
                 case "Normal":
-                    var normalUsers = JsonConvert.DeserializeObject<List<IDwithPartnerCheck>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
-                    var partnerUsers = JsonConvert.DeserializeObject<List<IDwithPartnerCheck>>(File.ReadAllText(@"..\..\ExampleIDs\PartnerUserID.json"));
+                    var normalUsers = JsonConvert.DeserializeObject<List<IDwithPartnerCheck>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
+                    var partnerUsers = JsonConvert.DeserializeObject<List<IDwithPartnerCheck>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
 
                     // Create a list to hold all users (no repetitions)
                     var allUsers = new List<IDwithPartnerCheck>();
@@ -235,7 +240,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                     DataGrid.Columns["IsPartner"].DataPropertyName = "IsPartner";
                     break;
                 case "Special":
-                    var json = File.ReadAllText(@"..\..\ExampleIDs\SpecialUserID.json");
+                    var json = File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json");
                     var result = JsonConvert.DeserializeObject<List<ID>>(json);
                     DataGrid.AutoGenerateColumns = true;
                     DataGrid.DataSource = result.Where(user => user.Role == role).ToList();
@@ -249,25 +254,25 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if (Users == "Normal")
             { 
-                var userList_n = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
-                var userList_p = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleIDs\PartnerUserID.json"));
+                var userList_n = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
+                var userList_p = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
                 string usersJson = "", usersJson2 = "";
                 userList_p.RemoveAll(u => u.UUID == originalUser.UUID);
                 userList_n.RemoveAll(u => u.UUID == originalUser.UUID);
                 usersJson = JsonConvert.SerializeObject(userList_p, Formatting.Indented);
                 usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
-                File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
-                File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                File.WriteAllText(@"..\..\ExampleJSONs\PartnerUserID.json", usersJson);
+                File.WriteAllText(@"..\..\ExampleJSONs\NormalUserID.json", usersJson2);
                 gridInit("Normal");
             }
             else
             {
-                var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\SpecialUserID.json"));
+                var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json"));
                 userList.RemoveAll(u => u.UUID == originalUser.UUID);
                 string usersJson = JsonConvert.SerializeObject(userList, Formatting.Indented);
 
                 // Write the JSON to the file
-                File.WriteAllText(@"..\..\ExampleIDs\SpecialUserID.json", usersJson);
+                File.WriteAllText(@"..\..\ExampleJSONs\SpecialUserID.json", usersJson);
                 gridInit("Special", originalUser.Role);
             }
             originalUser = null;
@@ -288,8 +293,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if(Users == "Normal")
             {
-                var userList_n = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
-                var userList_p = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleIDs\PartnerUserID.json"));
+                var userList_n = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
+                var userList_p = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
                 string usersJson = "", usersJson2 = "";
                 if (originalUser.IsPartner == revisedUser.IsPartner)
                 {
@@ -302,8 +307,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                         usersJson = JsonConvert.SerializeObject(userList_p, Formatting.Indented);
                         usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
 
-                        File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
-                        File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                        File.WriteAllText(@"..\..\ExampleJSONs\PartnerUserID.json", usersJson);
+                        File.WriteAllText(@"..\..\ExampleJSONs\NormalUserID.json", usersJson2);
                     }
                     else
                     {
@@ -311,7 +316,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                         userList_n.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
                         usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
 
-                        File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                        File.WriteAllText(@"..\..\ExampleJSONs\NormalUserID.json", usersJson2);
                     }
                 }
                 if(originalUser.IsPartner == "True" && revisedUser.IsPartner == "False")
@@ -321,8 +326,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                     userList_n.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
                     usersJson = JsonConvert.SerializeObject(userList_p, Formatting.Indented);
                     usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
-                    File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
-                    File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                    File.WriteAllText(@"..\..\ExampleJSONs\PartnerUserID.json", usersJson);
+                    File.WriteAllText(@"..\..\ExampleJSONs\NormalUserID.json", usersJson2);
                 }
                 if(originalUser.IsPartner == "False" && revisedUser.IsPartner == "True")
                 {
@@ -331,20 +336,20 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                     userList_n.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
                     usersJson = JsonConvert.SerializeObject(userList_p, Formatting.Indented);
                     usersJson2 = JsonConvert.SerializeObject(userList_n, Formatting.Indented);
-                    File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
-                    File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson2);
+                    File.WriteAllText(@"..\..\ExampleJSONs\PartnerUserID.json", usersJson);
+                    File.WriteAllText(@"..\..\ExampleJSONs\NormalUserID.json", usersJson2);
                 }
                 gridInit("Normal");
             }
             else
             {
-                var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\SpecialUserID.json"));
+                var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json"));
                 userList.RemoveAll(u => u.UUID == originalUser.UUID);
                 userList.Add(new ID(revisedUser.Username, revisedUser.Password, revisedUser.Email, revisedUser.Role, originalUser.UUID));
                 string usersJson = JsonConvert.SerializeObject(userList, Formatting.Indented);
 
                 // Write the JSON to the file
-                File.WriteAllText(@"..\..\ExampleIDs\SpecialUserID.json", usersJson);
+                File.WriteAllText(@"..\..\ExampleJSONs\SpecialUserID.json", usersJson);
                 gridInit("Special", revisedUser.Role);
             }
 
@@ -369,8 +374,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 if (newUser.IsPartner == "True")
                 {
                     var NewUser = new ID(newUser.Username, newUser.Password, newUser.Email, newUser.Role);
-                    var existingNormalUser = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json")).FirstOrDefault(normalUser => normalUser.Username == NewUser.Username && normalUser.Password == NewUser.Password);
-                    var userList = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleIDs\PartnerUserID.json"));
+                    var existingNormalUser = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json")).FirstOrDefault(normalUser => normalUser.Username == NewUser.Username && normalUser.Password == NewUser.Password);
+                    var userList = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
 
                     if (existingNormalUser == null) userList.Add(new PartnerID(NewUser.Username, NewUser.Password, NewUser.Email, NewUser.Role, NewUser.UUID));
                     else userList.Add(new PartnerID(NewUser.Username, NewUser.Password, NewUser.Email, NewUser.Role, existingNormalUser.UUID));
@@ -378,35 +383,35 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                     string usersJson = JsonConvert.SerializeObject(userList, Formatting.Indented);
 
                     if(isExist(NewUser)) goto SkipP2N;
-                    var p2n_userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
+                    var p2n_userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
                     p2n_userList.Add(NewUser);
                     string p2n_usersJson = JsonConvert.SerializeObject(p2n_userList, Formatting.Indented);
-                    File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", p2n_usersJson);
+                    File.WriteAllText(@"..\..\ExampleJSONs\NormalUserID.json", p2n_usersJson);
                 // Write the JSON to the file
 
                 SkipP2N:
-                    File.WriteAllText(@"..\..\ExampleIDs\PartnerUserID.json", usersJson);
+                    File.WriteAllText(@"..\..\ExampleJSONs\PartnerUserID.json", usersJson);
                     gridInit("Normal");
                 }
                 else
                 {
-                    var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\NormalUserID.json"));
+                    var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
                     userList.Add(new ID(newUser.Username, newUser.Password, newUser.Email, newUser.Role));
                     string usersJson = JsonConvert.SerializeObject(userList, Formatting.Indented);
 
                     // Write the JSON to the file
-                    File.WriteAllText(@"..\..\ExampleIDs\NormalUserID.json", usersJson);
+                    File.WriteAllText(@"..\..\ExampleJSONs\NormalUserID.json", usersJson);
                     gridInit("Normal");
                 }
             }
             else
             {
-                var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleIDs\SpecialUserID.json"));
+                var userList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json"));
                 userList.Add(new ID(newUser.Username, newUser.Password, newUser.Email, newUser.Role));
                 string usersJson = JsonConvert.SerializeObject(userList, Formatting.Indented);
 
                 // Write the JSON to the file
-                File.WriteAllText(@"..\..\ExampleIDs\SpecialUserID.json", usersJson);
+                File.WriteAllText(@"..\..\ExampleJSONs\SpecialUserID.json", usersJson);
                 gridInit("Special", newUser.Role);
             }
         }
@@ -519,7 +524,13 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 }
                 gridInit("Special", Users);
             }
-            else if(SpecialUsers.Checked && cbox_Roles.SelectedItem == null) { MessageBox.Show("你還沒有選擇一個特殊用戶的分類!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); NormalUsers.Checked = true; }
+            else if(SpecialUsers.Checked && cbox_Roles.SelectedItem == null) 
+            { 
+                MessageBox.Show("你還沒有選擇一個特殊用戶的分類!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); 
+                NormalUsers.Checked = true; 
+                cbox_UserType.Items.Clear();
+                cbox_UserType.Items.AddRange(new object[] { "一般用戶", "合作夥伴" });
+            }
             else DoNothing();
         }
 
@@ -658,13 +669,13 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             public string Account { get; set; }
             public string Quota { get; set; }
-            public bool Notify { get; set; }
+            public string Notify { get; set; }
 
             public PartnerID(string username, string password, string email, string role, string uUID) : base(username, password, email, role, uUID)
             {
                 Account = "";
                 Quota = "";
-                Notify = false;
+                Notify = "False";
             }
         }
     }

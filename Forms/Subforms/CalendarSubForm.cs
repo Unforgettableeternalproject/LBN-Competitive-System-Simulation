@@ -19,19 +19,20 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private List<string> eventName = new List<string>();
         private string Mode = "View";
         private readonly string prompt = "輸入活動名稱...";
-        private bool hasEvent = false, isDefault = true;
+        private bool hasEvent = false, isDefault = true, editable = true;
         public List<Proposal> EventList
         {
-            get { return eventList; }
+            get => eventList;
             set { eventList = value; updateTime = DateTime.Now; }
         }
         public DateTime UpdateTime => updateTime;
 
-        public CalendarSubform()
+        public CalendarSubform(bool _editable)
         {
             InitializeComponent();
             EventName.Enter += EventName_Enter;
             EventName.Leave += EventName_Leave;
+            editable = _editable;
         }
 
         private void CalendarSubForm_Load(object sender, EventArgs e)
@@ -105,7 +106,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                         }
                         else
                         {
-                            EventName.Text = eventName.Count > 1 ? $"{eventName.Count-1}個活動" : eventName[0];
+                            EventName.Text = eventName.Count > 1 ? $"{eventName.Count}個活動" : eventName[0];
                             EventName.ForeColor = SystemColors.GrayText;
                             StartDate.Value = selectedDate;
                             EndDate.Value = selectedDate.AddDays(timeSpan);
@@ -171,8 +172,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             StartDate.Hide();
             To.Hide();
             EndDate.Hide();
-            AddEvent.Show();
-            DeleteEvent.Show();
+            if (editable) { AddEvent.Show(); DeleteEvent.Show(); }
+            else { AddEvent.Hide(); DeleteEvent.Hide(); }
         }
 
         private void eInit(string subMode)

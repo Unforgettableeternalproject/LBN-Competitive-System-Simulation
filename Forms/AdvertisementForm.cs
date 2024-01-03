@@ -50,7 +50,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private bool isExist(ID userID)
         {
-            var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\PartnerUserID.json");
             var json = read.ReadToEnd();
 
             read.Close();
@@ -90,7 +90,7 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void register(ID userID)
         {
-            var read = new StreamReader($@"..\..\ExampleIDs\PartnerUserID.json");
+            var read = new StreamReader($@"..\..\ExampleJSONs\PartnerUserID.json");
             var json = read.ReadToEnd();
 
             read.Close();
@@ -99,7 +99,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             IDList.Add(userID);
 
             json = JsonConvert.SerializeObject(IDList);
-            var writer = new StreamWriter($@"..\..\ExampleIDs\PartnerUserID.json");
+            var writer = new StreamWriter($@"..\..\ExampleJSONs\PartnerUserID.json");
             writer.Write(json);
 
             writer.Flush();
@@ -211,9 +211,9 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void Home_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
-            ds.Dispose();
-            ps.Dispose();
-            us.Dispose();
+            if(ds != null) ds.Dispose();
+            if(ps != null) ps.Dispose();
+            if (us != null) us.Dispose();
             Close();
         }
 
