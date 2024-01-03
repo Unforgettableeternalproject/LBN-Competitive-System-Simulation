@@ -103,6 +103,10 @@ namespace LBN_Competitive_System_Simulation
                     WelcomeDisplay.ForeColor = Color.FromArgb(85, 114, 180);
                     WelcomeDisplay.Text = $"歡迎回來, {userName}!\r\n將在{counter}秒後自動跳轉至儀表板...";
                     break;
+                case "League Owner":
+                    WelcomeDisplay.ForeColor = Color.FromArgb(85, 114, 180);
+                    WelcomeDisplay.Text = $"歡迎回來, {userName}!\r\n將在{counter}秒後自動跳轉至儀表板...";
+                    break;
             }
         }
 
@@ -124,6 +128,9 @@ namespace LBN_Competitive_System_Simulation
                         redirect = new AdminMainForm(userID);
                         break;
                     case "Player":
+                        redirect = new PlayerMainForm(userID);
+                        break;
+                    case "League Owner":
                         redirect = new PlayerMainForm(userID);
                         break;
                 }

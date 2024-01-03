@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -198,6 +200,54 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 isDefault = false;
                 SignatureTXT.Text = string.Empty;
                 SignatureTXT.ForeColor = SystemColors.ControlText;
+            }
+        }
+
+        private void Export_Click(object sender, EventArgs e)
+        {
+            if(pastGames.Count == 0) { MessageBox.Show("您並沒有任何過往的賽事記錄!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return; }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                Filter = "Excel表單檔案 (*.xlsx)|*.xlsx|所有檔案 (*.*)|*.*",
+                Title = "儲存文件",
+                FileName = "PastGames.xlsx"
+            };
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+                using (ExcelPackage package = new ExcelPackage())
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("PastGames");
+
+                    // Headers
+                    worksheet.Cells["A1"].Value = "主辦聯盟";
+                    worksheet.Cells["B1"].Value = "競賽類別";
+                    worksheet.Cells["C1"].Value = "日期";
+                    worksheet.Cells["D1"].Value = "持續時間";
+                    // Add more headers as needed
+
+                    // Data
+                    for (int i = 0; i < pastGames.Count; i++)
+                    {
+                        worksheet.Cells[i + 2, 1].Value = pastGames[i].LeagueName;
+                        worksheet.Cells[i + 2, 2].Value = pastGames[i].GameType;
+                        worksheet.Cells[i + 2, 3].Value = pastGames[i].Date.ToShortDateString();
+                        worksheet.Cells[i + 2, 4].Value = pastGames[i].DurationDays.ToString() + "天";
+                        // Add more data columns as needed
+                    }
+
+                    worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+
+                    FileInfo excelFile = new FileInfo(saveFileDialog.FileName);
+                    package.SaveAs(excelFile);
+
+                    Console.WriteLine($"Exported to Excel: {excelFile.FullName}");
+                }
+
+                MessageBox.Show("已成功匯出檔案!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

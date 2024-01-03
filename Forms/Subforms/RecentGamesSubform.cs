@@ -92,7 +92,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 groupBox.Controls[$"Apply_{prefix}_{i + 1}"].Visible = true;
                 groupBox.Controls[$"Ignore_{prefix}_{i + 1}"].Tag = events[i];
                 groupBox.Controls[$"Ignore_{prefix}_{i + 1}"].Visible = true;
-                groupBox.Controls[$"Ignore_{prefix}_{i + 1}"].Click += IgnoreButton_Click;
             }
 
             if (events.Count > 3)

@@ -48,6 +48,7 @@
             this.PastGames = new System.Windows.Forms.Label();
             this.Export = new System.Windows.Forms.Button();
             this.History = new System.Windows.Forms.GroupBox();
+            this.NoRecord = new System.Windows.Forms.Label();
             this.Etc = new System.Windows.Forms.Label();
             this.Game_6 = new System.Windows.Forms.Label();
             this.Game_5 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.Game_3 = new System.Windows.Forms.Label();
             this.Game_2 = new System.Windows.Forms.Label();
             this.Game_1 = new System.Windows.Forms.Label();
-            this.NoRecord = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.AvatarIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Graph)).BeginInit();
             this.History.SuspendLayout();
@@ -243,6 +243,7 @@
             this.Export.TabIndex = 17;
             this.Export.Text = "匯出為表格..";
             this.Export.UseVisualStyleBackColor = true;
+            this.Export.Click += new System.EventHandler(this.Export_Click);
             // 
             // History
             // 
@@ -260,6 +261,16 @@
             this.History.Size = new System.Drawing.Size(480, 299);
             this.History.TabIndex = 18;
             this.History.TabStop = false;
+            // 
+            // NoRecord
+            // 
+            this.NoRecord.AutoSize = true;
+            this.NoRecord.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoRecord.Location = new System.Drawing.Point(151, 119);
+            this.NoRecord.Name = "NoRecord";
+            this.NoRecord.Size = new System.Drawing.Size(163, 25);
+            this.NoRecord.TabIndex = 8;
+            this.NoRecord.Text = "沒有賽局紀錄!";
             // 
             // Etc
             // 
@@ -330,16 +341,6 @@
             this.Game_1.Size = new System.Drawing.Size(71, 19);
             this.Game_1.TabIndex = 0;
             this.Game_1.Text = "Game_1";
-            // 
-            // NoRecord
-            // 
-            this.NoRecord.AutoSize = true;
-            this.NoRecord.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NoRecord.Location = new System.Drawing.Point(151, 119);
-            this.NoRecord.Name = "NoRecord";
-            this.NoRecord.Size = new System.Drawing.Size(163, 25);
-            this.NoRecord.TabIndex = 8;
-            this.NoRecord.Text = "沒有賽局紀錄!";
             // 
             // PersonalStatsSubform
             // 

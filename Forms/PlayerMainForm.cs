@@ -82,7 +82,7 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            ld = new LeagueDutySubform(userID)
+            ld = new LeagueDutySubform(userID, chat)
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
@@ -195,6 +195,8 @@ namespace LBN_Competitive_System_Simulation.Forms
     public class League
     {
         public string Name;
+        public string Motto;
+        public string LeagueType;
         public ID Owner;
         public List<ID> Members;
 

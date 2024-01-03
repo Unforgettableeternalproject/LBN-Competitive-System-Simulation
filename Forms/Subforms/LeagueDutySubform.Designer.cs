@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.WelcomeMessage = new System.Windows.Forms.Label();
             this.FeedLBL = new System.Windows.Forms.Label();
             this.MemberLBL = new System.Windows.Forms.Label();
@@ -39,13 +40,16 @@
             this.FeedMsg1 = new System.Windows.Forms.Label();
             this.FeedPic1 = new System.Windows.Forms.PictureBox();
             this.LeagueType = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.LeaguePage = new System.Windows.Forms.Button();
+            this.TransferOwner = new System.Windows.Forms.Button();
+            this.LeaveLeague = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.Rankings = new System.Windows.Forms.Label();
             this.InLeague = new System.Windows.Forms.GroupBox();
             this.OutLeague = new System.Windows.Forms.GroupBox();
+            this.ExtendDescription = new System.Windows.Forms.ToolTip(this.components);
+            this.LogoLBL = new System.Windows.Forms.Label();
+            this.ContactOwner = new System.Windows.Forms.Button();
             this.Feed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FeedPic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FeedPic1)).BeginInit();
@@ -87,6 +91,7 @@
             // 
             this.Members.BackColor = System.Drawing.SystemColors.Window;
             this.Members.Enabled = false;
+            this.Members.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Members.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Members.Location = new System.Drawing.Point(660, 306);
             this.Members.Name = "Members";
@@ -96,11 +101,11 @@
             // 
             // FavorText
             // 
-            this.FavorText.AutoSize = true;
+            this.FavorText.AutoEllipsis = true;
             this.FavorText.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FavorText.Location = new System.Drawing.Point(28, 65);
             this.FavorText.Name = "FavorText";
-            this.FavorText.Size = new System.Drawing.Size(71, 19);
+            this.FavorText.Size = new System.Drawing.Size(347, 19);
             this.FavorText.TabIndex = 4;
             this.FavorText.Text = "座右銘:";
             // 
@@ -129,29 +134,31 @@
             // 
             // FeedMsg2
             // 
-            this.FeedMsg2.AutoSize = true;
+            this.FeedMsg2.AutoEllipsis = true;
             this.FeedMsg2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FeedMsg2.Location = new System.Drawing.Point(15, 314);
             this.FeedMsg2.Name = "FeedMsg2";
-            this.FeedMsg2.Size = new System.Drawing.Size(150, 21);
+            this.FeedMsg2.Size = new System.Drawing.Size(349, 21);
             this.FeedMsg2.TabIndex = 2;
             this.FeedMsg2.Text = "[插入動態消息]";
             // 
             // FeedMsg1
             // 
-            this.FeedMsg1.AutoSize = true;
+            this.FeedMsg1.AutoEllipsis = true;
             this.FeedMsg1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FeedMsg1.Location = new System.Drawing.Point(15, 260);
+            this.FeedMsg1.Location = new System.Drawing.Point(15, 266);
             this.FeedMsg1.Name = "FeedMsg1";
-            this.FeedMsg1.Size = new System.Drawing.Size(150, 21);
+            this.FeedMsg1.Size = new System.Drawing.Size(349, 21);
             this.FeedMsg1.TabIndex = 1;
             this.FeedMsg1.Text = "[插入動態消息]";
             // 
             // FeedPic1
             // 
+            this.FeedPic1.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Announement;
             this.FeedPic1.Location = new System.Drawing.Point(19, 29);
             this.FeedPic1.Name = "FeedPic1";
             this.FeedPic1.Size = new System.Drawing.Size(345, 199);
+            this.FeedPic1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.FeedPic1.TabIndex = 0;
             this.FeedPic1.TabStop = false;
             // 
@@ -165,42 +172,44 @@
             this.LeagueType.TabIndex = 6;
             this.LeagueType.Text = "聯盟類型:";
             // 
-            // button1
+            // LeaguePage
             // 
-            this.button1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(798, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 39);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "聯盟頁面";
-            this.button1.UseVisualStyleBackColor = true;
+            this.LeaguePage.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeaguePage.Location = new System.Drawing.Point(798, 8);
+            this.LeaguePage.Name = "LeaguePage";
+            this.LeaguePage.Size = new System.Drawing.Size(114, 39);
+            this.LeaguePage.TabIndex = 7;
+            this.LeaguePage.Text = "聯盟頁面";
+            this.LeaguePage.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // TransferOwner
             // 
-            this.button2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(798, 55);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 39);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "轉讓所有權";
-            this.button2.UseVisualStyleBackColor = true;
+            this.TransferOwner.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TransferOwner.Location = new System.Drawing.Point(798, 55);
+            this.TransferOwner.Name = "TransferOwner";
+            this.TransferOwner.Size = new System.Drawing.Size(114, 39);
+            this.TransferOwner.TabIndex = 8;
+            this.TransferOwner.Text = "轉讓所有權";
+            this.TransferOwner.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // LeaveLeague
             // 
-            this.button3.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(798, 142);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 39);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "離開聯盟";
-            this.button3.UseVisualStyleBackColor = true;
+            this.LeaveLeague.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeaveLeague.Location = new System.Drawing.Point(798, 142);
+            this.LeaveLeague.Name = "LeaveLeague";
+            this.LeaveLeague.Size = new System.Drawing.Size(114, 39);
+            this.LeaveLeague.TabIndex = 9;
+            this.LeaveLeague.Text = "離開聯盟";
+            this.LeaveLeague.UseVisualStyleBackColor = true;
             // 
             // Logo
             // 
             this.Logo.BackColor = System.Drawing.Color.Transparent;
-            this.Logo.Location = new System.Drawing.Point(381, 20);
+            this.Logo.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.LeagueLogo_1;
+            this.Logo.Location = new System.Drawing.Point(399, 21);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(160, 160);
+            this.Logo.Size = new System.Drawing.Size(140, 140);
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Logo.TabIndex = 10;
             this.Logo.TabStop = false;
             // 
@@ -217,11 +226,13 @@
             // InLeague
             // 
             this.InLeague.BackColor = System.Drawing.Color.Transparent;
+            this.InLeague.Controls.Add(this.ContactOwner);
+            this.InLeague.Controls.Add(this.LogoLBL);
             this.InLeague.Controls.Add(this.Rankings);
             this.InLeague.Controls.Add(this.Logo);
-            this.InLeague.Controls.Add(this.button3);
-            this.InLeague.Controls.Add(this.button2);
-            this.InLeague.Controls.Add(this.button1);
+            this.InLeague.Controls.Add(this.LeaveLeague);
+            this.InLeague.Controls.Add(this.TransferOwner);
+            this.InLeague.Controls.Add(this.LeaguePage);
             this.InLeague.Controls.Add(this.LeagueType);
             this.InLeague.Controls.Add(this.Feed);
             this.InLeague.Controls.Add(this.FavorText);
@@ -244,6 +255,26 @@
             this.OutLeague.TabIndex = 13;
             this.OutLeague.TabStop = false;
             // 
+            // LogoLBL
+            // 
+            this.LogoLBL.AutoSize = true;
+            this.LogoLBL.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogoLBL.Location = new System.Drawing.Point(433, 173);
+            this.LogoLBL.Name = "LogoLBL";
+            this.LogoLBL.Size = new System.Drawing.Size(71, 16);
+            this.LogoLBL.TabIndex = 12;
+            this.LogoLBL.Text = "聯盟標誌";
+            // 
+            // ContactOwner
+            // 
+            this.ContactOwner.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContactOwner.Location = new System.Drawing.Point(660, 142);
+            this.ContactOwner.Name = "ContactOwner";
+            this.ContactOwner.Size = new System.Drawing.Size(114, 39);
+            this.ContactOwner.TabIndex = 13;
+            this.ContactOwner.Text = "聯絡所有者";
+            this.ContactOwner.UseVisualStyleBackColor = true;
+            // 
             // LeagueDutySubform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -257,7 +288,6 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.LeagueDutySubform_Load);
             this.Feed.ResumeLayout(false);
-            this.Feed.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FeedPic2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FeedPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
@@ -276,9 +306,9 @@
         private System.Windows.Forms.Label FavorText;
         private System.Windows.Forms.GroupBox Feed;
         private System.Windows.Forms.Label LeagueType;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button LeaguePage;
+        private System.Windows.Forms.Button TransferOwner;
+        private System.Windows.Forms.Button LeaveLeague;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Label Rankings;
         private System.Windows.Forms.GroupBox InLeague;
@@ -287,5 +317,8 @@
         private System.Windows.Forms.Label FeedMsg1;
         private System.Windows.Forms.PictureBox FeedPic1;
         private System.Windows.Forms.GroupBox OutLeague;
+        private System.Windows.Forms.ToolTip ExtendDescription;
+        private System.Windows.Forms.Label LogoLBL;
+        private System.Windows.Forms.Button ContactOwner;
     }
 }
