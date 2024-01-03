@@ -138,6 +138,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             Confim.Text = "確認並刪除";
             RadioBtns.Enabled = false;
             if (Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
+            else cbox_UserType.Text = "選擇類型...";
         }
         private void editInit()
         {
@@ -162,6 +163,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             Confim.Text = "確認並更改";
             RadioBtns.Enabled = false;
             if(Users != "Normal") cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex;
+            else cbox_UserType.Text = "選擇類型...";
         }
         private void addInit()
         {
@@ -184,8 +186,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             btn_edit.Hide();
             RadioBtns.Enabled = false;
             Confim.Text = "確認並添加";
-            if(Users == "Normal") { lbl_Partner.Enabled = true; chk_Partner.Enabled = true; lbl_UserType.Enabled = true; cbox_UserType.Enabled = true; }
-            else { lbl_Partner.Enabled = false; chk_Partner.Enabled = false; lbl_UserType.Enabled = false; cbox_UserType.Enabled = false; }
+            if(Users == "Normal") { lbl_Partner.Enabled = true; chk_Partner.Enabled = true; lbl_UserType.Enabled = true; cbox_UserType.Enabled = true; cbox_UserType.Text = "選擇類型..."; }
+            else { lbl_Partner.Enabled = false; chk_Partner.Enabled = false; lbl_UserType.Enabled = false; cbox_UserType.Enabled = false; cbox_UserType.SelectedIndex = cbox_Roles.SelectedIndex; }
         }
         private void gridInit(string type, string role = "")
         {

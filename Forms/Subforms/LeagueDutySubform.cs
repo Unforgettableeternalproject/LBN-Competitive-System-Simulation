@@ -240,6 +240,10 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             Members.Lines = display.ToArray();
         }
 
+        private void LeaguePage_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();///To be implemented
+        }
         private void CancelTransfer_Click(object sender, EventArgs e)
         {
             EnterUsername.Text = "輸入使用者名稱...";
@@ -459,6 +463,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 LNameTXT.ForeColor = SystemColors.ControlText;
             }
         }
+
         private void LNameTXT_Leave(object sender, EventArgs e)
         {
             var prompt = "輸入聯盟名稱...";

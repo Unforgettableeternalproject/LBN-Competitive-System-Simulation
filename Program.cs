@@ -48,8 +48,8 @@ namespace LBN_Competitive_System_Simulation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //    Application.Run(new AdminMainForm(testCase[0]));
-                Application.Run(new PlayerMainForm(testCase[1]));
-            //    Application.Run(new MainPage());
+            //    Application.Run(new PlayerMainForm(testCase[1]));
+            Application.Run(new MainPage());
         }
     }
 }

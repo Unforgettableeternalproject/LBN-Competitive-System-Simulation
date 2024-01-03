@@ -14,7 +14,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     public partial class DataManagementSubform : Form
     {
-        private int leagueCount = 26, userCount = 0, gameCount = 0, errorCount = 0;
+        private int leagueCount = 0, userCount = 0, gameCount = 0, errorCount = 0;
         public DataManagementSubform()
         {
             InitializeComponent();
@@ -30,6 +30,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private void btn_Refresh_Click(object sender, EventArgs e)
         {
             Random random = new Random();
+            getLeagueCount();
             getUserCount();
             Leagues.Text = $"已註冊聯盟數: {leagueCount}";
             Users.Text = $"已註冊用戶數: {userCount}";
@@ -37,6 +38,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             FatalError.Text = $"近期重大錯誤數: {errorCount += (random.Next(10) < 3 ? random.Next(5) : 0)}";
         }
 
+        private void getLeagueCount()
+        {
+            List<League> leagues = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
+
+            leagueCount = leagues.Count();
+        }
         private void getUserCount()
         {
             List<ID> users = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));

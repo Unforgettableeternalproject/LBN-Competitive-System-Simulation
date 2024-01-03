@@ -8,30 +8,30 @@
 
 "Well, not this time!"
 
-✎ Why is admin page so hard to make
+✎ Man, the last user to implement.
 
-✎ Now the chatroom template is done, everything will be fine
+✎ Can I just speedrun all of that?
 
-✎ Dashboards league owners and players, especailly the later one
+✎ Players can be league owners, but league owners are not necessarily players.
 
-✎ Consider adding some more easter eggs? Uh, Not now I guess
+✎ I do not want to see any more fatal errors...
 
 Contributors:
 	Currently None
 
 To-do list:
 
-	✧ Players...Well I have bad feeling about this
+	✧ Make league and users actually connected 'pogs'?
  
-	✧ We can do league owners at the same time, absolutely
+	✧ Final optimization on most of the form.
 
-	✧ Make the codes much more cleaner
+	✧ Make the codes much more cleaner (Working on it)
  
-	✧ Perhaps adding some SFXs?
+	✧ Perhaps adding some SFXs? (Is that even possible?)
 
 Preserved for future check: git 3 steps
 1. ```git add .```
 2. ```git git commit -m "commit message"```
 3. ```git push```
 
-![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/AdminScreen.png)
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/PlayerScreen.png)

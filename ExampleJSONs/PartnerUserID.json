@@ -1,8 +1,8 @@
 [
   {
-    "Account": "1234567 0123456",
-    "Quota": "每月入/出帳",
-    "Notify": "False",
+    "Account": "1122334 5566778",
+    "Quota": "每季入/出帳",
+    "Notify": "True",
     "Username": "Bernie",
     "Password": "123456",
     "Email": "ptyc4076@gmail.com",

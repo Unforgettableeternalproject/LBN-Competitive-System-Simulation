@@ -213,6 +213,7 @@
             this.LeaguePage.TabIndex = 7;
             this.LeaguePage.Text = "聯盟頁面";
             this.LeaguePage.UseVisualStyleBackColor = true;
+            this.LeaguePage.Click += new System.EventHandler(this.LeaguePage_Click);
             // 
             // TransferOwner
             // 
@@ -631,8 +632,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.LDPage2;
             this.ClientSize = new System.Drawing.Size(1108, 777);
-            this.Controls.Add(this.OutLeague);
             this.Controls.Add(this.InLeague);
+            this.Controls.Add(this.OutLeague);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LeagueDutySubform";
             this.Text = "Form1";
