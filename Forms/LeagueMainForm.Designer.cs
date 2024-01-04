@@ -39,6 +39,7 @@
             this.ExpandChatroom = new System.Windows.Forms.Button();
             this.Chatroom = new System.Windows.Forms.Panel();
             this.SubPages = new System.Windows.Forms.Panel();
+            this.Return = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LeagueLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@
             this.Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Exit.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Exit.ForeColor = System.Drawing.Color.Black;
-            this.Exit.Location = new System.Drawing.Point(81, 826);
+            this.Exit.Location = new System.Drawing.Point(154, 839);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(71, 16);
             this.Exit.TabIndex = 37;
@@ -162,12 +163,27 @@
             this.SubPages.Size = new System.Drawing.Size(1299, 777);
             this.SubPages.TabIndex = 41;
             // 
+            // Return
+            // 
+            this.Return.AutoSize = true;
+            this.Return.BackColor = System.Drawing.Color.Transparent;
+            this.Return.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Return.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Return.ForeColor = System.Drawing.Color.Black;
+            this.Return.Location = new System.Drawing.Point(8, 839);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(87, 16);
+            this.Return.TabIndex = 42;
+            this.Return.Text = "回到儀表板";
+            this.Return.Click += new System.EventHandler(this.Return_Click);
+            // 
             // LeagueMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.LO_Base;
             this.ClientSize = new System.Drawing.Size(1536, 864);
+            this.Controls.Add(this.Return);
             this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.ExpandChatroom);
             this.Controls.Add(this.LeagueLogo);
@@ -181,6 +197,7 @@
             this.Controls.Add(this.SubPages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LeagueMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBN聯盟後台";
             ((System.ComponentModel.ISupportInitialize)(this.LeagueLogo)).EndInit();
             this.ResumeLayout(false);
@@ -201,5 +218,6 @@
         private System.Windows.Forms.Button ExpandChatroom;
         private System.Windows.Forms.Panel Chatroom;
         private System.Windows.Forms.Panel SubPages;
+        private System.Windows.Forms.Label Return;
     }
 }

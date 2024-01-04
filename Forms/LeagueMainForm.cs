@@ -32,5 +32,11 @@ namespace LBN_Competitive_System_Simulation.Forms
                 Application.Exit();
             }
         }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
+        }
     }
 }

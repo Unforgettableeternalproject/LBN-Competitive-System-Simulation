@@ -186,13 +186,15 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void redirectTimer_Tick(object sender, EventArgs e)
         {
             redirectTimer.Stop();
+            Tick.Stop();
             RedirectSpinner.Hide();
             this.Hide();
             LeagueMainForm league = new LeagueMainForm(userID, leagueLogo);
             league.ShowDialog();
-
-            this.Show();
+            league.Dispose();
             ld.RedirectToLO = false;
+            this.Show();
+            Tick.Start();
             Home.PerformClick();
         }
 

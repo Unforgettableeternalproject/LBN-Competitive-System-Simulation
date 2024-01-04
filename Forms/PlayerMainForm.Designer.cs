@@ -221,7 +221,7 @@
             // 
             this.RedirectSpinner.BackColor = System.Drawing.Color.Transparent;
             this.RedirectSpinner.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Spinner_Blue;
-            this.RedirectSpinner.Location = new System.Drawing.Point(512, 176);
+            this.RedirectSpinner.Location = new System.Drawing.Point(530, 224);
             this.RedirectSpinner.Name = "RedirectSpinner";
             this.RedirectSpinner.Size = new System.Drawing.Size(512, 512);
             this.RedirectSpinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
