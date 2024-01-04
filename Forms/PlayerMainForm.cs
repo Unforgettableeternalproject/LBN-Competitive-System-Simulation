@@ -29,6 +29,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private ChatroomSubform chat;
         private CalendarSubform c;
         private DateTime updateTime;
+        private Bitmap leagueLogo = null;
         public PlayerMainForm(ID _userID, bool _adminMode = false, List<Proposal> outerEventList = null)
         {
             InitializeComponent();
@@ -187,7 +188,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             redirectTimer.Stop();
             RedirectSpinner.Hide();
             this.Hide();
-            LeagueMainForm league = new LeagueMainForm(userID);
+            LeagueMainForm league = new LeagueMainForm(userID, leagueLogo);
             league.ShowDialog();
 
             this.Show();
@@ -217,7 +218,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             if(isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); }
             if(isOwner != ld.IsOwner) { isOwner = ld.IsOwner; ps.update(); }
             redirectToLO = ld.RedirectToLO;
-
+            leagueLogo = ld.LeagueLogo;
             if (redirectToLO) LOredirect();
         }
         

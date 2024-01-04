@@ -50,23 +50,15 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private bool isExist(ID userID)
         {
-            var read = new StreamReader($@"..\..\ExampleJSONs\PartnerUserID.json");
-            var json = read.ReadToEnd();
+            var IDs= JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
 
-            read.Close();
-            read.Dispose();
-
-            if (string.IsNullOrEmpty(json.ToString()))
+            if (IDs.Count == 0)
             {
                 return false;
             }
 
-            List<ID> IDs = JsonConvert.DeserializeObject<List<ID>>(json);
 
-            return IDs.Any(id => 
-                userID.Username == id.Username &&
-                userID.Password == id.Password &&
-                userID.Email == id.Email);
+            return IDs.Any(id => userID.UUID == id.UUID);
         }
         private bool reLogin()
         {
@@ -90,21 +82,11 @@ namespace LBN_Competitive_System_Simulation.Forms
 
         private void register(ID userID)
         {
-            var read = new StreamReader($@"..\..\ExampleJSONs\PartnerUserID.json");
-            var json = read.ReadToEnd();
+            var IDList = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
+            IDList.Add(new PartnerID(userID));
 
-            read.Close();
-            read.Dispose();
-            var IDList = !string.IsNullOrEmpty(json.ToString()) ? JsonConvert.DeserializeObject<List<ID>>(json) : new List<ID>();
-            IDList.Add(userID);
-
-            json = JsonConvert.SerializeObject(IDList);
-            var writer = new StreamWriter($@"..\..\ExampleJSONs\PartnerUserID.json");
-            writer.Write(json);
-
-            writer.Flush();
-            writer.Close();
-            writer.Dispose();
+            string json = JsonConvert.SerializeObject(IDList, Formatting.Indented);
+            File.WriteAllText(@"..\..\ExampleJSONs\PartnerUserID.json", json);
         }
         private void overallInit() 
         {
@@ -248,6 +230,37 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void Tick_Tick(object sender, EventArgs e)
         {
             if (ds != null) { isDeployed = ds.IsDeployed; adImage = ds.Image; costTotal = ds.Total; } 
+        }
+    }
+    public class PartnerID : ID
+    {
+        public string Account { get; set; }
+        public string Quota { get; set; }
+        public string Notify { get; set; }
+
+        public PartnerID()
+        {
+
+        }
+
+        public PartnerID(ID baseID) : base(baseID.Username, baseID.Password, baseID.Email, baseID.Role, baseID.UUID)
+        {
+            Account = "";
+            Quota = "";
+            Notify = "False";
+        }
+
+        public PartnerID(ID baseID, string account, string quota, string notify) : base(baseID.Username, baseID.Password, baseID.Email, baseID.Role, baseID.UUID)
+        {
+            Account = account;
+            Quota = quota;
+            Notify = notify;
+        }
+        public PartnerID(string username, string password, string email, string role, string uUID) : base(username, password, email, role, uUID)
+        {
+            Account = "";
+            Quota = "";
+            Notify = "False";
         }
     }
 }

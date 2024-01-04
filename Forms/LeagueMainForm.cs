@@ -13,10 +13,24 @@ namespace LBN_Competitive_System_Simulation.Forms
     public partial class LeagueMainForm : Form
     {
         private ID userID;
-        public LeagueMainForm(ID _userID)
+        private Bitmap logo;
+        public LeagueMainForm(ID _userID, Bitmap _logo)
         {
             InitializeComponent();
             userID = _userID;
+            logo = _logo;
+            LeagueLogo.Image = logo;
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("您確定要離開系統嗎?", "離開系統?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // If the user clicks Yes, close the application
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

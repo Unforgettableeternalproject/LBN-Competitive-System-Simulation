@@ -121,6 +121,7 @@
             this.Exit.Size = new System.Drawing.Size(71, 16);
             this.Exit.TabIndex = 37;
             this.Exit.Text = "離開系統";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // LeagueLogo
             // 

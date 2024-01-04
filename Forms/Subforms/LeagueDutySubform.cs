@@ -46,6 +46,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         public bool IsOwner { get => isOwner; }
         public bool IsInLeague { get => inLeague; }
         public bool RedirectToLO { get => redirectToLO; set { redirectToLO = value; } }
+        public Bitmap LeagueLogo { get => leagueLogo; }
         public LeagueDutySubform(ID _userID, ChatroomSubform _chat)
         {
             InitializeComponent();
@@ -106,8 +107,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             if (isNew)
             {
                 Rankings.Text = "本周排名: 第 " + random.Next(1, leagueList.Count).ToString() + " 名";
-                if(leagueLogo == null) Logo.Image = logos[random.Next(logos.Count)];
-                else Logo.Image = leagueLogo;
+                if(leagueLogo == null) leagueLogo = logos[random.Next(logos.Count)];
+                Logo.Image = leagueLogo;
                 int index1 = random.Next(feed.Count), index2;
                 FeedMsg1.Text = feed[index1];
                 ExtendDescription.SetToolTip(FeedMsg1, feed[index1]);

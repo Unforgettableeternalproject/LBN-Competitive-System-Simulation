@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using LBN_Competitive_System_Simulation.Forms;
 
 namespace LBN_Competitive_System_Simulation
 {
@@ -18,9 +19,10 @@ namespace LBN_Competitive_System_Simulation
     {
         String Mode = "Login";
         private ID userID = null;
-        private bool errorMsg = false, passwordToggle = true, allowAlterate = true;
+        private bool errorMsg = false, passwordToggle = true;
+        private readonly bool allowAlterate = true;
         private string type = "Normal";
-        private List<string> keys = new List<string>()
+        private readonly List<string> keys = new List<string>()
         {
             "gay",
             "special",
@@ -61,28 +63,22 @@ namespace LBN_Competitive_System_Simulation
         }
         private ID Validation(string username, string password)
         {
-            bool flag = false;
-            ID result = new ID();
-            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
-            var json = read.ReadToEnd();
+            ID result = null;
+            var IDs = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText($@"..\..\ExampleJSONs\{type}UserID.json"));
 
-            if (string.IsNullOrEmpty(json.ToString()))
+            if (IDs.Count == 0)
             {
-                read.Close();
-                read.Dispose();
                 return null;
             }
 
-            var IDs = JsonConvert.DeserializeObject<List<ID>>(json);
-            foreach(var id in IDs)
+
+            foreach (var id in IDs)
             {
-                if (username == id.Username.ToString() && password == id.Password.ToString())
+                if (username == id.Username && password == id.Password)
                 {
-                    if (id.Role == null) result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString());
-                    else result = new ID(id.Username.ToString(), id.Password.ToString(), id.Email.ToString(), id.Role.ToString(), id.UUID.ToString());
-                    flag = true;
+                    result = id;
                     break;
-                }else if(username == id.Username.ToString() && password != id.Password.ToString())
+                }else if(username == id.Username && password != id.Password)
                 {
                     errorMsg = true;
                     MessageBox.Show("您的密碼不正確，請重新嘗試!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -90,10 +86,7 @@ namespace LBN_Competitive_System_Simulation
                 }
             }
 
-            read.Close();
-            read.Dispose();
-            if (flag) return result;
-            else return null;
+            return result;
         }
 
         private ID Verification(string username, string email, string password, string confirmPassword)
@@ -109,19 +102,16 @@ namespace LBN_Competitive_System_Simulation
                 emailValid = false;
             }
 
-            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
-            var json = read.ReadToEnd();
+            var IDs = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText($@"..\..\ExampleJSONs\{type}UserID.json"));
 
-            if (string.IsNullOrEmpty(json.ToString()))
+            if (IDs.Count == 0)
             {
                 goto ExceptionHandling;
             }
 
-            dynamic IDs = JsonConvert.DeserializeObject(json);
-
             foreach (var id in IDs)
             {
-                if (username == id.Username.ToString())
+                if (username == id.Username)
                 {
                     repeated = true;
                     break;
@@ -129,10 +119,8 @@ namespace LBN_Competitive_System_Simulation
             }
 
             ExceptionHandling:
-                read.Close();
-                read.Dispose();
 
-                if (string.IsNullOrEmpty(txt_Username.Text) || string.IsNullOrEmpty(txt_Password.Text) || string.IsNullOrEmpty(txt_Email.Text) || string.IsNullOrEmpty(txt_ConfirmPW.Text))
+                if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(confirmPassword))
                 {
                     MessageBox.Show("請填寫所有欄位", "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return null;
@@ -161,21 +149,11 @@ namespace LBN_Competitive_System_Simulation
 
         private void newID(ID _new)
         {
-            var read = new StreamReader($@"..\..\ExampleJSONs\{type}UserID.json");
-            var json = read.ReadToEnd();
-
-            read.Close();
-            read.Dispose();
-            var IDList = !string.IsNullOrEmpty(json.ToString()) ? JsonConvert.DeserializeObject<List<ID>>(json) : new List<ID>();
+            var IDList = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText($@"..\..\ExampleJSONs\{type}UserID.json"));
             IDList.Add(_new);
 
-            json = JsonConvert.SerializeObject(IDList);
-            var writer = new StreamWriter($@"..\..\ExampleJSONs\{type}UserID.json");
-            writer.Write(json);
-
-            writer.Flush();
-            writer.Close();
-            writer.Dispose();
+            string json = JsonConvert.SerializeObject(IDList, Formatting.Indented);
+            File.WriteAllText($@"..\..\ExampleJSONs\{type}UserID.json", json);
         }
 
         private void clearFields()
