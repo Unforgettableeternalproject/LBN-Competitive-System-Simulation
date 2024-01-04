@@ -3,42 +3,21 @@
     "Username": "Bernie",
     "Password": "123456",
     "Email": "ptyc4076@gmail.com",
-    "UUID": "09f24fff-1e2f-45b2-ba81-d3e5732eedb8",
-    "Role": "Normal"
-  },
-  {
-    "Username": "四弟",
-    "Password": "123",
-    "Email": "gm@gmail.com",
-    "UUID": "3da03d2c-38ab-485d-b88d-f17fbcac61ca",
-    "Role": "Normal"
-  },
-  {
-    "Username": "Hobobo",
-    "Password": "hobohobho",
-    "Email": "hobo@gmail.com",
-    "UUID": "527fd2cc-4794-43f4-a335-7effd3984f99",
-    "Role": "Normal"
-  },
-  {
-    "Username": "Test23",
-    "Password": "test23",
-    "Email": "Test@gmail.com",
-    "UUID": "62634182-f5ff-46ed-b6a5-cec2fd68368b",
-    "Role": "Normal"
-  },
-  {
-    "Username": "很不錯",
-    "Password": "Itsgood",
-    "Email": "opopo@gmail.com",
-    "UUID": "5983122a-eef3-45bd-ad79-e2033b2d7471",
+    "UUID": "4f020cd8-3110-4f20-af6c-68b5d7412dd8",
     "Role": "Normal"
   },
   {
     "Username": "046",
-    "Password": "666",
-    "Email": "046@gmail.com",
-    "UUID": "c0ae8691-b0fe-41b2-a457-1e1c781b70d1",
+    "Password": "046",
+    "Email": "zerofoursix@gmail.com",
+    "UUID": "e0e9312d-1eb3-4088-8189-e24633ab8093",
+    "Role": "Normal"
+  },
+  {
+    "Username": "TestO",
+    "Password": "Test",
+    "Email": "Test@gmail.com",
+    "UUID": "03055289-1ba1-4a1c-a274-a132f5744a39",
     "Role": "Normal"
   }
 ]
