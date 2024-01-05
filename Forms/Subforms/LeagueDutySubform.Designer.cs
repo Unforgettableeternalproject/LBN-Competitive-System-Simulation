@@ -51,6 +51,7 @@
             this.ContactOwner = new System.Windows.Forms.Button();
             this.LogoLBL = new System.Windows.Forms.Label();
             this.OutLeague = new System.Windows.Forms.GroupBox();
+            this.Hint2 = new System.Windows.Forms.Label();
             this.Hint = new System.Windows.Forms.Label();
             this.PrevPage = new System.Windows.Forms.Button();
             this.SearchBTN = new System.Windows.Forms.Button();
@@ -76,7 +77,7 @@
             this.NoResult = new System.Windows.Forms.Label();
             this.LeagueListDisplay = new System.Windows.Forms.DataGridView();
             this.ExtendDescription = new System.Windows.Forms.ToolTip(this.components);
-            this.Hint2 = new System.Windows.Forms.Label();
+            this.Tick = new System.Windows.Forms.Timer(this.components);
             this.Feed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FeedPic2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FeedPic1)).BeginInit();
@@ -244,7 +245,7 @@
             this.Logo.Location = new System.Drawing.Point(399, 21);
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(140, 140);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 10;
             this.Logo.TabStop = false;
             // 
@@ -343,6 +344,16 @@
             this.OutLeague.Size = new System.Drawing.Size(933, 699);
             this.OutLeague.TabIndex = 13;
             this.OutLeague.TabStop = false;
+            // 
+            // Hint2
+            // 
+            this.Hint2.AutoSize = true;
+            this.Hint2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hint2.Location = new System.Drawing.Point(239, 91);
+            this.Hint2.Name = "Hint2";
+            this.Hint2.Size = new System.Drawing.Size(462, 32);
+            this.Hint2.TabIndex = 8;
+            this.Hint2.Text = "填寫下方的資料來創建一個聯盟";
             // 
             // Hint
             // 
@@ -616,15 +627,9 @@
             this.LeagueListDisplay.Size = new System.Drawing.Size(831, 414);
             this.LeagueListDisplay.TabIndex = 0;
             // 
-            // Hint2
+            // Tick
             // 
-            this.Hint2.AutoSize = true;
-            this.Hint2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hint2.Location = new System.Drawing.Point(239, 91);
-            this.Hint2.Name = "Hint2";
-            this.Hint2.Size = new System.Drawing.Size(462, 32);
-            this.Hint2.TabIndex = 8;
-            this.Hint2.Text = "填寫下方的資料來創建一個聯盟";
+            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
             // LeagueDutySubform
             // 
@@ -706,5 +711,6 @@
         private System.Windows.Forms.TextBox LNameTXT;
         private System.Windows.Forms.Button Create;
         private System.Windows.Forms.Label Hint2;
+        private System.Windows.Forms.Timer Tick;
     }
 }

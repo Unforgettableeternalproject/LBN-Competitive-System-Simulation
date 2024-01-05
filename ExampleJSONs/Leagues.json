@@ -784,41 +784,6 @@
     ]
   },
   {
-    "Name": "小人物聯盟",
-    "Motto": "人小志氣高，明天會更好!",
-    "LeagueType": "休閒型聯盟",
-    "Owner": {
-      "Username": "Berniee",
-      "Password": "122334",
-      "Email": "ptyc4076@gmail.com",
-      "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
-      "Role": "League Owner"
-    },
-    "Members": [
-      {
-        "Username": "GoodLord",
-        "Password": "Lmao",
-        "Email": "Nord@gmail.com",
-        "UUID": "b9f8c6a2-ae16-4a7f-b53b-fbbbcd610f35",
-        "Role": "Player"
-      },
-      {
-        "Username": "HX閃電狼",
-        "Password": "Wolfy",
-        "Email": "LightningWolf@gmail.com",
-        "UUID": "c7g7c6b4-aa21-4t4f-b54h-fb34c5610f35",
-        "Role": "Player"
-      },
-      {
-        "Username": "Berniee",
-        "Password": "122334",
-        "Email": "ptyc4076@gmail.com",
-        "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
-        "Role": "League Owner"
-      }
-    ]
-  },
-  {
     "Name": "美麗島共和國",
     "Motto": "無",
     "LeagueType": "競技型聯盟",
@@ -871,6 +836,55 @@
         "Email": "test_1@gmail.com",
         "UUID": "bed5b5cb-1f5f-4367-94c9-c68c615e7c6a",
         "Role": "League Owner"
+      }
+    ]
+  },
+  {
+    "Name": "小人物聯盟",
+    "Motto": "人小志氣高，明天會更好!",
+    "LeagueType": "休閒型聯盟",
+    "Owner": {
+      "Username": "GoodLord",
+      "Password": "Lmao",
+      "Email": "Nord@gmail.com",
+      "UUID": "b9f8c6a2-ae16-4a7f-b53b-fbbbcd610f35",
+      "Role": "League Owner"
+    },
+    "Members": [
+      {
+        "Username": "GoodLord",
+        "Password": "Lmao",
+        "Email": "Nord@gmail.com",
+        "UUID": "b9f8c6a2-ae16-4a7f-b53b-fbbbcd610f35",
+        "Role": "League Owner"
+      },
+      {
+        "Username": "HX閃電狼",
+        "Password": "Wolfy",
+        "Email": "LightningWolf@gmail.com",
+        "UUID": "c7g7c6b4-aa21-4t4f-b54h-fb34c5610f35",
+        "Role": "Player"
+      }
+    ]
+  },
+  {
+    "Name": "5567788",
+    "Motto": "123456",
+    "LeagueType": "競技型聯盟",
+    "Owner": {
+      "Username": "Berniee",
+      "Password": "122334",
+      "Email": "ptyc4076@gmail.com",
+      "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
+      "Role": "Player"
+    },
+    "Members": [
+      {
+        "Username": "Berniee",
+        "Password": "122334",
+        "Email": "ptyc4076@gmail.com",
+        "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
+        "Role": "Player"
       }
     ]
   }

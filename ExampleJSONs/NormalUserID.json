@@ -7,17 +7,17 @@
     "Role": "Normal"
   },
   {
-    "Username": "046",
-    "Password": "046",
-    "Email": "zerofoursix@gmail.com",
-    "UUID": "e0e9312d-1eb3-4088-8189-e24633ab8093",
-    "Role": "Normal"
-  },
-  {
     "Username": "TestO",
     "Password": "Test",
     "Email": "Test@gmail.com",
     "UUID": "03055289-1ba1-4a1c-a274-a132f5744a39",
+    "Role": "Normal"
+  },
+  {
+    "Username": "046",
+    "Password": "046",
+    "Email": "zerofoursix@gmail.com",
+    "UUID": "e0e9312d-1eb3-4088-8189-e24633ab8093",
     "Role": "Normal"
   }
 ]

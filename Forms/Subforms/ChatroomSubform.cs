@@ -52,6 +52,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                     defaultContact = new Contact("HX閃電狼", new List<string>() { $"[{DateTime.Now.AddHours(random.Next(-10, -1) * random.NextDouble()).ToShortTimeString()}] HX閃電狼: 欸阿你之前還欠我五百內!" });
                     break;
                 case "League Owner":
+                    defaultContact = new Contact("系統支援", new List<string>() { $"[{DateTime.Now.AddHours(random.Next(-10, -1) * random.NextDouble()).ToShortTimeString()}] 系統支援: 有什麼我可以幫您的嗎?" });
                     break;
                 default:
                     defaultContact = new Contact("伯尼");

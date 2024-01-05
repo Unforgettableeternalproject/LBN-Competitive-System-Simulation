@@ -41,12 +41,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             Properties.Resources.LeagueLogo_6
         };
         private ChatroomSubform chat;
-        private string Mode = "None";
         private Bitmap leagueLogo = null;
         public bool IsOwner { get => isOwner; }
         public bool IsInLeague { get => inLeague; }
         public bool RedirectToLO { get => redirectToLO; set { redirectToLO = value; } }
-        public Bitmap LeagueLogo { get => leagueLogo; }
+        public Bitmap LeagueLogo { get => leagueLogo; set { leagueLogo = value; } }
+
         public LeagueDutySubform(ID _userID, ChatroomSubform _chat)
         {
             InitializeComponent();
@@ -71,6 +71,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         private void LeagueDutySubform_Load(object sender, EventArgs e)
         {
+            Tick.Start();
             if (inLeague) 
             {
                 leagueInit(true);
@@ -78,9 +79,13 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             else { non_leagueInit(); }
         }
 
+        public void refresh(League newLeague)
+        {
+            affiliatedLeague = newLeague;
+            leagueInit();
+        }
         private void leagueInit(bool isNew = false)
         {
-            Mode = "None";
             BackgroundImage = Properties.Resources.LDPage;
             InLeague.Show();
             OutLeague.Hide();
@@ -108,7 +113,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             {
                 Rankings.Text = "本周排名: 第 " + random.Next(1, leagueList.Count).ToString() + " 名";
                 if(leagueLogo == null) leagueLogo = logos[random.Next(logos.Count)];
-                Logo.Image = leagueLogo;
                 int index1 = random.Next(feed.Count), index2;
                 FeedMsg1.Text = feed[index1];
                 ExtendDescription.SetToolTip(FeedMsg1, feed[index1]);
@@ -122,7 +126,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void non_leagueInit()
         {
-            Mode = "None";
             BackgroundImage = Properties.Resources.LDPage2;
             InLeague.Hide();
             OutLeague.Show();
@@ -285,7 +288,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void ModeSearch_Click(object sender, EventArgs e)
         {
-            Mode = "Search";
             ModeCreate.Hide();
             ModeSearch.Hide();
             LeagueGridDisplay.Show();
@@ -298,7 +300,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void ModeCreate_Click(object sender, EventArgs e)
         {
-            Mode = "Create";
             ModeCreate.Hide();
             ModeSearch.Hide();
             LeagueGridDisplay.Hide();
@@ -360,6 +361,11 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void UploadBTN_Click(object sender, EventArgs e)
         {
+            DialogResult result = DialogResult.Yes;
+            if (uploaded) result = MessageBox.Show("你要更換現有的聯盟標誌嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (result == DialogResult.No) return;
+
             OpenFileDialog of = new OpenFileDialog
             {
                 InitialDirectory = Environment.CurrentDirectory,
@@ -455,6 +461,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 SearchTXT.ForeColor = SystemColors.GrayText;
             }
         }
+
+        private void Tick_Tick(object sender, EventArgs e)
+        {
+            if (leagueLogo != null) Logo.Image = leagueLogo;
+        }
+
         private void LNameTXT_Enter(object sender, EventArgs e)
         {
             var prompt = "輸入聯盟名稱...";

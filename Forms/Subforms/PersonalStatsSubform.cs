@@ -210,17 +210,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             }
         }
 
-        private void SignatureTXT_Enter(object sender, EventArgs e)
-        {
-            var prompt = "加入你的個性簽名吧!";
-            if (SignatureTXT.Text == prompt)
-            {
-                isDefault = false;
-                SignatureTXT.Text = string.Empty;
-                SignatureTXT.ForeColor = SystemColors.ControlText;
-            }
-        }
-
         private void Export_Click(object sender, EventArgs e)
         {
             if(pastGames.Count == 0) { MessageBox.Show("您並沒有任何過往的賽事記錄!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return; }
@@ -269,6 +258,17 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             }
         }
 
+        private void SignatureTXT_Enter(object sender, EventArgs e)
+        {
+            var prompt = "加入你的個性簽名吧!";
+            if (SignatureTXT.Text == prompt)
+            {
+                isDefault = false;
+                SignatureTXT.Text = string.Empty;
+                SignatureTXT.ForeColor = SystemColors.ControlText;
+            }
+        }
+
         private void SignatureTXT_Leave(object sender, EventArgs e)
         {
             var prompt = "加入你的個性簽名吧!";
@@ -279,6 +279,5 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 SignatureTXT.ForeColor = SystemColors.GrayText;
             }
         }
-        //c
     }
 }

@@ -133,6 +133,12 @@
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Subforms\LeagueOverviewSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\LeagueOverviewSubform.Designer.cs">
+      <DependentUpon>LeagueOverviewSubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\LeagueDutySubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\LeagueOverviewSubform.resx">
+      <DependentUpon>LeagueOverviewSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\LeagueDutySubform.resx">
       <DependentUpon>LeagueDutySubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +318,7 @@
     <Content Include="Icon.ico" />
     <None Include="Resources\beep.wav" />
     <None Include="Resources\ExitIndicator.wav" />
+    <None Include="Resources\LOPage.png" />
     <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />

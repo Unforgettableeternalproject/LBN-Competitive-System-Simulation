@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LBN_Competitive_System_Simulation.Forms.PlayerMainForm;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
@@ -55,9 +56,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             RGInit();
         }
 
+        private void updateUI()
+        {
+            if (!isInLeague) { Announcement.Image = Properties.Resources.LeagueAnnouncementEmpty; LeagueDisplay.Text = "無"; }
+            else { Announcement.Image = Properties.Resources.LeagueAnnouncementNormal; LeagueDisplay.Text = affiliatedLeague.Name; }
+        }
         private void fetchLeague()
         {
-            Console.WriteLine("Debug-1");
             foreach (League league in leagueList)
             {
                 if (league.Members.Any(e => e.UUID == userID.UUID)) { isInLeague = true; LeagueDisplay.Text = league.Name; affiliatedLeague = league; }
@@ -68,7 +73,6 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void getLeagueList()
         {
-            Console.WriteLine("Debug-2");
             leagueList = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
             Console.WriteLine(leagueList[0].Members.Count);
         }
@@ -189,10 +193,14 @@ namespace LBN_Competitive_System_Simulation.Forms
             Tick.Stop();
             RedirectSpinner.Hide();
             this.Hide();
-            LeagueMainForm league = new LeagueMainForm(userID, leagueLogo);
+            LeagueMainForm league = new LeagueMainForm(userID, leagueLogo, affiliatedLeague);
             league.ShowDialog();
-            league.Dispose();
+            leagueLogo = league.Logo;
+            affiliatedLeague = league.League;
+            ld.LeagueLogo = leagueLogo;
             ld.RedirectToLO = false;
+            ld.refresh(affiliatedLeague);
+            league.Dispose();
             this.Show();
             Tick.Start();
             Home.PerformClick();
@@ -217,7 +225,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             if (DateTime.Compare(updateTime, rg.UpdateTime) < 0) { eventList = rg.EventList; updateTime = DateTime.Now; }
             c.EventList = eventList;
-            if(isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); }
+            if(isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); updateUI(); }
             if(isOwner != ld.IsOwner) { isOwner = ld.IsOwner; ps.update(); }
             redirectToLO = ld.RedirectToLO;
             leagueLogo = ld.LeagueLogo;
@@ -237,6 +245,14 @@ namespace LBN_Competitive_System_Simulation.Forms
         public League()
         {
             Members = new List<ID>();
+        }
+        public League(League copy)
+        {
+            Name = copy.Name;
+            Motto = copy.Motto;
+            LeagueType = copy.LeagueType;
+            Owner = copy.Owner;
+            Members = copy.Members;
         }
         public League(string name, ID owner)
         {

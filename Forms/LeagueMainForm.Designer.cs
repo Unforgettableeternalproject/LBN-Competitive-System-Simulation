@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LeagueOverview = new System.Windows.Forms.Button();
             this.ProposeGames = new System.Windows.Forms.Button();
             this.MemberManagement = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.Chatroom = new System.Windows.Forms.Panel();
             this.SubPages = new System.Windows.Forms.Panel();
             this.Return = new System.Windows.Forms.Label();
+            this.Tick = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LeagueLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +55,7 @@
             this.LeagueOverview.Size = new System.Drawing.Size(240, 59);
             this.LeagueOverview.TabIndex = 25;
             this.LeagueOverview.UseVisualStyleBackColor = false;
+            this.LeagueOverview.Click += new System.EventHandler(this.LeagueOverview_Click);
             // 
             // ProposeGames
             // 
@@ -131,7 +134,7 @@
             this.LeagueLogo.Location = new System.Drawing.Point(8, 552);
             this.LeagueLogo.Name = "LeagueLogo";
             this.LeagueLogo.Size = new System.Drawing.Size(222, 222);
-            this.LeagueLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.LeagueLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LeagueLogo.TabIndex = 38;
             this.LeagueLogo.TabStop = false;
             // 
@@ -146,6 +149,7 @@
             this.ExpandChatroom.Size = new System.Drawing.Size(189, 57);
             this.ExpandChatroom.TabIndex = 39;
             this.ExpandChatroom.UseVisualStyleBackColor = false;
+            this.ExpandChatroom.Click += new System.EventHandler(this.ExpandChatroom_Click);
             // 
             // Chatroom
             // 
@@ -177,6 +181,10 @@
             this.Return.Text = "回到儀表板";
             this.Return.Click += new System.EventHandler(this.Return_Click);
             // 
+            // Tick
+            // 
+            this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
+            // 
             // LeagueMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -184,7 +192,6 @@
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.LO_Base;
             this.ClientSize = new System.Drawing.Size(1536, 864);
             this.Controls.Add(this.Return);
-            this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.ExpandChatroom);
             this.Controls.Add(this.LeagueLogo);
             this.Controls.Add(this.Exit);
@@ -194,11 +201,13 @@
             this.Controls.Add(this.MemberManagement);
             this.Controls.Add(this.ProposeGames);
             this.Controls.Add(this.LeagueOverview);
+            this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.SubPages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LeagueMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBN聯盟後台";
+            this.Load += new System.EventHandler(this.LeagueMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LeagueLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -219,5 +228,6 @@
         private System.Windows.Forms.Panel Chatroom;
         private System.Windows.Forms.Panel SubPages;
         private System.Windows.Forms.Label Return;
+        private System.Windows.Forms.Timer Tick;
     }
 }
