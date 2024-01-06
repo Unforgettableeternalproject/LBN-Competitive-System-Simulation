@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LBN_Competitive_System_Simulation
+namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class BrowseForm : Form
     {

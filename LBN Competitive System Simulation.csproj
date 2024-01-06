@@ -328,6 +328,7 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Snapshots\LeagueScreen.png" />
     <None Include="Resources\LDPage.png" />
     <None Include="Resources\Novia.gif" />
     <None Include="Resources\Announement.png" />

@@ -1,4 +1,4 @@
-﻿namespace LBN_Competitive_System_Simulation.Forms
+﻿namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     partial class ProfitSubform
     {

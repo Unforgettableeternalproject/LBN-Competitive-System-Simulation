@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LeagueMainForm));
             this.LeagueOverview = new System.Windows.Forms.Button();
             this.ProposeGames = new System.Windows.Forms.Button();
             this.MemberManagement = new System.Windows.Forms.Button();
@@ -208,6 +209,7 @@
             this.Controls.Add(this.Chatroom);
             this.Controls.Add(this.SubPages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LeagueMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LBN聯盟後台";

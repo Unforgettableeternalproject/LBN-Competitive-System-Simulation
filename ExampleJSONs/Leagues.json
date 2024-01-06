@@ -868,30 +868,9 @@
     ]
   },
   {
-    "Name": "5567788",
-    "Motto": "123456",
-    "LeagueType": "競技型聯盟",
-    "Owner": {
-      "Username": "Berniee",
-      "Password": "122334",
-      "Email": "ptyc4076@gmail.com",
-      "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
-      "Role": "Player"
-    },
-    "Members": [
-      {
-        "Username": "Berniee",
-        "Password": "122334",
-        "Email": "ptyc4076@gmail.com",
-        "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
-        "Role": "Player"
-      }
-    ]
-  },
-  {
-    "Name": "測試聯盟",
-    "Motto": "測試",
-    "LeagueType": "休閒型聯盟",
+    "Name": "你好世界",
+    "Motto": "你好世界，再見世界",
+    "LeagueType": "合作型聯盟",
     "Owner": {
       "Username": "Berniee",
       "Password": "122334",
@@ -911,28 +890,42 @@
         "Username": "Joja",
         "Password": "OOPP",
         "Email": "ligk@gmail.com",
-        "UUID": "356be36f-4d58-44b8-b573-da2e362ea961",
+        "UUID": "a493c5b6-e6a6-4a99-8b0b-b40f715ba2f7",
         "Role": "Player"
       },
       {
         "Username": "Coca",
         "Password": "Kilpw",
         "Email": "JOgaot@gmail.com",
-        "UUID": "5c460a56-922a-4f2c-b1ec-9046674058ed",
+        "UUID": "ce6dd61e-80b3-4f94-b8e5-7226083458de",
         "Role": "Player"
       },
       {
         "Username": "Celena",
         "Password": "Yes123",
         "Email": "GoodHi@gmail.com",
-        "UUID": "c6448eab-73d1-4a15-aa21-6d223c73efef",
+        "UUID": "cfb01fe4-02a9-442a-8c3b-c040d19a0917",
         "Role": "Player"
       },
       {
-        "Username": "Pinelopi",
-        "Password": "K#$GJBDEGBR",
-        "Email": "X4e0U7c@yahoo.com",
-        "UUID": "674de3e3-9e4a-47bd-b143-365bc4cdb2e9",
+        "Username": "無敵的吧",
+        "Password": "aYyLQsq3m",
+        "Email": "?z(CmF@gmail.com",
+        "UUID": "cd068cf9-0e4e-4f91-ad50-7ec0ad843c7f",
+        "Role": "Player"
+      },
+      {
+        "Username": "我不會玩Celeste",
+        "Password": "LGKbNpJL5rh",
+        "Email": "%*3Oa@outlook.com",
+        "UUID": "7d6d1fd8-dc37-4b6b-8fb2-fd78f29f9626",
+        "Role": "Player"
+      },
+      {
+        "Username": "申",
+        "Password": "w0KrV*hs",
+        "Email": "x8QP$Q@hotmail.com",
+        "UUID": "b4ea8c8e-2e0f-458e-9668-f5d137178e05",
         "Role": "Player"
       }
     ]

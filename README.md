@@ -8,30 +8,24 @@
 
 "Well, not this time!"
 
-✎ Man, the last user to implement.
-
-✎ Can I just speedrun all of that?
-
-✎ Players can be league owners, but league owners are not necessarily players.
-
-✎ I do not want to see any more fatal errors...
+✎ Guess what? Unit Test time! (Who tf does unit test at the very end of a project)
 
 Contributors:
 	Currently None
 
 To-do list:
 
-	✧ Make league and users actually connected 'pogs'?
- 
-	✧ Final optimization on most of the form.
-
 	✧ Make the codes much more cleaner (Working on it)
  
 	✧ Perhaps adding some SFXs? (Is that even possible?)
+
+	✧ Every user needs their requirements to be tested
+
+	✧ There got to be more improvements
 
 Preserved for future check: git 3 steps
 1. ```git add .```
 2. ```git git commit -m "commit message"```
 3. ```git push```
 
-![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/PlayerScreen.png)
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/LeagueScreen.png)

@@ -1,4 +1,4 @@
-﻿namespace LBN_Competitive_System_Simulation
+﻿namespace LBN_Competitive_System_Simulation.Forms
 {
     partial class ContactForm
     {

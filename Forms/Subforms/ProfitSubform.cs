@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LBN_Competitive_System_Simulation.Forms
+namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     public partial class ProfitSubform : Form
     {

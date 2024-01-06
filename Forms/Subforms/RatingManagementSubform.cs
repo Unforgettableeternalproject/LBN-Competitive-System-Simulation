@@ -19,6 +19,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private League league;
         private List<Proposal> scheduledGames = new List<Proposal>(), updated = null;
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
+        public League League { set { league = value; } }
         public List<Proposal> Updated { set { updated = value; scheduledGames = updated; updateSchedule(); } }
         public RatingManagementSubform(League _league)
         {

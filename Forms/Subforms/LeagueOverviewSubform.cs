@@ -33,8 +33,10 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             "說實話我也不知道聯盟紀錄能寫甚麼"
         };
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
+        private DateTime updateTime;
+        public DateTime UpdateTime => updateTime;
         public Bitmap Logo => logo;
-        public League League => affiliatedLeague;
+        public League League { get => affiliatedLeague; set { affiliatedLeague = value; updateTime = DateTime.Now; MemberCount.Text = $"成員數量: {affiliatedLeague.Members.Count} 名成員"; } }
         public LeagueOverviewSubform(League _affiliatedLeague, Bitmap _logo)
         {
             InitializeComponent();
@@ -72,6 +74,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             leagueList.Add(newLeague);
 
             affiliatedLeague = newLeague;
+            updateTime = DateTime.Now;
             string leagueJson = JsonConvert.SerializeObject(leagueList, Formatting.Indented);
 
             // Write the JSON to the file

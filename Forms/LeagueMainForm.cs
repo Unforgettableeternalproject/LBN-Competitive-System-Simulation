@@ -22,6 +22,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private MemberManagementSubform mm;
         private RatingManagementSubform rm;
         private ChatroomSubform chat;
+        private DateTime updateTime;
         public Bitmap Logo => logo;
         public League League => league;
         public LeagueMainForm(ID _userID, Bitmap _logo, League _league)
@@ -160,10 +161,14 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void Tick_Tick(object sender, EventArgs e)
         {
+            if (DateTime.Compare(updateTime, lo.UpdateTime) < 0) { league = lo.League; updateTime = DateTime.Now; }
+            else { lo.League = league; }
+            if (DateTime.Compare(updateTime, mm.UpdateTime) < 0) { league = mm.League; updateTime = DateTime.Now; }
+            else { mm.League = league; }
             logo = lo.Logo;
-            league = lo.League;
             LeagueLogo.Image = logo;
             acceptedProposals = pg.AcceptedProposals;
+            rm.League = league;
             rm.Updated = acceptedProposals;
         }
 

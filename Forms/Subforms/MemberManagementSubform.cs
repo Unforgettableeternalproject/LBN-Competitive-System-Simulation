@@ -16,6 +16,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
     public partial class MemberManagementSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;
+        private DateTime updateTime;
         private League league;
         private ChatroomSubform chat;
         private List<MemberDisplay> members;
@@ -48,6 +49,9 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                                  "帕絲蒂蘭斯"
                              };
         private int delayTime = 3;
+        public DateTime UpdateTime => updateTime;
+
+        public League League { get => league; set { league = value; updateTime = DateTime.Now; } }
         public MemberManagementSubform(ChatroomSubform _chat, League _league, ID _userID)
         {
             InitializeComponent();
@@ -157,6 +161,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
             league.Members.RemoveAll(u => u.Username == chosenMember.Name);
             members.Remove(chosenMember);
+            updateTime = DateTime.Now;
             gridInit();
         }
 
@@ -167,6 +172,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
             league.Members.RemoveAll(u => u.Username == chosenMember.Name);
             members.Remove(chosenMember);
+            updateTime = DateTime.Now;
             gridInit();
         }
 
@@ -288,7 +294,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if (button != null && button.Tag is ID newPlayer)
             {
-                if (mode == "Accept") { league.Members.Add(newPlayer); members.Add(new MemberDisplay(newPlayer)); }
+                if (mode == "Accept") { league.Members.Add(newPlayer); members.Add(new MemberDisplay(newPlayer)); updateTime = DateTime.Now; }
                 requests.Remove(newPlayer);
                 updateUI();
                 gridInit();

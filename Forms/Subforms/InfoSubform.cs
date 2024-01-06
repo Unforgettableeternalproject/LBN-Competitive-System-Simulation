@@ -10,9 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace LBN_Competitive_System_Simulation.Forms
+namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     public partial class InfoSubform : Form
     {

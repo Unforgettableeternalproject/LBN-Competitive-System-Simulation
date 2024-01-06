@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using LBN_Competitive_System_Simulation.Forms;
 
-namespace LBN_Competitive_System_Simulation
+namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class LoginForm : Form
     {
