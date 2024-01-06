@@ -67,6 +67,7 @@
             this.ProposeGames.Size = new System.Drawing.Size(240, 59);
             this.ProposeGames.TabIndex = 26;
             this.ProposeGames.UseVisualStyleBackColor = false;
+            this.ProposeGames.Click += new System.EventHandler(this.ProposeGames_Click);
             // 
             // MemberManagement
             // 
@@ -100,6 +101,7 @@
             this.Home.Size = new System.Drawing.Size(43, 42);
             this.Home.TabIndex = 34;
             this.Home.UseVisualStyleBackColor = false;
+            this.Home.Click += new System.EventHandler(this.Home_Click);
             // 
             // WelcomeMessage
             // 

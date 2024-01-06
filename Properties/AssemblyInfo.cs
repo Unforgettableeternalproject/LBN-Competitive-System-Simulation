@@ -21,6 +21,7 @@ using System.Runtime.InteropServices;
 
 // 下列 GUID 為專案公開 (Expose) 至 COM 時所要使用的 typelib ID
 [assembly: Guid("c20bb17e-273c-48e0-b774-0b65a2ad4b98")]
+[assembly: InternalsVisibleTo("LBN_SUI Unit Test")]
 
 // 組件的版本資訊由下列四個值所組成: 
 //

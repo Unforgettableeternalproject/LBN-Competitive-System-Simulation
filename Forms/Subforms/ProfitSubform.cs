@@ -49,10 +49,5 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             UserTag.Text = userID.Username;
         }
-
-        private void Profit_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

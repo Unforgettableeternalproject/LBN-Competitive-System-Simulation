@@ -13,18 +13,18 @@ namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class LeagueMainForm : Form
     {
-        private ID userID;
         private Bitmap logo;
         private League league;
         private LeagueOverviewSubform lo;
+        private ProposeGamesSubform pg;
         private ChatroomSubform chat;
         public Bitmap Logo => logo;
         public League League => league;
-        public LeagueMainForm(ID _userID, Bitmap _logo, League _league)
+        public LeagueMainForm(Bitmap _logo, League _league)
         {
             InitializeComponent();
-            userID = _userID;
-            logo = _logo;
+            if (_logo != null) logo = _logo;
+            else logo = Properties.Resources.Placeholder4;
             league = _league;
             LeagueLogo.Image = logo;
         }
@@ -49,8 +49,14 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
+            pg = new ProposeGamesSubform(chat, league)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
             
             lo.Show();
+            pg.Show();
             chat.Show();
             chat.VisibleChanged += Chat_VisibleChanged;
             Chatroom.Controls.Add(chat);
@@ -62,6 +68,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(lo);
             SubPages.Tag = lo;
+        }
+
+        private void PGInit()
+        {
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(pg);
+            SubPages.Tag = pg;
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -101,11 +114,20 @@ namespace LBN_Competitive_System_Simulation.Forms
             LOInit();
         }
 
+        private void ProposeGames_Click(object sender, EventArgs e)
+        {
+            PGInit();
+        }
         private void Tick_Tick(object sender, EventArgs e)
         {
             logo = lo.Logo;
             league = lo.League;
             LeagueLogo.Image = logo;
+        }
+
+        private void Home_Click(object sender, EventArgs e)
+        {
+            LOInit();
         }
     }
 }

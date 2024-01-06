@@ -193,7 +193,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             Tick.Stop();
             RedirectSpinner.Hide();
             this.Hide();
-            LeagueMainForm league = new LeagueMainForm(userID, leagueLogo, affiliatedLeague);
+            LeagueMainForm league = new LeagueMainForm(leagueLogo, affiliatedLeague);
             league.ShowDialog();
             leagueLogo = league.Logo;
             affiliatedLeague = league.League;

@@ -133,6 +133,12 @@
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Subforms\ProposeGamesSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\ProposeGamesSubform.Designer.cs">
+      <DependentUpon>ProposeGamesSubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\LeagueOverviewSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     <EmbeddedResource Include="Forms\Subforms\PersonalStatsSubform.resx">
       <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\ProposeGamesSubform.resx">
+      <DependentUpon>ProposeGamesSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\RecentGamesSubform.resx">
       <DependentUpon>RecentGamesSubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -319,6 +328,7 @@
     <None Include="Resources\beep.wav" />
     <None Include="Resources\ExitIndicator.wav" />
     <None Include="Resources\LOPage.png" />
+    <None Include="Resources\PGPage.png" />
     <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />

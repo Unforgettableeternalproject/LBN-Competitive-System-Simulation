@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBN Competitive System Simulation", "LBN Competitive System Simulation.csproj", "{C20BB17E-273C-48E0-B774-0B65A2AD4B98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LBN_CSS Unit Test", "..\LBN_SUI Unit Test\LBN_CSS Unit Test.csproj", "{48B5CE31-1320-4BF3-B0CF-FEF5780DBFAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C20BB17E-273C-48E0-B774-0B65A2AD4B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C20BB17E-273C-48E0-B774-0B65A2AD4B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C20BB17E-273C-48E0-B774-0B65A2AD4B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48B5CE31-1320-4BF3-B0CF-FEF5780DBFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B5CE31-1320-4BF3-B0CF-FEF5780DBFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B5CE31-1320-4BF3-B0CF-FEF5780DBFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B5CE31-1320-4BF3-B0CF-FEF5780DBFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
