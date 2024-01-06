@@ -17,7 +17,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private List<Proposal> proposals = new List<Proposal>();
         private ChatroomSubform chat;
         private League currentLeague;
-        private string Mode = "None";
         private int onGoing = 0, accepted = 0, declined = 0, history = 0;
         private List<string> typeDes = new List<string>()
         {
@@ -61,7 +60,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         private void WInit()
         {
-            Mode = "None";
             ProposalDisplay.Hide();
             ProposalMaker.Hide();
             WebDisplay.Show();
@@ -70,7 +68,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         private void AInit()
         {
-            Mode = "Create";
             ProposalDisplay.Hide();
             ProposalMaker.Show();
             WebDisplay.Hide();
@@ -83,7 +80,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         private void RInit()
         {
-            Mode = "Remove";
             ProposalDisplay.Show();
             ProposalMaker.Hide();
             WebDisplay.Hide();

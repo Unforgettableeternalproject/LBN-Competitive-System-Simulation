@@ -142,9 +142,6 @@
   <data name="Contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Placeholder41" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Placeholder4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Spinner" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Spinner.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +150,9 @@
   </data>
   <data name="Advertise_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Advertise_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Admin_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Admin_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Diagram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,6 +181,9 @@
   <data name="Introduction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Introduction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MMPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MMPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Property" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Property.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -207,6 +210,9 @@
   </data>
   <data name="Deployment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Deployment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Graph_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Graph_1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,14 +307,14 @@
   <data name="AdminLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdminLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PGPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PGPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LDPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LDPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Admin_Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Admin_Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Placeholder41" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Placeholder4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="StreamPreview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\StreamPreview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,7 +331,7 @@
   <data name="Spinner_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Spinner_Blue.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PGPage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PGPage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="NewRequest1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\NewRequest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
