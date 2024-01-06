@@ -1,4 +1,4 @@
-﻿加入聯盟的部分
+﻿Unit Test.
 
 League Generator:
             List<ID> players = new List<ID>();
