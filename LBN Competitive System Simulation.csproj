@@ -133,6 +133,12 @@
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Subforms\RatingManagementSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\RatingManagementSubform.Designer.cs">
+      <DependentUpon>RatingManagementSubform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Subforms\MemberManagementSubform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\RatingManagementSubform.resx">
+      <DependentUpon>RatingManagementSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\MemberManagementSubform.resx">
       <DependentUpon>MemberManagementSubform.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +347,7 @@
     <None Include="Resources\ExitIndicator.wav" />
     <None Include="Resources\LOPage.png" />
     <None Include="Resources\PGPage.png" />
+    <None Include="Resources\RMPage.png" />
     <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />
