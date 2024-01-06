@@ -19,7 +19,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private League affiliatedLeague = null;
         private List<League> leagueList;
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
-        private bool inLeague, isOwner, hadContact = false, uploaded = false, redirectToLO = false;
+        private bool inLeague, isOwner, hadContact = false, uploaded = false, redirectToLO = false, adminMode;
         private bool[] isDefault = new bool[] { true, true, true, true };
         private List<string> feed = new List<string>()
         {
@@ -47,11 +47,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         public bool RedirectToLO { get => redirectToLO; set { redirectToLO = value; } }
         public Bitmap LeagueLogo { get => leagueLogo; set { leagueLogo = value; } }
 
-        public LeagueDutySubform(ID _userID, ChatroomSubform _chat)
+        public LeagueDutySubform(ID _userID, ChatroomSubform _chat, bool _adminMode)
         {
             InitializeComponent();
             userID = _userID;
             chat = _chat;
+            adminMode = _adminMode;
             fetchLeague();
             EnterUsername.Enter += EnterUsername_Enter;
             EnterUsername.Leave += EnterUsername_Leave;
@@ -288,6 +289,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void ModeSearch_Click(object sender, EventArgs e)
         {
+            if(adminMode) { MessageBox.Show("匿蹤模式下無法瀏覽或創建聯盟!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return; }
+
             ModeCreate.Hide();
             ModeSearch.Hide();
             LeagueGridDisplay.Show();
@@ -300,6 +303,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
         private void ModeCreate_Click(object sender, EventArgs e)
         {
+            if (adminMode) { MessageBox.Show("匿蹤模式下無法瀏覽或創建聯盟!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return; }
             ModeCreate.Hide();
             ModeSearch.Hide();
             LeagueGridDisplay.Hide();

@@ -28,404 +28,360 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.LeagueLeaderBoard = new System.Windows.Forms.Label();
             this.LeaderBoard_L = new System.Windows.Forms.GroupBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.L_5 = new System.Windows.Forms.Label();
+            this.L_4 = new System.Windows.Forms.Label();
+            this.L_3 = new System.Windows.Forms.Label();
+            this.L_2 = new System.Windows.Forms.Label();
+            this.L_1 = new System.Windows.Forms.Label();
+            this.Statistics = new System.Windows.Forms.Label();
+            this.MostActivePlayer = new System.Windows.Forms.Label();
+            this.GamesHosted = new System.Windows.Forms.Label();
+            this.LeagueRatings = new System.Windows.Forms.Label();
+            this.LeagueGoals = new System.Windows.Forms.Label();
+            this.GoalLists = new System.Windows.Forms.CheckedListBox();
+            this.HistoryGames = new System.Windows.Forms.Label();
+            this.QuickAction = new System.Windows.Forms.Label();
+            this.PlayerLeaderboard = new System.Windows.Forms.Label();
             this.LeaderBoard_P = new System.Windows.Forms.GroupBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.Game1 = new System.Windows.Forms.Label();
-            this.Game2 = new System.Windows.Forms.Label();
+            this.P_5 = new System.Windows.Forms.Label();
+            this.P_4 = new System.Windows.Forms.Label();
+            this.P_3 = new System.Windows.Forms.Label();
+            this.P_2 = new System.Windows.Forms.Label();
+            this.P_1 = new System.Windows.Forms.Label();
+            this.AnnounceWinner = new System.Windows.Forms.Button();
+            this.EndedGames = new System.Windows.Forms.GroupBox();
+            this.Empty_EG = new System.Windows.Forms.Label();
+            this.ScheduledGames = new System.Windows.Forms.GroupBox();
+            this.Etc = new System.Windows.Forms.Label();
             this.Game3 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
+            this.Game2 = new System.Windows.Forms.Label();
+            this.Game1 = new System.Windows.Forms.Label();
+            this.Empty_SG = new System.Windows.Forms.Label();
+            this.ResetLeaderboard = new System.Windows.Forms.Button();
+            this.Reexamine = new System.Windows.Forms.Button();
+            this.Highlights = new System.Windows.Forms.Button();
+            this.ExtendDescriptions = new System.Windows.Forms.ToolTip(this.components);
+            this.RefreshBTN = new System.Windows.Forms.Button();
             this.LeaderBoard_L.SuspendLayout();
             this.LeaderBoard_P.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.EndedGames.SuspendLayout();
+            this.ScheduledGames.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // LeagueLeaderBoard
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(989, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(229, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "整體聯盟排行榜: (本月)";
+            this.LeagueLeaderBoard.AutoSize = true;
+            this.LeagueLeaderBoard.BackColor = System.Drawing.Color.Transparent;
+            this.LeagueLeaderBoard.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeagueLeaderBoard.Location = new System.Drawing.Point(989, 19);
+            this.LeagueLeaderBoard.Name = "LeagueLeaderBoard";
+            this.LeagueLeaderBoard.Size = new System.Drawing.Size(229, 21);
+            this.LeagueLeaderBoard.TabIndex = 0;
+            this.LeagueLeaderBoard.Text = "整體聯盟排行榜: (本月)";
             // 
             // LeaderBoard_L
             // 
             this.LeaderBoard_L.BackColor = System.Drawing.Color.Transparent;
-            this.LeaderBoard_L.Controls.Add(this.label6);
-            this.LeaderBoard_L.Controls.Add(this.label5);
-            this.LeaderBoard_L.Controls.Add(this.label4);
-            this.LeaderBoard_L.Controls.Add(this.label3);
-            this.LeaderBoard_L.Controls.Add(this.label2);
+            this.LeaderBoard_L.Controls.Add(this.L_5);
+            this.LeaderBoard_L.Controls.Add(this.L_4);
+            this.LeaderBoard_L.Controls.Add(this.L_3);
+            this.LeaderBoard_L.Controls.Add(this.L_2);
+            this.LeaderBoard_L.Controls.Add(this.L_1);
             this.LeaderBoard_L.Location = new System.Drawing.Point(984, 43);
             this.LeaderBoard_L.Name = "LeaderBoard_L";
             this.LeaderBoard_L.Size = new System.Drawing.Size(300, 260);
             this.LeaderBoard_L.TabIndex = 1;
             this.LeaderBoard_L.TabStop = false;
             // 
-            // label6
+            // L_5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(20, 223);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(85, 19);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "♜第五名:";
+            this.L_5.AutoSize = true;
+            this.L_5.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.L_5.Location = new System.Drawing.Point(20, 223);
+            this.L_5.Name = "L_5";
+            this.L_5.Size = new System.Drawing.Size(85, 19);
+            this.L_5.TabIndex = 4;
+            this.L_5.Text = "♜第五名:";
             // 
-            // label5
+            // L_4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(20, 173);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 19);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "♞第四名:";
+            this.L_4.AutoSize = true;
+            this.L_4.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_4.ForeColor = System.Drawing.Color.Gray;
+            this.L_4.Location = new System.Drawing.Point(20, 173);
+            this.L_4.Name = "L_4";
+            this.L_4.Size = new System.Drawing.Size(85, 19);
+            this.L_4.TabIndex = 3;
+            this.L_4.Text = "♞第四名:";
             // 
-            // label4
+            // L_3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(20, 123);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "♝第三名:";
+            this.L_3.AutoSize = true;
+            this.L_3.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_3.ForeColor = System.Drawing.Color.Chocolate;
+            this.L_3.Location = new System.Drawing.Point(20, 123);
+            this.L_3.Name = "L_3";
+            this.L_3.Size = new System.Drawing.Size(85, 19);
+            this.L_3.TabIndex = 2;
+            this.L_3.Text = "♝第三名:";
             // 
-            // label3
+            // L_2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(20, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 19);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "♛第二名:";
+            this.L_2.AutoSize = true;
+            this.L_2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_2.ForeColor = System.Drawing.Color.Silver;
+            this.L_2.Location = new System.Drawing.Point(20, 73);
+            this.L_2.Name = "L_2";
+            this.L_2.Size = new System.Drawing.Size(85, 19);
+            this.L_2.TabIndex = 1;
+            this.L_2.Text = "♛第二名:";
             // 
-            // label2
+            // L_1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Orange;
-            this.label2.Location = new System.Drawing.Point(20, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "♚第一名:";
+            this.L_1.AutoSize = true;
+            this.L_1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.L_1.ForeColor = System.Drawing.Color.Orange;
+            this.L_1.Location = new System.Drawing.Point(20, 23);
+            this.L_1.Name = "L_1";
+            this.L_1.Size = new System.Drawing.Size(85, 19);
+            this.L_1.TabIndex = 0;
+            this.L_1.Text = "♚第一名:";
             // 
-            // label7
+            // Statistics
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(837, 344);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 21);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "聯盟內狀況統計";
+            this.Statistics.AutoSize = true;
+            this.Statistics.BackColor = System.Drawing.Color.Transparent;
+            this.Statistics.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Statistics.Location = new System.Drawing.Point(837, 344);
+            this.Statistics.Name = "Statistics";
+            this.Statistics.Size = new System.Drawing.Size(157, 21);
+            this.Statistics.TabIndex = 2;
+            this.Statistics.Text = "聯盟內狀況統計";
             // 
-            // label8
+            // MostActivePlayer
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(874, 403);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(145, 21);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "最活躍玩家: {}";
+            this.MostActivePlayer.AutoSize = true;
+            this.MostActivePlayer.BackColor = System.Drawing.Color.Transparent;
+            this.MostActivePlayer.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MostActivePlayer.Location = new System.Drawing.Point(874, 403);
+            this.MostActivePlayer.Name = "MostActivePlayer";
+            this.MostActivePlayer.Size = new System.Drawing.Size(145, 21);
+            this.MostActivePlayer.TabIndex = 3;
+            this.MostActivePlayer.Text = "最活躍玩家: {}";
             // 
-            // label9
+            // GamesHosted
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(874, 457);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(187, 21);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "已舉辦比賽數量: {}";
+            this.GamesHosted.AutoSize = true;
+            this.GamesHosted.BackColor = System.Drawing.Color.Transparent;
+            this.GamesHosted.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GamesHosted.Location = new System.Drawing.Point(874, 457);
+            this.GamesHosted.Name = "GamesHosted";
+            this.GamesHosted.Size = new System.Drawing.Size(217, 21);
+            this.GamesHosted.TabIndex = 4;
+            this.GamesHosted.Text = "已舉辦比賽數量: 0 場";
             // 
-            // label10
+            // LeagueRatings
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(874, 513);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(124, 21);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "聯盟評級: {}";
+            this.LeagueRatings.AutoSize = true;
+            this.LeagueRatings.BackColor = System.Drawing.Color.Transparent;
+            this.LeagueRatings.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeagueRatings.Location = new System.Drawing.Point(874, 513);
+            this.LeagueRatings.Name = "LeagueRatings";
+            this.LeagueRatings.Size = new System.Drawing.Size(152, 21);
+            this.LeagueRatings.TabIndex = 5;
+            this.LeagueRatings.Text = "聯盟評級: 青銅";
             // 
-            // label11
+            // LeagueGoals
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(837, 586);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(289, 21);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "聯盟目標 (加油! 我們可以的!)";
+            this.LeagueGoals.AutoSize = true;
+            this.LeagueGoals.BackColor = System.Drawing.Color.Transparent;
+            this.LeagueGoals.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LeagueGoals.Location = new System.Drawing.Point(837, 586);
+            this.LeagueGoals.Name = "LeagueGoals";
+            this.LeagueGoals.Size = new System.Drawing.Size(289, 21);
+            this.LeagueGoals.TabIndex = 6;
+            this.LeagueGoals.Text = "聯盟目標 (加油! 我們可以的!)";
             // 
-            // checkedListBox1
+            // GoalLists
             // 
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.Enabled = false;
-            this.checkedListBox1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.GoalLists.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.GoalLists.Enabled = false;
+            this.GoalLists.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
+            this.GoalLists.FormattingEnabled = true;
+            this.GoalLists.Items.AddRange(new object[] {
             "舉辦第一場競賽",
             "成員達到十人",
             "被評選為精選聯盟",
             "進入本月排行榜",
             "舉辦每一種競賽",
             "讓一名管理員加入聯盟"});
-            this.checkedListBox1.Location = new System.Drawing.Point(878, 621);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(183, 132);
-            this.checkedListBox1.TabIndex = 7;
+            this.GoalLists.Location = new System.Drawing.Point(878, 621);
+            this.GoalLists.Name = "GoalLists";
+            this.GoalLists.Size = new System.Drawing.Size(183, 132);
+            this.GoalLists.TabIndex = 7;
             // 
-            // label12
+            // HistoryGames
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(29, 19);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(157, 21);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "歷史賽事一覽表";
+            this.HistoryGames.AutoSize = true;
+            this.HistoryGames.BackColor = System.Drawing.Color.Transparent;
+            this.HistoryGames.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HistoryGames.Location = new System.Drawing.Point(29, 19);
+            this.HistoryGames.Name = "HistoryGames";
+            this.HistoryGames.Size = new System.Drawing.Size(157, 21);
+            this.HistoryGames.TabIndex = 8;
+            this.HistoryGames.Text = "歷史賽事一覽表";
             // 
-            // label13
+            // QuickAction
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(498, 344);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 21);
-            this.label13.TabIndex = 9;
-            this.label13.Text = "快速動作:";
+            this.QuickAction.AutoSize = true;
+            this.QuickAction.BackColor = System.Drawing.Color.Transparent;
+            this.QuickAction.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuickAction.Location = new System.Drawing.Point(498, 344);
+            this.QuickAction.Name = "QuickAction";
+            this.QuickAction.Size = new System.Drawing.Size(99, 21);
+            this.QuickAction.TabIndex = 9;
+            this.QuickAction.Text = "快速動作:";
             // 
-            // label14
+            // PlayerLeaderboard
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(498, 19);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(292, 21);
-            this.label14.TabIndex = 10;
-            this.label14.Text = "聯盟內玩家排行: (依照積分數)";
+            this.PlayerLeaderboard.AutoSize = true;
+            this.PlayerLeaderboard.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerLeaderboard.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayerLeaderboard.Location = new System.Drawing.Point(498, 19);
+            this.PlayerLeaderboard.Name = "PlayerLeaderboard";
+            this.PlayerLeaderboard.Size = new System.Drawing.Size(292, 21);
+            this.PlayerLeaderboard.TabIndex = 10;
+            this.PlayerLeaderboard.Text = "聯盟內玩家排行: (依照積分數)";
             // 
             // LeaderBoard_P
             // 
             this.LeaderBoard_P.BackColor = System.Drawing.Color.Transparent;
-            this.LeaderBoard_P.Controls.Add(this.label15);
-            this.LeaderBoard_P.Controls.Add(this.label16);
-            this.LeaderBoard_P.Controls.Add(this.label17);
-            this.LeaderBoard_P.Controls.Add(this.label18);
-            this.LeaderBoard_P.Controls.Add(this.label19);
+            this.LeaderBoard_P.Controls.Add(this.RefreshBTN);
+            this.LeaderBoard_P.Controls.Add(this.P_5);
+            this.LeaderBoard_P.Controls.Add(this.P_4);
+            this.LeaderBoard_P.Controls.Add(this.P_3);
+            this.LeaderBoard_P.Controls.Add(this.P_2);
+            this.LeaderBoard_P.Controls.Add(this.P_1);
             this.LeaderBoard_P.Location = new System.Drawing.Point(514, 43);
             this.LeaderBoard_P.Name = "LeaderBoard_P";
-            this.LeaderBoard_P.Size = new System.Drawing.Size(300, 260);
+            this.LeaderBoard_P.Size = new System.Drawing.Size(422, 260);
             this.LeaderBoard_P.TabIndex = 5;
             this.LeaderBoard_P.TabStop = false;
             // 
-            // label15
+            // P_5
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(20, 223);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(85, 19);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "♜第五名:";
+            this.P_5.AutoSize = true;
+            this.P_5.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.P_5.Location = new System.Drawing.Point(20, 223);
+            this.P_5.Name = "P_5";
+            this.P_5.Size = new System.Drawing.Size(85, 19);
+            this.P_5.TabIndex = 4;
+            this.P_5.Text = "♜第五名:";
             // 
-            // label16
+            // P_4
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Gray;
-            this.label16.Location = new System.Drawing.Point(20, 173);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(85, 19);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "♞第四名:";
+            this.P_4.AutoSize = true;
+            this.P_4.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_4.ForeColor = System.Drawing.Color.Gray;
+            this.P_4.Location = new System.Drawing.Point(20, 173);
+            this.P_4.Name = "P_4";
+            this.P_4.Size = new System.Drawing.Size(85, 19);
+            this.P_4.TabIndex = 3;
+            this.P_4.Text = "♞第四名:";
             // 
-            // label17
+            // P_3
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Chocolate;
-            this.label17.Location = new System.Drawing.Point(20, 123);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(85, 19);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "♝第三名:";
+            this.P_3.AutoSize = true;
+            this.P_3.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_3.ForeColor = System.Drawing.Color.Chocolate;
+            this.P_3.Location = new System.Drawing.Point(20, 123);
+            this.P_3.Name = "P_3";
+            this.P_3.Size = new System.Drawing.Size(85, 19);
+            this.P_3.TabIndex = 2;
+            this.P_3.Text = "♝第三名:";
             // 
-            // label18
+            // P_2
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Silver;
-            this.label18.Location = new System.Drawing.Point(20, 73);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(85, 19);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "♛第二名:";
+            this.P_2.AutoSize = true;
+            this.P_2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_2.ForeColor = System.Drawing.Color.Silver;
+            this.P_2.Location = new System.Drawing.Point(20, 73);
+            this.P_2.Name = "P_2";
+            this.P_2.Size = new System.Drawing.Size(85, 19);
+            this.P_2.TabIndex = 1;
+            this.P_2.Text = "♛第二名:";
             // 
-            // label19
+            // P_1
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Orange;
-            this.label19.Location = new System.Drawing.Point(20, 23);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(85, 19);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "♚第一名:";
+            this.P_1.AutoSize = true;
+            this.P_1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.P_1.ForeColor = System.Drawing.Color.Orange;
+            this.P_1.Location = new System.Drawing.Point(20, 23);
+            this.P_1.Name = "P_1";
+            this.P_1.Size = new System.Drawing.Size(85, 19);
+            this.P_1.TabIndex = 0;
+            this.P_1.Text = "♚第一名:";
             // 
-            // button1
+            // AnnounceWinner
             // 
-            this.button1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
-            this.button1.Location = new System.Drawing.Point(514, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 51);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "宣布賽事優勝者";
-            this.button1.UseVisualStyleBackColor = true;
+            this.AnnounceWinner.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
+            this.AnnounceWinner.Location = new System.Drawing.Point(514, 390);
+            this.AnnounceWinner.Name = "AnnounceWinner";
+            this.AnnounceWinner.Size = new System.Drawing.Size(94, 51);
+            this.AnnounceWinner.TabIndex = 11;
+            this.AnnounceWinner.Text = "宣布賽事優勝者";
+            this.AnnounceWinner.UseVisualStyleBackColor = true;
+            this.AnnounceWinner.Click += new System.EventHandler(this.AnnounceWinner_Click);
             // 
-            // groupBox1
+            // EndedGames
             // 
-            this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(7, 56);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 246);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "已結束";
+            this.EndedGames.Controls.Add(this.Empty_EG);
+            this.EndedGames.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EndedGames.Location = new System.Drawing.Point(7, 56);
+            this.EndedGames.Name = "EndedGames";
+            this.EndedGames.Size = new System.Drawing.Size(455, 246);
+            this.EndedGames.TabIndex = 12;
+            this.EndedGames.TabStop = false;
+            this.EndedGames.Text = "已結束";
             // 
-            // groupBox2
+            // Empty_EG
             // 
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.Game3);
-            this.groupBox2.Controls.Add(this.Game2);
-            this.groupBox2.Controls.Add(this.Game1);
-            this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 308);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(455, 246);
-            this.groupBox2.TabIndex = 13;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "已排程";
+            this.Empty_EG.AutoSize = true;
+            this.Empty_EG.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F);
+            this.Empty_EG.Location = new System.Drawing.Point(127, 91);
+            this.Empty_EG.Name = "Empty_EG";
+            this.Empty_EG.Size = new System.Drawing.Size(163, 25);
+            this.Empty_EG.TabIndex = 0;
+            this.Empty_EG.Text = "沒有賽事紀錄!";
             // 
-            // button2
+            // ScheduledGames
             // 
-            this.button2.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
-            this.button2.Location = new System.Drawing.Point(661, 390);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 51);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "重置聯盟賽季";
-            this.button2.UseVisualStyleBackColor = true;
+            this.ScheduledGames.Controls.Add(this.Etc);
+            this.ScheduledGames.Controls.Add(this.Game3);
+            this.ScheduledGames.Controls.Add(this.Game2);
+            this.ScheduledGames.Controls.Add(this.Game1);
+            this.ScheduledGames.Controls.Add(this.Empty_SG);
+            this.ScheduledGames.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ScheduledGames.Location = new System.Drawing.Point(7, 308);
+            this.ScheduledGames.Name = "ScheduledGames";
+            this.ScheduledGames.Size = new System.Drawing.Size(455, 246);
+            this.ScheduledGames.TabIndex = 13;
+            this.ScheduledGames.TabStop = false;
+            this.ScheduledGames.Text = "已排程";
             // 
-            // button3
+            // Etc
             // 
-            this.button3.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
-            this.button3.Location = new System.Drawing.Point(514, 470);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 51);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "申請重新審查";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
-            this.button4.Location = new System.Drawing.Point(661, 470);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 51);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "檢視精華回顧";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F);
-            this.label20.Location = new System.Drawing.Point(127, 91);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(163, 25);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "沒有賽事紀錄!";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F);
-            this.label21.Location = new System.Drawing.Point(127, 95);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(163, 25);
-            this.label21.TabIndex = 1;
-            this.label21.Text = "沒有賽事紀錄!";
-            // 
-            // Game1
-            // 
-            this.Game1.AutoSize = true;
-            this.Game1.Location = new System.Drawing.Point(22, 50);
-            this.Game1.Name = "Game1";
-            this.Game1.Size = new System.Drawing.Size(73, 21);
-            this.Game1.TabIndex = 2;
-            this.Game1.Text = "賽事一";
-            // 
-            // Game2
-            // 
-            this.Game2.AutoSize = true;
-            this.Game2.Location = new System.Drawing.Point(22, 100);
-            this.Game2.Name = "Game2";
-            this.Game2.Size = new System.Drawing.Size(73, 21);
-            this.Game2.TabIndex = 3;
-            this.Game2.Text = "賽事二";
+            this.Etc.AutoSize = true;
+            this.Etc.Location = new System.Drawing.Point(102, 197);
+            this.Etc.Name = "Etc";
+            this.Etc.Size = new System.Drawing.Size(208, 21);
+            this.Etc.TabIndex = 5;
+            this.Etc.Text = "還有其他 {} 個賽事...";
             // 
             // Game3
             // 
@@ -436,14 +392,77 @@
             this.Game3.TabIndex = 4;
             this.Game3.Text = "賽事三";
             // 
-            // label22
+            // Game2
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(102, 197);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(208, 21);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "還有其他 {} 個賽事...";
+            this.Game2.AutoSize = true;
+            this.Game2.Location = new System.Drawing.Point(22, 100);
+            this.Game2.Name = "Game2";
+            this.Game2.Size = new System.Drawing.Size(73, 21);
+            this.Game2.TabIndex = 3;
+            this.Game2.Text = "賽事二";
+            // 
+            // Game1
+            // 
+            this.Game1.AutoSize = true;
+            this.Game1.Location = new System.Drawing.Point(22, 50);
+            this.Game1.Name = "Game1";
+            this.Game1.Size = new System.Drawing.Size(73, 21);
+            this.Game1.TabIndex = 2;
+            this.Game1.Text = "賽事一";
+            // 
+            // Empty_SG
+            // 
+            this.Empty_SG.AutoSize = true;
+            this.Empty_SG.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 18F);
+            this.Empty_SG.Location = new System.Drawing.Point(127, 95);
+            this.Empty_SG.Name = "Empty_SG";
+            this.Empty_SG.Size = new System.Drawing.Size(163, 25);
+            this.Empty_SG.TabIndex = 1;
+            this.Empty_SG.Text = "沒有賽事紀錄!";
+            // 
+            // ResetLeaderboard
+            // 
+            this.ResetLeaderboard.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
+            this.ResetLeaderboard.Location = new System.Drawing.Point(661, 390);
+            this.ResetLeaderboard.Name = "ResetLeaderboard";
+            this.ResetLeaderboard.Size = new System.Drawing.Size(94, 51);
+            this.ResetLeaderboard.TabIndex = 14;
+            this.ResetLeaderboard.Text = "重置聯盟賽季";
+            this.ResetLeaderboard.UseVisualStyleBackColor = true;
+            this.ResetLeaderboard.Click += new System.EventHandler(this.ResetLeaderboard_Click);
+            // 
+            // Reexamine
+            // 
+            this.Reexamine.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
+            this.Reexamine.Location = new System.Drawing.Point(514, 470);
+            this.Reexamine.Name = "Reexamine";
+            this.Reexamine.Size = new System.Drawing.Size(94, 51);
+            this.Reexamine.TabIndex = 15;
+            this.Reexamine.Text = "申請重新審查";
+            this.Reexamine.UseVisualStyleBackColor = true;
+            this.Reexamine.Click += new System.EventHandler(this.Reexamine_Click);
+            // 
+            // Highlights
+            // 
+            this.Highlights.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F);
+            this.Highlights.Location = new System.Drawing.Point(661, 470);
+            this.Highlights.Name = "Highlights";
+            this.Highlights.Size = new System.Drawing.Size(94, 51);
+            this.Highlights.TabIndex = 16;
+            this.Highlights.Text = "檢視精華回顧";
+            this.Highlights.UseVisualStyleBackColor = true;
+            this.Highlights.Click += new System.EventHandler(this.Highlights_Click);
+            // 
+            // RefreshBTN
+            // 
+            this.RefreshBTN.FlatAppearance.BorderSize = 0;
+            this.RefreshBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshBTN.Location = new System.Drawing.Point(372, 10);
+            this.RefreshBTN.Name = "RefreshBTN";
+            this.RefreshBTN.Size = new System.Drawing.Size(45, 45);
+            this.RefreshBTN.TabIndex = 5;
+            this.RefreshBTN.UseVisualStyleBackColor = true;
+            this.RefreshBTN.Click += new System.EventHandler(this.RefreshBTN_Click);
             // 
             // RatingManagementSubform
             // 
@@ -451,34 +470,35 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.RMPage;
             this.ClientSize = new System.Drawing.Size(1299, 777);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Highlights);
+            this.Controls.Add(this.Reexamine);
+            this.Controls.Add(this.ResetLeaderboard);
+            this.Controls.Add(this.ScheduledGames);
+            this.Controls.Add(this.EndedGames);
+            this.Controls.Add(this.AnnounceWinner);
             this.Controls.Add(this.LeaderBoard_P);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.PlayerLeaderboard);
+            this.Controls.Add(this.QuickAction);
+            this.Controls.Add(this.HistoryGames);
+            this.Controls.Add(this.GoalLists);
+            this.Controls.Add(this.LeagueGoals);
+            this.Controls.Add(this.LeagueRatings);
+            this.Controls.Add(this.GamesHosted);
+            this.Controls.Add(this.MostActivePlayer);
+            this.Controls.Add(this.Statistics);
             this.Controls.Add(this.LeaderBoard_L);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LeagueLeaderBoard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RatingManagementSubform";
+            this.Load += new System.EventHandler(this.RatingManagementSubform_Load);
             this.LeaderBoard_L.ResumeLayout(false);
             this.LeaderBoard_L.PerformLayout();
             this.LeaderBoard_P.ResumeLayout(false);
             this.LeaderBoard_P.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.EndedGames.ResumeLayout(false);
+            this.EndedGames.PerformLayout();
+            this.ScheduledGames.ResumeLayout(false);
+            this.ScheduledGames.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,39 +506,41 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LeagueLeaderBoard;
         private System.Windows.Forms.GroupBox LeaderBoard_L;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label L_5;
+        private System.Windows.Forms.Label L_4;
+        private System.Windows.Forms.Label L_3;
+        private System.Windows.Forms.Label L_2;
+        private System.Windows.Forms.Label L_1;
+        private System.Windows.Forms.Label Statistics;
+        private System.Windows.Forms.Label MostActivePlayer;
+        private System.Windows.Forms.Label GamesHosted;
+        private System.Windows.Forms.Label LeagueRatings;
+        private System.Windows.Forms.Label LeagueGoals;
+        private System.Windows.Forms.CheckedListBox GoalLists;
+        private System.Windows.Forms.Label HistoryGames;
+        private System.Windows.Forms.Label QuickAction;
+        private System.Windows.Forms.Label PlayerLeaderboard;
         private System.Windows.Forms.GroupBox LeaderBoard_P;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label P_5;
+        private System.Windows.Forms.Label P_4;
+        private System.Windows.Forms.Label P_3;
+        private System.Windows.Forms.Label P_2;
+        private System.Windows.Forms.Label P_1;
+        private System.Windows.Forms.Button AnnounceWinner;
+        private System.Windows.Forms.GroupBox EndedGames;
+        private System.Windows.Forms.GroupBox ScheduledGames;
+        private System.Windows.Forms.Button ResetLeaderboard;
+        private System.Windows.Forms.Button Reexamine;
+        private System.Windows.Forms.Button Highlights;
+        private System.Windows.Forms.Label Empty_EG;
         private System.Windows.Forms.Label Game3;
         private System.Windows.Forms.Label Game2;
         private System.Windows.Forms.Label Game1;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label Empty_SG;
+        private System.Windows.Forms.Label Etc;
+        private System.Windows.Forms.ToolTip ExtendDescriptions;
+        private System.Windows.Forms.Button RefreshBTN;
     }
 }

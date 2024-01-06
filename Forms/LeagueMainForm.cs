@@ -16,9 +16,11 @@ namespace LBN_Competitive_System_Simulation.Forms
         private ID userID;
         private Bitmap logo;
         private League league;
+        private List<Proposal> acceptedProposals = new List<Proposal>();
         private LeagueOverviewSubform lo;
         private ProposeGamesSubform pg;
         private MemberManagementSubform mm;
+        private RatingManagementSubform rm;
         private ChatroomSubform chat;
         public Bitmap Logo => logo;
         public League League => league;
@@ -62,10 +64,16 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
+            rm = new RatingManagementSubform(league)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
             
             lo.Show();
             pg.Show();
             mm.Show();
+            rm.Show();
             chat.Show();
             chat.VisibleChanged += Chat_VisibleChanged;
             Chatroom.Controls.Add(chat);
@@ -91,6 +99,12 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(mm);
             SubPages.Tag = mm;
+        }
+        private void RMInit()
+        {
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(rm);
+            SubPages.Tag = rm;
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -139,11 +153,18 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             MMInit();
         }
+
+        private void RatingManagement_Click(object sender, EventArgs e)
+        {
+            RMInit();
+        }
         private void Tick_Tick(object sender, EventArgs e)
         {
             logo = lo.Logo;
             league = lo.League;
             LeagueLogo.Image = logo;
+            acceptedProposals = pg.AcceptedProposals;
+            rm.Updated = acceptedProposals;
         }
 
         private void Home_Click(object sender, EventArgs e)

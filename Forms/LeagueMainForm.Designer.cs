@@ -91,6 +91,7 @@
             this.RatingManagement.Size = new System.Drawing.Size(240, 59);
             this.RatingManagement.TabIndex = 28;
             this.RatingManagement.UseVisualStyleBackColor = false;
+            this.RatingManagement.Click += new System.EventHandler(this.RatingManagement_Click);
             // 
             // Home
             // 

@@ -27,6 +27,7 @@ namespace LBN_Competitive_System_Simulation
             };
             var testLeague = new League("測試聯盟", testCase[1], "休閒型聯盟", "測試", new List<ID>()
             {
+                testCase[1],
                 new ID("Joja", "OOPP", "ligk@gmail.com", "Player"),
                 new ID("Coca", "Kilpw", "JOgaot@gmail.com", "Player"),
                 new ID("Celena", "Yes123", "GoodHi@gmail.com", "Player")

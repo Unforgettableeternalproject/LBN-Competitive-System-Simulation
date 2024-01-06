@@ -14,7 +14,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
     public partial class ProposeGamesSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;
-        private List<Proposal> proposals = new List<Proposal>();
+        private List<Proposal> proposals = new List<Proposal>(), acceptedProposals = new List<Proposal>();
         private ChatroomSubform chat;
         private League currentLeague;
         private int onGoing = 0, accepted = 0, declined = 0, history = 0;
@@ -36,6 +36,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         };
         private bool contact = false;
         private Random random = new Random((int)(currentTime & 0xFFFFFFFF));
+        public List<Proposal> AcceptedProposals => acceptedProposals;
         public ProposeGamesSubform(ChatroomSubform _chat, League _currentLeague)
         {
             InitializeComponent();
@@ -75,7 +76,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             RemoveProposal.Hide();
             TypeChooser.SelectedItem = null; TypeChooser.Text = "選擇類型..."; TypeChooser.ForeColor = SystemColors.GrayText;
             FormatChooser.SelectedItem = null; FormatChooser.Text = "選擇模式..."; FormatChooser.ForeColor = SystemColors.GrayText;
-            StartDate.Value = DateTime.Now; EndDate.Value = DateTime.Now;
+            StartDate.Value = DateTime.Now.AddDays(5); EndDate.Value = DateTime.Now.AddDays(5);
             DoNotify.Checked = false;
         }
         private void RInit()
@@ -103,7 +104,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         }
         private void ProposeGamesSubform_Load(object sender, EventArgs e)
         {
-            EndDate.MinDate = DateTime.Now;
+            StartDate.MinDate = DateTime.Now.AddDays(5);
+            EndDate.MinDate = StartDate.MinDate;
             Tick.Start();
             updateStatus();
             WInit();
@@ -199,9 +201,11 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             {
                 if(random.NextDouble() > 0.5)
                 {
+                    var index = random.Next(proposals.Count);
                     accepted++;
                     onGoing--;
-                    proposals.Remove(proposals[random.Next(proposals.Count)]);
+                    acceptedProposals.Add(proposals[index]);
+                    proposals.Remove(proposals[index]);
                     updateStatus();
                 }
                 else

@@ -115,7 +115,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             for(int i = 0; i < maxCount; i++)
             {
                 JoinRequests.Controls[$"Request{i + 1}"].Show();
-                JoinRequests.Controls[$"Request{i + 1}"].Controls[$"RequestTitle{i + 1}"].Text = $"加入請求: 來自{requests[i].Username}";
+                JoinRequests.Controls[$"Request{i + 1}"].Controls[$"RequestTitle{i + 1}"].Text = $"加入請求: 來自 {requests[i].Username}";
                 JoinRequests.Controls[$"Request{i + 1}"].Controls[$"RequestTitle{i + 1}"].Show();
                 JoinRequests.Controls[$"Request{i + 1}"].Controls[$"Accept{i + 1}"].Tag = requests[i];
                 JoinRequests.Controls[$"Request{i + 1}"].Controls[$"Accept{i + 1}"].Show();
@@ -281,7 +281,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             else Empty.Hide();
 
             if (delayTime != 0) { delayTime--; return; }
-            if(random.Next(450) < 50) { delayTime = 3; generateRequest(); }
+            if(random.Next(450) < 50) { Empty.Hide(); delayTime = 3; generateRequest(); }
         }
 
         private void HandleApplication(Button button, string mode)
