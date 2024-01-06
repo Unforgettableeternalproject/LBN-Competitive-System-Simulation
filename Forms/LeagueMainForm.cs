@@ -13,19 +13,22 @@ namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class LeagueMainForm : Form
     {
+        private ID userID;
         private Bitmap logo;
         private League league;
         private LeagueOverviewSubform lo;
         private ProposeGamesSubform pg;
+        private MemberManagementSubform mm;
         private ChatroomSubform chat;
         public Bitmap Logo => logo;
         public League League => league;
-        public LeagueMainForm(Bitmap _logo, League _league)
+        public LeagueMainForm(ID _userID, Bitmap _logo, League _league)
         {
             InitializeComponent();
             if (_logo != null) logo = _logo;
             else logo = Properties.Resources.Placeholder4;
             league = _league;
+            userID = _userID;
             LeagueLogo.Image = logo;
         }
         private void LeagueMainForm_Load(object sender, EventArgs e)
@@ -54,9 +57,15 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
+            mm = new MemberManagementSubform(chat, league, userID)
+            {
+                TopLevel = false,
+                Dock = DockStyle.Fill
+            };
             
             lo.Show();
             pg.Show();
+            mm.Show();
             chat.Show();
             chat.VisibleChanged += Chat_VisibleChanged;
             Chatroom.Controls.Add(chat);
@@ -75,6 +84,13 @@ namespace LBN_Competitive_System_Simulation.Forms
             SubPages.Controls.Clear();
             SubPages.Controls.Add(pg);
             SubPages.Tag = pg;
+        }
+
+        private void MMInit()
+        {
+            SubPages.Controls.Clear();
+            SubPages.Controls.Add(mm);
+            SubPages.Tag = mm;
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -117,6 +133,11 @@ namespace LBN_Competitive_System_Simulation.Forms
         private void ProposeGames_Click(object sender, EventArgs e)
         {
             PGInit();
+        }
+
+        private void MemberManagement_Click(object sender, EventArgs e)
+        {
+            MMInit();
         }
         private void Tick_Tick(object sender, EventArgs e)
         {

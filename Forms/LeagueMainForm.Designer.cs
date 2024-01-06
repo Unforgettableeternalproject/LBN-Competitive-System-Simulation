@@ -79,6 +79,7 @@
             this.MemberManagement.Size = new System.Drawing.Size(240, 59);
             this.MemberManagement.TabIndex = 27;
             this.MemberManagement.UseVisualStyleBackColor = false;
+            this.MemberManagement.Click += new System.EventHandler(this.MemberManagement_Click);
             // 
             // RatingManagement
             // 

@@ -887,5 +887,33 @@
         "Role": "Player"
       }
     ]
+  },
+  {
+    "Name": "測試聯盟",
+    "Motto": "測試",
+    "LeagueType": "休閒型聯盟",
+    "Owner": {
+      "Username": "Berniee",
+      "Password": "122334",
+      "Email": "ptyc4076@gmail.com",
+      "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
+      "Role": "League Owner"
+    },
+    "Members": [
+      {
+        "Username": "Joja",
+        "Password": "OOPP",
+        "Email": "ligk@gmail.com",
+        "UUID": "f8b9167f-4a7b-448b-bf7d-cd416917ea4f",
+        "Role": "Player"
+      },
+      {
+        "Username": "Coca",
+        "Password": "Kilpw",
+        "Email": "JOgaot@gmail.com",
+        "UUID": "0dcc170e-b582-4fe6-aa80-fd57a64ebaeb",
+        "Role": "Player"
+      }
+    ]
   }
 ]
