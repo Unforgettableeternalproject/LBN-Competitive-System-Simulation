@@ -133,8 +133,11 @@
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Subforms\MemberManagerSubform.cs">
+    <Compile Include="Forms\Subforms\MemberManagementSubform.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\MemberManagementSubform.Designer.cs">
+      <DependentUpon>MemberManagementSubform.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Subforms\ProposeGamesSubform.cs">
       <SubType>Form</SubType>
@@ -240,14 +243,14 @@
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\MemberManagementSubform.resx">
+      <DependentUpon>MemberManagementSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\LeagueOverviewSubform.resx">
       <DependentUpon>LeagueOverviewSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\LeagueDutySubform.resx">
       <DependentUpon>LeagueDutySubform.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Subforms\MemberManagerSubform.resx">
-      <DependentUpon>MemberManagerSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\PersonalStatsSubform.resx">
       <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
