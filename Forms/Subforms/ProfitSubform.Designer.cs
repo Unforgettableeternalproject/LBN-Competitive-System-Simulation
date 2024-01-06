@@ -1,4 +1,4 @@
-﻿namespace LBN_Competitive_System_Simulation.Forms
+﻿namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     partial class ProfitSubform
     {
@@ -78,7 +78,6 @@
             this.Profit.TabIndex = 11;
             this.Profit.Text = "0";
             this.Profit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Profit.Click += new System.EventHandler(this.Profit_Click);
             // 
             // Exposure
             // 

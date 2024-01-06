@@ -10,9 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
-namespace LBN_Competitive_System_Simulation.Forms
+namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     public partial class InfoSubform : Form
     {
@@ -57,51 +56,33 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void getUserInfo()
         {
-            var read = new StreamReader($@"..\..\ExampleJSONs\PartnerUserID.json");
-            var json = read.ReadToEnd();
+            var IDList = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
 
-            read.Close();
-            read.Dispose();
-
-            dynamic users = JsonConvert.DeserializeObject(json);
-            foreach (var user in users)
+            foreach (var user in IDList)
             {
                 if (user.Username == userID.Username && user.Password == userID.Password)
                 {
-                    userInfo[0] = string.IsNullOrEmpty(user.Account.ToString()) ? null : user.Account.ToString();
-                    userInfo[1] = string.IsNullOrEmpty(user.Quota.ToString()) ? null : user.Quota.ToString();
+                    userInfo[0] = string.IsNullOrEmpty(user.Account) ? null : user.Account.ToString();
+                    userInfo[1] = string.IsNullOrEmpty(user.Quota) ? null : user.Quota.ToString();
 
                     if (user.Notify == null) userInfo[2] = null;
-                    else userInfo[2] = user.Notify.ToString() == "True" ? true : false;
+                    else userInfo[2] = user.Notify == "True" ? true : false;
                 }
             }
         }
 
         private void updateJSON()
         {
-            var filePath = @"..\..\ExampleJSONs\PartnerUserID.json";
+            var IDList = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
 
-            // Read JSON from file
-            var json = File.ReadAllText(filePath);
-
-            // Deserialize JSON to dynamic array
-            dynamic users = JsonConvert.DeserializeObject<ExpandoObject[]>(json);
-
-            foreach (dynamic user in users)
-            {
-                if (user.Username == userID.Username && user.Password == userID.Password)
-                {
-                    if(userInfo[0] != null) user.Account = (string)userInfo[0];
-                    if (userInfo[1] != null) user.Quota = (string)userInfo[1];
-                    if (userInfo[2] != null) user.Notify = (bool)userInfo[2] ? "True" : "False";
-                }
-            }
+            IDList.RemoveAll(u => u.UUID == userID.UUID);
+            IDList.Add(new PartnerID(userID, userInfo[0], userInfo[1], (userInfo[2] ? "True" : "False")));
 
             // Serialize modified dynamic array back to JSON
-            var updatedJson = JsonConvert.SerializeObject(users, Formatting.Indented);
+            var updatedJson = JsonConvert.SerializeObject(IDList, Formatting.Indented);
 
             // Write the updated JSON back to the file
-            File.WriteAllText(filePath, updatedJson);
+            File.WriteAllText(@"..\..\ExampleJSONs\PartnerUserID.json", updatedJson);
         }
 
         private void btn_acc_change_Click(object sender, EventArgs e)
@@ -132,7 +113,7 @@ namespace LBN_Competitive_System_Simulation.Forms
                     MessageBox.Show("成功設定新的帳戶資料!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     userInfo[0] = $"{result.Substring(0, 7)} {result.Substring(7, 7)}";
                     display = $"{result.Substring(0, 3)}**** {result.Substring(7, 3)}****";
-                    Account.Text = userInfo[0];
+                    Account.Text = display;
                     Account.ForeColor = SystemColors.ControlText;
                     Account.Show();
                     AccountChange.Hide();

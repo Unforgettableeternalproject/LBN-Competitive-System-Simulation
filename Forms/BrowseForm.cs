@@ -12,7 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LBN_Competitive_System_Simulation
+namespace LBN_Competitive_System_Simulation.Forms
 {
     public partial class BrowseForm : Form
     {
@@ -168,6 +168,7 @@ namespace LBN_Competitive_System_Simulation
             Stream.settings.autoStart = false;
             Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources\Demo.mp4"));
             Stream.settings.setMode("loop", false);
+            Stream.settings.volume = 7;
             ChatMessage.Enter += (s, args) => { this.ActiveControl = null; };
             ChatTextbox.KeyDown += this.Pressed_Key;
             toolTip.SetToolTip(btn_return, "返回上一頁");
@@ -204,7 +205,8 @@ namespace LBN_Competitive_System_Simulation
             string userMessage = ChatTextbox.Text;
             if (!string.IsNullOrWhiteSpace(userMessage))
             {
-                AddMessage(userMessage, userID.Username);
+                if(userID.Username == "Anonymous") AddMessage(userMessage, "匿名訪客");
+                else AddMessage(userMessage, userID.Username);
                 ChatTextbox.Clear(); // Clear the input textbox
             }
         }

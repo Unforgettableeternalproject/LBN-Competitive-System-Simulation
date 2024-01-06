@@ -1,4 +1,4 @@
-﻿namespace LBN_Competitive_System_Simulation
+﻿namespace LBN_Competitive_System_Simulation.Forms
 {
     partial class ContactForm
     {
@@ -150,7 +150,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Contact Page";
+            this.Text = "LBN聯絡我們";
             this.Load += new System.EventHandler(this.ContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CaptchaImg)).EndInit();
             this.ResumeLayout(false);

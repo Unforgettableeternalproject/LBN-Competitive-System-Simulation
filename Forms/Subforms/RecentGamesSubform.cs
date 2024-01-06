@@ -130,15 +130,15 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private void ApplyButton_Click(object sender, EventArgs e)
         {
             if (!isInLeague) { MessageBox.Show("你還沒有加入任何聯盟!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return; }
-            DialogResult = MessageBox.Show("將向聯盟所有人申請加入競賽，確認嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (DialogResult == DialogResult.Yes) HandleApplication(sender as Button, "Apply");
+            DialogResult result = MessageBox.Show("將向聯盟所有人申請加入競賽，確認嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes) HandleApplication(sender as Button, "Apply");
         }
 
         private void IgnoreButton_Click(object sender, EventArgs e)
         {
             if (!isInLeague) { MessageBox.Show("你還沒有加入任何聯盟!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); return; }
-            DialogResult = MessageBox.Show("將忽略此賽事並將其移出近期賽事外，確認嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-            if (DialogResult == DialogResult.Yes) HandleApplication(sender as Button, "Ignore");
+            DialogResult result = MessageBox.Show("將忽略此賽事並將其移出近期賽事外，確認嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes) HandleApplication(sender as Button, "Ignore");
         }
 
         private void HandleApplication(Button button, string mode)

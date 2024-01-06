@@ -209,7 +209,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdvertisementForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdvertisementScreen";
+            this.Text = "LBN廣告商後台";
             this.Load += new System.EventHandler(this.AdvertisementForm_Load);
             this.SubPages.ResumeLayout(false);
             this.SubPages.PerformLayout();

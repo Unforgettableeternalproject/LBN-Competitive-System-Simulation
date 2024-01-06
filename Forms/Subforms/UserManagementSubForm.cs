@@ -377,7 +377,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                     var existingNormalUser = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json")).FirstOrDefault(normalUser => normalUser.Username == NewUser.Username && normalUser.Password == NewUser.Password);
                     var userList = JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
 
-                    if (existingNormalUser == null) userList.Add(new PartnerID(NewUser.Username, NewUser.Password, NewUser.Email, NewUser.Role, NewUser.UUID));
+                    if (existingNormalUser == null) userList.Add(new PartnerID(NewUser));
                     else userList.Add(new PartnerID(NewUser.Username, NewUser.Password, NewUser.Email, NewUser.Role, existingNormalUser.UUID));
 
                     string usersJson = JsonConvert.SerializeObject(userList, Formatting.Indented);
@@ -665,19 +665,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             }
         }
 
-        private class PartnerID : ID
-        {
-            public string Account { get; set; }
-            public string Quota { get; set; }
-            public string Notify { get; set; }
-
-            public PartnerID(string username, string password, string email, string role, string uUID) : base(username, password, email, role, uUID)
-            {
-                Account = "";
-                Quota = "";
-                Notify = "False";
-            }
-        }
     }
   
 }

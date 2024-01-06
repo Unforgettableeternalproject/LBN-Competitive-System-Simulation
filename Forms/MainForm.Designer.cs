@@ -1,4 +1,4 @@
-﻿namespace LBN_Competitive_System_Simulation
+﻿namespace LBN_Competitive_System_Simulation.Forms
 {
     partial class MainPage
     {
@@ -36,6 +36,8 @@
             this.LoadingSpinner = new System.Windows.Forms.PictureBox();
             this.RedirectingTimer = new System.Windows.Forms.Timer(this.components);
             this.WelcomeDisplay = new System.Windows.Forms.Label();
+            this.Esc_Timer = new System.Windows.Forms.Timer(this.components);
+            this.Reminder = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Introduction)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LoadingSpinner)).BeginInit();
@@ -70,7 +72,6 @@
             this.Introduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Introduction.TabIndex = 3;
             this.Introduction.TabStop = false;
-            this.Introduction.Click += new System.EventHandler(this.Introduction_Click);
             // 
             // Ball
             // 
@@ -111,7 +112,24 @@
             this.WelcomeDisplay.Size = new System.Drawing.Size(116, 48);
             this.WelcomeDisplay.TabIndex = 6;
             this.WelcomeDisplay.Text = "訊息";
-            this.WelcomeDisplay.Click += new System.EventHandler(this.WelcomeDisplay_Click_1);
+            this.WelcomeDisplay.Click += new System.EventHandler(this.WelcomeDisplay_Click);
+            // 
+            // Esc_Timer
+            // 
+            this.Esc_Timer.Interval = 1000;
+            this.Esc_Timer.Tick += new System.EventHandler(this.Esc_Timer_Tick);
+            // 
+            // Reminder
+            // 
+            this.Reminder.AutoSize = true;
+            this.Reminder.BackColor = System.Drawing.Color.Transparent;
+            this.Reminder.Font = new System.Drawing.Font("腾祥睿黑GB18030-W3", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reminder.Location = new System.Drawing.Point(913, 9);
+            this.Reminder.Name = "Reminder";
+            this.Reminder.Size = new System.Drawing.Size(116, 16);
+            this.Reminder.TabIndex = 7;
+            this.Reminder.Text = "按住ESC以退出";
+            this.Reminder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MainPage
             // 
@@ -122,6 +140,7 @@
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1041, 550);
+            this.Controls.Add(this.Reminder);
             this.Controls.Add(this.WelcomeDisplay);
             this.Controls.Add(this.Ball);
             this.Controls.Add(this.btn_confirm);
@@ -129,10 +148,11 @@
             this.Controls.Add(this.LoadingSpinner);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
             this.Name = "MainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main Window";
+            this.Text = "LBN主畫面";
             this.Load += new System.EventHandler(this.MainPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Introduction)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).EndInit();
@@ -150,6 +170,8 @@
         private System.Windows.Forms.PictureBox LoadingSpinner;
         private System.Windows.Forms.Timer RedirectingTimer;
         private System.Windows.Forms.Label WelcomeDisplay;
+        private System.Windows.Forms.Timer Esc_Timer;
+        private System.Windows.Forms.Label Reminder;
     }
 }
 

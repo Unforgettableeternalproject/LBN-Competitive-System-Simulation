@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPPlus, Version=7.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.7.0.5\lib\net462\EPPlus.dll</HintPath>
@@ -94,6 +97,12 @@
     <Compile Include="Forms\AdminMainForm.Designer.cs">
       <DependentUpon>AdminMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LeagueMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LeagueMainForm.Designer.cs">
+      <DependentUpon>LeagueMainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PlayerMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +132,30 @@
     </Compile>
     <Compile Include="Forms\Subforms\ChatroomSubform.Designer.cs">
       <DependentUpon>ChatroomSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\RatingManagementSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\RatingManagementSubform.Designer.cs">
+      <DependentUpon>RatingManagementSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\MemberManagementSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\MemberManagementSubform.Designer.cs">
+      <DependentUpon>MemberManagementSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\ProposeGamesSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\ProposeGamesSubform.Designer.cs">
+      <DependentUpon>ProposeGamesSubform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Subforms\LeagueOverviewSubform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Subforms\LeagueOverviewSubform.Designer.cs">
+      <DependentUpon>LeagueOverviewSubform.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Subforms\LeagueDutySubform.cs">
       <SubType>Form</SubType>
@@ -198,6 +231,9 @@
     <EmbeddedResource Include="Forms\ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LeagueMainForm.resx">
+      <DependentUpon>LeagueMainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlayerMainForm.resx">
       <DependentUpon>PlayerMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,11 +249,23 @@
     <EmbeddedResource Include="Forms\Subforms\DeploymentSubform.resx">
       <DependentUpon>DeploymentSubform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\RatingManagementSubform.resx">
+      <DependentUpon>RatingManagementSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\MemberManagementSubform.resx">
+      <DependentUpon>MemberManagementSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\LeagueOverviewSubform.resx">
+      <DependentUpon>LeagueOverviewSubform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\LeagueDutySubform.resx">
       <DependentUpon>LeagueDutySubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\PersonalStatsSubform.resx">
       <DependentUpon>PersonalStatsSubform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Subforms\ProposeGamesSubform.resx">
+      <DependentUpon>ProposeGamesSubform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Subforms\RecentGamesSubform.resx">
       <DependentUpon>RecentGamesSubform.cs</DependentUpon>
@@ -280,6 +328,7 @@
     <None Include="Resources\Introduction.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Snapshots\LeagueScreen.png" />
     <None Include="Resources\LDPage.png" />
     <None Include="Resources\Novia.gif" />
     <None Include="Resources\Announement.png" />
@@ -292,6 +341,14 @@
     <None Include="Resources\LDPage2.png" />
     <None Include="Resources\Search.png" />
     <Content Include="Concepts\To-Do List.txt" />
+    <None Include="Resources\Spinner_Blue.gif" />
+    <None Include="Resources\LO_Base.png" />
+    <Content Include="Icon.ico" />
+    <None Include="Resources\beep.wav" />
+    <None Include="Resources\ExitIndicator.wav" />
+    <None Include="Resources\LOPage.png" />
+    <None Include="Resources\PGPage.png" />
+    <None Include="Resources\RMPage.png" />
     <Content Include="Snapshots\PlayerScreen.png" />
     <None Include="Resources\StreamPreview.png" />
     <None Include="Resources\Player_Base.png" />

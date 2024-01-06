@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static LBN_Competitive_System_Simulation.Forms.PlayerMainForm;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
@@ -19,7 +20,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         static readonly long currentTime = DateTime.Now.Ticks;
         private List<Proposal> eventList = new List<Proposal>(), extraEventList = null;
         private List<League> leagueList = new List<League>();
-        private bool isInLeague, isOwner, adminMode;
+        private bool isInLeague, isOwner, adminMode, redirectToLO = false;
         private League affiliatedLeague = null;
         private readonly ID userID;
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
@@ -29,6 +30,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         private ChatroomSubform chat;
         private CalendarSubform c;
         private DateTime updateTime;
+        private Bitmap leagueLogo = null;
         public PlayerMainForm(ID _userID, bool _adminMode = false, List<Proposal> outerEventList = null)
         {
             InitializeComponent();
@@ -48,14 +50,19 @@ namespace LBN_Competitive_System_Simulation.Forms
             Tick.Start();
             WelcomeMessage.Text = $"好久不見, {userID.Username}\n\n見到你真開心!\n\n今天也要再加把勁喔!";
             Chatroom.Hide();
+            RedirectSpinner.Hide();
             ExpandChatroom.Show();
             overallInit();
             RGInit();
         }
 
+        private void updateUI()
+        {
+            if (!isInLeague) { Announcement.Image = Properties.Resources.LeagueAnnouncementEmpty; LeagueDisplay.Text = "無"; }
+            else { Announcement.Image = Properties.Resources.LeagueAnnouncementNormal; LeagueDisplay.Text = affiliatedLeague.Name; }
+        }
         private void fetchLeague()
         {
-            Console.WriteLine("Debug-1");
             foreach (League league in leagueList)
             {
                 if (league.Members.Any(e => e.UUID == userID.UUID)) { isInLeague = true; LeagueDisplay.Text = league.Name; affiliatedLeague = league; }
@@ -66,7 +73,6 @@ namespace LBN_Competitive_System_Simulation.Forms
         }
         private void getLeagueList()
         {
-            Console.WriteLine("Debug-2");
             leagueList = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
             Console.WriteLine(leagueList[0].Members.Count);
         }
@@ -87,7 +93,7 @@ namespace LBN_Competitive_System_Simulation.Forms
                 TopLevel = false,
                 Dock = DockStyle.Fill
             };
-            ld = new LeagueDutySubform(userID, chat)
+            ld = new LeagueDutySubform(userID, chat, adminMode)
             {
                 TopLevel = false,
                 Dock = DockStyle.Fill
@@ -107,6 +113,12 @@ namespace LBN_Competitive_System_Simulation.Forms
             Chatroom.Tag = "active";
         }
 
+        private void LOredirect()
+        {
+            SubPages.Controls.Clear();
+            RedirectSpinner.Show();
+            redirectTimer.Start();
+        }
         private void RGInit()
         {
             SubPages.Controls.Clear();
@@ -175,6 +187,25 @@ namespace LBN_Competitive_System_Simulation.Forms
             CInit();
         }
 
+        private void redirectTimer_Tick(object sender, EventArgs e)
+        {
+            redirectTimer.Stop();
+            Tick.Stop();
+            RedirectSpinner.Hide();
+            this.Hide();
+            LeagueMainForm league = new LeagueMainForm(userID, leagueLogo, affiliatedLeague);
+            league.ShowDialog();
+            leagueLogo = league.Logo;
+            affiliatedLeague = league.League;
+            ld.LeagueLogo = leagueLogo;
+            ld.RedirectToLO = false;
+            ld.refresh(affiliatedLeague);
+            league.Dispose();
+            this.Show();
+            Tick.Start();
+            Home.PerformClick();
+        }
+
         private void PersonalStats_Click(object sender, EventArgs e)
         {
             PSInit();
@@ -194,9 +225,13 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             if (DateTime.Compare(updateTime, rg.UpdateTime) < 0) { eventList = rg.EventList; updateTime = DateTime.Now; }
             c.EventList = eventList;
-            if(isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); }
+            if(isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); updateUI(); }
             if(isOwner != ld.IsOwner) { isOwner = ld.IsOwner; ps.update(); }
+            redirectToLO = ld.RedirectToLO;
+            leagueLogo = ld.LeagueLogo;
+            if (redirectToLO) LOredirect();
         }
+        
     }
 
     public class League
@@ -210,6 +245,14 @@ namespace LBN_Competitive_System_Simulation.Forms
         public League()
         {
             Members = new List<ID>();
+        }
+        public League(League copy)
+        {
+            Name = copy.Name;
+            Motto = copy.Motto;
+            LeagueType = copy.LeagueType;
+            Owner = copy.Owner;
+            Members = copy.Members;
         }
         public League(string name, ID owner)
         {

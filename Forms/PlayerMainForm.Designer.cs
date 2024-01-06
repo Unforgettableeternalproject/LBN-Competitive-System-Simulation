@@ -45,7 +45,10 @@
             this.Home = new System.Windows.Forms.Button();
             this.Announcement = new System.Windows.Forms.PictureBox();
             this.Tick = new System.Windows.Forms.Timer(this.components);
+            this.RedirectSpinner = new System.Windows.Forms.PictureBox();
+            this.redirectTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Announcement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeMessage
@@ -214,6 +217,22 @@
             // 
             this.Tick.Tick += new System.EventHandler(this.Tick_Tick);
             // 
+            // RedirectSpinner
+            // 
+            this.RedirectSpinner.BackColor = System.Drawing.Color.Transparent;
+            this.RedirectSpinner.Image = global::LBN_Competitive_System_Simulation.Properties.Resources.Spinner_Blue;
+            this.RedirectSpinner.Location = new System.Drawing.Point(530, 224);
+            this.RedirectSpinner.Name = "RedirectSpinner";
+            this.RedirectSpinner.Size = new System.Drawing.Size(512, 512);
+            this.RedirectSpinner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.RedirectSpinner.TabIndex = 35;
+            this.RedirectSpinner.TabStop = false;
+            // 
+            // redirectTimer
+            // 
+            this.redirectTimer.Interval = 3000;
+            this.redirectTimer.Tick += new System.EventHandler(this.redirectTimer_Tick);
+            // 
             // PlayerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -221,6 +240,7 @@
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.Player_Base;
             this.ClientSize = new System.Drawing.Size(1536, 864);
             this.Controls.Add(this.Chatroom);
+            this.Controls.Add(this.RedirectSpinner);
             this.Controls.Add(this.Announcement);
             this.Controls.Add(this.Home);
             this.Controls.Add(this.LeagueDisplay);
@@ -238,9 +258,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PlayerMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "LBN選手儀表板";
             this.Load += new System.EventHandler(this.PlayerMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Announcement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedirectSpinner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +284,7 @@
         private System.Windows.Forms.Button Home;
         private System.Windows.Forms.PictureBox Announcement;
         private System.Windows.Forms.Timer Tick;
+        private System.Windows.Forms.PictureBox RedirectSpinner;
+        private System.Windows.Forms.Timer redirectTimer;
     }
 }

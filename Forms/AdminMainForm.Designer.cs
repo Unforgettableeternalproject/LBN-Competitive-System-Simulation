@@ -258,7 +258,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "LBN系統後台管理畫面";
             this.Load += new System.EventHandler(this.AdminMainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
