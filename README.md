@@ -8,7 +8,7 @@
 
 "Well, not this time!"
 
-✎ Guess what? Unit Test time! (Who tf does unit test at the very end of a project)
+✎ Everything is Done
 
 Contributors:
 	Currently None
@@ -17,15 +17,27 @@ To-do list:
 
 	✧ Make the codes much more cleaner (Working on it)
  
-	✧ Perhaps adding some SFXs? (Is that even possible?)
-
-	✧ Every user needs their requirements to be tested
-
-	✧ There got to be more improvements
+	✧ Perhaps adding some SFXs? (Nah I give up)
 
 Preserved for future check: git 3 steps
 1. ```git add .```
 2. ```git git commit -m "commit message"```
 3. ```git push```
 
+✬ Main Page
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/MainScreen.png)
+
+✬ Audience Browse Page)
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/BrowseScreen.png)
+
+✬ Advertiser Dashboard
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/AdvertiserScreen.png)
+
+✬ Admin Back-end Management Page
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/AdminScreen.png)
+
+✬ Player Dashboard
+![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/PlayerScreen.png)
+
+✬ League Owner Back-end Management Page
 ![image](https://github.com/Unforgettableeternalproject/LBN-Competitive-System-Simulation/blob/master/Snapshots/LeagueScreen.png)

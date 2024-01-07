@@ -237,7 +237,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             Console.WriteLine("Debug");
             btn_enter.PerformClick();
             AdvertisementDeploy.PerformClick();
-            if (ds.setAd(new Bitmap(@"..\..\ExampleJSONs\Concept AD 1.png")) == DialogResult.OK) ;
+            if (ds.setAd(new Bitmap(@"..\..\Concepts\Concept AD 1.png")) == DialogResult.OK) ;
             else throw new Exception();
             this.Dispose();
         }
