@@ -96,12 +96,12 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private void StartDate_ValueChanged(object sender, EventArgs e)
         {
             EndDate.MinDate = StartDate.Value;
-            if (updated) arguments[1] = EndDate.Value.Subtract(StartDate.Value).TotalDays*0.1;
+            if (updated) arguments[1] = EndDate.Value.Subtract(StartDate.Value).TotalDays * 0.75;
         }
         private void EndDate_ValueChanged(object sender, EventArgs e)
         {
             if(!updated) updated = true;
-            arguments[1] = EndDate.Value.Subtract(StartDate.Value).TotalDays* 0.75;
+            arguments[1] = EndDate.Value.Subtract(StartDate.Value).TotalDays * 0.75;
         }
 
         private void Tick_Tick(object sender, EventArgs e)
@@ -123,5 +123,18 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             SkipDeployment:
             ;
         }
+        #region UnitTest
+        public DialogResult setAd(Bitmap ad)
+        {
+            image[0] = ad;
+            ChooseLocation.SelectedIndex = 2;
+            AdPreview.Image = (Bitmap)image[0];
+            arguments[0] = prices[image[1].ToString()];
+            EndDate.Value = StartDate.Value.AddDays(5);
+            total = arguments[0] * 1.2 * arguments[1];
+            btn_deploy.PerformClick();
+            return DialogResult.OK;
+        }
+        #endregion
     }
 }

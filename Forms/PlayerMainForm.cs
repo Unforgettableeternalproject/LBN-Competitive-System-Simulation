@@ -231,7 +231,29 @@ namespace LBN_Competitive_System_Simulation.Forms
             leagueLogo = ld.LeagueLogo;
             if (redirectToLO) LOredirect();
         }
-        
+        #region UnitTest
+        public void JoinGame()
+        {
+            RecentGames.PerformClick();
+            if (rg.JoinGame() == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        public void JoinLeague()
+        {
+            LeagueDuty.PerformClick();
+            if (ld.JoinLeague() == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        public void CreateLeague()
+        {
+            LeagueDuty.PerformClick();
+            if (ld.CreateNewLeague() == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        #endregion
     }
 
     public class League

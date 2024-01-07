@@ -176,5 +176,22 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             LOInit();
         }
+
+        #region UnitTest
+        public void ProposeGame()
+        {
+            ProposeGames.PerformClick();
+            if (pg.ProposeGame() == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        public void AnnounceWinner()
+        {
+            RatingManagement.PerformClick();
+            if (rm.AnnounceNewWinner() == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        #endregion
     }
 }

@@ -219,5 +219,29 @@ namespace LBN_Competitive_System_Simulation.Forms
                 Chatroom.Hide();
             }
         }
+        #region UnitTest
+        public void AddEvent()
+        {
+            GameProposal.PerformClick();
+            if (gp.AcceptNewProposals() == DialogResult.OK) ;
+            else throw new Exception();
+
+            Calendar.PerformClick();
+            if (c.NewEvent() == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        public void ManageUser()
+        {
+            UserManagement.PerformClick();
+            if (um.TestAddUser() == DialogResult.OK) ;
+            else throw new Exception();
+            if (um.TestEditUser() == DialogResult.OK) ;
+            else throw new Exception();
+            if (um.TestDeleteUser() == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        #endregion
     }
 }

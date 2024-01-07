@@ -13,7 +13,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     public partial class CalendarSubform : Form
     { 
-        private List<Proposal> eventList = null;
+        private List<Proposal> eventList = new List<Proposal>();
         private DateTime selectedDate, updateTime;
         private int timeSpan = 0;
         private List<string> eventName = new List<string>();
@@ -251,5 +251,17 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 EventName.ForeColor = SystemColors.GrayText;
             }
         }
+
+        #region UnitTest
+        public DialogResult NewEvent()
+        {
+            AddEvent.PerformClick();
+            EventName.Text = "測試"; isDefault = false;
+            StartDate.Value = DateTime.Now;
+            EndDate.Value = DateTime.Now.AddDays(5);
+            Confirm.PerformClick();
+            return DialogResult.OK;
+        }
+        #endregion
     }
 }

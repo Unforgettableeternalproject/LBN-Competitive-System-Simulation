@@ -356,6 +356,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 
             if (result == DialogResult.No) return;
 
+            userID.Role = "League Owner";
+
             var newLeague = new League(LeagueName, userID, LeagueType, LeagueMotto, new List<ID>() { userID });
             leagueLogo = uploaded ? (Bitmap)UploadBox.Image : null;
             isOwner = true;
@@ -392,7 +394,31 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             uploaded = false;
             MessageBox.Show("已移除現有圖片!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+        #region UnitTest
+        public DialogResult JoinLeague()
+        {
+            ModeSearch.PerformClick();
+            League league = new League("弒獸之者", new ID("Ariel", "s", "s@gmail.com", "League Owner"));
+            DialogResult result = MessageBox.Show("將向該聯盟送出加入申請，確認嗎?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.No) return DialogResult.Cancel;
 
+            DialogResult waity = MessageBox.Show("申請已經被允許!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            var newToLeague = leagueList.FirstOrDefault(l => l.Name == league.Name);
+            newToLeague.Members.Add(userID);
+            writeBackLeague(newToLeague);
+            leagueInit(true);
+            return DialogResult.OK;
+        }
+        public DialogResult CreateNewLeague()
+        {
+            ModeCreate.PerformClick();
+            LNameTXT.Text = "測試聯盟"; isDefault[2] = false; LNameTXT.ForeColor = SystemColors.ControlText;
+            LMottoTXT.Text = "測試座右銘"; isDefault[3] = false;  LMottoTXT.ForeColor = SystemColors.ControlText;
+            LType_R2.Checked = true;
+            Create.PerformClick();
+            return DialogResult.OK;
+        }
+        #endregion
         #region ExtraEvents
 
         private void Pressed_Key1(object sender, KeyEventArgs e)

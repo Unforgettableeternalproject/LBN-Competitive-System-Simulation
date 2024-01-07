@@ -17,9 +17,9 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         private static readonly Random random = new Random((int)(currentTime & 0xFFFFFFFF));
         private static readonly List<Proposal> defaultEventList = new List<Proposal>()
         {
-            new Proposal("小人物聯盟", DateTime.Now.AddDays(random.Next(1, 10)*random.NextDouble()), "友誼賽", "單一淘汰賽制", random.Next(14)),
-            new Proposal("自然聯盟",  DateTime.Now.AddDays(random.Next(1, 10)*random.NextDouble()), "錦標賽", "圓桌賽制", random.Next(14)),
-            new Proposal("美麗生活",  DateTime.Now.AddDays(random.Next(1, 10)*random.NextDouble()), "聯盟賽", "小組賽制", random.Next(14))
+            new Proposal("小人物聯盟", DateTime.Now.AddDays(random.Next(1, 14)*random.NextDouble()), "友誼賽", "單一淘汰賽制", random.Next(14)),
+            new Proposal("自然聯盟",  DateTime.Now.AddDays(random.Next(1, 14)*random.NextDouble()), "錦標賽", "圓桌賽制", random.Next(14)),
+            new Proposal("美麗生活",  DateTime.Now.AddDays(random.Next(1, 14)*random.NextDouble()), "聯盟賽", "小組賽制", random.Next(14))
         };
         private List<Proposal> eventList = new List<Proposal>(), acceptedEventList = new List<Proposal>();
         private DateTime updateTime;
@@ -150,5 +150,15 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 updateEvent();
             }
         }
+
+        #region UnitTest
+        public DialogResult JoinGame()
+        {
+            lbl_7.Text = "近七天的賽事 ▼";
+            Recent7Days.Show();
+            Apply_7_1.PerformClick();
+            return DialogResult.OK;
+        }
+        #endregion
     }
 }

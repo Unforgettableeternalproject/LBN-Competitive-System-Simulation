@@ -231,6 +231,17 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             if (ds != null) { isDeployed = ds.IsDeployed; adImage = ds.Image; costTotal = ds.Total; } 
         }
+        #region UnitTest
+        public void CanDeployAds()
+        {
+            Console.WriteLine("Debug");
+            btn_enter.PerformClick();
+            AdvertisementDeploy.PerformClick();
+            if (ds.setAd(new Bitmap(@"..\..\ExampleJSONs\Concept AD 1.png")) == DialogResult.OK) ;
+            else throw new Exception();
+            this.Dispose();
+        }
+        #endregion
     }
     public class PartnerID : ID
     {

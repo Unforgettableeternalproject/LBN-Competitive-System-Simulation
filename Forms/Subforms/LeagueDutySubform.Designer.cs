@@ -637,8 +637,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LBN_Competitive_System_Simulation.Properties.Resources.LDPage2;
             this.ClientSize = new System.Drawing.Size(1108, 777);
-            this.Controls.Add(this.InLeague);
             this.Controls.Add(this.OutLeague);
+            this.Controls.Add(this.InLeague);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LeagueDutySubform";
             this.Text = "Form1";

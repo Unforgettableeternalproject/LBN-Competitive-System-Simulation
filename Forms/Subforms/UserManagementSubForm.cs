@@ -645,6 +645,55 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             if (cbox_UserType.SelectedItem == null) cbox_UserType.ForeColor = SystemColors.GrayText;
         }
 
+        #region UnitTest
+        public DialogResult TestAddUser()
+        {
+            NormalUsers.Checked = true;
+            btn_add.PerformClick();
+            txt_Username.Text = "TestUser";
+            txt_Email.Text = "TextUser@gmail.com";
+            txt_Password.Text = "TestTest";
+            cbox_UserType.SelectedIndex = 0;
+            Confim.PerformClick();
+            Cancel.PerformClick();
+            return DialogResult.OK;
+        }
+        public DialogResult TestEditUser()
+        {
+            NormalUsers.Checked = true;
+            btn_edit.PerformClick();
+            originalUser = new IDwithPartnerCheck("TestUser", "TestTest", "TextUser@gmail.com", "Normal") { UUID = "750def62-c8d6-4235-a290-0f22cdf25ffc" };
+            txt_Username.Text = originalUser.Username;
+            txt_Password.Text = originalUser.Password;
+            txt_Email.Text = originalUser.Email;
+            cbox_UserType.ForeColor = SystemColors.ControlText;
+            cbox_UserType.SelectedIndex = cbox_UserType.FindStringExact("一般用戶");
+            chk_Partner.Checked = originalUser.IsPartner == "True";
+
+            chk_Partner.Checked = true;
+            Confim.PerformClick();
+            Cancel.PerformClick();
+            return DialogResult.OK;
+        }
+
+        public DialogResult TestDeleteUser()
+        {
+            NormalUsers.Checked = true;
+            btn_delete.PerformClick();
+            originalUser = new IDwithPartnerCheck("TestUser", "TestTest", "TextUser@gmail.com", "Normal", "True") { UUID = "750def62-c8d6-4235-a290-0f22cdf25ffc" };
+            txt_Username.Text = originalUser.Username;
+            txt_Password.Text = originalUser.Password;
+            txt_Email.Text = originalUser.Email;
+            cbox_UserType.ForeColor = SystemColors.ControlText;
+            cbox_UserType.SelectedIndex = cbox_UserType.FindStringExact("一般用戶");
+            chk_Partner.Checked = originalUser.IsPartner == "True";
+
+            Confim.PerformClick();
+            Cancel.PerformClick();
+            return DialogResult.OK;
+        }
+        #endregion
+
         private class IDwithPartnerCheck : ID
         {
             public string IsPartner { get; set; }
@@ -659,7 +708,7 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 IsPartner = "False";
             }
 
-            public IDwithPartnerCheck(string username, string password, string email, string role, string isPartner = "false") : base(username, password, email, role)
+            public IDwithPartnerCheck(string username, string password, string email, string role, string isPartner = "False") : base(username, password, email, role)
             {
                 IsPartner = isPartner;
             }

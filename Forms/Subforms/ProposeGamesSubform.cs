@@ -160,6 +160,18 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             WInit();
         }
+        #region UnitTest
+        public DialogResult ProposeGame()
+        {
+            NewProposal.PerformClick();
+            TypeChooser.SelectedIndex = 2;
+            FormatChooser.SelectedIndex = 3;
+            DoNotify.Checked = true;
+            Submit.PerformClick();
+            return DialogResult.OK;
+        }
+        #endregion
+
         #region ExtraEvents
         private void FormatChooser_DropDownClosed(object sender, EventArgs e)
         {

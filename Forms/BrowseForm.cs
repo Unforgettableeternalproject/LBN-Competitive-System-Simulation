@@ -293,5 +293,14 @@ namespace LBN_Competitive_System_Simulation.Forms
             RedirectSpinner.Hide();
             af.Dispose();
         }
+        #region UnitTest
+        public void CanWatchStream()
+        {
+            ExampleVideo.PerformClick();
+            ChatTextbox.Text = "測試";
+            btn_send.PerformClick();
+            this.Dispose();
+        }
+        #endregion
     }
 }
