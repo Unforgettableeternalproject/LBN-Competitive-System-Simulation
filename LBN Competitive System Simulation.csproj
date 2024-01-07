@@ -339,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Snapshots\LeagueScreen.png" />
+    <Content Include="Snapshots\Prove that my unit test is legit.png" />
     <None Include="Resources\LDPage.png" />
     <None Include="Resources\Novia.gif" />
     <None Include="Resources\Announement.png" />
@@ -385,7 +386,7 @@
     <None Include="Resources\Graph_1.gif" />
     <None Include="Resources\SLPage.png" />
     <None Include="Resources\Chatroom.png" />
-    <Content Include="Snapshots\AdvertiserDashboard.png" />
+    <Content Include="Snapshots\AdvertiserScreen.png" />
     <None Include="Resources\Advertise_Front.png" />
     <None Include="Resources\Advertise_Base.png" />
     <Content Include="Concepts\Concept Ad 1.png" />
