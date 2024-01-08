@@ -644,7 +644,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         {
             if (cbox_UserType.SelectedItem == null) cbox_UserType.ForeColor = SystemColors.GrayText;
         }
-
         #region UnitTest
         public DialogResult TestAddUser()
         {

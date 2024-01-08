@@ -154,7 +154,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             HideAndClear();
             Proposal_Tick.Start();
         }
-
         #region UnitTest
         public DialogResult AcceptNewProposals()
         {

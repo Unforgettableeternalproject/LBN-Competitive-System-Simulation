@@ -48,6 +48,10 @@ namespace LBN_Competitive_System_Simulation.Forms
             Hint.Text = "";
         }
 
+        private void DoNothing()
+        {
+            ;
+        }
         private bool isExist(ID userID)
         {
             var IDs= JsonConvert.DeserializeObject<List<PartnerID>>(File.ReadAllText(@"..\..\ExampleJSONs\PartnerUserID.json"));
@@ -237,7 +241,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             Console.WriteLine("Debug");
             btn_enter.PerformClick();
             AdvertisementDeploy.PerformClick();
-            if (ds.setAd(new Bitmap(@"..\..\Concepts\Concept AD 1.png")) == DialogResult.OK) ;
+            if (ds.setAd(new Bitmap(@"..\..\Concepts\Concept AD 1.png")) == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }

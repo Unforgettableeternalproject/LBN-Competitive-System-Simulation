@@ -150,7 +150,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 updateEvent();
             }
         }
-
         #region UnitTest
         public DialogResult JoinGame()
         {

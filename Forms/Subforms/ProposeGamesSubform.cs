@@ -171,7 +171,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             return DialogResult.OK;
         }
         #endregion
-
         #region ExtraEvents
         private void FormatChooser_DropDownClosed(object sender, EventArgs e)
         {

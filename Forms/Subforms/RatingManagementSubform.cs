@@ -134,7 +134,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 MessageBox.Show($"Error opening web page: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         #region UnitTest
         public DialogResult AnnounceNewWinner()
         {

@@ -43,6 +43,10 @@ namespace LBN_Competitive_System_Simulation.Forms
             overallInit();
             LOInit();
         }
+        private void DoNothing()
+        {
+            ;
+        }
         private void overallInit()
         {
             chat = new ChatroomSubform("League Owner")
@@ -176,19 +180,18 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             LOInit();
         }
-
         #region UnitTest
         public void ProposeGame()
         {
             ProposeGames.PerformClick();
-            if (pg.ProposeGame() == DialogResult.OK) ;
+            if (pg.ProposeGame() == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }
         public void AnnounceWinner()
         {
             RatingManagement.PerformClick();
-            if (rm.AnnounceNewWinner() == DialogResult.OK) ;
+            if (rm.AnnounceNewWinner() == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }

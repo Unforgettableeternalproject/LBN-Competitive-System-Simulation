@@ -232,7 +232,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
             uploaded = false;
             MessageBox.Show("已移除現有圖片!", "訊息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
         #region ExtraEvents
         private void Pressed_Key1(object sender, KeyEventArgs e)
         {

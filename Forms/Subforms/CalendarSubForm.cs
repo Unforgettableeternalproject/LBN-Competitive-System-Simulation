@@ -251,7 +251,6 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
                 EventName.ForeColor = SystemColors.GrayText;
             }
         }
-
         #region UnitTest
         public DialogResult NewEvent()
         {

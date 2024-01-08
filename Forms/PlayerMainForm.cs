@@ -56,6 +56,10 @@ namespace LBN_Competitive_System_Simulation.Forms
             RGInit();
         }
 
+        private void DoNothing()
+        {
+            ;
+        }
         private void updateUI()
         {
             if (!isInLeague) { Announcement.Image = Properties.Resources.LeagueAnnouncementEmpty; LeagueDisplay.Text = "無"; }
@@ -235,21 +239,21 @@ namespace LBN_Competitive_System_Simulation.Forms
         public void JoinGame()
         {
             RecentGames.PerformClick();
-            if (rg.JoinGame() == DialogResult.OK) ;
+            if (rg.JoinGame() == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }
         public void JoinLeague()
         {
             LeagueDuty.PerformClick();
-            if (ld.JoinLeague() == DialogResult.OK) ;
+            if (ld.JoinLeague() == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }
         public void CreateLeague()
         {
             LeagueDuty.PerformClick();
-            if (ld.CreateNewLeague() == DialogResult.OK) ;
+            if (ld.CreateNewLeague() == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }

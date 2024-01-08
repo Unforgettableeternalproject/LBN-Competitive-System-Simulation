@@ -45,6 +45,10 @@ namespace LBN_Competitive_System_Simulation.Forms
             UMInit();
         }
 
+        private void DoNothing()
+        {
+            ;
+        }
         private void overallInit()
         {
             chat = new ChatroomSubform("Admin")
@@ -223,22 +227,22 @@ namespace LBN_Competitive_System_Simulation.Forms
         public void AddEvent()
         {
             GameProposal.PerformClick();
-            if (gp.AcceptNewProposals() == DialogResult.OK) ;
+            if (gp.AcceptNewProposals() == DialogResult.OK) DoNothing();
             else throw new Exception();
 
             Calendar.PerformClick();
-            if (c.NewEvent() == DialogResult.OK) ;
+            if (c.NewEvent() == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }
         public void ManageUser()
         {
             UserManagement.PerformClick();
-            if (um.TestAddUser() == DialogResult.OK) ;
+            if (um.TestAddUser() == DialogResult.OK) DoNothing();
             else throw new Exception();
-            if (um.TestEditUser() == DialogResult.OK) ;
+            if (um.TestEditUser() == DialogResult.OK) DoNothing();
             else throw new Exception();
-            if (um.TestDeleteUser() == DialogResult.OK) ;
+            if (um.TestDeleteUser() == DialogResult.OK) DoNothing();
             else throw new Exception();
             this.Dispose();
         }
