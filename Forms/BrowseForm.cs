@@ -166,7 +166,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             RedirectSpinner.Hide();
             Stream.uiMode = "None";
             Stream.settings.autoStart = false;
-            Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Resources\Demo.mp4"));
+            Stream.URL = Path.GetFullPath(System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Concepts\Demo.mp4"));
             Stream.settings.setMode("loop", false);
             Stream.settings.volume = 7;
             ChatMessage.Enter += (s, args) => { this.ActiveControl = null; };
