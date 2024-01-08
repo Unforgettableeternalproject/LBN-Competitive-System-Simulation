@@ -36,7 +36,7 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             InitializeComponent();
             allowAlterate = _allowAlterate;
-            if (allowAlterate) SwitchRole.Show();
+            if (allowAlterate) { SwitchRole.Show(); }
             else SwitchRole.Hide();
             loginInit();
 
@@ -168,7 +168,6 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             clearFields();
             Mode = "Login";
-            SwitchRole.Show();
             passwordToggle = true;
             this.Text = "LBN登入畫面";
             this.BackgroundImage = Properties.Resources.LoginForm;
@@ -180,7 +179,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             txt_DoubleCheck.Hide();
             txt_Email.Hide();
             txt_ConfirmPW.Hide();
-            if (allowAlterate) Anonymous.Show();
+            if (allowAlterate) { Anonymous.Show(); SwitchRole.Show(); }
             else Anonymous.Hide();
             ToggleInvis.Show();
             Register.Show();

@@ -229,8 +229,9 @@ namespace LBN_Competitive_System_Simulation.Forms
         {
             if (DateTime.Compare(updateTime, rg.UpdateTime) < 0) { eventList = rg.EventList; updateTime = DateTime.Now; }
             c.EventList = eventList;
-            if(isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); updateUI(); }
+            if (isInLeague != ld.IsInLeague) { isInLeague = ld.IsInLeague; ps.IsInLeague = isInLeague; ps.update(); updateUI(); }
             if(isOwner != ld.IsOwner) { isOwner = ld.IsOwner; ps.update(); }
+            if(affiliatedLeague != ld.AffiliatedLeague && ld.AffiliatedLeague != null) { affiliatedLeague = ld.AffiliatedLeague; ps.update(); updateUI(); }
             redirectToLO = ld.RedirectToLO;
             leagueLogo = ld.LeagueLogo;
             if (redirectToLO) LOredirect();

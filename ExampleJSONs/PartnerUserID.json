@@ -18,5 +18,15 @@
     "Email": "ptyc4076@gmail.com",
     "UUID": "4f020cd8-3110-4f20-af6c-68b5d7412dd8",
     "Role": "Normal"
+  },
+  {
+    "Account": "0123456 1234567",
+    "Quota": "每季入/出帳",
+    "Notify": "True",
+    "Username": "Man",
+    "Password": "123",
+    "Email": "man@gmail.com",
+    "UUID": "8bc44e80-8380-4991-9947-2ec8ee63663c",
+    "Role": "Normal"
   }
 ]

@@ -47,6 +47,8 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
         public bool RedirectToLO { get => redirectToLO; set { redirectToLO = value; } }
         public Bitmap LeagueLogo { get => leagueLogo; set { leagueLogo = value; } }
 
+        public League AffiliatedLeague => affiliatedLeague;
+
         public LeagueDutySubform(ID _userID, ChatroomSubform _chat, bool _adminMode)
         {
             InitializeComponent();

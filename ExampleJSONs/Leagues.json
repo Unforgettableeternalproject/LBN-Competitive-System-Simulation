@@ -168,174 +168,6 @@
     ]
   },
   {
-    "Name": "王國之淚五百小隊",
-    "Motto": "無",
-    "LeagueType": "休閒型聯盟",
-    "Owner": {
-      "Username": "Player4",
-      "Password": "649647",
-      "Email": "test_4@gmail.com",
-      "UUID": "7b0d1a7f-4fd3-4ead-aeb2-2e68d705aaf5",
-      "Role": "League Owner"
-    },
-    "Members": [
-      {
-        "Username": "Player0",
-        "Password": "144160",
-        "Email": "test_0@gmail.com",
-        "UUID": "803c883b-e384-48df-81a1-bad388f1e6e8",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player2",
-        "Password": "363597",
-        "Email": "test_2@gmail.com",
-        "UUID": "e63a3a87-fc76-44bc-95e8-bfbd1c6a37e7",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player3",
-        "Password": "808818",
-        "Email": "test_3@gmail.com",
-        "UUID": "bc972799-ad73-40a3-970d-2f6643a18aa8",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player4",
-        "Password": "822310",
-        "Email": "test_4@gmail.com",
-        "UUID": "54b70d4f-166b-4dd3-98c0-30df444e637b",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player5",
-        "Password": "194208",
-        "Email": "test_5@gmail.com",
-        "UUID": "04ced609-932d-435b-9f30-cae23c59982d",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player1",
-        "Password": "669345",
-        "Email": "test_1@gmail.com",
-        "UUID": "bed5b5cb-1f5f-4367-94c9-c68c615e7c6a",
-        "Role": "League Owner"
-      }
-    ]
-  },
-  {
-    "Name": "車諾比戰隊",
-    "Motto": "無",
-    "LeagueType": "合作型聯盟",
-    "Owner": {
-      "Username": "Player1",
-      "Password": "628677",
-      "Email": "test_1@gmail.com",
-      "UUID": "966dda6b-b4a8-4047-a07f-4354c27ad386",
-      "Role": "League Owner"
-    },
-    "Members": [
-      {
-        "Username": "Player0",
-        "Password": "144160",
-        "Email": "test_0@gmail.com",
-        "UUID": "803c883b-e384-48df-81a1-bad388f1e6e8",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player2",
-        "Password": "363597",
-        "Email": "test_2@gmail.com",
-        "UUID": "e63a3a87-fc76-44bc-95e8-bfbd1c6a37e7",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player3",
-        "Password": "808818",
-        "Email": "test_3@gmail.com",
-        "UUID": "bc972799-ad73-40a3-970d-2f6643a18aa8",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player4",
-        "Password": "822310",
-        "Email": "test_4@gmail.com",
-        "UUID": "54b70d4f-166b-4dd3-98c0-30df444e637b",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player5",
-        "Password": "194208",
-        "Email": "test_5@gmail.com",
-        "UUID": "04ced609-932d-435b-9f30-cae23c59982d",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player1",
-        "Password": "669345",
-        "Email": "test_1@gmail.com",
-        "UUID": "bed5b5cb-1f5f-4367-94c9-c68c615e7c6a",
-        "Role": "League Owner"
-      }
-    ]
-  },
-  {
-    "Name": "自然聯盟",
-    "Motto": "無",
-    "LeagueType": "合作型聯盟",
-    "Owner": {
-      "Username": "Player0",
-      "Password": "500110",
-      "Email": "test_0@gmail.com",
-      "UUID": "24ac2907-832f-484f-8c94-3b194b6400dd",
-      "Role": "League Owner"
-    },
-    "Members": [
-      {
-        "Username": "Player0",
-        "Password": "144160",
-        "Email": "test_0@gmail.com",
-        "UUID": "803c883b-e384-48df-81a1-bad388f1e6e8",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player2",
-        "Password": "363597",
-        "Email": "test_2@gmail.com",
-        "UUID": "e63a3a87-fc76-44bc-95e8-bfbd1c6a37e7",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player3",
-        "Password": "808818",
-        "Email": "test_3@gmail.com",
-        "UUID": "bc972799-ad73-40a3-970d-2f6643a18aa8",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player4",
-        "Password": "822310",
-        "Email": "test_4@gmail.com",
-        "UUID": "54b70d4f-166b-4dd3-98c0-30df444e637b",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player5",
-        "Password": "194208",
-        "Email": "test_5@gmail.com",
-        "UUID": "04ced609-932d-435b-9f30-cae23c59982d",
-        "Role": "Player"
-      },
-      {
-        "Username": "Player1",
-        "Password": "669345",
-        "Email": "test_1@gmail.com",
-        "UUID": "bed5b5cb-1f5f-4367-94c9-c68c615e7c6a",
-        "Role": "League Owner"
-      }
-    ]
-  },
-  {
     "Name": "老二高爾夫協會",
     "Motto": "無",
     "LeagueType": "休閒型聯盟",
@@ -840,9 +672,219 @@
     ]
   },
   {
+    "Name": "sdsd",
+    "Motto": "sdsd",
+    "LeagueType": "休閒型聯盟",
+    "Owner": {
+      "Username": "Man",
+      "Password": "123",
+      "Email": "Hi@gmail.com",
+      "UUID": "4a6ee593-b762-4c3b-a142-8318d8c1d780",
+      "Role": "League Owner"
+    },
+    "Members": [
+      {
+        "Username": "Man",
+        "Password": "123",
+        "Email": "Hi@gmail.com",
+        "UUID": "4a6ee593-b762-4c3b-a142-8318d8c1d780",
+        "Role": "League Owner"
+      },
+      {
+        "Username": "我不會玩Celeste",
+        "Password": "WC9G!U5eePQ",
+        "Email": "66B7@hotmail.com",
+        "UUID": "f71d2eb8-8c9b-4a14-997d-b21616d5a542",
+        "Role": "Player"
+      },
+      {
+        "Username": "四十四隻石獅子",
+        "Password": "I?N49O4EqQY",
+        "Email": "JUOW7@icloud.com",
+        "UUID": "b7cf4468-a841-4554-a37d-06b6c8911448",
+        "Role": "Player"
+      },
+      {
+        "Username": "巴別圖書館",
+        "Password": "S5is?pvt(",
+        "Email": "FeEp5@yahoo.com",
+        "UUID": "c9f620ac-598e-4bbc-97e2-f34d3c55850b",
+        "Role": "Player"
+      }
+    ]
+  },
+  {
+    "Name": "王國之淚五百小隊",
+    "Motto": "無",
+    "LeagueType": "休閒型聯盟",
+    "Owner": {
+      "Username": "Player4",
+      "Password": "649647",
+      "Email": "test_4@gmail.com",
+      "UUID": "7b0d1a7f-4fd3-4ead-aeb2-2e68d705aaf5",
+      "Role": "League Owner"
+    },
+    "Members": [
+      {
+        "Username": "Player0",
+        "Password": "144160",
+        "Email": "test_0@gmail.com",
+        "UUID": "803c883b-e384-48df-81a1-bad388f1e6e8",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player2",
+        "Password": "363597",
+        "Email": "test_2@gmail.com",
+        "UUID": "e63a3a87-fc76-44bc-95e8-bfbd1c6a37e7",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player3",
+        "Password": "808818",
+        "Email": "test_3@gmail.com",
+        "UUID": "bc972799-ad73-40a3-970d-2f6643a18aa8",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player4",
+        "Password": "822310",
+        "Email": "test_4@gmail.com",
+        "UUID": "54b70d4f-166b-4dd3-98c0-30df444e637b",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player5",
+        "Password": "194208",
+        "Email": "test_5@gmail.com",
+        "UUID": "04ced609-932d-435b-9f30-cae23c59982d",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player1",
+        "Password": "669345",
+        "Email": "test_1@gmail.com",
+        "UUID": "bed5b5cb-1f5f-4367-94c9-c68c615e7c6a",
+        "Role": "League Owner"
+      }
+    ]
+  },
+  {
+    "Name": "車諾比戰隊",
+    "Motto": "無",
+    "LeagueType": "合作型聯盟",
+    "Owner": {
+      "Username": "Player1",
+      "Password": "628677",
+      "Email": "test_1@gmail.com",
+      "UUID": "966dda6b-b4a8-4047-a07f-4354c27ad386",
+      "Role": "League Owner"
+    },
+    "Members": [
+      {
+        "Username": "Player0",
+        "Password": "144160",
+        "Email": "test_0@gmail.com",
+        "UUID": "803c883b-e384-48df-81a1-bad388f1e6e8",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player2",
+        "Password": "363597",
+        "Email": "test_2@gmail.com",
+        "UUID": "e63a3a87-fc76-44bc-95e8-bfbd1c6a37e7",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player3",
+        "Password": "808818",
+        "Email": "test_3@gmail.com",
+        "UUID": "bc972799-ad73-40a3-970d-2f6643a18aa8",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player4",
+        "Password": "822310",
+        "Email": "test_4@gmail.com",
+        "UUID": "54b70d4f-166b-4dd3-98c0-30df444e637b",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player5",
+        "Password": "194208",
+        "Email": "test_5@gmail.com",
+        "UUID": "04ced609-932d-435b-9f30-cae23c59982d",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player1",
+        "Password": "669345",
+        "Email": "test_1@gmail.com",
+        "UUID": "bed5b5cb-1f5f-4367-94c9-c68c615e7c6a",
+        "Role": "League Owner"
+      }
+    ]
+  },
+  {
+    "Name": "自然聯盟",
+    "Motto": "無",
+    "LeagueType": "合作型聯盟",
+    "Owner": {
+      "Username": "Player0",
+      "Password": "500110",
+      "Email": "test_0@gmail.com",
+      "UUID": "24ac2907-832f-484f-8c94-3b194b6400dd",
+      "Role": "League Owner"
+    },
+    "Members": [
+      {
+        "Username": "Player0",
+        "Password": "144160",
+        "Email": "test_0@gmail.com",
+        "UUID": "803c883b-e384-48df-81a1-bad388f1e6e8",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player2",
+        "Password": "363597",
+        "Email": "test_2@gmail.com",
+        "UUID": "e63a3a87-fc76-44bc-95e8-bfbd1c6a37e7",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player3",
+        "Password": "808818",
+        "Email": "test_3@gmail.com",
+        "UUID": "bc972799-ad73-40a3-970d-2f6643a18aa8",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player4",
+        "Password": "822310",
+        "Email": "test_4@gmail.com",
+        "UUID": "54b70d4f-166b-4dd3-98c0-30df444e637b",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player5",
+        "Password": "194208",
+        "Email": "test_5@gmail.com",
+        "UUID": "04ced609-932d-435b-9f30-cae23c59982d",
+        "Role": "Player"
+      },
+      {
+        "Username": "Player1",
+        "Password": "669345",
+        "Email": "test_1@gmail.com",
+        "UUID": "bed5b5cb-1f5f-4367-94c9-c68c615e7c6a",
+        "Role": "League Owner"
+      }
+    ]
+  },
+  {
     "Name": "你好世界",
     "Motto": "你好世界，再見世界",
-    "LeagueType": "合作型聯盟",
+    "LeagueType": "競技型聯盟",
     "Owner": {
       "Username": "Berniee",
       "Password": "122334",
@@ -851,13 +893,6 @@
       "Role": "League Owner"
     },
     "Members": [
-      {
-        "Username": "Berniee",
-        "Password": "122334",
-        "Email": "ptyc4076@gmail.com",
-        "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
-        "Role": "League Owner"
-      },
       {
         "Username": "Joja",
         "Password": "OOPP",
@@ -894,10 +929,101 @@
         "Role": "Player"
       },
       {
-        "Username": "申",
-        "Password": "w0KrV*hs",
-        "Email": "x8QP$Q@hotmail.com",
-        "UUID": "b4ea8c8e-2e0f-458e-9668-f5d137178e05",
+        "Username": "奪胎叔叔",
+        "Password": "(fC3k4C$iY7I",
+        "Email": "s)C3@hotmail.com",
+        "UUID": "e7a0059a-f9b1-43cf-bd71-2f0401276a59",
+        "Role": "Player"
+      },
+      {
+        "Username": "045",
+        "Password": "HDCM(89t_mP_l",
+        "Email": "_l0*jx@yahoo.com",
+        "UUID": "0661a628-56b4-4aeb-859f-e7838d8515b0",
+        "Role": "Player"
+      },
+      {
+        "Username": "帕絲蒂蘭斯",
+        "Password": "y2(F7)mk9h1Ha",
+        "Email": "Yh9)gD@gmail.com",
+        "UUID": "bbc6ce70-77c9-491b-806c-03d2fed9abdc",
+        "Role": "Player"
+      },
+      {
+        "Username": "Berniee",
+        "Password": "122334",
+        "Email": "ptyc4076@gmail.com",
+        "UUID": "a4df083d-dd7b-4d6e-81b0-2686d24acc64",
+        "Role": "League Owner"
+      }
+    ]
+  },
+  {
+    "Name": "你好世界，嗨!",
+    "Motto": "你好世界，再見世界",
+    "LeagueType": "休閒型聯盟",
+    "Owner": {
+      "Username": "Joja",
+      "Password": "OOPP",
+      "Email": "ligk@gmail.com",
+      "UUID": "a493c5b6-e6a6-4a99-8b0b-b40f715ba2f7",
+      "Role": "League Owner"
+    },
+    "Members": [
+      {
+        "Username": "Joja",
+        "Password": "OOPP",
+        "Email": "ligk@gmail.com",
+        "UUID": "a493c5b6-e6a6-4a99-8b0b-b40f715ba2f7",
+        "Role": "League Owner"
+      },
+      {
+        "Username": "Coca",
+        "Password": "Kilpw",
+        "Email": "JOgaot@gmail.com",
+        "UUID": "ce6dd61e-80b3-4f94-b8e5-7226083458de",
+        "Role": "Player"
+      },
+      {
+        "Username": "Celena",
+        "Password": "Yes123",
+        "Email": "GoodHi@gmail.com",
+        "UUID": "cfb01fe4-02a9-442a-8c3b-c040d19a0917",
+        "Role": "Player"
+      },
+      {
+        "Username": "無敵的吧",
+        "Password": "aYyLQsq3m",
+        "Email": "?z(CmF@gmail.com",
+        "UUID": "cd068cf9-0e4e-4f91-ad50-7ec0ad843c7f",
+        "Role": "Player"
+      },
+      {
+        "Username": "我不會玩Celeste",
+        "Password": "LGKbNpJL5rh",
+        "Email": "%*3Oa@outlook.com",
+        "UUID": "7d6d1fd8-dc37-4b6b-8fb2-fd78f29f9626",
+        "Role": "Player"
+      },
+      {
+        "Username": "奪胎叔叔",
+        "Password": "(fC3k4C$iY7I",
+        "Email": "s)C3@hotmail.com",
+        "UUID": "e7a0059a-f9b1-43cf-bd71-2f0401276a59",
+        "Role": "Player"
+      },
+      {
+        "Username": "045",
+        "Password": "HDCM(89t_mP_l",
+        "Email": "_l0*jx@yahoo.com",
+        "UUID": "0661a628-56b4-4aeb-859f-e7838d8515b0",
+        "Role": "Player"
+      },
+      {
+        "Username": "帕絲蒂蘭斯",
+        "Password": "y2(F7)mk9h1Ha",
+        "Email": "Yh9)gD@gmail.com",
+        "UUID": "bbc6ce70-77c9-491b-806c-03d2fed9abdc",
         "Role": "Player"
       }
     ]
