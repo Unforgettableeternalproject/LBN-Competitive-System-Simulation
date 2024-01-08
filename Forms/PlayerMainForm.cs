@@ -204,6 +204,7 @@ namespace LBN_Competitive_System_Simulation.Forms
             ld.LeagueLogo = leagueLogo;
             ld.RedirectToLO = false;
             ld.refresh(affiliatedLeague);
+            updateUI();
             league.Dispose();
             this.Show();
             Tick.Start();
