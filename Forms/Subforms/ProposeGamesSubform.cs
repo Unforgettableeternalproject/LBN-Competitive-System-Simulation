@@ -11,6 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides propose game function for the league owners.
+    /// </summary>
     public partial class ProposeGamesSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

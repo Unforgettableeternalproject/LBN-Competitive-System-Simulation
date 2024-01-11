@@ -16,6 +16,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides function to view personal statistics for the players.
+    /// </summary>
     public partial class PersonalStatsSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

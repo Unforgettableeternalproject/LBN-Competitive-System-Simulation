@@ -16,6 +16,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// The main page every user encounters first.
+    /// </summary>
     public partial class MainPage : Form
     {
         private const int Countdown = 3;

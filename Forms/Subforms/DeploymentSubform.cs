@@ -11,6 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides function to deploy advertisements for the advertisers.
+    /// </summary>
     public partial class DeploymentSubform : Form
     {
         private ID userID;

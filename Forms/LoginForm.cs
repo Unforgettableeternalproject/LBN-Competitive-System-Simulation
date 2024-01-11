@@ -15,6 +15,9 @@ using LBN_Competitive_System_Simulation.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// A general login form for various types of users.
+    /// </summary>
     public partial class LoginForm : Form
     {
         String Mode = "Login";

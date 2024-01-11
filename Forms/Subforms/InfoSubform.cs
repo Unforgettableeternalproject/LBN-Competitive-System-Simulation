@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides function to change personal info for the advertisers.
+    /// </summary>
     public partial class InfoSubform : Form
     {
         private ID userID;

@@ -15,6 +15,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides user managing function for the admins.
+    /// </summary>
     public partial class UserManagementSubform : Form
     {
         private IDwithPartnerCheck originalUser;

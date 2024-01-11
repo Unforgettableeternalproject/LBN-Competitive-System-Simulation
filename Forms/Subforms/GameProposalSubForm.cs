@@ -11,6 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides function to review game proposal for the admins.
+    /// </summary>
     public partial class GameProposalSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

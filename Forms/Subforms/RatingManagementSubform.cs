@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides rating management function for the league owners.
+    /// </summary>
     public partial class RatingManagementSubform : Form //This Form is purely cosmetic as it does not contain any practical data exchanges or W/R
     {
         static readonly long currentTime = DateTime.Now.Ticks;

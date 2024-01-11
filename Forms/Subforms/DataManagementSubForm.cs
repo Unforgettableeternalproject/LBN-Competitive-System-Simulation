@@ -14,6 +14,9 @@ namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
     public partial class DataManagementSubform : Form
     {
+        /// <summary>
+        /// Provides data management function for the admins.
+        /// </summary>
         private int leagueCount = 0, userCount = 0, gameCount = 0, errorCount = 0;
         public DataManagementSubform()
         {

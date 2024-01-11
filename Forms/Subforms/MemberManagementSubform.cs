@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides member management function for the league owners.
+    /// </summary>
     public partial class MemberManagementSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

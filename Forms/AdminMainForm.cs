@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// Admin's main page, can access to many functions.
+    /// </summary>
     public partial class AdminMainForm : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

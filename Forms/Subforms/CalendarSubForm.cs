@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides function to see or edit scheduled events for the admins and players.
+    /// </summary>
     public partial class CalendarSubform : Form
     { 
         private List<Proposal> eventList = new List<Proposal>();

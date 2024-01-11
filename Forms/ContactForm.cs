@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// A form that is attached to the browse page, as a bridge to connect to advertiser's back-end.
+    /// </summary>
     public partial class ContactForm : Form
     {
         private string captchaCode;

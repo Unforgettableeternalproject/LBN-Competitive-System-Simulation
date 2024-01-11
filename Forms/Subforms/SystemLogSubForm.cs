@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides visiting system log function for the admins.
+    /// </summary>
     public partial class SystemLogSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

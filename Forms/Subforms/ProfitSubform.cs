@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides function to view estimated revenue for the advertisers.
+    /// </summary>
     public partial class ProfitSubform : Form
     {
         private ID userID;

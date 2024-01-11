@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides chatroom function for special users.
+    /// </summary>
     public partial class ChatroomSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

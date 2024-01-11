@@ -14,6 +14,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// The visible page that the audience can see.
+    /// </summary>
     public partial class BrowseForm : Form
     {
         private ID userID;

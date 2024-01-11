@@ -15,6 +15,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// The main front and back end page fot the advertisers.
+    /// </summary>
     public partial class AdvertisementForm : Form
     {
         private ID userID;

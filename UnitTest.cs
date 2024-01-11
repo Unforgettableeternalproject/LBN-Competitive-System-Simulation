@@ -129,7 +129,8 @@ namespace LBN_Competitive_System_Simulation
             [TestMethod]
             public void ManageUsers()
             {
-                var originalUsers = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
+                var originalUsers = JsonConvert.DeserializeObject<List<ID>>
+                    (File.ReadAllText(@"..\..\ExampleJSONs\NormalUserID.json"));
                 testAdmin = new AdminMainForm(testcase[1]);
                 try
                 {
@@ -170,8 +171,10 @@ namespace LBN_Competitive_System_Simulation
             [TestMethod]
             public void JoinLeague()
             {
-                var originalLeague = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
-                var originalUsers = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json"));
+                var originalLeague = JsonConvert.DeserializeObject<List<League>>
+                    (File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
+                var originalUsers = JsonConvert.DeserializeObject<List<ID>>
+                    (File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json"));
                 testPlayer = new PlayerMainForm(testcase[2]);
                 try
                 {
@@ -196,30 +199,6 @@ namespace LBN_Competitive_System_Simulation
         {
             PlayerMainForm testPlayer;
             LeagueMainForm testLO;
-
-            [TestMethod]
-            public void CreateLeague()
-            {
-                var originalLeague = JsonConvert.DeserializeObject<List<League>>(File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
-                var originalUsers = JsonConvert.DeserializeObject<List<ID>>(File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json"));
-                testPlayer = new PlayerMainForm(testcase[2]);
-                try
-                {
-                    testPlayer.Show();
-                    testPlayer.CreateLeague();
-                }
-                catch
-                {
-                    Assert.Fail();
-                }
-                finally
-                {
-                    string leagueJson = JsonConvert.SerializeObject(originalLeague, Formatting.Indented);
-                    string userJson = JsonConvert.SerializeObject(originalUsers, Formatting.Indented);
-                    File.WriteAllText(@"..\..\ExampleJSONs\Leagues.json", leagueJson);
-                    File.WriteAllText(@"..\..\ExampleJSONs\SpecialUserID.json", userJson);
-                }
-            }
 
             [TestMethod]
             public void ProposeGame()
@@ -248,6 +227,31 @@ namespace LBN_Competitive_System_Simulation
                 catch
                 {
                     Assert.Fail();
+                }
+            }
+            [TestMethod]
+            public void CreateLeague()
+            {
+                var originalLeague = JsonConvert.DeserializeObject<List<League>>
+                    (File.ReadAllText(@"..\..\ExampleJSONs\Leagues.json"));
+                var originalUsers = JsonConvert.DeserializeObject<List<ID>>
+                    (File.ReadAllText(@"..\..\ExampleJSONs\SpecialUserID.json"));
+                testPlayer = new PlayerMainForm(testcase[2]);
+                try
+                {
+                    testPlayer.Show();
+                    testPlayer.CreateLeague();
+                }
+                catch
+                {
+                    Assert.Fail();
+                }
+                finally
+                {
+                    string leagueJson = JsonConvert.SerializeObject(originalLeague, Formatting.Indented);
+                    string userJson = JsonConvert.SerializeObject(originalUsers, Formatting.Indented);
+                    File.WriteAllText(@"..\..\ExampleJSONs\Leagues.json", leagueJson);
+                    File.WriteAllText(@"..\..\ExampleJSONs\SpecialUserID.json", userJson);
                 }
             }
         }

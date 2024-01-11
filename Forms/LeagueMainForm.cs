@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// A back-end league main page for the league owners.
+    /// </summary>
     public partial class LeagueMainForm : Form
     {
         private ID userID;

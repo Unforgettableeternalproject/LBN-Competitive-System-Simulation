@@ -15,6 +15,9 @@ using static LBN_Competitive_System_Simulation.Forms.PlayerMainForm;
 
 namespace LBN_Competitive_System_Simulation.Forms
 {
+    /// <summary>
+    /// Player's main page, they can access their functions here.
+    /// </summary>
     public partial class PlayerMainForm : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

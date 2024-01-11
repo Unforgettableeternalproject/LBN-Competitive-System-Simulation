@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides visiting recent game function for the players.
+    /// </summary>
     public partial class RecentGamesSubform : Form
     {
         //▲▼

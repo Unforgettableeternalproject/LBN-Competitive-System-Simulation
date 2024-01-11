@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides function to view league duty for the players.
+    /// </summary>
     public partial class LeagueDutySubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;

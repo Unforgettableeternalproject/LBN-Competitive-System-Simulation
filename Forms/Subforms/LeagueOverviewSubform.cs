@@ -13,6 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LBN_Competitive_System_Simulation.Forms.Subforms
 {
+    /// <summary>
+    /// Provides league overview function for the league owners.
+    /// </summary>
     public partial class LeagueOverviewSubform : Form
     {
         static readonly long currentTime = DateTime.Now.Ticks;
