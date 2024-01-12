@@ -11,8 +11,9 @@
 ✎ Everything is Done
 
 Contributors:
-	Currently None
-
+	yutao33003
+	qqwnua
+ 
 To-do list:
 
 	✧ Make the codes much more cleaner (Working on it)
